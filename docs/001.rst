@@ -1,0 +1,383 @@
+
+                         NCSA HDF Newsletter #1
+                           December 12, 1989	
+
+Contents:
+	The HDF Newsletter
+	The Current State of HDF
+	HDF Release 3.0
+	The HDF Vgroup: A More General HDF Structure
+	HDF File Conversion 
+	The NCSA HDF Staff
+
+
+      --------------------------- ** ---------------------------
+
+                          The HDF Newsletter
+
+As HDF has begun to spread beyond NCSA many of you have requested 
+some form of regular communication among all HDF users.  The HDF 
+Newsletter is an occasional newsletter designed to provide that 
+communication.  It is meant to serve as a clearinghouse of 
+information about HDF.
+
+The contents of this issue reflect the kinds of things I expect to 
+include in the Newsletter, but I am quite open to suggestions.  I 
+will print anything about HDF that seems as though it might be of 
+interest to the HDF community.
+
+We will distribute the Newsletter via both surface mail and email.  
+If we have your email address, we will use email.  It is cheaper 
+and (we hope) easier to manage than surface mail.
+
+Mike Folk
+NCSA
+University of Illinois
+605 E. Springfield Ave.
+Champaign, IL 61820
+217-244-0647
+mfolk@ncsa.uiuc.edu (internet)
+12409@ncsavmsa
+
+    --------------------------- ** ---------------------------
+
+                    The current state of HDF
+
+FUNCTIONALITY
+HDF Release 2.0, released last February and since then revised 
+only for bug fixes, is still the most up-to-date official version 
+of HDF.  It includes interfaces and file formats for handling 8-
+bit raster images (with or withoout palettes), and regular gridded 
+multidimensional floating point data sets.  It includes utilities 
+for listing the contents of an HDF file (hdfls), for converting 
+raw raster data to HDF (r8tohdf) and vice versa (hdftor8), and for 
+displaying images or sequences of images from HDF files (hdfseq 
+and hdfrseq).
+
+NCSA WORKSTATION TOOLS
+Most of the workstation tools now support HDF files.  This 
+includes CompositeTool on the Sun, which previously did not 
+support HDF.  (By the end of the year ImageTool (also Sun) will 
+also support HDF files.)  The Mac tools are NCSA Image, NCSA 
+PalEdit, NCSA DataScope, and NCSA Layout.  NCSA CompositeTool is a 
+Sun version of Layout.  Our two X-Windows tools are NCSA X-Image, 
+and NCSA X-DataSlice.
+
+OFFICIAL PLATFORMS
+Architectures that we have HDF running on: Cray-2 and Cray X-MP; 
+Alliant (Concentrix), SGI 4, Sun-3, and Sun Sparc machines, 
+Macintosh and IBM-PC.  And VMS, sort of (see below).
+
+UNOFFICIAL PLATFORMS
+People outside of NCSA have ported HDF to: Convex, Stellar, 
+Connection Machine, Symbolics Machine, and Amiga.  (Do you know of 
+any others?)  I think most of these people would be happy to give 
+you advice on any special thing you need to do if you want to port 
+HDF to one of these machines, but I probably shouldn't publish 
+their names without their permission.  Let me know if you are 
+interested in any particular port, and I will give your name to 
+the relevant person.
+
+SEMI-OFFICIAL PLATFORMS -- VMS & CTSS
+VMS. A lot of you have asked for HDF support on VMS systems, so we 
+made a quick attempt to port HDF to VMS last spring.  It was 
+problematic from the beginning because we don't have any real VMS 
+expertise here.  It actually went reasonably well in most 
+respects, except for one major problem, which we're still 
+struggling with: VMS-C writes files "stream-LF" format, which does 
+not transfer well via ftp and some other transfer programs.  There 
+is a VMS utility called FIXATR that we supply with VMS HDF, which 
+converts stream-LF files to "fixed-512" files, which seems to be 
+more amenable to transfer outside of the VMS environment.  This is 
+not a great solution, since it involves an extra step whenever 
+files go to or from VMS, but it may at least make it possible.  
+Any suggestions for better solutions are certainly welcome.
+
+CTSS. CTSS is a different story.  Not only don't we have CTSS/HDF 
+expertise at NCSA; we also don't have access to CTSS any more.  If 
+you are having problems getting HDF to work on CTSS, we will be 
+happy to try to help you, but frankly we haven't been very 
+successful diagnosing such problems recently.  If we can't help 
+you, we may be able to put you in touch with someone who has 
+successfully implemented HDF on CTSS.
+
+
+     --------------------------- ** ---------------------------
+
+
+                          HDF Release 3.0
+
+After many delays, HDF 3.0 seems now to be ready for release. All 
+of the features of HDF 2.0 are present in HDF 3.0, plus several 
+new features.  
+
+HDF 3.0 has been in available as a beta release for about 5 
+months, and it seems pretty bug free.  But certain parts of it 
+have hardly been used by anyone, so please let us know if 
+something doesn't seem to work the way you think it should.
+
+New features of HDF 3.0 include the following:
+
+An interface for basic i/o of 24-bit raster images, which includes 
+the following routines:
+
+  DF24setil:   sets the interlace to be used when writing out the 
+               RIS24 for the image.
+
+  DF24addimage:appends a 24-bit raster image set to the file.
+
+  DF24getdims: retrieves the dimensions and interlace of the
+               image.
+
+  DF24getimage: retrieves the image and stores it in an array.
+
+  DF24reqil:   specifies an interlace to be used in place of the
+               interlace indicated in the file when the next 
+               raster image is read.
+
+
+An interface for annotating HDF data objects and files, which 
+includes the following routines:
+
+  DFANgetlablen: gets length of label of a tag/ref
+  
+  DFANgetlabel:  gets label of tag/ref
+
+  DFANgetdesclen: gets length of description of tag/ref
+
+  DFANgetdesc:   gets description of tag/ref
+
+  DFANputlabel:  puts label of tag/ref
+
+  DFANputdesc:   puts description of tag/ref
+
+  DFANlastref:   returns ref of last annotation read or written
+
+  DFANlablist:   gets list of labels for a particular tag
+
+
+An interface for input and output of 8-bit palettes, including the 
+following routines:
+
+  DFPaddpal:    appends a palette to a file.
+
+  DFPgetpal:    reads in the next palette in the file.
+
+  DFPputpal:    writes a palette to a file.
+
+  DFPnpals:     indicates number of palettes in a file.
+
+  DFPwriteref:  sets the reference number of the next palette to
+                be written.
+
+  DFPreadref:   gets the reference number of the next palette to
+                be retrieved.
+
+  DFPrestart:   specifies that the next call to DFPgetpal reads
+                first palette in the file, rather than the next.
+
+  DFPlastref:   returns value of the reference number most
+                recently read or written.
+
+
+Scientific data set routines for storing and retreiving subsets 
+(slices) of scientific data, and for choosing optional storage 
+formats and data types:
+
+  DFSDstartslice: prepares to write part of dataset to file.
+
+  DFSDputslice:   writes part of a dataset to a file.
+
+  DFSDendslice:   indicates write completion for part of dataset.
+
+  DFSDgetslice:   reads part of a dataset.
+
+  DFSDsettype:    specifies data attributes: data type and 
+                  representation, system type, and array order.
+
+
+* new utilities, including the following:
+
+  hdfed:    lets you browse in an HDF file and manipulate some of
+            the data
+
+  fptohdf:  converts floating point data to HDF floating point 
+            data and/or 8-bit raster images
+
+  r24tohdf: converts a raw RGB 24-bit image to an 8-bit RIS8 with 
+            a palette
+
+  paltohdf: converts a raw palette to hdf format
+
+  hdftopal: converts palette in an hdf file to raw format
+
+    --------------------------- ** ---------------------------
+
+
+              HDF Vgroup--A More General Structure
+
+HDF currently supports only two major types of scientific data: 
+raster data and regular gridded multidimensional arrays.  Recently 
+we have added an HDF structure that promises to expand 
+significantly the types of data that we can support.  This 
+structure, currently called Vgroup (the name may change), provides 
+two important new structures:
+
+    1. a general grouping structure that lets the user form
+       groups out of any set of HDF objects, including other
+       Vgroups
+
+    2. a general structure made up of a set of record-like
+       structures, each record being made up of a set of
+       fields.  Fields can be use-defined or predefined.
+
+Vgroups look very promising for a number of important scientific 
+application areas not currently supported by HDF, including finite 
+element and non-rectilinear mesh data.  We have talked with a 
+number of scientists who work with this kind of data, and our 
+general impression is that there is a need for a standard in this 
+area and that Vgroups could well provide the standard.
+
+The idea for Vgroup springs from a need to store 3-D polygonal 
+data, with vertices, polygons (connectivity lists), and various 
+associated values with each vertex or polygon. 
+
+When Jason Ng took over the Vgroup project, he began talking to a 
+lot of potential users from many different disciplines about how 
+they might be able to use Vroups.  Their responses were so varied, 
+that Jason immediately began looking for ways to generalize the 
+concept so that it could handle many different kinds of data. The 
+result is a very general HDF structure that "groups" one or more 
+other HDF structures.  The structures in a Vgroup can be anything 
+you want them to be including other Vgroups.  
+
+For example, a Raster Image Set could probably be stored as a 
+Vgroup.  The members of the Vgroup would be a palette, a dimension 
+record, and an image.  But with the Vgoup concept we could now go 
+a step further and group several Raster Image Sets, in an 
+animation, for example.
+
+While the Vgroup idea provides a general structure for linking HDF 
+items together, we still need a structure for representing things 
+like sets of vertices and connectivity lists.  The structure that 
+we use for this is a very familiar one--a field and record 
+structure.  Store 3-D vertices, we define three fields per 
+element, corresponding to the x, y and z coordinates that define 
+each vertex.  A vertex set is a fixed number of vertex records.  A 
+polygon set is similarly defined.  If there are four vertices per 
+polygon, each record consists of four vertex numbers; these 
+numbers appear an order that describes the connectivity of the 
+polygon.
+
+In keeping with our desire to standardize those items that are 
+likely to be accessed by different programs in different 
+environments, certain types of sets will be predefined.  A 3-D 
+vertex set will have exactly three fields per vertex, for 
+instance.  But those who have the need are free to define their 
+own dataset types.  For example, you might for some reason want to 
+store scalar values in the same dataset that you store your 
+vertices.  You are free to do this, but must recognize that you 
+are building a non-standard dataset.  (Unless, of course, enough 
+users ask us to make THAT one of the standard types.)
+
+There are still some issues yet to be settled with respect to 
+Vgroups, but we think that we are pretty close to having the major 
+design of it pinned down.  The interface is now undergoing a major 
+overhaul.  We expect to release a Beta version of it in mid-
+January for any of you who would like to look at it and play with 
+it.
+
+Of course we welcome all comments and questions you have about 
+Vgroups.  We don't want to freeze this structure too soon, because 
+we see it as an important building block to HDF in the future.  On 
+the other hand, we want to get it into use as soon as is 
+reasonably possible.  If don't want to wait for the Beta release, 
+contact us and we will send you the draft of the documentation.
+
+     --------------------------- ** ---------------------------
+
+
+                        HDF File Conversions
+
+A frequent question that arises is "How can I translate between 
+file format xxx and HDF?"  We want very much to support 
+translators between HDF and other formats, but have so far had 
+trouble finding the resources to write them.  Here is a list of 
+some of the translators that we would like to have.  If you have a 
+translator, know of one, are interested in working on one, etc., 
+please let us know.  
+
+
+FITS--Flexible Image Transport System
+FITS is the standard format used for astronomical images and other 
+digital arrays.  We have small collaborative project with the 
+Space TelescopeScience Institute to translate basic FITS to HDF.  
+We hope this will lead to a more elaborate project later.
+
+CGM--Computer Graphics Metafile 
+CGM is a very widespread file format that is used primarily for 
+describing pictures.  Though CGM and HDF have different roles to 
+play in scientific visualization, it would be nice to be able to 
+look at CGM pictures using HDF-based tools, and vice versa.  Some 
+programs that might help us do this: a CGM cell array-to-HDF 
+converter, a rasterizer that converts CGM 2-D pictures to HDF 
+raster, and a converter  that converts CGM text to HDF.  (HDF 
+currently does not support text.)
+
+(We have heard about a tool called CGM-Maker developed at Los 
+Alamos that converts between CGM and Pict files, among others.  
+Since NCSA Layout reads and writes both Pict and HDF files, CGM-
+Maker and Layout together provide a kind of primitive filter 
+between the two formats.)
+
+netCDF
+The netCDF interface allows users to share scientific data in a 
+form that is self-describing and network transparent, and is very 
+much in the spirit of HDF.  It is a well-designed, flexible 
+interface, and one that would benefit HDF users enormously if it 
+could be incorporated into the HDF library.  We are very 
+interested in adapting HDF to support the netCDF interface, and 
+also in writing translators that convert between the HDF and 
+netCDF file formats.
+
+TIFF--Tag Image File Format
+Several HDF users have requested translators to and from this 
+common image format and HDF.
+
+     --------------------------- ** ---------------------------
+
+                            The HDF Staff
+
+In the last year and a half, the HDF project has expanded from one 
+programmer to six people.  We lost Swami Natarajan, who finished 
+his Ph.D last summer and took a job a Texas A & M.  We really miss 
+him and continue to appreciate the work he did for us. Fortunately 
+he is still in touch via email.
+
+Mike Folk is the project manager for HDF.  Mike joined NCSA in 
+August, 1988, having last worked at Oklahoma State University as a 
+professor in the computer science department.
+
+ChinChau Low has taken over Swami's responsibilities for 
+maintaining HDF.  ChinChau is a graduate student in Computer 
+Science at the University of Illinois.   ChinChau joined us in 
+Fall, 1988, and has worked on virtually all aspects of HDF. He is 
+crucial to maintaining HDF and also to all additions.
+
+Jason Likkai Ng is a full-time staff member from Malaysia (via 
+Cornell, Milwaukee, and La Jolla) who joined us in May.  Jason's 
+main responsibility is the Vgroup project described earlier.
+
+Peter Webb, Brian Calvert and Drew Hess joined the HDF group this 
+fall semester.  Peter last worked at Schlumberger; Brian joins us 
+from Motorola.  Peter and Brian are graduate students in Computer 
+Science; Drew is an undergraduate in Computer Science.  
+
+Peter's current projects include (1) installation of a revision 
+control system to help manage HDF code development, and (2) 
+finding ways to speed up HDF's performance.  Brian's project is 
+Polyview, an SGI-based interactive tool for displaying polygonal 
+data stored in the Vgroup format described above.  Drew is 
+currently working on an HDF utility for taking slices out of 3-D 
+scientific datasets.
+
