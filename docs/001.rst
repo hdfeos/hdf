@@ -1,5 +1,5 @@
-
-                         NCSA HDF Newsletter #1
+NCSA HDF Newsletter #1
+======================
                            December 12, 1989	
 
 Contents:
