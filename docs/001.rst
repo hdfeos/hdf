@@ -1,5 +1,5 @@
 ================================================================================
-                         NCSA HDF Newsletter #1
+                         HDF Newsletter #1
 ================================================================================
                            December 12, 1989	
 
@@ -12,9 +12,9 @@ Contents:
 	The NCSA HDF Staff
 
 
-      --------------------------- ** ---------------------------
-
+--------------------------------------------------------------------------------
                           The HDF Newsletter
+--------------------------------------------------------------------------------
 
 As HDF has begun to spread beyond NCSA many of you have requested 
 some form of regular communication among all HDF users.  The HDF 
@@ -40,9 +40,10 @@ Champaign, IL 61820
 mfolk@ncsa.uiuc.edu (internet)
 12409@ncsavmsa
 
-    --------------------------- ** ---------------------------
-
+--------------------------------------------------------------------------------
                     The current state of HDF
+--------------------------------------------------------------------------------
+
 
 FUNCTIONALITY
 HDF Release 2.0, released last February and since then revised 
