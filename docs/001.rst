@@ -104,10 +104,9 @@ you, we may be able to put you in touch with someone who has
 successfully implemented HDF on CTSS.
 
 
-     --------------------------- ** ---------------------------
-
-
+--------------------------------------------------------------------------------
                           HDF Release 3.0
+--------------------------------------------------------------------------------                          
 
 After many delays, HDF 3.0 seems now to be ready for release. All 
 of the features of HDF 2.0 are present in HDF 3.0, plus several 
@@ -213,10 +212,10 @@ formats and data types:
 
   hdftopal: converts palette in an hdf file to raw format
 
-    --------------------------- ** ---------------------------
 
-
+--------------------------------------------------------------------------------
               HDF Vgroup--A More General Structure
+--------------------------------------------------------------------------------
 
 HDF currently supports only two major types of scientific data: 
 raster data and regular gridded multidimensional arrays.  Recently 
@@ -346,9 +345,10 @@ TIFF--Tag Image File Format
 Several HDF users have requested translators to and from this 
 common image format and HDF.
 
-     --------------------------- ** ---------------------------
 
+--------------------------------------------------------------------------------
                             The HDF Staff
+--------------------------------------------------------------------------------
 
 In the last year and a half, the HDF project has expanded from one 
 programmer to six people.  We lost Swami Natarajan, who finished 
