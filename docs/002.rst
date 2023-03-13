@@ -210,7 +210,7 @@ machine.  The problem is as follows: hdfrseq sends a stream of
 bytes via telnet to your terminal.  If this stream of bytes 
 doesn't have a line-feed every 512 bytes or less, VMS in its 
 infinite wisdom adds one for you.  This of corrupts the image, and 
-you get wierd streaks in your output.
+you get weird streaks in your output.
 
 Brian Wallace has given us a simple solution to this problem:  You 
 can eliminate the extra line-feed by entering the following line 
