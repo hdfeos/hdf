@@ -383,7 +383,7 @@ Some caveats for the use of hdfpack:
 	1. Your system must have enough RAM to read in the 
 	largest element in the file you are trying to pack.
 
-	2.Your system must have enough disk space to accomodate 
+	2.Your system must have enough disk space to accommodate 
 	the new packed file.
 
 	3.Although the logical organization of your file will remain 

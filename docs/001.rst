@@ -49,7 +49,7 @@ FUNCTIONALITY
 HDF Release 2.0, released last February and since then revised 
 only for bug fixes, is still the most up-to-date official version 
 of HDF.  It includes interfaces and file formats for handling 8-
-bit raster images (with or withoout palettes), and regular gridded 
+bit raster images (with or without palettes), and regular gridded 
 multidimensional floating point data sets.  It includes utilities 
 for listing the contents of an HDF file (hdfls), for converting 
 raw raster data to HDF (r8tohdf) and vice versa (hdftor8), and for 
@@ -181,7 +181,7 @@ following routines:
                 recently read or written.
 
 
-Scientific data set routines for storing and retreiving subsets 
+Scientific data set routines for storing and retrieving subsets 
 (slices) of scientific data, and for choosing optional storage 
 formats and data types:
 

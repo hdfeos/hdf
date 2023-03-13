@@ -1,5 +1,5 @@
 ================================================================================
-                   NCSA HDF Newsletter #2
+                   HDF Newsletter #2
 ================================================================================
                        August 20, 1990
 
@@ -19,9 +19,10 @@ CONTENTS
 			
 
 Mike Folk (mfolk@ncsa.uiuc.edu)
---------------------------- ** ---------------------------
 
+--------------------------------------------------------------------------------
                       HDF Version 3.1
+--------------------------------------------------------------------------------
 
 During the first half of July, we released Version 3.1 of HDF.  
 
@@ -140,9 +141,9 @@ of success, and we expect them to be able to share their results
 with us soon.  Stay tuned.
 
 
---------------------------- ** ---------------------------
-
+--------------------------------------------------------------------------------
                            VMS
+--------------------------------------------------------------------------------
 
 The VMS port finally seems to be working pretty well, at least if 
 the lack of bug reports on it is any indication.  We owe a real 
@@ -223,11 +224,9 @@ its original modes with something like "set terminal/wrap.")
 In release 3.1 this is done for you, as hdfrseq is included in a 
 ".com" file that sets "nowrap" before executing hdfrseq.
 
---------------------------- ** ---------------------------
-
-                DFSDgetslice and DFSDputslice 
-                 documentation errors fixed
-
+--------------------------------------------------------------------------------
+                DFSDgetslice and DFSDputslice documentation errors fixed
+--------------------------------------------------------------------------------
 
 The documentation for DFSDputslice and DFSDgetslice is wrong in 
 the most recently published version of the HDF manual.  Most 
@@ -450,9 +449,9 @@ char *filename;
 	printf("\n");
 }
 
---------------------------- ** ---------------------------
-
+--------------------------------------------------------------------------------
                        Other Releases
+--------------------------------------------------------------------------------
 
 Here are some short takes on other items of interest.  All of 
 these items can be gotten from our anonymous ftp server 
@@ -589,7 +588,7 @@ fp2hdf to distinguish it from the old version.)
 
 
 
---------------------------- ** ---------------------------
+--------------------------------------------------------------------------------
 
                       HDF 4.0 in the works
 
@@ -609,10 +608,9 @@ greater user control over file access.
 We will provide more details on HDF 4.0 in a future Newsletter.
 
 
---------------------------- ** ---------------------------
-
+--------------------------------------------------------------------------------
                          HDF and netCDF
-
+--------------------------------------------------------------------------------
 
 NetCDF is an interface for data access produced by the Unidata 
 Program Center at the University Center for Atmospheric Research.  
@@ -625,7 +623,7 @@ which would be fairly substantial.
 
 We will give more details about this effort in a future 
 newsletter.
---------------------------- ** ---------------------------
+
 
 
 
