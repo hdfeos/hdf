@@ -24,9 +24,10 @@ Contents:
    Goodbye Chin-Chau / hello Doug
 
   
-+++++++++++++++++
 
+--------------------------------------------------------------------------------
                       HDF 3.1 Release 2 
+--------------------------------------------------------------------------------
 
 On October 2 we released an updated version of HDF 3.1. 
 These are changes made in Release3.1r2
@@ -45,9 +46,10 @@ These are changes made in Release3.1r2
 
 
 
-+++++++++++++++++
 
+--------------------------------------------------------------------------------
                       HDF 3.1 Release 3 
+--------------------------------------------------------------------------------
 
 On December 6 we released another update of HDF 3.1. 
 These are changes made in Release3.1r3
@@ -60,10 +62,10 @@ These are changes made in Release3.1r3
 *   changed DFconvert to call CSPK32 and SCUP32 with icheck so that
     underflow, overflow and NaNs are handled correctly.
 
-+++++++++++++++++
 
+--------------------------------------------------------------------------------
                    HDF ported to IBM/MVS by UCLA
-
+--------------------------------------------------------------------------------
 
 The good folks at UCLA have ported much of HDF to an IBM/MVS
 system and have given it all to us for distribution.  All of 
@@ -90,18 +92,20 @@ that had to be made are described in the file "porting.notes".
 Once again, thanks, Joan, for your valuable contribution.
 
 
-+++++++++++++++++
 
+--------------------------------------------------------------------------------
                      Docs available in postscript
+--------------------------------------------------------------------------------                     
 
 By popular demand, Jill Peacock (our docs person) has figured out 
 how to produce postscript versions of our documentation from the 
 original Microsoft Word versions.  You will find them in 
 doc/postscript on the ftp server.
 
-+++++++++++++++++
 
+--------------------------------------------------------------------------------
                        DECStations now supported
+--------------------------------------------------------------------------------
 
 Thanks to the generosity of Digital, we now have a DEC 3100 in our
 group.  And, thanks to several of you who had already ported HDF to 
@@ -123,9 +127,10 @@ on their 3100s with success.
 Let us know if you run into any problems.
 
 
-+++++++++++++++++
 
+--------------------------------------------------------------------------------
               IBM PC/Microsoft C Version Now Available
+--------------------------------------------------------------------------------
 
 The PC version of HDF that is currently stored on the server is 3.0.  
 Contrary to what was reported in the last newsletter, this version
@@ -135,7 +140,9 @@ HDF 3.1 has not been ported to the PC yet, but we are working on it.
 
 
 ++++++++++++++++
+--------------------------------------------------------------------------------
                       Convex support update
+--------------------------------------------------------------------------------
 
 One of the most popular unofficial platforms for HDF has been Convex.
 A number of people have ported HDF to Convexes, thanks largely to 
@@ -152,7 +159,9 @@ me.
 
 
 ++++++++++++++++
+--------------------------------------------------------------------------------
                         Correction: VMS 
+--------------------------------------------------------------------------------
 
 In Newsletter #2: In the VMS section, there is
 a missing dollar sign before the "sys$login"
@@ -170,8 +179,9 @@ Correction:
     hdfls :== $sys$login:[hdf]hdfls.exe
 
 ++++++++++++++++
-
+--------------------------------------------------------------------------------
                         Bug fix: 24-bit interface
+--------------------------------------------------------------------------------
 
 A bug has been discovered in the 24-bit routines.  When reading in
 a 24-bit image that is stored in pixel-interlace form, if you ask
@@ -191,8 +201,9 @@ Note that the x and y are interchanged.  This should fix the bug.
 The code that is now on anonymous ftp reflects this change.
 
 ++++++++++++++++
-
+--------------------------------------------------------------------------------
                     Bug fix: annotations interface
+--------------------------------------------------------------------------------
 
 A bug has been discovered in the annotations interface. The routine
 DFANlablist does not return the correct number of reference numbers
@@ -214,8 +225,9 @@ The code that is now on anonymous ftp in "HDF/src" reflects this change,
 but the release 3 tar files, etc., do not.
 
 ++++++++++++++++
-
+--------------------------------------------------------------------------------
                 Import2HDF and Reformat released
+--------------------------------------------------------------------------------
 
 Two utilities that we announced as beta releases in the last
 newsletter have now been officially released.
@@ -233,8 +245,9 @@ files to HDF.  NCSA Import2HDF is in a directory on anonymous ftp called
 "Import2HDF."
 
 ++++++++++++++++
-
+--------------------------------------------------------------------------------
                    Image 3.0 released
+--------------------------------------------------------------------------------
 
 This is the newest installation of the Image program.  We
 have added many new features to the program which we hope
@@ -302,8 +315,9 @@ Project Leader
 redman@ncsa.uiuc.edu
 
 ++++++++++++++++
-
+--------------------------------------------------------------------------------
             Contributions Directory Added
+--------------------------------------------------------------------------------
 
 Now there is a "contrib" directory with several subdirectories
 containing contributions donated by HDF users.
@@ -365,8 +379,9 @@ Jim Salem (salem@think.com)
 Thinking Machines Corporation
 
 +++++++++++++++
-
+--------------------------------------------------------------------------------
                  New Utility: hdfpack
+--------------------------------------------------------------------------------
 
 A new utility named hdfpack has been made available on the 
 ftp server.  The purpose of this program is to clean up HDF files 
@@ -392,8 +407,9 @@ Some caveats for the use of hdfpack:
 	HDF tool.
 
 +++++++++++++++
-
+--------------------------------------------------------------------------------
                  New Version of fptohdf
+--------------------------------------------------------------------------------
 
 Bob Weaver and his colleagues at INEL have greatly enhanced fptohdf.
 The new version, which we are calling fp2hdf,  supports native
@@ -410,8 +426,9 @@ You will find all of this in the anonymous ftp directory HDF/fp2hdf.
 
 
 ++++++++++++++++
-
+--------------------------------------------------------------------------------
                 Examples Directory Expanded
+--------------------------------------------------------------------------------
 
 The examples directory on anonymous ftp now contains several 
 subdirectories, which contain sample and test programs that we
@@ -492,8 +509,9 @@ files/storm140.hdf  - hdf image of data from storm simulation
 
 
 ++++++++++++++++
-
+--------------------------------------------------------------------------------
                      ACR-NEMA and HDF
+--------------------------------------------------------------------------------
 
 ACR-NEMA is a standard developed jointly between the American College
 of Radiology (ACR) and National Electrical Manufacturers Association
@@ -521,9 +539,10 @@ UNC have started us in.  If any of you are interested in being
 involved in this effort, or know of someone who might be,
 let us know.
 
-+++++++++++++++++
 
+--------------------------------------------------------------------------------
                    Goodbye Chin-Chau / Hello Doug
+--------------------------------------------------------------------------------
 
 In December, Chin-Chau Low, whom many of you know so well as
 the HDF guru, finished his masters degree and returned home to 
