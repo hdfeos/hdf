@@ -4,12 +4,13 @@
                            December 12, 1989	
 
 .. toctree::
-	The HDF Newsletter
-	The Current State of HDF
-	HDF Release 3.0
-	The HDF Vgroup: A More General HDF Structure
-	HDF File Conversion 
-	The NCSA HDF Staff
+
+   The HDF Newsletter
+   The Current State of HDF
+   HDF Release 3.0
+   The HDF Vgroup: A More General HDF Structure
+   HDF File Conversion 
+   The NCSA HDF Staff
 
 
 --------------------------------------------------------------------------------
@@ -295,10 +296,9 @@ the other hand, we want to get it into use as soon as is
 reasonably possible.  If don't want to wait for the Beta release, 
 contact us and we will send you the draft of the documentation.
 
-     --------------------------- ** ---------------------------
-
-
+--------------------------------------------------------------------------------
                         HDF File Conversions
+--------------------------------------------------------------------------------
 
 A frequent question that arises is "How can I translate between 
 file format xxx and HDF?"  We want very much to support 
