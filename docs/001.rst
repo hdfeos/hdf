@@ -4,8 +4,6 @@
                            December 12, 1989	
 
 .. toctree::
-   
-Contents:
 	The HDF Newsletter
 	The Current State of HDF
 	HDF Release 3.0
