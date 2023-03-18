@@ -141,21 +141,21 @@ the following routines:
 An interface for annotating HDF data objects and files, which 
 includes the following routines:
 
-  DFANgetlablen: gets length of label of a tag/ref
+   * DFANgetlablen: gets length of label of a tag/ref
   
-  DFANgetlabel:  gets label of tag/ref
+   * DFANgetlabel:  gets label of tag/ref
 
-  DFANgetdesclen: gets length of description of tag/ref
+   * DFANgetdesclen: gets length of description of tag/ref
 
-  DFANgetdesc:   gets description of tag/ref
+   * DFANgetdesc:   gets description of tag/ref
 
-  DFANputlabel:  puts label of tag/ref
+   * DFANputlabel:  puts label of tag/ref
 
-  DFANputdesc:   puts description of tag/ref
+   * DFANputdesc:   puts description of tag/ref
 
-  DFANlastref:   returns ref of last annotation read or written
+   *  DFANlastref:   returns ref of last annotation read or written
 
-  DFANlablist:   gets list of labels for a particular tag
+   * DFANlablist:   gets list of labels for a particular tag
 
 
 An interface for input and output of 8-bit palettes, including the 
