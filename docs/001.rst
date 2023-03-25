@@ -123,8 +123,8 @@ New features of HDF 3.0 include the following:
 An interface for basic i/o of 24-bit raster images, which includes 
 the following routines:
 
-   * DF24setil:   sets the interlace to be used when writing out the 
-               RIS24 for the image.
+   * DF24setil: sets the interlace to be used when writing out the 
+     RIS24 for the image.
 
    * DF24addimage:appends a 24-bit raster image set to the file.
 
