@@ -194,19 +194,19 @@ formats and data types:
   DFSDgetslice:   reads part of a dataset.
 
   DFSDsettype:    specifies data attributes: data type and 
-                  representation, system type, and array order.
+  representation, system type, and array order.
 
 
-* new utilities, including the following:
+new utilities, including the following:
 
   hdfed:    lets you browse in an HDF file and manipulate some of
-            the data
+  the data
 
   fptohdf:  converts floating point data to HDF floating point 
-            data and/or 8-bit raster images
+  data and/or 8-bit raster images
 
   r24tohdf: converts a raw RGB 24-bit image to an 8-bit RIS8 with 
-            a palette
+  a palette
 
   paltohdf: converts a raw palette to hdf format
 
