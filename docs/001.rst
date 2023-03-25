@@ -123,39 +123,38 @@ New features of HDF 3.0 include the following:
 An interface for basic i/o of 24-bit raster images, which includes 
 the following routines:
 
-   * DF24setil: sets the interlace to be used when writing out the 
-     RIS24 for the image.
+* DF24setil:    sets the interlace to be used when writing out the 
+  RIS24 for the image.
 
-   * DF24addimage:appends a 24-bit raster image set to the file.
+* DF24addimage: appends a 24-bit raster image set to the file.
 
-  DF24getdims: retrieves the dimensions and interlace of the
-               image.
+* DF24getdims:  retrieves the dimensions and interlace of the image.
 
-  DF24getimage: retrieves the image and stores it in an array.
+* DF24getimage: retrieves the image and stores it in an array.
 
-  DF24reqil:   specifies an interlace to be used in place of the
-               interlace indicated in the file when the next 
-               raster image is read.
+* DF24reqil:    specifies an interlace to be used in place of the
+  interlace indicated in the file when the next 
+  raster image is read.
 
 
 An interface for annotating HDF data objects and files, which 
 includes the following routines:
 
-   * DFANgetlablen: gets length of label of a tag/ref
-  
-   * DFANgetlabel:  gets label of tag/ref
+* DFANgetlablen:  gets length of label of a tag/ref
+ 
+* DFANgetlabel:   gets label of tag/ref
 
-   * DFANgetdesclen: gets length of description of tag/ref
+* DFANgetdesclen: gets length of description of tag/ref
 
-   * DFANgetdesc:   gets description of tag/ref
+* DFANgetdesc:    gets description of tag/ref
 
-   * DFANputlabel:  puts label of tag/ref
+* DFANputlabel:   puts label of tag/ref
 
-   * DFANputdesc:   puts description of tag/ref
+* DFANputdesc:    puts description of tag/ref
 
-   *  DFANlastref:   returns ref of last annotation read or written
+* DFANlastref:    returns ref of last annotation read or written
 
-   * DFANlablist:   gets list of labels for a particular tag
+* DFANlablist:    gets list of labels for a particular tag
 
 
 An interface for input and output of 8-bit palettes, including the 
@@ -170,16 +169,16 @@ following routines:
   DFPnpals:     indicates number of palettes in a file.
 
   DFPwriteref:  sets the reference number of the next palette to
-                be written.
+  be written.
 
   DFPreadref:   gets the reference number of the next palette to
-                be retrieved.
+  be retrieved.
 
   DFPrestart:   specifies that the next call to DFPgetpal reads
-                first palette in the file, rather than the next.
+  first palette in the file, rather than the next.
 
   DFPlastref:   returns value of the reference number most
-                recently read or written.
+  recently read or written.
 
 
 Scientific data set routines for storing and retrieving subsets 
