@@ -32,14 +32,14 @@ We will distribute the Newsletter via both surface mail and email.
 If we have your email address, we will use email.  It is cheaper 
 and (we hope) easier to manage than surface mail.
 
-|Mike Folk
-|NCSA
-|University of Illinois
-|605 E. Springfield Ave.
-|Champaign, IL 61820
-|217-244-0647
-|mfolk@ncsa.uiuc.edu (internet)
-|12409@ncsavmsa
+| Mike Folk
+| NCSA
+| University of Illinois
+| 605 E. Springfield Ave.
+| Champaign, IL 61820
+| 217-244-0647
+| mfolk@ncsa.uiuc.edu (internet)
+| 12409@ncsavmsa
 
 -------------------------------------------------------------------------------
                     The current state of HDF
