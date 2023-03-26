@@ -1,6 +1,6 @@
-================================================================================
+===============================================================================
                          HDF Newsletter #1
-================================================================================
+===============================================================================
                            December 12, 1989	
 
 .. toctree::
@@ -13,9 +13,9 @@
    The NCSA HDF Staff
 
 
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
                           The HDF Newsletter
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
 As HDF has begun to spread beyond NCSA many of you have requested 
 some form of regular communication among all HDF users.  The HDF 
@@ -41,9 +41,9 @@ Champaign, IL 61820
 mfolk@ncsa.uiuc.edu (internet)
 12409@ncsavmsa
 
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
                     The current state of HDF
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
 
 FUNCTIONALITY
@@ -105,9 +105,9 @@ you, we may be able to put you in touch with someone who has
 successfully implemented HDF on CTSS.
 
 
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
                           HDF Release 3.0
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
 After many delays, HDF 3.0 seems now to be ready for release. All 
 of the features of HDF 2.0 are present in HDF 3.0, plus several 
@@ -212,9 +212,9 @@ new utilities, including the following:
    * hdftopal: converts palette in an hdf file to raw format
 
 
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
               HDF Vgroup--A More General Structure
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
 HDF currently supports only two major types of scientific data: 
 raster data and regular gridded multidimensional arrays.  Recently 
@@ -294,9 +294,9 @@ the other hand, we want to get it into use as soon as is
 reasonably possible.  If don't want to wait for the Beta release, 
 contact us and we will send you the draft of the documentation.
 
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
                         HDF File Conversions
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
 A frequent question that arises is "How can I translate between 
 file format xxx and HDF?"  We want very much to support 
@@ -344,9 +344,9 @@ Several HDF users have requested translators to and from this
 common image format and HDF.
 
 
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
                             The HDF Staff
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
 In the last year and a half, the HDF project has expanded from one 
 programmer to six people.  We lost Swami Natarajan, who finished 
