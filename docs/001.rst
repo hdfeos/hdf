@@ -107,7 +107,7 @@ successfully implemented HDF on CTSS.
 
 --------------------------------------------------------------------------------
                           HDF Release 3.0
---------------------------------------------------------------------------------                          
+--------------------------------------------------------------------------------
 
 After many delays, HDF 3.0 seems now to be ready for release. All 
 of the features of HDF 2.0 are present in HDF 3.0, plus several 
@@ -123,94 +123,93 @@ New features of HDF 3.0 include the following:
 An interface for basic i/o of 24-bit raster images, which includes 
 the following routines:
 
-* DF24setil:    sets the interlace to be used when writing out the 
-  RIS24 for the image.
+   * DF24setil:    sets the interlace to be used when writing out the 
+     RIS24 for the image.
 
-* DF24addimage: appends a 24-bit raster image set to the file.
+   * DF24addimage: appends a 24-bit raster image set to the file.
 
-* DF24getdims:  retrieves the dimensions and interlace of the image.
+   * DF24getdims:  retrieves the dimensions and interlace of the image.
 
-* DF24getimage: retrieves the image and stores it in an array.
+   * DF24getimage: retrieves the image and stores it in an array.
 
-* DF24reqil:    specifies an interlace to be used in place of the
-  interlace indicated in the file when the next 
-  raster image is read.
+   * DF24reqil:    specifies an interlace to be used in place of the
+     interlace indicated in the file when the next raster image is read.
 
 
 An interface for annotating HDF data objects and files, which 
 includes the following routines:
 
-* DFANgetlablen:  gets length of label of a tag/ref
+   * DFANgetlablen:  gets length of label of a tag/ref
  
-* DFANgetlabel:   gets label of tag/ref
+   * DFANgetlabel:   gets label of tag/ref
 
-* DFANgetdesclen: gets length of description of tag/ref
+   * DFANgetdesclen: gets length of description of tag/ref
 
-* DFANgetdesc:    gets description of tag/ref
+   * DFANgetdesc:    gets description of tag/ref
 
-* DFANputlabel:   puts label of tag/ref
+   * DFANputlabel:   puts label of tag/ref
 
-* DFANputdesc:    puts description of tag/ref
+   * DFANputdesc:    puts description of tag/ref
 
-* DFANlastref:    returns ref of last annotation read or written
+   * DFANlastref:    returns ref of last annotation read or written
 
-* DFANlablist:    gets list of labels for a particular tag
+   * DFANlablist:    gets list of labels for a particular tag
 
 
 An interface for input and output of 8-bit palettes, including the 
 following routines:
 
-  DFPaddpal:    appends a palette to a file.
+   * DFPaddpal:    appends a palette to a file.
 
-  DFPgetpal:    reads in the next palette in the file.
+   * DFPgetpal:    reads in the next palette in the file.
 
-  DFPputpal:    writes a palette to a file.
+   * DFPputpal:    writes a palette to a file.
 
-  DFPnpals:     indicates number of palettes in a file.
+   * DFPnpals:     indicates number of palettes in a file.
 
-  DFPwriteref:  sets the reference number of the next palette to
-  be written.
+   * DFPwriteref:  sets the reference number of the next palette to
+     be written.
 
-  DFPreadref:   gets the reference number of the next palette to
-  be retrieved.
+   * DFPreadref:   gets the reference number of the next palette to
+     be retrieved.
 
-  DFPrestart:   specifies that the next call to DFPgetpal reads
-  first palette in the file, rather than the next.
+   * DFPrestart:   specifies that the next call to DFPgetpal reads
+     first palette in the file, rather than the next.
 
-  DFPlastref:   returns value of the reference number most
-  recently read or written.
+   * DFPlastref:   returns value of the reference number most
+     recently read or written.
 
 
 Scientific data set routines for storing and retrieving subsets 
 (slices) of scientific data, and for choosing optional storage 
 formats and data types:
 
-  DFSDstartslice: prepares to write part of dataset to file.
+   * DFSDstartslice: prepares to write part of dataset to file.
 
-  DFSDputslice:   writes part of a dataset to a file.
+   * DFSDputslice:   writes part of a dataset to a file.
 
-  DFSDendslice:   indicates write completion for part of dataset.
+   * DFSDendslice:   indicates write completion for part of dataset.
 
-  DFSDgetslice:   reads part of a dataset.
+   * DFSDgetslice:   reads part of a dataset.
 
-  DFSDsettype:    specifies data attributes: data type and 
-  representation, system type, and array order.
+   * DFSDsettype:    specifies data attributes: data type and 
+     representation, system type, and array order.
 
 
 new utilities, including the following:
 
-  hdfed:    lets you browse in an HDF file and manipulate some of
-  the data
+   * hdfed:    lets you browse in an HDF file and manipulate some of
+     the data
 
-  fptohdf:  converts floating point data to HDF floating point 
-  data and/or 8-bit raster images
+   * fptohdf:  converts floating point data to HDF floating point 
+     data and/or 8-bit raster images
 
-  r24tohdf: converts a raw RGB 24-bit image to an 8-bit RIS8 with 
-  a palette
+   * r24tohdf: converts a raw RGB 24-bit image to an 8-bit RIS8 with 
+     a palette
 
-  paltohdf: converts a raw palette to hdf format
+   * paltohdf: converts a raw palette to hdf format
 
-  hdftopal: converts palette in an hdf file to raw format
+   * hdftopal: converts palette in an hdf file to raw format
 
 
 --------------------------------------------------------------------------------
@@ -224,13 +223,13 @@ significantly the types of data that we can support.  This
 structure, currently called Vgroup (the name may change), provides 
 two important new structures:
 
-    1. a general grouping structure that lets the user form
-       groups out of any set of HDF objects, including other
-       Vgroups
+   1. a general grouping structure that lets the user form
+   groups out of any set of HDF objects, including other
+   Vgroups
 
-    2. a general structure made up of a set of record-like
-       structures, each record being made up of a set of
-       fields.  Fields can be use-defined or predefined.
+   2. a general structure made up of a set of record-like
+   structures, each record being made up of a set of
+   fields.  Fields can be use-defined or predefined.
 
 Vgroups look very promising for a number of important scientific 
 application areas not currently supported by HDF, including finite 
