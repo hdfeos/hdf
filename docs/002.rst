@@ -19,9 +19,9 @@
 |
 | Mike Folk (mfolk@ncsa.uiuc.edu)
 
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
                       HDF Version 3.1
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
 During the first half of July, we released Version 3.1 of HDF.  
 
@@ -33,7 +33,9 @@ correctly with HDF 3.0 but does not run correctly under HDF 3.1,
 let us know immediately.  (mfolk@ncsa.uiuc.edu (217-244-0647) or 
 clow@ncsa.uiuc.edu (217-2440014))
 
---- Changes in 3.10 ---
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   Changes in 3.10
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 These are changes made in Release 3.10:
 
@@ -77,23 +79,26 @@ These are changes made in Release 3.10:
 
     * Other minor modifications. 
 
---- Updated manual soon ---
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   Updated manual soon 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 An updated version of the HDF manual should be available soon.  We 
 will send out another announcement when it is.
 
---- Supported platforms ---
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   Supported platforms
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 With this release, we now support the HDF library on the following 
 platforms:
 
-	Cray 2 and X-MP (UNICOS)
-	Suns (Unix)
-	SGI (Unix)
-	Alliant (Concentrix)
-	Macintosh (Mac OS)
-	IBM PC (MS-DOS)
-	Vax (VMS)
+|	Cray 2 and X-MP (UNICOS)
+|	Suns (Unix)
+|	SGI (Unix)
+|	Alliant (Concentrix)
+|	Macintosh (Mac OS)
+|	IBM PC (MS-DOS)
+|	Vax (VMS)
 
 The Macintosh, PC, and VMS versions are somewhat special, 
 unfortunately:
@@ -111,8 +116,9 @@ popular.
 
 * See the writeup on VMS HDF below.
 
-
---- Other platforms ---
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   Other platforms
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 There are several other machines that HDF is running on 
 successfully, but that we can't officially support because we 
@@ -124,11 +130,11 @@ to, we put that information in this file.  We can provide
 information (or put you in touch with someone who can) on how you 
 can probably make HDF work on the following machines:
 
-	Cray (CTSS)
-	Apollo
-	MIPS machines (e.g. DEC 3100 (Ultrix))
-	Convex 
-	Stellar
+|	Cray (CTSS)
+|	Apollo
+|	MIPS machines (e.g. DEC 3100 (Ultrix))
+|	Convex 
+|	Stellar
 
 In general, if you have a Unix platform, there is a good chance 
 that it is similar enough to one of the machines that we do 
@@ -158,8 +164,9 @@ a couple of months ago, and just recently have gotten it to be
 functional with VMS.  Now, with luck we can keep a really stable 
 HDF working.
 
---- fixatr ---
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   fixatr
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 One frequent question we get asked is how to use the fixatr 
 routine.  The fixatr routine needs to be used to convert between 
 VMS's Stream-LF format, which VMS C reads and writes, and fixed-
@@ -185,8 +192,9 @@ Also, before executing fixatr, you need to execute the command:
 
 	set command fixatr
 
---- Utilities on VMS ---
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   Utilities on VMS 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Another problem several people have encountered has been in using 
 the utilities, such as hdfls and fptohdf.  If a program name (e.g. 
 hdfls) is to be treated as a command procedure, VMS requires that 
@@ -195,14 +203,18 @@ corresponding executable procedure.  For example, if the full path
 name for the executable hdfls is sys$login:[hdf]hdfls.exe, you 
 would enter
 
-	hdfls :== sys$login:[hdf]hdfls.exe
+.. code-block::
+
+   hdfls :== sys$login:[hdf]hdfls.exe
 
 We have included with the new release on anonymous ftp a file 
 called setuputils.com that does this for you for all of the hdf 
 utilities.  (You have to change a path name within setuputils.com 
 to correspond to your system before you execute it.)
 
- --- hdfrseq ---
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   hdfrseq
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The utility hdfrseq requires special treatment when use from a VMS 
 machine.  The problem is as follows: hdfrseq sends a stream of 
@@ -215,7 +227,9 @@ Brian Wallace has given us a simple solution to this problem:  You
 can eliminate the extra line-feed by entering the following line 
 before you execute hdfrseq: 
 
-set terminal/nowrap
+.. code-block::
+
+   set terminal/nowrap
 
 (After executing hdfrseq, you may want to set the terminal back to 
 its original modes with something like "set terminal/wrap.")
@@ -353,7 +367,7 @@ it has not, returns an error code.
    ...
 
 
- --- Reading Part of a Scientific Dataset --- 
+--- Reading Part of a Scientific Dataset --- 
 
 The routine DFSDgetslice lets you read in a slice from an SDS.  A 
 slice is an array of elements that is a subarray, or "hypercube", 
