@@ -1,6 +1,6 @@
-================================================================================
+===============================================================================
                    HDF Newsletter #2
-================================================================================
+===============================================================================
                        August 20, 1990
 
 CONTENTS 
@@ -78,7 +78,7 @@ These are changes made in Release 3.10:
 
     * Other minor modifications. 
 
- --- Updated manual soon ---
+--- Updated manual soon ---
 
 An updated version of the HDF manual should be available soon.  We 
 will send out another announcement when it is.
@@ -141,9 +141,9 @@ of success, and we expect them to be able to share their results
 with us soon.  Stay tuned.
 
 
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
                            VMS
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
 The VMS port finally seems to be working pretty well, at least if 
 the lack of bug reports on it is any indication.  We owe a real 
@@ -159,7 +159,7 @@ a couple of months ago, and just recently have gotten it to be
 functional with VMS.  Now, with luck we can keep a really stable 
 HDF working.
 
- --- fixatr ---
+--- fixatr ---
 
 One frequent question we get asked is how to use the fixatr 
 routine.  The fixatr routine needs to be used to convert between 
@@ -235,7 +235,7 @@ are incorrect.  Here are some excerpts from the new documentation
 that explain how the routines should be called.
 
 
- --- Writing Parts of a Scientific Dataset ---
+--- Writing Parts of a Scientific Dataset ---
 
 To store an array in slices, make calls to DFSDstartslice, 
 DFSDputslice, and DFSDendslice in the following order:
@@ -248,7 +248,7 @@ DFSDputslice(windims, data, dims)
 DFSDendslice()
 
 
- --- DFSDstartslice --- 
+--- DFSDstartslice --- 
 
 FORTRAN:
 INTEGER FUNCTION dfsdstartslice(filename)
@@ -266,7 +266,7 @@ specify the dimensions of the dataset to be written to the file.
 DFSDstartslice always appends a new dataset to an existing file. 
 
 
- --- DFSDputslice --- 
+--- DFSDputslice --- 
 
 FORTRAN:
 INTEGER FUNCTION DFSDputslice(windims, source, dims)
@@ -292,7 +292,7 @@ dimensions in the entire SDS array. source is an array containing
 the slice. 
 
 
- --- DFSDendslice --- 
+--- DFSDendslice --- 
 
 FORTRAN:
 INTEGER FUNCTION DFSDendslice()
@@ -307,49 +307,51 @@ checks to ensure that the entire dataset has been written, and if
 it has not, returns an error code.
 
 
- --- Example: Writing slices to a 10x12 SDS. --- 
-/****************************************************
-*
-* Example C code:    Write out slices of different sizes 
-*        from a 10 x 12 array.
-*
-****************************************************/
+--- Example: Writing slices to a 10x12 SDS. ---
 
-...
+.. code-block::
+   
+   /****************************************************
+   *
+   * Example C code:    Write out slices of different sizes 
+   *                   from a 10 x 12 array.
+   *
+   ****************************************************/
 
-    int rank;
-    int dimsizes[2], windims[2];
-    float data[10][12];
+   ...
+   
+   int rank;
+   int dimsizes[2], windims[2];
+   float data[10][12];
 
-    /* code that builds the array goes here */
-    ...
+   /* code that builds the array goes here */
+   ...
 
-    dimsizes[0]=10;
-    dimsizes[1]=12;
+   dimsizes[0]=10;
+   dimsizes[1]=12;
 
-    DFSDsetdims(2,dimsizes);
+   DFSDsetdims(2,dimsizes);
 
-    /* write out scientific data set in slices */
-    DFSDstartslice(filename);
+   /* write out scientific data set in slices */
+   DFSDstartslice(filename);
 
-    windims[0]=2; windims[1]=12;    /* {(1,1) to (2,12)} */
-    DFSDputslice(windims, &data[0][0], dimsizes);
+   windims[0]=2; windims[1]=12;    /* {(1,1) to (2,12)} */
+   DFSDputslice(windims, &data[0][0], dimsizes);
 
-    windims[0]=4; windims[1]=12;    /* {(3,1) to (6,12)} */
-    DFSDputslice(windims, &data[2][0], dimsizes);
+   windims[0]=4; windims[1]=12;    /* {(3,1) to (6,12)} */
+   DFSDputslice(windims, &data[2][0], dimsizes);
 
-    windims[0]=1; windims[1]=4;    /* {(7,1) to (7,4)} */
-    DFSDputslice(windims, &data[6][0], dimsizes);
+   windims[0]=1; windims[1]=4;    /* {(7,1) to (7,4)} */
+   DFSDputslice(windims, &data[6][0], dimsizes);
 
-    windims[0]=1; windims[1]=8;    /* {(7,5) to (7,12)} */
-    DFSDputslice(windims, &data[6][4], dimsizes);
+   windims[0]=1; windims[1]=8;    /* {(7,5) to (7,12)} */
+   DFSDputslice(windims, &data[6][4], dimsizes);
 
-    windims[0]=3; windims[1]=12;    /* {(8,1) to (10,12)} */
-    DFSDputslice(windims, &data[7][0], dimsizes);
+   windims[0]=3; windims[1]=12;    /* {(8,1) to (10,12)} */
+   DFSDputslice(windims, &data[7][0], dimsizes);
 
-    DFSDendslice();
-
-...
+   DFSDendslice();
+   ...
 
 
  --- Reading Part of a Scientific Dataset --- 
@@ -576,7 +578,8 @@ There is also a command line interface that does not require X.
 
  ---  fptohdf enhancement coming --
 
-Bob Weaver at INEL recently sent me a greatly improved version of 
+Bob Weaver at Idaho National Engineering Laboratory (INEL)
+recently sent me a greatly improved version of 
 fptohdf.  We haven't installed this new version on anonymous ftp, 
 but we hope to do so soon.  The current version accepts only 2-D 
 data sets that are text or hdf SDS files.  The new version can 
