@@ -3,22 +3,21 @@
 ===============================================================================
                        August 20, 1990
 
-CONTENTS 
-	HDF Version 3.1
-	VMS
-	DFSDgetslice and DFSDputslice documentation errors 
-	Other releases
-		The HDF V-set
-		PolyView 1.0 (2-D and 3-D polygon viewer)
-		NCSA Image 3.0 (Macintosh): late September
-		Import2HDF (Mac): beta release
-		Reformat, a Unix-based file converter: beta release
-		Enhanced fptohdf coming soon
-	HDF 4.0 in the works
-	HDF and netCDF
-			
-
-Mike Folk (mfolk@ncsa.uiuc.edu)
+| CONTENTS 
+|	HDF Version 3.1
+|	VMS
+|	DFSDgetslice and DFSDputslice documentation errors 
+|	Other releases
+|		The HDF V-set
+|		PolyView 1.0 (2-D and 3-D polygon viewer)
+|		NCSA Image 3.0 (Macintosh): late September
+|		Import2HDF (Mac): beta release
+|		Reformat, a Unix-based file converter: beta release
+|		Enhanced fptohdf coming soon
+|	HDF 4.0 in the works
+|	HDF and netCDF
+|
+| Mike Folk (mfolk@ncsa.uiuc.edu)
 
 --------------------------------------------------------------------------------
                       HDF Version 3.1
