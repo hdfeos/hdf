@@ -341,6 +341,7 @@ FORTRAN:
    INTEGER FUNCTION DFSDendslice()
 
 C:
+
 .. code-block:: c
    
    int DFSDendslice()
