@@ -268,12 +268,14 @@ DFSDputslice, and DFSDendslice in the following order:
 FORTRAN:
 
 .. code-block::
+   
    INTEGER FUNCTION dfsdstartslice(filename)
    CHARACTER*64 filename
 
 C:
 
 .. code-block::
+   
    int DFSDstartslice(filename)
    char *filename;    /* name of HDF file */
 
@@ -291,6 +293,7 @@ DFSDstartslice always appends a new dataset to an existing file.
 FORTRAN:
 
 .. code-block::
+   
    INTEGER FUNCTION DFSDputslice(windims, source, dims)
    INTEGER windims(*) 
    REAL	source()
@@ -299,6 +302,7 @@ FORTRAN:
 C:
 
 .. code-block::
+   
    int DFSDputslice(windims, source, dims)
    int32 windims[];    /* dimensions of slice*/
    float32 *source;    /* array for storing slice*/
@@ -322,10 +326,12 @@ the slice.
 FORTRAN:
 
 .. code-block::
+   
    INTEGER FUNCTION DFSDendslice()
 
 C:
 .. code-block::
+   
    int DFSDendslice()
 
 Purpose:  To specify that the entire dataset has been written.
@@ -443,6 +449,7 @@ arrays.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block::
+   
    /****************************************************
     *
     * Example C code: Read in slices from a 10 x 12 array. 
@@ -451,18 +458,18 @@ arrays.
    #include "df.h"
    ...
 
-   int  i, rank;
-   int32 dimsizes[2];
+      int  i, rank;
+      int32 dimsizes[2];
 
-   DFSDgetdims(filename, &rank, dimsizes, 2);
+      DFSDgetdims(filename, &rank, dimsizes, 2);
 
-   /* starting at (3,4) read 4 x 6 window */
-   getit("myfile", 3,4,4,6); 
+      /* starting at (3,4) read 4 x 6 window */
+      getit("myfile", 3,4,4,6); 
 
-   /* starting at (1,10) read 10 x 2 window */
-   getit("myfile", 1,10,10,2);
+      /* starting at (1,10) read 10 x 2 window */
+      getit("myfile", 1,10,10,2);
 
-   printf("\n");
+      printf("\n");
 
    }
 
@@ -601,7 +608,7 @@ This program is currently in BETA release form, and should be
 released in early fall.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   Reformat, a Unix-based file converter: Beta release ---
+   Reformat, a Unix-based file converter: Beta release
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This utility provides a mechanism by which images can be 
