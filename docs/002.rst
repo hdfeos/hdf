@@ -189,9 +189,9 @@ For instance, if the directory that contains recformat.exe is
 
 .. code-block:: shell                
 
-   sys$login:[hdf],
+   sys$login:[hdf]
 
-you change the line to read
+, you change the line to read
    
 .. code-block:: shell
 
@@ -199,7 +199,9 @@ you change the line to read
 
 Also, before executing fixatr, you need to execute the command:
 
-	set command fixatr
+.. code-block:: shell
+
+   set command fixatr
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    Utilities on VMS 
@@ -467,18 +469,18 @@ arrays.
    #include "df.h"
    ...
 
-      int  i, rank;
-      int32 dimsizes[2];
+       int  i, rank;
+       int32 dimsizes[2];
 
-      DFSDgetdims(filename, &rank, dimsizes, 2);
+       DFSDgetdims(filename, &rank, dimsizes, 2);
 
-      /* starting at (3,4) read 4 x 6 window */
-      getit("myfile", 3,4,4,6); 
+       /* starting at (3,4) read 4 x 6 window */
+       getit("myfile", 3,4,4,6); 
 
-      /* starting at (1,10) read 10 x 2 window */
-      getit("myfile", 1,10,10,2);
+       /* starting at (1,10) read 10 x 2 window */
+       getit("myfile", 1,10,10,2);
 
-      printf("\n");
+       printf("\n");
 
    }
 
@@ -486,21 +488,21 @@ arrays.
    int st0, st1, rows, cols;
    char *filename;
    {
-	int i, j;
-	int32 winst[2], windims[2], dims[2];
-	float32 data[500];
+       int i, j;
+       int32 winst[2], windims[2], dims[2];
+       float32 data[500];
 
-	winst[0]=st0; winst[1]=st1;
-	dims[0] = windims[0] = rows;
-	dims[1] = windims[1] = cols;
-	DFSDgetslice(filename, winst, windims, data,dims);
+       winst[0]=st0; winst[1]=st1;
+       dims[0] = windims[0] = rows;
+       dims[1] = windims[1] = cols;
+       DFSDgetslice(filename, winst, windims, data,dims);
 
-	for (i=0; i<rows; i++)  {
-		printf("\n");
-		for (j=0; j<cols; j++)
-		 printf("%5.0f%c",data[i*cols+j], ' ');
-	}
-	printf("\n");
+       for (i=0; i<rows; i++)  {
+           printf("\n");
+           for (j=0; j<cols; j++)
+               printf("%5.0f%c",data[i*cols+j], ' ');
+       }
+       printf("\n");
    }
 
 --------------------------------------------------------------------------------
