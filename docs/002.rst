@@ -181,12 +181,21 @@ you need to find out the full path name to recformat.exe.  This
 path name has to be substituted in the proper place on line 2 of 
 the file fixatr.cld, which originally reads:
 
-	image disk$system:[fixatr]recformat
+.. code-block:: shell
+                
+   image disk$system:[fixatr]recformat
 
-For instance, if the directory that contains recformat.exe is 
-sys$login:[hdf], you change the line to read 
+For instance, if the directory that contains recformat.exe is
 
-	image sys$login:[hdf]recformat.exe
+.. code-block:: shell                
+
+   sys$login:[hdf],
+
+you change the line to read
+   
+.. code-block:: shell
+
+   image sys$login:[hdf]recformat.exe
 
 Also, before executing fixatr, you need to execute the command:
 
