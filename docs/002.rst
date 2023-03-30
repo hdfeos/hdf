@@ -39,7 +39,7 @@ clow@ncsa.uiuc.edu (217-2440014))
 
 These are changes made in Release 3.10:
 
-    * fixed a bug concerning checking the status of opening a file
+    * Fixed a bug concerning checking the status of opening a file
       with unbuffered i/o
 
     * Added function DF24readref and DFGRreadref for random access
@@ -104,15 +104,15 @@ The Macintosh, PC, and VMS versions are somewhat special,
 unfortunately:
 
 * On the Mac, you need MPW C and Languages Systems Fortran (we're 
-trying to make it work with Absoft Fortran as well).  You need MPW 
-C even if you only want to write Fortran calls, because HDF makes 
-calls to MPW C routines that are proprietary and cannot be 
-included with the library.  We are also playing with AUX 2.0 on 
-the Mac, and may support an AUX-based HDF soon.
+  trying to make it work with Absoft Fortran as well).  You need MPW 
+  C even if you only want to write Fortran calls, because HDF makes 
+  calls to MPW C routines that are proprietary and cannot be 
+  included with the library.  We are also playing with AUX 2.0 on 
+  the Mac, and may support an AUX-based HDF soon.
 
 * The PC version currently requires Lattice C, but we are 
-currently switching over to Microsoft C, which seems to be more 
-popular.
+  currently switching over to Microsoft C, which seems to be more 
+  popular.
 
 * See the writeup on VMS HDF below.
 
