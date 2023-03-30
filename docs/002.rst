@@ -203,7 +203,7 @@ corresponding executable procedure.  For example, if the full path
 name for the executable hdfls is sys$login:[hdf]hdfls.exe, you 
 would enter
 
-.. code-block::
+.. code-block:: shell
 
    hdfls :== sys$login:[hdf]hdfls.exe
 
@@ -227,7 +227,7 @@ Brian Wallace has given us a simple solution to this problem:  You
 can eliminate the extra line-feed by entering the following line 
 before you execute hdfrseq: 
 
-.. code-block::
+.. code-block:: shell
 
    set terminal/nowrap
 
@@ -253,7 +253,7 @@ that explain how the routines should be called.
 To store an array in slices, make calls to DFSDstartslice, 
 DFSDputslice, and DFSDendslice in the following order:
 
-.. code-block::
+.. code-block:: c
 
    DFSDstartslice(filename)
    DFSDputslice(windims, data, dims)
@@ -267,14 +267,14 @@ DFSDputslice, and DFSDendslice in the following order:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 FORTRAN:
 
-.. code-block::
+.. code-block:: fortran
    
    INTEGER FUNCTION dfsdstartslice(filename)
    CHARACTER*64 filename
 
 C:
 
-.. code-block::
+.. code-block:: c
    
    int DFSDstartslice(filename)
    char *filename;    /* name of HDF file */
@@ -292,7 +292,7 @@ DFSDstartslice always appends a new dataset to an existing file.
 
 FORTRAN:
 
-.. code-block::
+.. code-block:: fortran
    
    INTEGER FUNCTION DFSDputslice(windims, source, dims)
    INTEGER windims(*) 
@@ -301,7 +301,7 @@ FORTRAN:
 
 C:
 
-.. code-block::
+.. code-block:: c
    
    int DFSDputslice(windims, source, dims)
    int32 windims[];    /* dimensions of slice*/
@@ -325,12 +325,12 @@ the slice.
 
 FORTRAN:
 
-.. code-block::
+.. code-block:: fortran
    
    INTEGER FUNCTION DFSDendslice()
 
 C:
-.. code-block::
+.. code-block:: c
    
    int DFSDendslice()
 
@@ -345,7 +345,7 @@ it has not, returns an error code.
     Example: Writing slices to a 10x12 SDS.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code-block::
+.. code-block:: c
    
    /****************************************************
     *
@@ -410,7 +410,7 @@ dimensions.
 
 FORTRAN:
 
-.. code-block::
+.. code-block:: fortran
    
    INTEGER FUNCTION DFSDgetslice(filename,winst,windims dest, dims)
    CHARACTER*(*) filename
@@ -448,7 +448,7 @@ arrays.
   Example
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code-block::
+.. code-block:: c
    
    /****************************************************
     *
@@ -570,7 +570,7 @@ Sample code which demonstrates the creation of an HDF
 Vset file is included.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   NCSA Image 3.0 (Macintosh): late September --
+   NCSA Image 3.0 (Macintosh): late September
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This is the next upgrade for the Image program.  It will support 
