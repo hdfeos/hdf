@@ -291,7 +291,7 @@ one command, StartDTM. This command will allow  you to connect to a
 remote machine and run a program there. The program on the remote 
 machine must be modified to communicate using the Data Transport 
 Mechanism, developed at NCSA by Jeff Terstriep and others.
-...
+
 
 (3) Support for 3D datasets.
 
