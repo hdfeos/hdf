@@ -361,11 +361,11 @@ See the README file in this directory for details.
 
 Several utilities (with man pages):
 
-xwdtohdf       - converts X-windows display to hdf
-hdftoxwd       - converts hdf to X-windows display 
-qdvtohdf       - converts qdv to hdf converter
-paltohdf       - converts raw palette to hdf 
-hdfxdis        - directly displays HDF image on an X server
+* xwdtohdf       - converts X-windows display to hdf
+* hdftoxwd       - converts hdf to X-windows display 
+* qdvtohdf       - converts qdv to hdf converter
+* paltohdf       - converts raw palette to hdf 
+* hdfxdis        - directly displays HDF image on an X server
 
 | Dave Olsen
 | Materials Science Center, Cornell Univ.
@@ -385,10 +385,10 @@ hdfrseq_new     - new hdfrseq routine with special Sunview features
 
 HDF Image Format Conversion Utilities
 
-hdf2tiff	- converts HDF images to TIFF images
-tiff2hdf	- converts TIFF images to HDF images
-hdf2ras		- converts HDF images to Sun Rasterfile images
-ras2hdf		- converts Sun Rasterfile images to HDF images
+* hdf2tiff	- converts HDF images to TIFF images
+* tiff2hdf	- converts TIFF images to HDF images
+* hdf2ras		- converts HDF images to Sun Rasterfile images
+* ras2hdf		- converts Sun Rasterfile images to HDF images
 
 | Jim Salem (salem@think.com)
 | Thinking Machines Corporation
@@ -469,58 +469,58 @@ programs may have been added by the time you get this.  File names
 ending in ".c" are C programs; names ending in ".f" are FORTRAN
 programs:
 
-sds/buildsds.c          - generate and write an SDS
-sds/sdsampl1F.f         - write SDS, read it back and compare with original
-sds/multi_test/multi_test.c  - tests basic SDS read/write functions
-sds/speed/speedtestF.f  - tests speed writing floats to HDF and raw files
-sds/speed/speedtest.c   - C version
-sds/slices/putslices.c  - tests storage of 2d array in slices
-sds/slices/getslices.c  - tests 2d sub-array access
+* sds/buildsds.c          - generate and write an SDS
+* sds/sdsampl1F.f         - write SDS, read it back and compare with original
+* sds/multi_test/multi_test.c  - tests basic SDS read/write functions
+* sds/speed/speedtestF.f  - tests speed writing floats to HDF and raw files
+* sds/speed/speedtest.c   - C version
+* sds/slices/putslices.c  - tests storage of 2d array in slices
+* sds/slices/getslices.c  - tests 2d sub-array access
 
-ris8/putim.c            - create and image and store it in an HDF file
-ris8/putimF.f           - FORTRAN version
-ris8/manyRIS.c          - generate and read back images of different sizes
-ris8/getputim.c         - show use of DFR8getdims, DFR8getimage, DFR8addimage
-ris8/getputimF.f        - FORTRAN version
-ris8/threeRISF.f        - read three RIS's from one file and write to another
-ris8/t_bigbufF.f        - tests DFR8getimage when buffers larger than image
+* ris8/putim.c            - create and image and store it in an HDF file
+* ris8/putimF.f           - FORTRAN version
+* ris8/manyRIS.c          - generate and read back images of different sizes
+* ris8/getputim.c         - show use of DFR8getdims, DFR8getimage, DFR8addimage
+* ris8/getputimF.f        - FORTRAN version
+* ris8/threeRISF.f        - read three RIS's from one file and write to another
+* ris8/t_bigbufF.f        - tests DFR8getimage when buffers larger than image
 
-ann/ann.test            - a script that runs the programs
-ann/ann_test_results    - results you should get when running ann.test
-ann/file_ann_test.c     - C program to test reading/writing *file* annotations
-ann/file_ann_testF.f    - FORTRAN version
-ann/putSDS_RISan.c      - puts some HDF-object annotations in file
-ann/get1anF.f           - gets one label and one description
-ann/getSDSan.c          - gets all SDS annotations
-ann/getSDSlablist.c     - gets list of all SDS labels
-ann/getSDSlablistF.f    - FORTRAN version of same program
+* ann/ann.test            - a script that runs the programs
+* ann/ann_test_results    - results you should get when running ann.test
+* ann/file_ann_test.c     - C program to test reading/writing *file* annotations
+* ann/file_ann_testF.f    - FORTRAN version
+* ann/putSDS_RISan.c      - puts some HDF-object annotations in file
+* ann/get1anF.f           - gets one label and one description
+* ann/getSDSan.c          - gets all SDS annotations
+* ann/getSDSlablist.c     - gets list of all SDS labels
+* ann/getSDSlablistF.f    - FORTRAN version of same program
 
-err/err.c               - illustrates use of DFerror
-err/errF.f              - FORTRAN version
+* err/err.c               - illustrates use of DFerror
+* err/errF.f              - FORTRAN version
 
-util/hdf24hdf8/hdf24hdf8.test - test the utility hdf24hdf8
-util/r8tohdf/r8tohdf.test     - test the utility r8tohdf
+* util/hdf24hdf8/hdf24hdf8.test - test the utility hdf24hdf8
+* util/r8tohdf/r8tohdf.test     - test the utility r8tohdf
 
-files/                  - various files used by the other programs
-files/README            - describes the files
-files/corn.r24      - isosurface from a 3-D nmr array describing 
-                      moisture content in a piece of corn.
-files/head.r24      - isosurface rendering of human head
-files/h200x150.hdf  - hdf file with a 200x150 RIS; also a small SDS
-files/many.hdf      - contains many labels, descriptions, RISs and SDSs
-files/old.hdf       - contains a label, description, RIS8 and SDS
-files/default.pal   - default ("rainbow") palette in hdf file
-files/grey.pal      - grey scale palette in HDF file
-files/palette.raw   - contains a raw palette
-files/greypal.raw   - contains a raw grey-scale palette
-files/storm110.raw  - raw image of data from storm simulation
-files/storm120.raw  - raw image of data from storm simulation
-files/storm130.raw  - raw image of data from storm simulation
-files/storm140.raw  - raw image of data from storm simulation
-files/storm110.hdf  - hdf image of data from storm simulation
-files/storm120.hdf  - hdf image of data from storm simulation
-files/storm130.hdf  - hdf image of data from storm simulation
-files/storm140.hdf  - hdf image of data from storm simulation
+* files/                  - various files used by the other programs
+* files/README            - describes the files
+* files/corn.r24      - isosurface from a 3-D nmr array describing 
+                        moisture content in a piece of corn.
+* files/head.r24      - isosurface rendering of human head
+* files/h200x150.hdf  - hdf file with a 200x150 RIS; also a small SDS
+* files/many.hdf      - contains many labels, descriptions, RISs and SDSs
+* files/old.hdf       - contains a label, description, RIS8 and SDS
+* files/default.pal   - default ("rainbow") palette in hdf file
+* files/grey.pal      - grey scale palette in HDF file
+* files/palette.raw   - contains a raw palette
+* files/greypal.raw   - contains a raw grey-scale palette
+* files/storm110.raw  - raw image of data from storm simulation
+* files/storm120.raw  - raw image of data from storm simulation
+* files/storm130.raw  - raw image of data from storm simulation
+* files/storm140.raw  - raw image of data from storm simulation
+* files/storm110.hdf  - hdf image of data from storm simulation
+* files/storm120.hdf  - hdf image of data from storm simulation
+* files/storm130.hdf  - hdf image of data from storm simulation
+* files/storm140.hdf  - hdf image of data from storm simulation
 
 
 -------------------------------------------------------------------------------
