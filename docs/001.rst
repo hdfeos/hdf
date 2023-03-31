@@ -45,8 +45,8 @@ and (we hope) easier to manage than surface mail.
                     The current state of HDF
 -------------------------------------------------------------------------------
 
-
 FUNCTIONALITY
+~~~~~~~~~~~~~
 HDF Release 2.0, released last February and since then revised 
 only for bug fixes, is still the most up-to-date official version 
 of HDF.  It includes interfaces and file formats for handling 8-
@@ -58,6 +58,7 @@ displaying images or sequences of images from HDF files (hdfseq
 and hdfrseq).
 
 NCSA WORKSTATION TOOLS
+~~~~~~~~~~~~~~~~~~~~~~
 Most of the workstation tools now support HDF files.  This 
 includes CompositeTool on the Sun, which previously did not 
 support HDF.  (By the end of the year ImageTool (also Sun) will 
@@ -67,11 +68,13 @@ Sun version of Layout.  Our two X-Windows tools are NCSA X-Image,
 and NCSA X-DataSlice.
 
 OFFICIAL PLATFORMS
+~~~~~~~~~~~~~~~~~~
 Architectures that we have HDF running on: Cray-2 and Cray X-MP; 
 Alliant (Concentrix), SGI 4, Sun-3, and Sun Sparc machines, 
 Macintosh and IBM-PC.  And VMS, sort of (see below).
 
 UNOFFICIAL PLATFORMS
+~~~~~~~~~~~~~~~~~~~~
 People outside of NCSA have ported HDF to: Convex, Stellar, 
 Connection Machine, Symbolics Machine, and Amiga.  (Do you know of 
 any others?)  I think most of these people would be happy to give 
@@ -82,6 +85,7 @@ interested in any particular port, and I will give your name to
 the relevant person.
 
 SEMI-OFFICIAL PLATFORMS -- VMS & CTSS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 VMS. A lot of you have asked for HDF support on VMS systems, so we 
 made a quick attempt to port HDF to VMS last spring.  It was 
 problematic from the beginning because we don't have any real VMS 
