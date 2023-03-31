@@ -1,38 +1,38 @@
-================================================================================
+===============================================================================
                       HDF Newsletter #3
-================================================================================
+===============================================================================
 
-Contents:
-
-   HDF 3.1 Release 2 
-   HDF 3.1 Release 3
-   HDF ported to IBM/MVS by UCLA
-   Docs available in postscript
-   DECStations now supported
-   IBM PC/Microsoft C Version Now Available
-   Convex update
-   Correction: VMS
-   Bug fix: 24-bit interface
-   Bug fix: annotations interface
-   Reformat released
-   Image 3.0 released
-   Contributions Directory Added
-   New utility: hdfpack
-   New Version of fptohdf: fp2hdf
-   Examples directory expanded
-   ACR/NEMA and HDF
-   Goodbye Chin-Chau / hello Doug
+| Contents:
+|
+|   HDF 3.1 Release 2 
+|   HDF 3.1 Release 3
+|   HDF ported to IBM/MVS by UCLA
+|   Docs available in postscript
+|   DECStations now supported
+|   IBM PC/Microsoft C Version Now Available
+|   Convex update
+|   Correction: VMS
+|   Bug fix: 24-bit interface
+|   Bug fix: annotations interface
+|   Reformat released
+|   Image 3.0 released
+|   Contributions Directory Added
+|   New utility: hdfpack
+|   New Version of fptohdf: fp2hdf
+|   Examples directory expanded
+|   ACR/NEMA and HDF
+|   Goodbye Chin-Chau / hello Doug
 
   
 
---------------------------------------------------------------------------------
-                      HDF 3.1 Release 2 
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+                      Hdf 3.1 Release 2 
+-------------------------------------------------------------------------------
 
 On October 2 we released an updated version of HDF 3.1. 
 These are changes made in Release3.1r2
 
-*   added many new subdirectories, includine a "contributions"
+*   added many new subdirectories, including a "contributions"
     directory and a greatly expanded examples directory.
 
 *   fixed bug in DFSDIgetslice
@@ -45,11 +45,9 @@ These are changes made in Release3.1r2
 *   fixed inconsistency in dfivms.h
 
 
-
-
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
                       HDF 3.1 Release 3 
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
 On December 6 we released another update of HDF 3.1. 
 These are changes made in Release3.1r3
@@ -63,9 +61,9 @@ These are changes made in Release3.1r3
     underflow, overflow and NaNs are handled correctly.
 
 
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
                    HDF ported to IBM/MVS by UCLA
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
 The good folks at UCLA have ported much of HDF to an IBM/MVS
 system and have given it all to us for distribution.  All of 
@@ -93,9 +91,9 @@ Once again, thanks, Joan, for your valuable contribution.
 
 
 
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
                      Docs available in postscript
---------------------------------------------------------------------------------                     
+-------------------------------------------------------------------------------                     
 
 By popular demand, Jill Peacock (our docs person) has figured out 
 how to produce postscript versions of our documentation from the 
@@ -103,9 +101,9 @@ original Microsoft Word versions.  You will find them in
 doc/postscript on the ftp server.
 
 
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
                        DECStations now supported
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
 Thanks to the generosity of Digital, we now have a DEC 3100 in our
 group.  And, thanks to several of you who had already ported HDF to 
@@ -128,9 +126,9 @@ Let us know if you run into any problems.
 
 
 
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
               IBM PC/Microsoft C Version Now Available
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
 The PC version of HDF that is currently stored on the server is 3.0.  
 Contrary to what was reported in the last newsletter, this version
@@ -139,10 +137,9 @@ does work with Microsoft C.
 HDF 3.1 has not been ported to the PC yet, but we are working on it.
 
 
-++++++++++++++++
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
                       Convex support update
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
 One of the most popular unofficial platforms for HDF has been Convex.
 A number of people have ported HDF to Convexes, thanks largely to 
@@ -158,30 +155,32 @@ did.  If you want more details about either of these ports, contact
 me.
 
 
-++++++++++++++++
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
                         Correction: VMS 
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
 In Newsletter #2: In the VMS section, there is
 a missing dollar sign before the "sys$login"
 
 Original text:
-...
-corresponding executable procedure.  For example, if the full path
-name for the executable hdfls is sys$login:[hdf]hdfls.exe, you
-would enter
+
+::
+   corresponding executable procedure.  For example, if the full path
+   name for the executable hdfls is sys$login:[hdf]hdfls.exe, you
+   would enter
 
     hdfls :== sys$login:[hdf]hdfls.exe
 
 Correction:
 
-    hdfls :== $sys$login:[hdf]hdfls.exe
+.. code-block:: shell
 
-++++++++++++++++
---------------------------------------------------------------------------------
+   hdfls :== $sys$login:[hdf]hdfls.exe
+
+
+-----------------------------------------------------------------------------
                         Bug fix: 24-bit interface
---------------------------------------------------------------------------------
+-----------------------------------------------------------------------------
 
 A bug has been discovered in the 24-bit routines.  When reading in
 a 24-bit image that is stored in pixel-interlace form, if you ask
@@ -189,21 +188,25 @@ to convert it to scan-line interlace or plane-interlace form you
 get an incorrect image.  To fix the bug, find the routine DFGRIgetimlut
 in dfgr.c and find the lines that say:
 
+.. code-block:: C
+                
                 currmax[1] = Grread.datadesc[type].ydim;
                 currmax[2] = Grread.datadesc[type].xdim;
 
 change them to
 
+.. code-block:: C
+                
                 currmax[1] = Grread.datadesc[type].xdim;
                 currmax[2] = Grread.datadesc[type].ydim;
 
 Note that the x and y are interchanged.  This should fix the bug.
 The code that is now on anonymous ftp reflects this change.
 
-++++++++++++++++
---------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
                     Bug fix: annotations interface
---------------------------------------------------------------------------------
+n-------------------------------------------------------------------------------
 
 A bug has been discovered in the annotations interface. The routine
 DFANlablist does not return the correct number of reference numbers
@@ -212,22 +215,34 @@ a segmentation fault. To fix the bug, find the routine dailist in
 dfanF.c and make the following changes.
 
 Change the line:
+
+.. code-block:: C
+                
       tempreflist = (uint16 *) DFIgetspace( (*maxlen) * sizeof(uint16) );
 to:
+
+.. code-block:: C
+                
       tempreflist = (uint16 *) DFIgetspace( (*listsize) * sizeof(uint16) );
 
 and change:
+
+.. code-block:: C
+                
       for (i=0; i < *maxlen; i++)
 to:
+
+.. code-block:: C
+                
       for (i=0; i < *listsize; i++)
 
 The code that is now on anonymous ftp in "HDF/src" reflects this change,
 but the release 3 tar files, etc., do not.
 
-++++++++++++++++
---------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
                 Import2HDF and Reformat released
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
 Two utilities that we announced as beta releases in the last
 newsletter have now been officially released.
@@ -244,10 +259,10 @@ This utility converts FITS, TIFF, GIFF, PICT, Ras raster, and ascii
 files to HDF.  NCSA Import2HDF is in a directory on anonymous ftp called 
 "Import2HDF."
 
-++++++++++++++++
---------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
                    Image 3.0 released
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
 This is the newest installation of the Image program.  We
 have added many new features to the program which we hope
@@ -310,14 +325,13 @@ window with the grow box, and the volume will be magnified to fit, but
 no option exists to magnify independently or to select part of the
 volume to display.
 
-Thomas Redman
-Project Leader
-redman@ncsa.uiuc.edu
+| Thomas Redman
+| Project Leader
+| redman@ncsa.uiuc.edu
 
-++++++++++++++++
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
             Contributions Directory Added
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
 Now there is a "contrib" directory with several subdirectories
 containing contributions donated by HDF users.
@@ -352,9 +366,9 @@ qdvtohdf       - converts qdv to hdf converter
 paltohdf       - converts raw palette to hdf 
 hdfxdis        - directly displays HDF image on an X server
 
-Dave Olsen
-Materials Science Center, Cornell Univ.
-olsen@msc2.tn.cornell.edu
+| Dave Olsen
+| Materials Science Center, Cornell Univ.
+| olsen@msc2.tn.cornell.edu
 
 
 =================== gerardi ================
@@ -363,8 +377,8 @@ A new version of the hdfrseq utility:
 
 hdfrseq_new     - new hdfrseq routine with special Sunview features
 
-Paul Gerardi
-Schlumberger-Doll
+| Paul Gerardi
+| Schlumberger-Doll
 
 =================== salem  ================
 
@@ -375,10 +389,10 @@ tiff2hdf	- converts TIFF images to HDF images
 hdf2ras		- converts HDF images to Sun Rasterfile images
 ras2hdf		- converts Sun Rasterfile images to HDF images
 
-Jim Salem (salem@think.com)
-Thinking Machines Corporation
+| Jim Salem (salem@think.com)
+| Thinking Machines Corporation
 
-+++++++++++++++
+
 --------------------------------------------------------------------------------
                  New Utility: hdfpack
 --------------------------------------------------------------------------------
@@ -388,6 +402,8 @@ ftp server.  The purpose of this program is to clean up HDF files
 which have been subjected to a lot of deleting or appending.  An 
 invocation of hdfpack looks like this:
 
+.. code-block:: shell
+                
 	hdfpack <oldfile> <newfile>
 
 Where <oldfile> is the name of the file you wish to clean up and 
@@ -395,21 +411,20 @@ Where <oldfile> is the name of the file you wish to clean up and
 
 Some caveats for the use of hdfpack:
 
-	1. Your system must have enough RAM to read in the 
-	largest element in the file you are trying to pack.
+   1. Your system must have enough RAM to read in the 
+   largest element in the file you are trying to pack.
 
-	2.Your system must have enough disk space to accommodate 
-	the new packed file.
+   2.Your system must have enough disk space to accommodate 
+   the new packed file.
 
-	3.Although the logical organization of your file will remain 
-	intact, the physical order of your data elements will 
-	likely change.  This should not affect any well-behaved 
-	HDF tool.
+   3.Although the logical organization of your file will remain 
+   intact, the physical order of your data elements will 
+   likely change.  This should not affect any well-behaved 
+   HDF tool.
 
-+++++++++++++++
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
                  New Version of fptohdf
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
 Bob Weaver and his colleagues at INEL have greatly enhanced fptohdf.
 The new version, which we are calling fp2hdf,  supports native
@@ -425,10 +440,9 @@ You will find all of this in the anonymous ftp directory HDF/fp2hdf.
 
 
 
-++++++++++++++++
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
                 Examples Directory Expanded
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
 The examples directory on anonymous ftp now contains several 
 subdirectories, which contain sample and test programs that we
@@ -508,10 +522,9 @@ files/storm130.hdf  - hdf image of data from storm simulation
 files/storm140.hdf  - hdf image of data from storm simulation
 
 
-++++++++++++++++
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
                      ACR-NEMA and HDF
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
 ACR-NEMA is a standard developed jointly between the American College
 of Radiology (ACR) and National Electrical Manufacturers Association
@@ -540,9 +553,9 @@ involved in this effort, or know of someone who might be,
 let us know.
 
 
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
                    Goodbye Chin-Chau / Hello Doug
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
 In December, Chin-Chau Low, whom many of you know so well as
 the HDF guru, finished his masters degree and returned home to 
