@@ -290,8 +290,8 @@ C:
    int DFSDstartslice(filename)
    char *filename;    /* name of HDF file */
 
-Purpose:  To prepare the system to write a slice to a file. 
-Returns:  0 on success; -1 on failure.
+| Purpose:  To prepare the system to write a slice to a file. 
+| Returns:  0 on success; -1 on failure.
 
 Before DFSDstartslice is called, DFSDsetdims must be called to 
 specify the dimensions of the dataset to be written to the file. 
@@ -319,8 +319,8 @@ C:
    float32 *source;    /* array for storing slice*/
    int32 dims[];        /* dimensions of array source*/
 
-Purpose:  To write a slice to an SDS 
-Returns:  0 on success; -1 on failure.
+| Purpose:  To write a slice to an SDS 
+| Returns:  0 on success; -1 on failure.
 
 DFSDputslice stores part of an array to the dataset last declared 
 by DFSDsetdims.  Slices must be stored contiguously.  
@@ -346,8 +346,8 @@ C:
    
    int DFSDendslice()
 
-Purpose:  To specify that the entire dataset has been written.
-Returns:  0 on success; -1 on failure.
+| Purpose:  To specify that the entire dataset has been written.
+| Returns:  0 on success; -1 on failure.
 
 DFSDendslice must be called after all the slices are written. It 
 checks to ensure that the entire dataset has been written, and if 
@@ -534,12 +534,12 @@ what we said:
 
 Vset provides two important new structures:
 
-    1. a general grouping structure that lets the user form groups 
-out of any set of HDF objects, including other Vgroups
+   1. a general grouping structure that lets the user form groups 
+   out of any set of HDF objects, including other Vgroups
 
-    2. a general structure made up of a set of record-like 
-structures, each record being made up of a set of fields.  Fields 
-can be use-defined or predefined.
+   2. a general structure made up of a set of record-like 
+   structures, each record being made up of a set of fields.  Fields 
+   can be use-defined or predefined.
 
 Vgroups are useful for a number of important scientific  
 application areas, including finite element and non-rectilinear 
