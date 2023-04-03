@@ -144,7 +144,7 @@ for non-SGI platforms.  He also addresses (in vs2ps) some problems
 our tools have had for some time with interpolation.  Both Mac and 
 Unix versions of the programs are provided.
 
-Following are exerpts from two of his README files.
+Following are excerpts from two of his README files.
 
 *** From vs2ris.README:
 
