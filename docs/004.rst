@@ -147,6 +147,7 @@ Unix versions of the programs are provided.
 Following are excerpts from two of his README files.
 
 *** From vs2ris.README:
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 INTRO
 -----
@@ -167,7 +168,8 @@ On the Convex I use -DALLIANT, therefore the Alliant is likely to
 pose no problems.
 
 
-*** From vs2ps.README: 
+*** From vs2ps.README:
+^^^^^^^^^^^^^^^^^^^^^^
 
 INTRO
 -----
