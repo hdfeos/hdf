@@ -126,9 +126,9 @@ us know which ones you find useful, and how you are using them.
 
 
 
--------------------------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
           Contribution: Vset-to-Postscript and Vset-to-RIS
--------------------------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Location: on the NCSA ftp server in HDF/contrib/walsteijn
 
@@ -146,11 +146,13 @@ Unix versions of the programs are provided.
 
 Following are excerpts from two of his README files.
 
-*** From vs2ris.README:
-^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+From vs2ris.README:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 INTRO
------
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Vs2ris is a generalization of fp2hdf.  
 It generates color rasters of two-dimensional vset data or curvilinear data
 and can be considered as a system-independent implementation of a 2D subset
@@ -158,21 +160,22 @@ of NCSA PolyView.  PolyView, however, is available only on the Silicon
 Graphics Iris workstations.
 Currently, system-independent NCSA tools (such as fp2hdf) allow raster
 generation only of rectangular data.
-...
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 STATUS
-------
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Vs2ris has been tested on:
    MacII family, DECstations, Convex (in IEEE mode), and Cray-YMP.
 On the Convex I use -DALLIANT, therefore the Alliant is likely to
 pose no problems.
 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+From vs2ps.README:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-*** From vs2ps.README:
-^^^^^^^^^^^^^^^^^^^^^^
-
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 INTRO
------
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Vs2ps produces a PostScript file containing one of the following:
 1. a contour plot of data defined on a two-dimensional "rectangular" grid
    and/or a line drawing of this grid.  Input data is given in a single
@@ -200,10 +203,10 @@ b. Contourplots of data defined on curvilinear or finite element grids are
 c. The resulting (Encapsulated) PostScript file can be EDITED (etc.) with
    Adobe's Illustrator 3.0. Direct routing to a PostScript printer is
    possible also.
-...
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 STATUS
-------
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Vs2ps has been tested on:
    MacII family, DECstations, Convex (in IEEE mode), and Cray-YMP.
 On the Convex I use -DALLIANT, therefore the Alliant is likely to
