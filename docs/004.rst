@@ -87,10 +87,13 @@ since July, 1991.. The new release contains the following changes:
 
 * Full support added for the following machines and systems:
 
-        PC      - IBM PC (DOS)
-        WIN     - IBM PC (Microsoft Windows 3.0)
-        IBM6000 - IBM RS/6000 (AIX)
-        CONVEX  - Convex C-2 (Unix)
+  PC      - IBM PC (DOS)
+  
+  WIN     - IBM PC (Microsoft Windows 3.0)
+  
+  IBM6000 - IBM RS/6000 (AIX)
+  
+  CONVEX  - Convex C-2 (Unix)
 
 *  ANSI C support: All code for the library was modified to
    conform to the ANSI C standard.  If your system supports
@@ -109,7 +112,7 @@ since July, 1991.. The new release contains the following changes:
 
         ristosds.c - converts raster images to sds.
         hdfpack.c  - compacts an HDF file by reading in all data elements
-                     in a file and writing them out to a new file.
+        in a file and writing them out to a new file.
 
 
 -------------------------------------------------------------------------------
@@ -207,6 +210,7 @@ c. The resulting (Encapsulated) PostScript file can be EDITED (etc.) with
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 STATUS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 Vs2ps has been tested on:
    MacII family, DECstations, Convex (in IEEE mode), and Cray-YMP.
 On the Convex I use -DALLIANT, therefore the Alliant is likely to
