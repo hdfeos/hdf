@@ -184,9 +184,11 @@ Vs2ps produces a PostScript file containing one of the following:
    1. a contour plot of data defined on a two-dimensional "rectangular" grid
    and/or a line drawing of this grid.  Input data is given in a single
    HDF file.
+   
    2. a contour plot of data defined on a two-dimensional "curvilinear" grid
    and/or a line drawing of this grid.  Input data is given by two
    straight HDF files (grid only) or three HDF files (contour plot).
+   
    3. a contour plot of data defined on a two-dimensional "finite element"
    grid consisting of triangles and/or quadrangles.  Also a line drawing of
    the vertex set can be produced.  Input data is given in a single
@@ -200,11 +202,13 @@ The main advantages of this tool over others are (I think):
    sharp/steep "ridges" in the data (not aligned with the grid) are handled
    more accurate than usual for linear methods. (Don't expect miracles from
    a linear technique though.)
+   
    b. Contourplots of data defined on curvilinear or finite element grids are
    generated directly from this grid/data. No artificial interpolation to
-   an intermediate rectangular grid is used (nor an artificial clipping polygon)
-.
+   an intermediate rectangular grid is used
+   (nor an artificial clipping polygon).
    The result will be much more accurate for "difficult" data.
+   
    c. The resulting (Encapsulated) PostScript file can be EDITED (etc.) with
    Adobe's Illustrator 3.0. Direct routing to a PostScript printer is
    possible also.
