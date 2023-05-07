@@ -179,6 +179,7 @@ From vs2ps.README:
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 INTRO
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 Vs2ps produces a PostScript file containing one of the following:
 
    1. a contour plot of data defined on a two-dimensional "rectangular" grid
