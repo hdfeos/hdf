@@ -182,15 +182,15 @@ INTRO
 
 Vs2ps produces a PostScript file containing one of the following:
 
-   #. a contour plot of data defined on a two-dimensional "rectangular" grid
+   1. a contour plot of data defined on a two-dimensional "rectangular" grid
    and/or a line drawing of this grid.  Input data is given in a single
    HDF file.
 
-   #. a contour plot of data defined on a two-dimensional "curvilinear" grid
+   2. a contour plot of data defined on a two-dimensional "curvilinear" grid
    and/or a line drawing of this grid.  Input data is given by two
    straight HDF files (grid only) or three HDF files (contour plot).
 
-   #. a contour plot of data defined on a two-dimensional "finite element"
+   3. a contour plot of data defined on a two-dimensional "finite element"
    grid consisting of triangles and/or quadrangles.  Also a line drawing of
    the vertex set can be produced.  Input data is given in a single
    HDF Vset file.
@@ -232,14 +232,14 @@ pose no problems.
 
 Location: on the NCSA ftp server in HDF/contrib/UCLA
 
-This contribution from UCLA includes several different useful 
+This contribution from UCLA includes several different useful
 programs, including a CGM-to-HDF converter.
 
 There is a clear need for CGM-to-HDF conversion routines, and we
 are pleased to have this donation.  Though this code contains some
-IBM 3090 dependencies, you will find that it is well documented and 
-should port to UNIX without too much trouble.  If anyone does 
-actually port it, please share your program with us so that we 
+IBM 3090 dependencies, you will find that it is well documented and
+should port to UNIX without too much trouble.  If anyone does
+actually port it, please share your program with us so that we
 can share it with the rest of the HDF community.
 
 Here is what the README file says about the package:
@@ -294,7 +294,7 @@ CGM and OUT.  That is how the user specifies the input and output files.
 
 
 -------------------------------------------------------------------------------
-             Contribution: HDF for Vax running Ultrix 
+             Contribution: HDF for Vax running Ultrix
 -------------------------------------------------------------------------------
 
 Location: on NCSA anonymous ftp server in  HDF/contrib/VaxUltrix
@@ -313,7 +313,7 @@ Thanks for your contributions, Dave.
 
 
 -------------------------------------------------------------------------------
-           Contribution: HDF-to-DICOMED, HDF-to-postscript, 
+           Contribution: HDF-to-DICOMED, HDF-to-postscript,
                  IRIS-to-HDF, and IRIS-to-DICOMED
 -------------------------------------------------------------------------------
 
@@ -325,15 +325,15 @@ converter.  Here are brief descriptions taken from the code
 that they sent to us.
 
  hdftodico.c
-  takes an HDF file and translates it into a Dicomed DCN file. 
+  takes an HDF file and translates it into a Dicomed DCN file.
 
  hdftops.c - HDF image to PostScript image conversion utility
   This RCD utility converts an HDF image  to  either  a  PostScript
   program or to a PostScript compatilble hex file.  This conversion
   will generate programs that use the colorimage operator (which is
   not  supported  by  all  PostScript  implementations)  for 24 bit
-  images and 8 bit images that have a palette.  
-  
+  images and 8 bit images that have a palette.
+
  iristohdf.c
   converts sgi image format to HDF format
 
@@ -354,22 +354,22 @@ Location: on NCSA anonymous ftp server in  HDF/contrib/NeXT
 Two different people have ported HDF to NeXT platforms.  They
 are Simon Tortike of the University of Alberta and Henry
 Greenside of Duke University.  We are really grateful for
-these efforts, as there have been quite a few inquiries 
+these efforts, as there have been quite a few inquiries
 about HDF from NeXT users.
 
  Simon's code can be found in the subdirectory tortike. It includes
   a new make file and a new dfi.h.  He had to do some special things
-  to accommodate his Absoft FORTRAN compiler.  The changes are nicely 
-  documented in the make file MAKE.NEXT.  Note that Simon's port was done 
+  to accommodate his Absoft FORTRAN compiler.  The changes are nicely
+  documented in the make file MAKE.NEXT.  Note that Simon's port was done
   before HDF3.1 Release 5, so his dfi.h file will be quite a bit different
-  from the current.  The main differences are due to addition of sections 
-  to accommodate the IBM PC with Windows, the Convex, and the IBM/RS6000, 
+  from the current.  The main differences are due to addition of sections
+  to accommodate the IBM PC with Windows, the Convex, and the IBM/RS6000,
   plus some changes made to accommodate ANSI C compilers.
 
  Henry's changes can be found in the subdirectory greenside in a shell
-  archive file called "shar", which, like Simon's, includes a new make 
+  archive file called "shar", which, like Simon's, includes a new make
   file and dfi.h. Henry's changes remove dependencies on FORTRAN files,
-  since he assumes that a typical NeXT user will use C or f2c. Henry's 
+  since he assumes that a typical NeXT user will use C or f2c. Henry's
   port was done after HDF3.1 Release 5, so it incorporates those
   the latest (as of Nov. 1991) changes.
 
@@ -378,7 +378,7 @@ about HDF from NeXT users.
                     HDF ftp directory reorganized
 -------------------------------------------------------------------------------
 
-The HDF ftp directory has been reorganized. The following is a description 
+The HDF ftp directory has been reorganized. The following is a description
 of selected subdirectories and files.
 
 HDF:
@@ -492,7 +492,7 @@ doc:
 
 Last Spring, Spyglass, Inc. reworked the FORTRAN layer of HDF calls
 so that they work with Language Systems FORTRAN and Absoft FORTRAN.
-If you use FORTRAN on a Mac and want to use HDF directly, we strongly 
+If you use FORTRAN on a Mac and want to use HDF directly, we strongly
 recommend you use the Spyglass version.
 
 Note that since this was done last spring, it represents an earlier
@@ -508,31 +508,31 @@ Thank you, Spyglass, for your help with this.
 
 Several people have run into problems randomly reading or writing
 raster images, and also writing to several different files at one
-time. The basic problem is that the HDF RIS8 and SDS interfaces were 
-not originally set up to provide either random access or multiple-file 
-access. This was to keep HDF access as simple as possible. 
+time. The basic problem is that the HDF RIS8 and SDS interfaces were
+not originally set up to provide either random access or multiple-file
+access. This was to keep HDF access as simple as possible.
 
-Now that people are asking for it, we intend to put some random 
+Now that people are asking for it, we intend to put some random
 accessing capabilities into HDF, and also multiple-file access.
-But this will take some time for us to get done.  Meanwhile, there 
-is a fairly simple, if somewhat convoluted, way to accomplish both, 
+But this will take some time for us to get done.  Meanwhile, there
+is a fairly simple, if somewhat convoluted, way to accomplish both,
 at least for raster image sets and scientific data sets.
 
 Here is the basic idea, using the RIS8 interface as an example:
-  
+
   There is a routine in HDF called DFANlablist that gets you a list of
   all labels (if they exist) and ref numbers for a given tag.  If you
-  are not interested in labels, you can ignore them (except you have 
-  to set up an array to capture them).  But you definitely are 
-  interested in the ref numbers.  
-  
+  are not interested in labels, you can ignore them (except you have
+  to set up an array to capture them).  But you definitely are
+  interested in the ref numbers.
+
   Once you have all the ref numbers for the raster images in a file,
-  there is a routine called DFR8readref that opens the file and moves 
-  to the image you want to read.  The next call to DFR8getdims or 
+  there is a routine called DFR8readref that opens the file and moves
+  to the image you want to read.  The next call to DFR8getdims or
   DFR8getimage will read the image whose reference number it is you
   want.
 
-This approach basically lets you override the assumptions that 
+This approach basically lets you override the assumptions that
 the current interfaces make about what order to read images in,
 and what happens when you switch from one file to another.  It is
 definitely not efficient, because every access opens a file, reads
@@ -541,42 +541,42 @@ is not really a problem until you start working with large numbers
 of images or files.
 
 We have attached an example of a routine that illustrates the basic
-idea.  The program assumes that you have a file with several 
-raster images in it.  It reads the labels (if they exist) into a 
-labellist, and the ref numbers.  Then it prints them out, and 
-prompts you to indicate which one you are interested in.  It then 
+idea.  The program assumes that you have a file with several
+raster images in it.  It reads the labels (if they exist) into a
+labellist, and the ref numbers.  Then it prints them out, and
+prompts you to indicate which one you are interested in.  It then
 reads the corresponding image and writes it to another file.
 
-Note that the example only uses one input file.  This shouldn't 
+Note that the example only uses one input file.  This shouldn't
 matter.  The same approach should work with any number of files.
-We have done very little testing of this, so let us know how it 
+We have done very little testing of this, so let us know how it
 goes, and also let us know if you have any problems.
 
 
 =====================  c version =======================
 
 .. code-block:: C
-                
-   #include <stdio.h>
+
+#include <stdio.h>
    #include "df.h"            /* this is only needed to define DFTAG_RIG */
    char *malloc();
 
    #define LISTSIZE 100
    #define MAXLEN   15
-   
-   main(argc, argv)
+
+main(argc, argv)
    int argc;
    char *argv[];
    {
        int i, nlabels, startpos=1, ispalette, ret;
        int32 width, height;
        uint16 reflist[LISTSIZE], ref;
-       char labellist[MAXLEN*LISTSIZE+1], palette[768], *image; 
-	
+       char labellist[MAXLEN*LISTSIZE+1], palette[768], *image;
+
        printf("Labels of scientific data sets in file %s\n", argv[1]);
-       nlabels = DFANlablist(argv[1],DFTAG_RIG, reflist, 
+       nlabels = DFANlablist(argv[1],DFTAG_RIG, reflist,
                                   labellist, LISTSIZE, MAXLEN, startpos);
-       for (i=0; i<nlabels; i++) 
+       for (i=0; i<nlabels; i++)
            printf("\n\t%d\tRef number: %d\tLabel: %s",
                                            i, reflist[i],labellist+(i*15));
        printf("\n\n");
@@ -589,10 +589,10 @@ goes, and also let us know if you have any problems.
            ret = DFR8getdims(argv[1], &width, &height, &ispalette);
            image = (char *) malloc (width * height);
            ret = DFR8getimage(argv[1], image, width, height, palette);
-	   ret = DFR8addimage(argv[2], image, width, height, 0);
-	   ret = free (image);
-	   printf("Enter the ref number of the image you want (0 to stop): ");
-	   ret = scanf("%hd",&ref);
+           ret = DFR8addimage(argv[2], image, width, height, 0);
+           ret = free (image);
+           printf("Enter the ref number of the image you want (0 to stop): ");
+           ret = scanf("%hd",&ref);
        }
    }
 
@@ -600,7 +600,7 @@ goes, and also let us know if you have any problems.
 =====================  FORTRAN version =======================
 
 .. code-block:: fortran
-                
+
       program getlablist
 
 C
@@ -613,22 +613,22 @@ C****||************************************************************
       character image(40000), palette(768)
       character*2  infile, outfile
       character*15  labellist(100)
-	
+
       parameter (DFTAG_RIG   = 306,
      *           LISTSIZE    =  20,
      *           MAXLEN      =  15)
 
-C The test files being used are o1 and o2.  Substitute another if 
+C The test files being used are o1 and o2.  Substitute another if
 C you like.
 
       infile = 'o1'
       outfile = 'f2'
 
       startpos = 1
-      
+
       print *, 'Labels of scientific data sets in ', infile
       nlabels = dallist(infile,DFTAG_RIG, reflist,
-     *                         labellist, LISTSIZE, MAXLEN, startpos) 
+     *                         labellist, LISTSIZE, MAXLEN, startpos)
 
       do 100 i=1,nlabels
           print *,'  Ref number: ',reflist(i),'  Label: ',labellist(i)
@@ -656,7 +656,7 @@ C you like.
 
 Here is a selected listing of the latest versions of the tools:
 
-NCSA IMAGE 3.1.1: Options to publish and subscribe have been added 
+NCSA IMAGE 3.1.1: Options to publish and subscribe have been added
 to this new version.
 
 IMPORT2HDF: Macintosh program developed to provide conversion of FITS,
@@ -664,7 +664,7 @@ IMPORT2HDF: Macintosh program developed to provide conversion of FITS,
 
 NCSA PALEDIT: New features in the tool panel include
 	- interval manipulation tools that allow you to make range selections
-	  in the palette and component plot simultaneously, and 
+	  in the palette and component plot simultaneously, and
 	- an interpolation tool, which interpolates across the current palette
 	  interval
 	- several tools and commands that used to solely modify a
@@ -680,9 +680,9 @@ XDataSlice version 2.0 beta.  New features include:
 
 XImage version 1.2. New features:
 
-	- reading of data through DTM network connection, 
-	- notebook style parser, 
-	- image expansion, and 
+	- reading of data through DTM network connection,
+	- notebook style parser,
+	- image expansion, and
 	- color contours.  .
 
 -------------------------------------------------------------------------------
