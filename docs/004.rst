@@ -247,8 +247,8 @@ Here is what the README file says about the package:
 This UCLA contrib subdirectory contains the following:
 
    pcmovie -- a library of subroutines that creates NERSC compressed
-      movie files for playing on the IBM PC and PS 2 with NERSC's
-      MOVIE program.
+   movie files for playing on the IBM PC and PS 2 with NERSC's
+   MOVIE program.
 
       Documentation is in pcmovie.doc.
 
