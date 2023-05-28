@@ -253,10 +253,10 @@ This UCLA contrib subdirectory contains the following:
       Documentation is in pcmovie.doc.
 
    cgmct.to.raster.nopc -- a program which takes graphics from a CGM
-      clear text metafile as output by CA-DISSPLA and CA-GKS and
-      outputs either:
-          -  raw raster images and CLUTs
-          -  an HDF file containing raster-8 images
+   clear text metafile as output by CA-DISSPLA and CA-GKS and
+   outputs either:
+      -  raw raster images and CLUTs
+      -  an HDF file containing raster-8 images
 
       Documentation is in writeup.sg22 and in sg22.doc.
       JCL is in cgmct.to.raster.jcl.
