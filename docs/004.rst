@@ -262,8 +262,8 @@ This UCLA contrib subdirectory contains the following:
       JCL is in cgmct.to.raster.jcl.
 
    cgmct.to.raster.withpc -- a program which takes graphics from a
-      CGM clear text metafile as output by CA-DISSPLA and CA-GKS and
-      outputs one of:
+   CGM clear text metafile as output by CA-DISSPLA and CA-GKS and
+   outputs one of:
           - raw raster images and CLUTs
           - an HDF file containing raster-8 images
           - a NERSC compressed movie file
@@ -272,16 +272,16 @@ This UCLA contrib subdirectory contains the following:
       JCL is in cgmct.to.raster.jcl.
 
    fix.clrtable -- a program which normalizes the color tables in
-      a set of cgm metafiles so as to produce a movie with a
-      single color table.
+   a set of cgm metafiles so as to produce a movie with a
+   single color table.
 
       Documentation is in writeup.sg22 and in sg22.doc.
       JCL is in fix.clrtable.jcl.
 
    sas606.cgmct.to.cgmct -- a program which takes a CGM clear text
-      metafile as output by SAS 6.06 and changes it to look like one
-      created by CA-DISSPLA.  The output file can then be run through
-      one of the cgmct.to.raster programs.
+   metafile as output by SAS 6.06 and changes it to look like one
+   created by CA-DISSPLA.  The output file can then be run through
+   one of the cgmct.to.raster programs.
 
 All programs were written on an IBM 3090 running the MVS operating system
 and contain IBM dependences.
