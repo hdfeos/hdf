@@ -313,7 +313,8 @@ Thanks for your contributions, Dave.
 
 
 -------------------------------------------------------------------------------
-Contribution: HDF-to-DICOMED, HDF-to-postscript, IRIS-to-HDF, and IRIS-to-DICOMED
+Contribution: HDF-to-DICOMED, HDF-to-postscript, IRIS-to-HDF, and \
+IRIS-to-DICOMED
 -------------------------------------------------------------------------------
 
 Location: on NCSA anonymous ftp server in  `HDF/contrib/nrl`
