@@ -328,11 +328,13 @@ that they sent to us.
   takes an HDF file and translates it into a Dicomed DCN file.
 
  hdftops.c - HDF image to PostScript image conversion utility
-  This RCD utility converts an HDF image  to  either  a  PostScript
-  program or to a PostScript compatilble hex file.  This conversion
-  will generate programs that use the colorimage operator (which is
-  not  supported  by  all  PostScript  implementations)  for 24 bit
-  images and 8 bit images that have a palette.
+  This RCD (Raster Chart Display) utility converts an HDF image
+  to either a PostScript program or
+  to a PostScript compatilble hex file.
+  This conversion will generate programs
+  that use the colorimage operator
+  (which is not  supported  by  all  PostScript  implementations)
+  for 24 bit images and 8 bit images that have a palette.
 
  iristohdf.c
   converts sgi image format to HDF format
@@ -382,7 +384,6 @@ The HDF ftp directory has been reorganized. The following is a description
 of selected subdirectories and files.
 
 HDF:
-
     HDF3.1r4/      HDF 3.1 release 4 (previous release)
     HDF3.1r5/      HDF 3.1 release 5 (latest release)
     HDFVset/       HDF VSet 1.0 and 2.0
