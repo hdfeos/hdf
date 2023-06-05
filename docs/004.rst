@@ -325,22 +325,22 @@ converter.  Here are brief descriptions taken from the code
 that they sent to us.
 
  hdftodico.c
-  takes an HDF file and translates it into a Dicomed DCN file.
+ takes an HDF file and translates it into a Dicomed DCN file.
 
  hdftops.c - HDF image to PostScript image conversion utility
-  This RCD (Raster Chart Display) utility converts an HDF image
-  to either a PostScript program or
-  to a PostScript compatilble hex file.
-  This conversion will generate programs
-  that use the colorimage operator
-  (which is not  supported  by  all  PostScript  implementations)
-  for 24 bit images and 8 bit images that have a palette.
+ This RCD (Raster Chart Display) utility converts an HDF image
+ to either a PostScript program or
+ to a PostScript compatilble hex file.
+ This conversion will generate programs
+ that use the colorimage operator
+ (which is not  supported  by  all  PostScript  implementations)
+ for 24 bit images and 8 bit images that have a palette.
 
  iristohdf.c
-  converts sgi image format to HDF format
+ converts sgi image format to HDF format
 
  iristoddc.c
-  converts sgi image format to DICOMED D48 ddc format.
+ converts sgi image format to DICOMED D48 ddc format.
 
 
 Thanks, Buck & Co.
