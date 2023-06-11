@@ -359,14 +359,14 @@ Greenside of Duke University.  We are really grateful for
 these efforts, as there have been quite a few inquiries
 about HDF from NeXT users.
 
- Simon's code can be found in the subdirectory tortike. It includes
-  a new make file and a new dfi.h.  He had to do some special things
-  to accommodate his Absoft FORTRAN compiler.  The changes are nicely
-  documented in the make file MAKE.NEXT.  Note that Simon's port was done
-  before HDF3.1 Release 5, so his dfi.h file will be quite a bit different
-  from the current.  The main differences are due to addition of sections
-  to accommodate the IBM PC with Windows, the Convex, and the IBM/RS6000,
-  plus some changes made to accommodate ANSI C compilers.
+  Simon's code can be found in the subdirectory tortike. It includes
+a new make file and a new dfi.h.  He had to do some special things
+to accommodate his Absoft FORTRAN compiler.  The changes are nicely
+documented in the make file MAKE.NEXT.  Note that Simon's port was done
+before HDF3.1 Release 5, so his dfi.h file will be quite a bit different
+from the current.  The main differences are due to addition of sections
+to accommodate the IBM PC with Windows, the Convex, and the IBM/RS6000,
+plus some changes made to accommodate ANSI C compilers.
 
  Henry's changes can be found in the subdirectory greenside in a shell
   archive file called "shar", which, like Simon's, includes a new make
