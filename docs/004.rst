@@ -447,7 +447,7 @@ HDF/HDF3.1r5/src:        source code for HDF library and most utilities.
     HDFRSEQ.COM
     fixatr/* - files and scripts for making fixatr for VMS
 
-    Utility programs:
+Utility programs:
     hdf24to8.c - source for "hdf24hdf8" which converts HDF raster-24 images
           to raster-8 images
     hdfcomp.c - source for "hdfcomp" which compresses HDF raster-8 images
