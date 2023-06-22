@@ -384,17 +384,16 @@ The HDF ftp directory has been reorganized. The following is a description
 of selected subdirectories and files.
 
 HDF:
-    HDF3.1r4/      HDF 3.1 release 4 (previous release)
-    HDF3.1r5/      HDF 3.1 release 5 (latest release)
-    HDFVset/       HDF VSet 1.0 and 2.0
-    contrib/       contributions from hdf users outside NCSA
-    examples/      examples of hdf programs--good for testing, too
-    newsletters/   HDF newsletters
-    tar3.1r4/      compressed tar files for HDF3.1r4
-    tar3.1r5/      compressed tar files for HDF3.1r5
-    tarexamples/   compressed tar files of examples
-    tarutils/      compressed tar files of fixatr (VMS), fp2hdf, and hdfed
-
+|    HDF3.1r4/      HDF 3.1 release 4 (previous release)
+|    HDF3.1r5/      HDF 3.1 release 5 (latest release)
+|    HDFVset/       HDF VSet 1.0 and 2.0
+|    contrib/       contributions from hdf users outside NCSA
+|    examples/      examples of hdf programs--good for testing, too
+|    newsletters/   HDF newsletters
+|    tar3.1r4/      compressed tar files for HDF3.1r4
+|    tar3.1r5/      compressed tar files for HDF3.1r5
+|    tarexamples/   compressed tar files of examples
+|    tarutils/      compressed tar files of fixatr (VMS), fp2hdf, and hdfed
 
 HDF/HDF3.1r5:
     README.FIRST*
