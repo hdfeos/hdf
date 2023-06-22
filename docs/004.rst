@@ -383,7 +383,8 @@ the latest (as of Nov. 1991) changes.
 The HDF ftp directory has been reorganized. The following is a description
 of selected subdirectories and files.
 
-HDF:
+ HDF:
+
 |    HDF3.1r4/      HDF 3.1 release 4 (previous release)
 |    HDF3.1r5/      HDF 3.1 release 5 (latest release)
 |    HDFVset/       HDF VSet 1.0 and 2.0
