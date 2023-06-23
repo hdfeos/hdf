@@ -383,8 +383,8 @@ the latest (as of Nov. 1991) changes.
 The HDF ftp directory has been reorganized. The following is a description
 of selected subdirectories and files.
 
- HDF:
-
+| HDF:
+|
 |    HDF3.1r4/      HDF 3.1 release 4 (previous release)
 |    HDF3.1r5/      HDF 3.1 release 5 (latest release)
 |    HDFVset/       HDF VSet 1.0 and 2.0
@@ -396,95 +396,94 @@ of selected subdirectories and files.
 |    tarexamples/   compressed tar files of examples
 |    tarutils/      compressed tar files of fixatr (VMS), fp2hdf, and hdfed
 
-HDF/HDF3.1r5:
-    README.FIRST*
-    README.NCSA*
-    README.VMS*
-    RELEASE.NOTES*
-    doc/           HDF documentation
-    src/           source files
-    utils/         fixatr (VMS), fp2hdf, and hdfed.  (Other utilities can
-                      be found in HDF/HDF3.1r5/src/ and in HDF/contrib/)
+| HDF/HDF3.1r5:
+|    README.FIRST*
+|    README.NCSA*
+|    README.VMS*
+|    RELEASE.NOTES*
+|    doc/           HDF documentation
+|    src/           source files
+|    utils/         fixatr (VMS), fp2hdf, and hdfed.  (Other utilities can
+|                      be found in HDF/HDF3.1r5/src/ and in HDF/contrib/)
 
-HDF/HDF3.1r5/src:        source code for HDF library and most utilities.
-    CODECHANGES - describes changes since last release
-    HINTS - hints on how to port HDF to non-supported machines
-    INSTALL - instructions on installing HDF (READ THIS BEFORE CALLING)
-    df.h - header file included in all HDF source files and user programs
-    dfi.h - internal header file, included automatically by df.h
-    df.c - low-level routines which perform I/O to HDF files etc.
-    (NOTE: for each of the following ".c" files there is a corresponding
-           ".h" header file)
-    dfr8.c - routines to implement 8-bit raster image groups
-    dfgroup.c - routines to read and write groups (of tag/refs)
-    dfcomp.c - routines for data compression
-    dfimcomp.c - routines to implement the IMCOMP compression scheme
-    dfsd.c - routines to implement the Scientific Data set
-    dfkit.c - HDF internal utility routines
-    dfgr.c - routines for general raster
-    dfan.h - header for annotations
-    dfan.c - routines for annotations
-    dfp.c - routines for palette
-    df24.c - routines for 24 bit raster
-    dfufp2im.c - float to image conversion routine
-    dfversio.c - routine to return HDF version number
-    dfutil.c - general purpose utility routines
-    cspck32.f  - converts from from Cray float to IEEE float
-    scup32.f - converts from IEEE float to Cray float
-    Makefile - makefile for the HDF system
-    MAKE.*   - make files for individual machines.  Look in each file,
-               towards the top, for machines that it applies to.
+| HDF/HDF3.1r5/src:        source code for HDF library and most utilities.
+|    CODECHANGES - describes changes since last release
+|    HINTS - hints on how to port HDF to non-supported machines
+|    INSTALL - instructions on installing HDF (READ THIS BEFORE CALLING)
+|    df.h - header file included in all HDF source files and user programs
+|    dfi.h - internal header file, included automatically by df.h
+|    df.c - low-level routines which perform I/O to HDF files etc.
+|    (NOTE: for each of the following ".c" files there is a corresponding
+|           ".h" header file)
+|    dfr8.c - routines to implement 8-bit raster image groups
+|    dfgroup.c - routines to read and write groups (of tag/refs)
+|    dfcomp.c - routines for data compression
+|    dfimcomp.c - routines to implement the IMCOMP compression scheme
+|    dfsd.c - routines to implement the Scientific Data set
+|    dfkit.c - HDF internal utility routines
+|    dfgr.c - routines for general raster
+|    dfan.h - header for annotations
+|    dfan.c - routines for annotations
+|    dfp.c - routines for palette
+|    df24.c - routines for 24 bit raster
+|    dfufp2im.c - float to image conversion routine
+|    dfversio.c - routine to return HDF version number
+|    dfutil.c - general purpose utility routines
+|    cspck32.f  - converts from from Cray float to IEEE float
+|    scup32.f - converts from IEEE float to Cray float
+|    Makefile - makefile for the HDF system
+|    MAKE.*   - make files for individual machines.  Look in each file,
+|               towards the top, for machines that it applies to.
+|
+|    Files for FORTRAN stubs:
+|
+|    Files specific to VMS:
+|    dfivms.h - VMS specific header file
+|    MAKE.COM - VMS make script
+|    MAKELIB.COM -VMS make script for library
+|    MAKEUTILS.COM - VMS make script for utilities
+|    MAKENOF.COM - VMS make script to exclude FORTRAN calls
+|    SETUPUTILS.COM - VMS file for initializing utilities
+|    HDFRSEQ.COM
+|    fixatr/* - files and scripts for making fixatr for VMS
 
-    Files for FORTRAN stubs:
+| Utility programs:
+|    hdf24to8.c - source for "hdf24hdf8" which converts HDF raster-24 images
+|          to raster-8 images
+|    hdfcomp.c - source for "hdfcomp" which compresses HDF raster-8 images
+|    hdfls.c - source for "hdfls" which lists contents of HDF files
+|    hdfpack.c - source for "hdfpack" which reclaims wasted space in HDF files
+|    hdfrseq.c - source for "hdfseq" which displays images in
+|            HDF files and "hdfrseq" which produces ICR output for display
+|            on remote screen
+|    hdftopal.c - source for "hdftopal" which converts an HDF palette into a
+|         plain binary palette
+|    hdftor8.c - src for "hdftor8" which extracts raw 8 bit image and
+|          palette files from HDF.
+|    hdftotek.c - source for "hdftotek" which displays Tek images through a
+|         Tektronix emulator
+|    paltohdf.c - source for "paltohdf" which does the reverse of "hdftopal"
+|    ristosds - source for "ristosds", which converts several raster images to
+|         a single SDS
+|    r24hdf8.c - source for "r24hdf8" which converts raw 24-bit images into
+|         HDF raster-8 images
+|    r8tohdf.c - source for "r8tohdf" which converts raw image,
+|           palette files to HDF
+|    showr24.c - source for "showr24" which displays raster-24 images on
+|         Iris-4 machines
+|    showr8.c - source for "showr8" which displays raster-8 images on Iris-4's
+|    srtohdf.c - src for "srtohdf" which converts sun-raster files to HDF
+|    tektohdf.c - source for "tektohdf" which converts Tek images on stdin
+|         to an HDF file of raster-8 images
 
-    Files specific to VMS:
-    dfivms.h - VMS specific header file
-    MAKE.COM - VMS make script
-    MAKELIB.COM -VMS make script for library
-    MAKEUTILS.COM - VMS make script for utilities
-    MAKENOF.COM - VMS make script to exclude FORTRAN calls
-    SETUPUTILS.COM - VMS file for initializing utilities
-    HDFRSEQ.COM
-    fixatr/* - files and scripts for making fixatr for VMS
-
-Utility programs:
-    hdf24to8.c - source for "hdf24hdf8" which converts HDF raster-24 images
-          to raster-8 images
-    hdfcomp.c - source for "hdfcomp" which compresses HDF raster-8 images
-    hdfls.c - source for "hdfls" which lists contents of HDF files
-    hdfpack.c - source for "hdfpack" which reclaims wasted space in HDF files
-    hdfrseq.c - source for "hdfseq" which displays images in
-            HDF files and "hdfrseq" which produces ICR output for display
-            on remote screen
-    hdftopal.c - source for "hdftopal" which converts an HDF palette into a
-         plain binary palette
-    hdftor8.c - src for "hdftor8" which extracts raw 8 bit image and
-          palette files from HDF.
-    hdftotek.c - source for "hdftotek" which displays Tek images through a
-         Tektronix emulator
-    paltohdf.c - source for "paltohdf" which does the reverse of "hdftopal"
-    ristosds - source for "ristosds", which converts several raster images to
-         a single SDS
-    r24hdf8.c - source for "r24hdf8" which converts raw 24-bit images into
-         HDF raster-8 images
-    r8tohdf.c - source for "r8tohdf" which converts raw image,
-           palette files to HDF
-    showr24.c - source for "showr24" which displays raster-24 images on
-         Iris-4 machines
-    showr8.c - source for "showr8" which displays raster-8 images on Iris-4's
-    srtohdf.c - src for "srtohdf" which converts sun-raster files to HDF
-    tektohdf.c - source for "tektohdf" which converts Tek images on stdin
-         to an HDF file of raster-8 images
-
-doc:
-       doc/ascii/NCSA_HDF/*       - ASCII format documentation for HDF
-       doc/ascii/HDF_Specs/*      - ASCII format technical specification
-              of HDF
-       doc/postscript/NCSA_HDF/*  - postscript format documentation for HDF
-       doc/postscript/HDF_Specs/* - postscript format technical
-                                    specification of HDF
-       doc/man                    - man files (currently there's only one)
-
+| doc:
+|       doc/ascii/NCSA_HDF/*       - ASCII format documentation for HDF
+|       doc/ascii/HDF_Specs/*      - ASCII format technical specification
+|              of HDF
+|       doc/postscript/NCSA_HDF/*  - postscript format documentation for HDF
+|       doc/postscript/HDF_Specs/* - postscript format technical
+|                                    specification of HDF
+|       doc/man                    - man files (currently there's only one)
 
 
 -------------------------------------------------------------------------------
