@@ -557,14 +557,14 @@ goes, and also let us know if you have any problems.
 
 .. code-block:: C
 
-#include <stdio.h>
+   #include <stdio.h>
    #include "df.h"            /* this is only needed to define DFTAG_RIG */
    char *malloc();
 
    #define LISTSIZE 100
    #define MAXLEN   15
 
-main(argc, argv)
+   main(argc, argv)
    int argc;
    char *argv[];
    {

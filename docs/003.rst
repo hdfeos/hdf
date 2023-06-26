@@ -207,7 +207,7 @@ The code that is now on anonymous ftp reflects this change.
 
 -------------------------------------------------------------------------------
                     Bug fix: annotations interface
-n-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
 A bug has been discovered in the annotations interface. The routine
 DFANlablist does not return the correct number of reference numbers
