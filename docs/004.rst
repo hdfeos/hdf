@@ -603,8 +603,8 @@ goes, and also let us know if you have any problems.
 
       program getlablist
 
-C
-C****||************************************************************
+    C
+    C****||************************************************************
 
       integer dallist, d8gimg, d8rref, d8gdims,d8aimg, d8spal
       integer i, nlabels, startpos, ret
@@ -618,8 +618,8 @@ C****||************************************************************
      *           LISTSIZE    =  20,
      *           MAXLEN      =  15)
 
-C The test files being used are o1 and o2.  Substitute another if
-C you like.
+    C The test files being used are o1 and o2.  Substitute another if
+    C you like.
 
       infile = 'o1'
       outfile = 'f2'
