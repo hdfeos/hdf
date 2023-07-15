@@ -1,0 +1,544 @@
+
+                      HDF Newsletter #3
+
+Contents:
+
+   HDF 3.1 Release 2 
+   HDF 3.1 Release 3
+   HDF ported to IBM/MVS by UCLA
+   Docs available in postscript
+   DECStations now supported
+   IBM PC/Microsoft C Version Now Available
+   Convex update
+   Correction: VMS
+   Bug fix: 24-bit interface
+   Bug fix: annotations interface
+   Reformat released
+   Image 3.0 released
+   Contributions Directory Added
+   New utility: hdfpack
+   New Version of fptohdf: fp2hdf
+   Examples directory expanded
+   ACR/NEMA and HDF
+   Goodbye Chin-Chau / hello Doug
+
+  
++++++++++++++++++
+
+                      HDF 3.1 Release 2 
+
+On October 2 we released an updated version of HDF 3.1. 
+These are changes made in Release3.1r2
+
+*   added many new subdirectories, includine a "contributions"
+    directory and a greatly expanded examples directory.
+
+*   fixed bug in DFSDIgetslice
+
+*   reduced overhead of checking in DFSDIgetslice by adding DFIseek
+    and DFIread, which do not do the redundant checking
+
+*   added MIPSEL machine type for DEC 3100 and DEC 5000
+
+*   fixed inconsistency in dfivms.h
+
+
+
++++++++++++++++++
+
+                      HDF 3.1 Release 3 
+
+On December 6 we released another update of HDF 3.1. 
+These are changes made in Release3.1r3
+
+*   fixed bug in DFIemptyDD where contents of tbuf is clobbered
+
+*   fixed bug in CSPK32 where floating point Cray numbers are
+    converted incorrectly to IEEE
+
+*   changed DFconvert to call CSPK32 and SCUP32 with icheck so that
+    underflow, overflow and NaNs are handled correctly.
+
++++++++++++++++++
+
+                   HDF ported to IBM/MVS by UCLA
+
+
+The good folks at UCLA have ported much of HDF to an IBM/MVS
+system and have given it all to us for distribution.  All of 
+the porting was done by Joan Slottow at UCLA.  This has been 
+a major effort, and we are very grateful to Joan and her 
+supervisor, Virginia Hetrick, for undertaking such a major
+effort.
+
+The current version of the port supports all 6 HDF interfaces: basic (DF),
+raster-8 (DFR8), scientific (DFSD), annotation (DFAN), palette (DFP),
+and raster-24 (DF24).  The port comes complete with everything you
+need to install HDF on an MVS system, source code, install jobs, test
+jobs, test programs, and test files.
+
+This software has NOT been compiled or tested on any VM/CMS systems.  
+(Any volunteers?)
+
+We have placed all relevant files in a directory called 
+HDF.MVS on anonymous ftp. The README file contains notes 
+on the files that you need to install this version of 
+HDF on an MVS system.  Details of the changes and additions 
+that had to be made are described in the file "porting.notes".
+
+Once again, thanks, Joan, for your valuable contribution.
+
+
++++++++++++++++++
+
+                     Docs available in postscript
+
+By popular demand, Jill Peacock (our docs person) has figured out 
+how to produce postscript versions of our documentation from the 
+original Microsoft Word versions.  You will find them in 
+doc/postscript on the ftp server.
+
++++++++++++++++++
+
+                       DECStations now supported
+
+Thanks to the generosity of Digital, we now have a DEC 3100 in our
+group.  And, thanks to several of you who had already ported HDF to 
+3100s, we were able to use the fruits of your experience to do a 
+quick port.  It appears to work fine, but only time will tell if 
+everything works perfectly.
+
+MAKE.DECST, a makefile for Decstations, has been placed on anonymous
+ftp in the HDF/src directory.   Also, look at the HINTS file in the
+same directory for pointers on a few possible problems.
+
+Conrad Wilgus of Lawrence Livermore National Laboratory was able
+to port HDF to a DEC 5000 as well as a 3100.  He reports that the
+machines appear to be identical as far as installing HDF is concerned.
+
+Also, several people have apparently been using the NCSA X window tools
+on their 3100s with success.
+
+Let us know if you run into any problems.
+
+
++++++++++++++++++
+
+              IBM PC/Microsoft C Version Now Available
+
+The PC version of HDF that is currently stored on the server is 3.0.  
+Contrary to what was reported in the last newsletter, this version
+does work with Microsoft C.
+
+HDF 3.1 has not been ported to the PC yet, but we are working on it.
+
+
+++++++++++++++++
+                      Convex support update
+
+One of the most popular unofficial platforms for HDF has been Convex.
+A number of people have ported HDF to Convexes, thanks largely to 
+initial efforts by Paul Fons at U of Illinois  and Greg Cook at
+UNC Chapel Hill.  Paul did the initial work, then Greg did a port
+and sent me a description of what he did.  Paul and Greg's ports
+assume that Convex "native mode" is in effect, (i.e., Convex's
+floating point representation is used for floats).
+
+Just recently Fred Walsteijn of the U of Utrecht (The Netherlands)
+did an "IEEE mode" port.  He also sent me a description of what he
+did.  If you want more details about either of these ports, contact
+me.
+
+
+++++++++++++++++
+                        Correction: VMS 
+
+In Newsletter #2: In the VMS section, there is
+a missing dollar sign before the "sys$login"
+
+Original text:
+...
+corresponding executable procedure.  For example, if the full path
+name for the executable hdfls is sys$login:[hdf]hdfls.exe, you
+would enter
+
+    hdfls :== sys$login:[hdf]hdfls.exe
+
+Correction:
+
+    hdfls :== $sys$login:[hdf]hdfls.exe
+
+++++++++++++++++
+
+                        Bug fix: 24-bit interface
+
+A bug has been discovered in the 24-bit routines.  When reading in
+a 24-bit image that is stored in pixel-interlace form, if you ask
+to convert it to scan-line interlace or plane-interlace form you
+get an incorrect image.  To fix the bug, find the routine DFGRIgetimlut
+in dfgr.c and find the lines that say:
+
+                currmax[1] = Grread.datadesc[type].ydim;
+                currmax[2] = Grread.datadesc[type].xdim;
+
+change them to
+
+                currmax[1] = Grread.datadesc[type].xdim;
+                currmax[2] = Grread.datadesc[type].ydim;
+
+Note that the x and y are interchanged.  This should fix the bug.
+The code that is now on anonymous ftp reflects this change.
+
+++++++++++++++++
+
+                    Bug fix: annotations interface
+
+A bug has been discovered in the annotations interface. The routine
+DFANlablist does not return the correct number of reference numbers
+in the parameter reflist.  On some machines, this bug also causes
+a segmentation fault. To fix the bug, find the routine dailist in
+dfanF.c and make the following changes.
+
+Change the line:
+      tempreflist = (uint16 *) DFIgetspace( (*maxlen) * sizeof(uint16) );
+to:
+      tempreflist = (uint16 *) DFIgetspace( (*listsize) * sizeof(uint16) );
+
+and change:
+      for (i=0; i < *maxlen; i++)
+to:
+      for (i=0; i < *listsize; i++)
+
+The code that is now on anonymous ftp in "HDF/src" reflects this change,
+but the release 3 tar files, etc., do not.
+
+++++++++++++++++
+
+                Import2HDF and Reformat released
+
+Two utilities that we announced as beta releases in the last
+newsletter have now been officially released.
+
+NCSA Reformat, the UNIX-based file converter that we announced as a
+beta release in the last newsletter, has been expanded a bit. 
+It has been tested on Crays, Suns, and SGIs, and seems to work
+pretty well. It now converts X window dumps, Sun Raster, TIFF,
+FITS, and GIFF files to HDF.  NCSA Reformat is in a directory
+on anonymous ftp called "Reformat."
+
+NCSA Import2HDF, the Mac II equivalent, has also been formally released.  
+This utility converts FITS, TIFF, GIFF, PICT, Ras raster, and ascii 
+files to HDF.  NCSA Import2HDF is in a directory on anonymous ftp called 
+"Import2HDF."
+
+++++++++++++++++
+
+                   Image 3.0 released
+
+This is the newest installation of the Image program.  We
+have added many new features to the program which we hope
+you will find useful.  Below is a quick description of the
+new features. 
+
+(1) HDF List window:
+
+You can now display the contents of an HDF file in a list 
+form.  The list window allows you to load images and
+animations.
+
+(2) Distributed Computing:
+
+We have added a distributed computing feature to image. This
+feature is implemented via the items in the Tools menu, "Load
+calculations," and "Show calculations." Either of these two options
+will create a text edit window.
+
+To execute a command from the Calculations window, use the Enter
+key on the keypad. Initially, the Calculations window will be in 
+Parser mode. In this  mode, Image3 will try to interpret anything 
+you enter (using the Enter key) as a command. It understands only 
+one command, StartDTM. This command will allow  you to connect to a
+remote machine and run a program there. The program on the remote 
+machine must be modified to communicate using the Data Transport 
+Mechanism, developed at NCSA by Jeff Terstriep and others.
+...
+
+(3) Support for 3D datasets.
+
+Image 3 has limited 3D volume visualization capability.  
+To open a 3D data set, which must be stored as an SDS record in an
+HDF file, use the Open item in the File menu and select either the
+HDF or HDF List option in the open file dialog.  If you select HDF
+List, then simply open the SDS record from the HDF List window.
+
+When you open a 3D volume, first a 3D Options dialog appears to request
+the type of display and parameters to control the display.  Along the
+left are the options Animate, Dots, Wire Frame, and Shaded Polygons.
+
+Animate, the default, creates an animation window where each frame
+of the animation is a plane of the volume.  You can specify which
+axis to animate across by selecting either X, Y, or Z.
+
+If you select Dots, a fairly fast algorithm, is used to plot a dot for
+each unit cube of the volume that contains one of the data values
+specified.  You may enter the data values individually or specify
+an evenly spaced list of values.  The other two display types, Wire
+Frame, and Shaded Polygons, both use a "marching cubes" algorithm to
+plot isosurfaces for given data values.  The color used when plotting
+each value is taken from the corresponding position in the current
+palette.
+
+For the last three display types, two additional tools are available to
+manipulate the display.  The rotation tool rotates the view of the data
+volume while the perspective tool alters the apparent depth, keeping
+the data volume at the same distance.  You can change the size of the
+window with the grow box, and the volume will be magnified to fit, but
+no option exists to magnify independently or to select part of the
+volume to display.
+
+Thomas Redman
+Project Leader
+redman@ncsa.uiuc.edu
+
+++++++++++++++++
+
+            Contributions Directory Added
+
+Now there is a "contrib" directory with several subdirectories
+containing contributions donated by HDF users.
+
+Unfortunately, NCSA is not able to support this software at
+this time, but we encourage you to use it and send comments, 
+upgrades, etc., to us and the authors.
+
+
+We sincerely thank the people who have gone to the trouble of
+packaging and donating this software, and we encourage others
+to do the same.
+
+Listed below are brief descriptions of the contents of each of
+the directories.  Each directory has a README file with further
+details.  
+
+=================== amiga ================
+
+Richard Gerber at the U of Illinois has ported HDF to an amiga.
+See the README file in this directory for details.
+
+
+=================== olsen ================
+
+
+Several utilities (with man pages):
+
+xwdtohdf       - converts X-windows display to hdf
+hdftoxwd       - converts hdf to X-windows display 
+qdvtohdf       - converts qdv to hdf converter
+paltohdf       - converts raw palette to hdf 
+hdfxdis        - directly displays HDF image on an X server
+
+Dave Olsen
+Materials Science Center, Cornell Univ.
+olsen@msc2.tn.cornell.edu
+
+
+=================== gerardi ================
+
+A new version of the hdfrseq utility:
+
+hdfrseq_new     - new hdfrseq routine with special Sunview features
+
+Paul Gerardi
+Schlumberger-Doll
+
+=================== salem  ================
+
+HDF Image Format Conversion Utilities
+
+hdf2tiff	- converts HDF images to TIFF images
+tiff2hdf	- converts TIFF images to HDF images
+hdf2ras		- converts HDF images to Sun Rasterfile images
+ras2hdf		- converts Sun Rasterfile images to HDF images
+
+Jim Salem (salem@think.com)
+Thinking Machines Corporation
+
++++++++++++++++
+
+                 New Utility: hdfpack
+
+A new utility named hdfpack has been made available on the 
+ftp server.  The purpose of this program is to clean up HDF files 
+which have been subjected to a lot of deleting or appending.  An 
+invocation of hdfpack looks like this:
+
+	hdfpack <oldfile> <newfile>
+
+Where <oldfile> is the name of the file you wish to clean up and 
+<newfile> is the new name for the cleaned up file.
+
+Some caveats for the use of hdfpack:
+
+	1. Your system must have enough RAM to read in the 
+	largest element in the file you are trying to pack.
+
+	2.Your system must have enough disk space to accomodate 
+	the new packed file.
+
+	3.Although the logical organization of your file will remain 
+	intact, the physical order of your data elements will 
+	likely change.  This should not affect any well-behaved 
+	HDF tool.
+
++++++++++++++++
+
+                 New Version of fptohdf
+
+Bob Weaver and his colleagues at INEL have greatly enhanced fptohdf.
+The new version, which we are calling fp2hdf,  supports native
+mode floating point (both single and double precision), and 3D floating
+point data sets.  Bob has also provided C and FORTRAN programs for 
+generating test files.
+
+Fred Walsteijn of the University of Utrecht has made some
+very useful suggestions about improvements to fp2hdf, and 
+supplied some bug fixes.
+
+You will find all of this in the anonymous ftp directory HDF/fp2hdf.
+
+
+
+++++++++++++++++
+
+                Examples Directory Expanded
+
+The examples directory on anonymous ftp now contains several 
+subdirectories, which contain sample and test programs that we
+and several users have written.
+
+This is NOT a test suite.  I.e. it does not systematically test all
+of the HDF routines.  But it exercises many of the most common
+routines that are used with HDF, and should give a pretty good
+indication of what works and what doesn't.
+
+Another purpose for these programs is to serve as examples of how
+to make HDF calls.
+
+These programs have only been tested on the CRAY and Sun
+systems at NCSA, so please let us know if they reveal any
+bugs on your system.
+
+If you have a program that you think might be a useful addition to
+these, please let us know.
+
+Here is a listing of the sample programs, by subdirectory.  More 
+programs may have been added by the time you get this.  File names
+ending in ".c" are C programs; names ending in ".f" are FORTRAN
+programs:
+
+sds/buildsds.c          - generate and write an SDS
+sds/sdsampl1F.f         - write SDS, read it back and compare with original
+sds/multi_test/multi_test.c  - tests basic SDS read/write functions
+sds/speed/speedtestF.f  - tests speed writing floats to HDF and raw files
+sds/speed/speedtest.c   - C version
+sds/slices/putslices.c  - tests storage of 2d array in slices
+sds/slices/getslices.c  - tests 2d sub-array access
+
+ris8/putim.c            - create and image and store it in an HDF file
+ris8/putimF.f           - FORTRAN version
+ris8/manyRIS.c          - generate and read back images of different sizes
+ris8/getputim.c         - show use of DFR8getdims, DFR8getimage, DFR8addimage
+ris8/getputimF.f        - FORTRAN version
+ris8/threeRISF.f        - read three RIS's from one file and write to another
+ris8/t_bigbufF.f        - tests DFR8getimage when buffers larger than image
+
+ann/ann.test            - a script that runs the programs
+ann/ann_test_results    - results you should get when running ann.test
+ann/file_ann_test.c     - C program to test reading/writing *file* annotations
+ann/file_ann_testF.f    - FORTRAN version
+ann/putSDS_RISan.c      - puts some HDF-object annotations in file
+ann/get1anF.f           - gets one label and one description
+ann/getSDSan.c          - gets all SDS annotations
+ann/getSDSlablist.c     - gets list of all SDS labels
+ann/getSDSlablistF.f    - FORTRAN version of same program
+
+err/err.c               - illustrates use of DFerror
+err/errF.f              - FORTRAN version
+
+util/hdf24hdf8/hdf24hdf8.test - test the utility hdf24hdf8
+util/r8tohdf/r8tohdf.test     - test the utility r8tohdf
+
+files/                  - various files used by the other programs
+files/README            - describes the files
+files/corn.r24      - isosurface from a 3-D nmr array describing 
+                      moisture content in a piece of corn.
+files/head.r24      - isosurface rendering of human head
+files/h200x150.hdf  - hdf file with a 200x150 RIS; also a small SDS
+files/many.hdf      - contains many labels, descriptions, RISs and SDSs
+files/old.hdf       - contains a label, description, RIS8 and SDS
+files/default.pal   - default ("rainbow") palette in hdf file
+files/grey.pal      - grey scale palette in HDF file
+files/palette.raw   - contains a raw palette
+files/greypal.raw   - contains a raw grey-scale palette
+files/storm110.raw  - raw image of data from storm simulation
+files/storm120.raw  - raw image of data from storm simulation
+files/storm130.raw  - raw image of data from storm simulation
+files/storm140.raw  - raw image of data from storm simulation
+files/storm110.hdf  - hdf image of data from storm simulation
+files/storm120.hdf  - hdf image of data from storm simulation
+files/storm130.hdf  - hdf image of data from storm simulation
+files/storm140.hdf  - hdf image of data from storm simulation
+
+
+++++++++++++++++
+
+                     ACR-NEMA and HDF
+
+ACR-NEMA is a standard developed jointly between the American College
+of Radiology (ACR) and National Electrical Manufacturers Association
+(NEMA)  for transmitting digital images and other information used
+in the radiology community.  In the last several months we have
+discussed with several people the possible benefits of using HDF
+as an "envelope" for storing and transmitting ACR-NEMA data.
+
+Much of the groundwork for this has occurred at Massachusetts
+General Hospital's (MGH) Radiology PAC group, spearheaded by Sean
+Doyle and Jaime Taafe, with a lot of interest in their work
+coming from NYNEX.  Rick Lonon and Dr. Randy Perry at UNC 
+Radiology are also interested, having independently looked at
+the possibility of using HDF rather than a home-grown format
+for handling their data.
+
+I had an opportunity to meet the MGH group in September, and we
+decided to explore the use of Vsets for ACR-NEMA data.  So they
+are working on that now.  Also during my visit I met Steve Horii,
+who is on the ACR-NEMA standards committee, and we were able
+to discuss some of the issues involved.
+
+In the future we hope to pursue the directions that MGH and 
+UNC have started us in.  If any of you are interested in being 
+involved in this effort, or know of someone who might be,
+let us know.
+
++++++++++++++++++
+
+                   Goodbye Chin-Chau / Hello Doug
+
+In December, Chin-Chau Low, whom many of you know so well as
+the HDF guru, finished his masters degree and returned home to 
+Singapore to help establish a brand new supercomputing center 
+there.  (He may return to us in August to work on his PhD.) 
+We can't say enough about the tremendous contribution Chin-Chau
+has made to the HDF project, both in terms of providing consulting
+help and in terms of ongoing development.  Besides that, he was
+a wonderful guy to work with. So long, Chin-Chau.
+
+Doug Ilg joined us in September, and he will be replacing Chin-Chau.
+Doug comes to us from the Naval Research Lab, and has experience
+with a number of systems.  He has been breaking himself into HDF
+during his initial months by testing routines in the new HDF 4.0 
+general purpose interface, which has included implementing
+the HDF 3.1 general purpose interface on top of it.  Doug is in
+graduate school working on an advanced degree in computer science.
+Welcome, Doug!
+
