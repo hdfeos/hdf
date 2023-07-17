@@ -1,0 +1,688 @@
+
+                           HDF Newsletter #4
+
+Contents:
+
+   Notes and comments
+   HDF 3.1 release 5
+   Contributions
+   Contribution: Vset-to-Postscript and Vset-to-RIS
+   Contribution: CGM-to-HDF, and other conversions
+   Contribution: HDF for Vax running Ultrix 
+   Contribution: HDF-to-DICOMED, HDF-to-postscript, 
+                 IRIS-to-HDF, and IRIS-to-DICOMED
+   Contribution: Two ports of HDF to NeXT
+   HDF ftp directory reorganized
+   Spyglass version for Mac FORTRANs
+   Random access to Raster Image Sets
+   An update on the tools
+   Useful addresses and phone numbers
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+                          Notes and Comments
+
+A lot has happened with HDF since the last newsletter.  The number of 
+our users has increased dramatically, and it shows no signs of letting 
+up.  Many of you are using HDF in ways that we never dreamed of,
+and many are providing us with useful utilities, bug fixes, and ideas
+for future development.
+
+This good news is tempered by the fact that it has become harder
+and harder to remain responsive to you users.  We have had very
+little time over the past year to do the HDF development that we 
+have been planning, and the list of unanswered requests for support
+and new HDF features has grown very long.
+
+Fortunately, several new developments promise to get us back on track.
+About a year ago we applied for a "software capitalization"
+grant from the National Science Foundation to hire a full-time HDF
+support person.  Happily, our proposal was funded, and we brought
+Shiming Xu on board this summer.  Shiming has tackled the job with
+great enthusiasm, and is already making major contributions to every
+aspect of the HDF project.
+
+In the summer we hired two undergraduates to help us with some projects
+that we have been toying with for some time.  One of the students, Mark
+Livingston of Duke University, worked on fitting the netCDF data model
+into HDF.  As a result of Mark's fine work, we now have a much better 
+understanding of the challenges involved, and will have a real running
+start on the real thing if we can get funding.  (We currently have a
+proposal pending with NSF to fund this project.)
+
+The other student, Nelson Arzola of the University of Illinois, spent
+the summer working on adding new number types to HDF scientific data 
+sets (SDS).  Nelson made a lot of progress during the summer, and has
+continued to work on the progress during the fall.  We have made this
+addition to HDF our highest priority, and hope to come out soon with
+a release that lets you store 8-bit integers, 16-bit integers, 32-bit
+integers, 32-bit floats and 64-bit floats in HDF.
+
+As you may know, we are also trying to rewrite all of HDF to add other
+much-needed features, such as multiple-file access, better performance,
+and better error-handling capabilities.  Starting last Spring, we began
+collaborating with The Information Technologies Institute (ITI) in Singapore
+on this project.  ITI is very interested in working with NCSA on a number
+of projects, and HDF is the first.  Chin Chau Low, former NCSA HDF guru,
+is heading up the ITI project.  When this project is completed, we will
+call it HDF 4.0.
+
+There is more news to report, but we will save it until the next 
+Newsletter, which we promise will not be as long in coming as this
+one has been.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                            HDF 3.1 release 5
+
+HDF 3.1 release 5, installed in early November on NCSA's anonymous ftp 
+server.
+
+Release 5 supersedes HDF 3.1 release 4, which has been on the server
+since July, 1991.. The new release contains the following changes:
+
+* Full support added for the following machines and systems:
+
+        PC      - IBM PC (DOS)
+        WIN     - IBM PC (Microsoft Windows 3.0)
+        IBM6000 - IBM RS/6000 (AIX)
+        CONVEX  - Convex C-2 (Unix)
+
+*  ANSI C support: All code for the library was modified to
+   conform to the ANSI C standard.  If your system supports
+   ANSI C, the ANSI C versions of routine headers are invoked;
+   otherwise the old versions are invoked.
+
+*  Bugs were fixed in the following routines:
+
+        scup32.f: did not handle odd dimension sizes correctly
+        cspck32.f: did not handle odd dimension sizes correctly
+        dfpFf.f
+        dfpF.c
+        dfsd.c
+
+* Two new utilities has been added:
+
+        ristosds.c - converts raster images to sds.
+        hdfpack.c  - compacts an HDF file by reading in all data elements
+                     in a file and writing them out to a new file.
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+                          Contributions
+
+HDF users have donated quite a bit of new software since the last
+newsletter.  We have put these in the "HDF/contrib" directory on
+the anonymous ftp server.  As usual, we have put them there "as is",
+and cannot provide support for them  However, if you do any enhancements
+or find any bugs, or (better yet) fix any bugs, let us know and we
+will try to update the directories accordingly.  Also, please let
+us know which ones you find useful, and how you are using them.
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+          Contribution: Vset-to-Postscript and Vset-to-RIS
+
+
+Location: on the NCSA ftp server in HDF/contrib/walsteijn
+
+These two programs are from Fred Walsteijn at the Institute for Marine
+and Atmospheric Research at the University of Utrecht.   WE just
+received them recently and haven't had a chance to try them out,
+but they look really useful.  
+
+For some time, Fred has been a consistent contributor of useful and 
+high quality software, bug fixes and ideas to the HDF effort.  With 
+these two programs he adds some needed functionality to Vsets, especially 
+for non-SGI platforms.  He also addresses (in vs2ps) some problems 
+our tools have had for some time with interpolation.  Both Mac and 
+Unix versions of the programs are provided.
+
+Following are exerpts from two of his README files.
+
+*** From vs2ris.README:
+
+INTRO
+-----
+Vs2ris is a generalization of fp2hdf.  
+It generates color rasters of two-dimensional vset data or curvilinear data
+and can be considered as a system-independent implementation of a 2D subset
+of NCSA PolyView.  PolyView, however, is available only on the Silicon
+Graphics Iris workstations.
+Currently, system-independent NCSA tools (such as fp2hdf) allow raster
+generation only of rectangular data.
+...
+
+STATUS
+------
+Vs2ris has been tested on:
+   MacII family, DECstations, Convex (in IEEE mode), and Cray-YMP.
+On the Convex I use -DALLIANT, therefore the Alliant is likely to
+pose no problems.
+
+
+*** From vs2ps.README: 
+
+INTRO
+-----
+Vs2ps produces a PostScript file containing one of the following:
+1. a contour plot of data defined on a two-dimensional "rectangular" grid
+   and/or a line drawing of this grid.  Input data is given in a single
+   HDF file.
+2. a contour plot of data defined on a two-dimensional "curvilinear" grid
+   and/or a line drawing of this grid.  Input data is given by two
+   straight HDF files (grid only) or three HDF files (contour plot).
+3. a contour plot of data defined on a two-dimensional "finite element"
+   grid consisting of triangles and/or quadrangles.  Also a line drawing of
+   the vertex set can be produced.  Input data is given in a single
+   HDF Vset file.
+
+The main advantages of this tool over others are (I think):
+a. The accuracy of the (linear) interpolation used for contouring.
+   The tool rules out an artificial directional bias common in most other
+   contouring packages by a special "saddle point" strategy.  Especially
+   sharp/steep "ridges" in the data (not aligned with the grid) are handled
+   more accurate than usual for linear methods. (Don't expect miracles from
+   a linear technique though.)
+b. Contourplots of data defined on curvilinear or finite element grids are
+   generated directly from this grid/data. No artificial interpolation to
+   an intermediate rectangular grid is used (nor an artificial clipping polygon)
+.
+   The result will be much more accurate for "difficult" data.
+c. The resulting (Encapsulated) PostScript file can be EDITED (etc.) with
+   Adobe's Illustrator 3.0. Direct routing to a PostScript printer is
+   possible also.
+...
+
+STATUS
+------
+Vs2ps has been tested on:
+   MacII family, DECstations, Convex (in IEEE mode), and Cray-YMP.
+On the Convex I use -DALLIANT, therefore the Alliant is likely to
+pose no problems.
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+          Contribution: CGM-to-HDF, and other conversions
+
+
+Location: on the NCSA ftp server in HDF/contrib/UCLA
+
+This contribution from UCLA includes several different useful 
+programs, including a CGM-to-HDF converter.
+
+There is a clear need for CGM-to-HDF conversion routines, and we
+are pleased to have this donation.  Though this code contains some
+IBM 3090 dependencies, you will find that it is well documented and 
+should port to UNIX without too much trouble.  If anyone does 
+actually port it, please share your program with us so that we 
+can share it with the rest of the HDF community.
+
+Here is what the README file says about the package:
+
+This UCLA contrib subdirectory contains the following:
+
+   pcmovie -- a library of subroutines that creates NERSC compressed
+      movie files for playing on the IBM PC and PS 2 with NERSC's
+      MOVIE program.
+
+      Documentation is in pcmovie.doc.
+
+   cgmct.to.raster.nopc -- a program which takes graphics from a CGM
+      clear text metafile as output by CA-DISSPLA and CA-GKS and
+      outputs either:
+          -  raw raster images and CLUTs
+          -  an HDF file containing raster-8 images
+
+      Documentation is in writeup.sg22 and in sg22.doc.
+      JCL is in cgmct.to.raster.jcl.
+
+   cgmct.to.raster.withpc -- a program which takes graphics from a
+      CGM clear text metafile as output by CA-DISSPLA and CA-GKS and
+      outputs one of:
+          - raw raster images and CLUTs
+          - an HDF file containing raster-8 images
+          - a NERSC compressed movie file
+
+      Documentation is in writeup.sg22 and in sg22.doc.
+      JCL is in cgmct.to.raster.jcl.
+
+   fix.clrtable -- a program which normalizes the color tables in
+      a set of cgm metafiles so as to produce a movie with a
+      single color table.
+
+      Documentation is in writeup.sg22 and in sg22.doc.
+      JCL is in fix.clrtable.jcl.
+
+   sas606.cgmct.to.cgmct -- a program which takes a CGM clear text
+      metafile as output by SAS 6.06 and changes it to look like one
+      created by CA-DISSPLA.  The output file can then be run through
+      one of the cgmct.to.raster programs.
+
+All programs were written on an IBM 3090 running the MVS operating system
+and contain IBM dependences.
+The IBM dependences are in the fopen function calls and the lrecl and
+blk variables that go along with fopen.
+The fix.clrtable program has an assembler language subroutine.  That
+subroutine get the ddnames of all the DD statements beginning with
+CGM and OUT.  That is how the user specifies the input and output files.
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+             Contribution: HDF for Vax running Ultrix 
+
+
+Location: on NCSA anonymous ftp server in  HDF/contrib/VaxUltrix
+
+
+The material in this directory represents changes that Dave Anglin of the
+NRC in Canada made to HDF in order to make it run correctly on a MicroVax
+under Ultrix.  In some cases, we have created diff files to indicate the
+changes, rather than reproduce the entire set of files.  The diff files
+represent differences from the regular HDF source as of 3/28/91.
+
+Thanks for your contributions, Dave.
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+           Contribution: HDF-to-DICOMED, HDF-to-postscript, 
+                 IRIS-to-HDF, and IRIS-to-DICOMED
+
+Location: on NCSA anonymous ftp server in  HDF/contrib/nrl
+
+Buck Buchanan's group at Naval Research Lab, has contributed some
+nice utilities, including an often-requested HDF-to-postscript
+converter.  Here are brief descriptions taken from the code
+that they sent to us.
+
+ hdftodico.c
+  takes an HDF file and translates it into a Dicomed DCN file. 
+
+ hdftops.c - HDF image to PostScript image conversion utility
+  This RCD utility converts an HDF image  to  either  a  PostScript
+  program or to a PostScript compatilble hex file.  This conversion
+  will generate programs that use the colorimage operator (which is
+  not  supported  by  all  PostScript  implementations)  for 24 bit
+  images and 8 bit images that have a palette.  
+  
+ iristohdf.c
+  converts sgi image format to HDF format
+
+ iristoddc.c
+  converts sgi image format to DICOMED D48 ddc format.
+
+
+Thanks, Buck & Co.
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+           Contribution: Two ports of HDF to NeXT
+
+
+
+Location: on NCSA anonymous ftp server in  HDF/contrib/NeXT
+
+Two different people have ported HDF to NeXT platforms.  They
+are Simon Tortike of the University of Alberta and Henry
+Greenside of Duke University.  We are really grateful for
+these efforts, as there have been quite a few inquiries 
+about HDF from NeXT users.
+
+ Simon's code can be found in the subdirectory tortike. It includes
+  a new make file and a new dfi.h.  He had to do some special things
+  to accommodate his Absoft FORTRAN compiler.  The changes are nicely 
+  documented in the make file MAKE.NEXT.  Note that Simon's port was done 
+  before HDF3.1 Release 5, so his dfi.h file will be quite a bit different
+  from the current.  The main differences are due to addition of sections 
+  to accommodate the IBM PC with Windows, the Convex, and the IBM/RS6000, 
+  plus some changes made to accommodate ANSI C compilers.
+
+ Henry's changes can be found in the subdirectory greenside in a shell
+  archive file called "shar", which, like Simon's, includes a new make 
+  file and dfi.h. Henry's changes remove dependencies on FORTRAN files,
+  since he assumes that a typical NeXT user will use C or f2c. Henry's 
+  port was done after HDF3.1 Release 5, so it incorporates those
+  the latest (as of Nov. 1991) changes.
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+                    HDF ftp directory reorganized
+
+The HDF ftp directory has been reorganized. The following is a description 
+of selected subdirectories and files.
+
+HDF:
+
+    HDF3.1r4/      HDF 3.1 release 4 (previous release)
+    HDF3.1r5/      HDF 3.1 release 5 (latest release)
+    HDFVset/       HDF VSet 1.0 and 2.0
+    contrib/       contributions from hdf users outside NCSA
+    examples/      examples of hdf programs--good for testing, too
+    newsletters/   HDF newsletters
+    tar3.1r4/      compressed tar files for HDF3.1r4
+    tar3.1r5/      compressed tar files for HDF3.1r5
+    tarexamples/   compressed tar files of examples
+    tarutils/      compressed tar files of fixatr (VMS), fp2hdf, and hdfed
+
+
+HDF/HDF3.1r5:
+    README.FIRST*
+    README.NCSA*
+    README.VMS*
+    RELEASE.NOTES*
+    doc/           HDF documentation
+    src/           source files
+    utils/         fixatr (VMS), fp2hdf, and hdfed.  (Other utilities can
+                      be found in HDF/HDF3.1r5/src/ and in HDF/contrib/)
+
+HDF/HDF3.1r5/src:        source code for HDF library and most utilities.
+    CODECHANGES - describes changes since last release
+    HINTS - hints on how to port HDF to non-supported machines
+    INSTALL - instructions on installing HDF (READ THIS BEFORE CALLING)
+    df.h - header file included in all HDF source files and user programs
+    dfi.h - internal header file, included automatically by df.h
+    df.c - low-level routines which perform I/O to HDF files etc.
+    (NOTE: for each of the following ".c" files there is a corresponding
+           ".h" header file)
+    dfr8.c - routines to implement 8-bit raster image groups
+    dfgroup.c - routines to read and write groups (of tag/refs)
+    dfcomp.c - routines for data compression
+    dfimcomp.c - routines to implement the IMCOMP compression scheme
+    dfsd.c - routines to implement the Scientific Data set
+    dfkit.c - HDF internal utility routines
+    dfgr.c - routines for general raster
+    dfan.h - header for annotations
+    dfan.c - routines for annotations
+    dfp.c - routines for palette
+    df24.c - routines for 24 bit raster
+    dfufp2im.c - float to image conversion routine
+    dfversio.c - routine to return HDF version number
+    dfutil.c - general purpose utility routines
+    cspck32.f  - converts from from Cray float to IEEE float
+    scup32.f - converts from IEEE float to Cray float
+    Makefile - makefile for the HDF system
+    MAKE.*   - make files for individual machines.  Look in each file,
+               towards the top, for machines that it applies to.
+
+    Files for FORTRAN stubs:
+
+    Files specific to VMS:
+    dfivms.h - VMS specific header file
+    MAKE.COM - VMS make script
+    MAKELIB.COM -VMS make script for library
+    MAKEUTILS.COM - VMS make script for utilities
+    MAKENOF.COM - VMS make script to exclude FORTRAN calls
+    SETUPUTILS.COM - VMS file for initializing utilities
+    HDFRSEQ.COM
+    fixatr/* - files and scripts for making fixatr for VMS
+
+    Utility programs:
+    hdf24to8.c - source for "hdf24hdf8" which converts HDF raster-24 images
+          to raster-8 images
+    hdfcomp.c - source for "hdfcomp" which compresses HDF raster-8 images
+    hdfls.c - source for "hdfls" which lists contents of HDF files
+    hdfpack.c - source for "hdfpack" which reclaims wasted space in HDF files
+    hdfrseq.c - source for "hdfseq" which displays images in
+            HDF files and "hdfrseq" which produces ICR output for display
+            on remote screen
+    hdftopal.c - source for "hdftopal" which converts an HDF palette into a
+         plain binary palette
+    hdftor8.c - src for "hdftor8" which extracts raw 8 bit image and
+          palette files from HDF.
+    hdftotek.c - source for "hdftotek" which displays Tek images through a
+         Tektronix emulator
+    paltohdf.c - source for "paltohdf" which does the reverse of "hdftopal"
+    ristosds - source for "ristosds", which converts several raster images to
+         a single SDS
+    r24hdf8.c - source for "r24hdf8" which converts raw 24-bit images into
+         HDF raster-8 images
+    r8tohdf.c - source for "r8tohdf" which converts raw image,
+           palette files to HDF
+    showr24.c - source for "showr24" which displays raster-24 images on
+         Iris-4 machines
+    showr8.c - source for "showr8" which displays raster-8 images on Iris-4's
+    srtohdf.c - src for "srtohdf" which converts sun-raster files to HDF
+    tektohdf.c - source for "tektohdf" which converts Tek images on stdin
+         to an HDF file of raster-8 images
+
+doc:
+       doc/ascii/NCSA_HDF/*       - ASCII format documentation for HDF
+       doc/ascii/HDF_Specs/*      - ASCII format technical specification
+              of HDF
+       doc/postscript/NCSA_HDF/*  - postscript format documentation for HDF
+       doc/postscript/HDF_Specs/* - postscript format technical
+                                    specification of HDF
+       doc/man                    - man files (currently there's only one)
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+                 Spyglass version for Mac FORTRANs
+
+Last Spring, Spyglass, Inc. reworked the FORTRAN layer of HDF calls
+so that they work with Language Systems FORTRAN and Absoft FORTRAN.
+If you use FORTRAN on a Mac and want to use HDF directly, we strongly 
+recommend you use the Spyglass version.
+
+Note that since this was done last spring, it represents an earlier
+release of HDF, and may contain a few bugs that the current version
+has fixed.  The interfaces should be identical, however.
+
+Thank you, Spyglass, for your help with this.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+              Random access to Raster Image Sets
+
+Several people have run into problems randomly reading or writing
+raster images, and also writing to several different files at one
+time. The basic problem is that the HDF RIS8 and SDS interfaces were 
+not originally set up to provide either random access or multiple-file 
+access. This was to keep HDF access as simple as possible. 
+
+Now that people are asking for it, we intend to put some random 
+accessing capabilities into HDF, and also multiple-file access.
+But this will take some time for us to get done.  Meanwhile, there 
+is a fairly simple, if somewhat convoluted, way to accomplish both, 
+at least for raster image sets and scientific data sets.
+
+Here is the basic idea, using the RIS8 interface as an example:
+  
+  There is a routine in HDF called DFANlablist that gets you a list of
+  all labels (if they exist) and ref numbers for a given tag.  If you
+  are not interested in labels, you can ignore them (except you have 
+  to set up an array to capture them).  But you definitely are 
+  interested in the ref numbers.  
+  
+  Once you have all the ref numbers for the raster images in a file,
+  there is a routine called DFR8readref that opens the file and moves 
+  to the image you want to read.  The next call to DFR8getdims or 
+  DFR8getimage will read the image whose reference number it is you
+  want.
+
+This approach basically lets you override the assumptions that 
+the current interfaces make about what order to read images in,
+and what happens when you switch from one file to another.  It is
+definitely not efficient, because every access opens a file, reads
+or writes something, then closes the file.  But the inefficiency
+is not really a problem until you start working with large numbers
+of images or files.
+
+We have attached an example of a routine that illustrates the basic
+idea.  The program assumes that you have a file with several 
+raster images in it.  It reads the labels (if they exist) into a 
+labellist, and the ref numbers.  Then it prints them out, and 
+prompts you to indicate which one you are interested in.  It then 
+reads the corresponding image and writes it to another file.
+
+Note that the example only uses one input file.  This shouldn't 
+matter.  The same approach should work with any number of files.
+We have done very little testing of this, so let us know how it 
+goes, and also let us know if you have any problems.
+
+
+=====================  c version =======================
+
+#include <stdio.h>
+#include "df.h"            /* this is only needed to define DFTAG_RIG */
+char *malloc();
+
+#define LISTSIZE 100
+#define MAXLEN   15
+
+main(argc, argv)
+int argc;
+char *argv[];
+{
+    int i, nlabels, startpos=1, ispalette, ret;
+    int32 width, height;
+    uint16 reflist[LISTSIZE], ref;
+    char labellist[MAXLEN*LISTSIZE+1], palette[768], *image; 
+	
+    printf("Labels of scientific data sets in file %s\n", argv[1]);
+    nlabels = DFANlablist(argv[1],DFTAG_RIG, reflist, 
+                                  labellist, LISTSIZE, MAXLEN, startpos);
+    for (i=0; i<nlabels; i++) 
+        printf("\n\t%d\tRef number: %d\tLabel: %s",
+                                           i, reflist[i],labellist+(i*15));
+    printf("\n\n");
+
+    printf("Enter the ref number of the image you want (0 to stop): ");
+    scanf("%hd",&ref);
+
+    while (ref > 0) {
+	ret = DFR8readref(argv[1], ref);
+        ret = DFR8getdims(argv[1], &width, &height, &ispalette);
+	image = (char *) malloc (width * height);
+	ret = DFR8getimage(argv[1], image, width, height, palette);
+	ret = DFR8addimage(argv[2], image, width, height, 0);
+	ret = free (image);
+	printf("Enter the ref number of the image you want (0 to stop): ");
+	ret = scanf("%hd",&ref);
+    }
+}
+
+
+=====================  FORTRAN version =======================
+
+
+      program getlablist
+
+C
+C****||************************************************************
+
+      integer dallist, d8gimg, d8rref, d8gdims,d8aimg, d8spal
+      integer i, nlabels, startpos, ret
+      integer reflist(20), ref, width, height, ispalette
+      integer DFTAG_RIG, LISTSIZE, MAXLEN
+      character image(40000), palette(768)
+      character*2  infile, outfile
+      character*15  labellist(100)
+	
+      parameter (DFTAG_RIG   = 306,
+     *           LISTSIZE    =  20,
+     *           MAXLEN      =  15)
+
+C The test files being used are o1 and o2.  Substitute another if 
+C you like.
+
+      infile = 'o1'
+      outfile = 'f2'
+
+      startpos = 1
+      
+      print *, 'Labels of scientific data sets in ', infile
+      nlabels = dallist(infile,DFTAG_RIG, reflist,
+     *                         labellist, LISTSIZE, MAXLEN, startpos) 
+
+      do 100 i=1,nlabels
+          print *,'  Ref number: ',reflist(i),'  Label: ',labellist(i)
+  100 continue
+
+      print *, 'Enter the ref number of the image you want (0 to stop)'
+      read *, ref
+
+  200 if (ref .eq. 0) goto 300
+	  ret = d8rref(infile, ref)
+	  ret = d8gdims (infile, width, height, ispalette)
+	  ret = d8gimg (infile, image, width, height, palette)
+	  if (ispalette.ne.0) ret = d8spal(palette)
+	  ret = d8aimg (outfile, image, width, height, 0)
+	  print *, 'Enter next ref number (0 to stop)'
+	  read *, ref
+      goto 200
+
+  300 stop
+      end
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+                          An update on the tools
+
+Here is a selected listing of the latest versions of the tools:
+
+NCSA IMAGE 3.1.1: Options to publish and subscribe have been added 
+to this new version.
+
+IMPORT2HDF: Macintosh program developed to provide conversion of FITS,
+            TIFF, GIFF, PICT, Raw raster, and ascii file to HDF.
+
+NCSA PALEDIT: New features in the tool panel include
+	- interval manipulation tools that allow you to make range selections
+	  in the palette and component plot simultaneously, and 
+	- an interpolation tool, which interpolates across the current palette
+	  interval
+	- several tools and commands that used to solely modify a
+	  range of the palette now modify intervals of the palette/plot.
+
+XDataSlice version 2.0 beta.  New features include:
+
+	- contouring.
+	- color postscript hardcopy.
+	- creating a slice by tracing out a path.
+	- some distributed dataset access capability
+	- palette manipulation.
+
+XImage version 1.2. New features:
+
+	- reading of data through DTM network connection, 
+	- notebook style parser, 
+	- image expansion, and 
+	- color contours.  .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+             Important addresses and phone numbers
+
+NCSA's anonymous ftp server is ftp.ncsa.uiuc.edu (141.142.20.50).  Note that
+the IP number has changed since the last HDF Newsletter.
+
+If you have questions or comments about HDF, you can send them to
+softdev@ncsa.uiuc.  If your need is urgent, the phone number to call
+is 217-244-3830.
+
+If you want your name to be added to the HDF Newsletter mailing
+list, please send your name and email address to mfolk@ncsa.uiuc.edu.
+If you do not have email access, send your surface mailing address.
+Also include any other information that you think we might like to
+know, like the organization you work for and how you use HDF.
+
+If you want your name deleted from the HDF Newsletter mailing list,
+send your request to mfolk@ncsa.uiuc.edu.
