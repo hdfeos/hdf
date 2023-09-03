@@ -1,0 +1,255 @@
+                            HDF Newsletter #8                              
+                
+                              April 14, 1993
+
+Contents
+
+     1. Will new HDF releases be not backwards compatible in the sense
+        of reading hdf files created using previous HDF releases?
+     2. Updated HDF documentation
+     3. Status of the utility which fixes the deficiency in HDF files
+     4. Questions and answers for vdatas
+
+1. Will new HDF releases be not backwards compatible in the sense
+   of reading hdf files created using previous HDF releases?
+
+   Current releases are completely backwardly compatible in that the new
+   interfaces will read files created by the equivalent old interfaces.
+  (E.g. the new SDS interface will read old SDSs.)   We have no plans 
+   to change this policy.
+
+   However, there are a couple of forms of backward compatibility that we will
+   probably not always support.
+
+   (1) Some tags will become obsolete, and will not be written in some future
+   release of HDF, making these files incompatible with older versions of the
+   HDF library.
+
+   (2) Certain complex constructs, such as the SDS, will be organized
+   differently than in the past, so old versions of the library will not
+   recognize them.  This occurs when we add features to an interface that
+   earlier versions of the library were not aware of.  An example of this 
+   is the extension of SDS to support new number types.
+
+
+2. HDF Calling Interfaces and Utilities is updated to HDF3.2. 
+   A Mac MicroSoft Word version is on the NCSA anonymous ftp server, 
+   in subdirectory 
+
+          Documentation/HDF3.2/
+
+   This is a draft version. If you find any mistakes or have suggestions
+   please contact softdev@ncsa.uiuc.edu.
+
+   The Mac MicroSoft Word version of the HDF Specifications is in 
+   Documentation/HDF.Specs/HDFSpecs.msw.sit.hqx. 
+
+   The next target for updating is the documentation for Vset.
+   Before the new Vset docs are available, users may use Vset2.1 docs
+   and the MigrationNotes. Documentation for Vset2.1 is in 
+   Documentation/HDFVset2.1/. It includes the Vset2.0 documentation and 
+   a supplement file, Vset2.1.extra.doc, for new features and functions 
+   in Vset2.1.  MigrationNotes lists changes needed to migrate from 
+   Vset2.1 to HDF3.2.
+
+3. Status of the utility that fixes the defective data label/unit/format
+   in HDF files.
+
+   A C program fix32luf.c has been tested on SGI, CRAY-YMP and SUN Sparc
+   using a small test hdf file. It needs to be tested on large hdf files.
+   It is on NCSA anonymous ftp server in subdirectory
+
+         outgoing/hdf3.2/fix32luf/
+
+   In the same directory one can find a defective hdf file, a program
+   which creates the defective hdf file, a Makefile and a README file.
+   Please help us to test the program and contact sxu@ncsa.uiuc.edu 
+   if there are any suggestions, comments, or complaints.
+
+
+4. Recently we got some questions about vdatas, which were caused 
+   by the lack of adequate documentation. The most confusing
+   questions are listed below:
+
+   a. Q: Could I define in one vdata two fields both having order 2? 
+      A: The current implementation of Vset allows you to define 
+         in a vdata either multiple fields of order 1 or 
+         a single field with order greater or equal to 2.
+         For example, 
+
+         VSfdefine (vs, "Spectral_cal", LOCAL_SHORTTYPE, 1);
+         VSfdefine (vs, "Flags"       , LOCAL_SHORTTYPE, 1);
+         VSfdefine (vs, "data"        , LOCAL_SHORTTYPE, 261);
+         VSsetfields(vs,"Spectral_cal,Flags,data");
+
+         The above program segment defines 2 fields of order 1 and 
+         a field of order 261, and tries to use all 3 fields at once e 
+         in the vdata vs. When you compile this program, you will
+         get an error message complaining about order 261.
+
+         To solve this problem, you need to create 2 vdatas, one
+         contains the 2 fields of order 1 and another contains the
+         field of order 261. See the sample program below.
+
+         This restriction should be relaxed in the future so that
+         users can mix fields of different orders in vdatas.
+
+    b. Q: What is the right sequence to write vdatas to hdf files?
+       A: Generally speaking one needs to open and initialize a file
+          before he/she writes out any vdatas. Finish writing 
+          before closing the file. Due to historical reasons, 
+          there are several combinations available in HDF to do the job.
+          The following is recommended.
+ 
+
+           Call Vopen(filename, access,nddblocks) to open and initialize
+           the file; call Vclose(fileid) to finish writing and close
+           the file.  Here
+
+	     filename 	is the name of the HDF file.
+	     access     is the access type, eg 	DFACC_READ, DFACC_WRITE, 
+			DFACC_CREATE, and  DFACC_ALL.
+  	     nddblocks  is the number of dd-blocks to use. In most cases, 
+                        setting this to 0 is adequate (the system default 
+                        is then used).
+             fileid     id of opened HDF file, which is the return value
+                        of Vopen(). It is of type HFILEID.
+
+          We hope it will replace other combinations eventually in 
+          application programs. This applies to writing/reading vdatas
+          and vgroups. 
+
+    c. Q: How do I  repeatedly append data to vdatas?
+       A: The steps for appending data to vdatas are:
+
+         a. Call Vopen() to open and initialize the file for access. 
+         b. Call VSattach() to initialize a vdata for write
+         c. Call VSsetname() and VSsetclass() to set name and class for the vdata
+         d. Call VSfdefine() as many times as the number of fields to be contained
+            in the vdata. Each call defines one field
+         e. Call VSsetfields() ONCE to establish the fields to be written to the
+            vdata by subsequent VSwrite() calls
+         f. Call VSwrite() to write out data for the initialized vdata
+         g. Repeat step f as many as times as necessary
+         h. Call VSdetach() to write out information (such as tag/ref, etc.)
+            related to the vdata and to end the access to the vdata
+         k. Call Vclose() to end the access and close the file.
+
+    d. A sample program:
+
+/*********************************************************************
+* This is a sample program to illustrate how to create and append    *
+* data to vdatas. The main program opens an hdf file, creates        *
+* a parent vgroup named vg_parent, then calls create_channels()      *
+* to attach a group of channel data into the parent vgroup, detach   *
+* the vgroup and close the file.                                     *
+* Routine create_channels() creates a vgroup and two vdatas (vs1     *
+* contains auxiliary data while vs2 channel data), defines and sets  *
+* the fields for each vdata, writes out and appends data to vs1 and  *
+* vw2 through a loop, inserts vs1 and vs2 into the vgroup, then      *
+* closes the vdatas and the vgroup.                                  *
+*********************************************************************/
+
+#include "hdf.h"
+#include "vg.h"
+#include <stdio.h>
+
+#define FS "Vmorder.hdf"
+
+
+main() {
+
+   HFILEID f;
+   VGROUP *vg_parent;
+
+   if (FAIL == (f=Vopen(FS, DFACC_ALL,0)))  {
+       printf("Open error %s\n", FS);
+       exit(0);
+   }
+   vg_parent = (VGROUP *)Vattach(f, -1, "w");
+   create_channels(f, vg_parent);
+   Vdetach(vg_parent);
+   Vclose(f);
+   exit(0);
+}
+
+ 
+create_channels(f, vg_parent)
+        HFILEID f;
+    	VGROUP  *vg_parent;
+{
+        VGROUP *vg;
+        VDATA  *vs1, *vs2;
+        register int  i;
+        unsigned char *pp, *p;
+        short    cal, geo, polar, flags, data[261];
+        int      ret, norbits, sizeofshort;
+
+        norbits = 3;
+        sizeofshort = sizeof(short); 
+        cal = 0;
+        geo = 1;
+        polar = 2;
+        flags = 3;
+        for (i=0; i<261; i++)  data[i]=i+4;
+        /* copy the values of the fields into a buffer */
+        pp = (unsigned char *) malloc(4 * sizeofshort); 
+        p = pp;
+        movebytes(p, &(cal), sizeofshort);
+        p += sizeofshort;
+        movebytes(p, &(geo), sizeofshort);
+        p += sizeofshort;
+        movebytes(p, &(polar), sizeofshort);
+        p += sizeofshort;
+        movebytes(p, &(flags), sizeofshort);
+        p += sizeofshort;
+        /* data is already in an array, no need to copy  */        
+        
+        vg = (VGROUP*) Vattach (f, -1, "w");
+        if (vg == NULL) {fprintf (stderr, "Cannot create vgroup\n"); exit(1);}
+        Vsetname (vg, "X_CHANNEL");
+        Vsetclass(vg, "DFD");
+
+        /* define vdatas vs1 and vs2 and their fields   */
+        vs1 = (VDATA*) VSattach (f, -1, "w");
+        if (vs1 == NULL) {fprintf (stderr, "Cannot create vdata1\n"); exit(1);}
+        vs2 = (VDATA*) VSattach (f, -1, "w");
+        if (vs2 == NULL) {fprintf (stderr, "Cannot create vdata2\n"); exit(1);}
+        VSsetname (vs1, "Channel_1a_aux");
+        VSsetname (vs2, "Channel_la_data");
+        VSfdefine (vs1, "Spectral_cal", DFNT_INT16, 1);
+        VSfdefine (vs1, "Geolocation" , DFNT_INT16, 1);
+        VSfdefine (vs1, "Polarization", DFNT_INT16, 1);
+        VSfdefine (vs1, "Flags"       , DFNT_INT16, 1);
+        VSfdefine (vs2, "Data"        , DFNT_INT16, 261);
+        VSsetfields(vs1,"Spectral_cal,Geolocation,Polarization,Flags");
+        VSsetfields(vs2,"Data");
+
+        /* append norbits(3) records to each vdata   */
+        for (i = 0; i < norbits; i++) {
+                VSwrite (vs1, pp, 1, FULL_INTERLACE);
+                VSwrite (vs2, (unsigned char *)&(data[0]), 1, FULL_INTERLACE);
+        }
+        printf("%d vertices were written to hdf file\n", norbits);
+        Vinsert(vg, vs1);
+        Vinsert(vg, vs2);
+        VSdetach (vs1);
+        VSdetach (vs2);
+        ret = (int)Vinsert (vg_parent, (VDATA *)vg);
+        Vdetach (vg);
+        return(0);
+}
+
+movebytes(dest, src, nbytes)
+unsigned char *dest, *src;
+int nbytes;
+
+{
+   int i;
+   for (i=0; i<nbytes; i++)  {
+       *dest = *src;
+       dest++;
+       src++;
+   }
+}
+
