@@ -1,0 +1,203 @@
+                            HDF Newsletter #11
+
+                            September 23, 1993
+
+Contents
+
+        HDF3.3 1 Release 1
+        Update on HDF/contrib/
+           Vset tools
+           inspectHDF
+           fits2hdf
+        New version of NCSA XCollage
+
+
+===============================
+HDF 3.3 release 1 now available
+===============================
+
+NCSA is pleased to announce the release of HDF 3.3r1. HDF 3.3r1 is 
+available on on the NCSA ftp server (ftp.ncsa.uiuc.edu; IP address 
+141.142.20.50) in the directory HDF/HDF3.3r1.  README files in this 
+directory and subdirectories contain full details on the new features 
+of HDF 3.3, as well as directions on how to download, install and use 
+it.
+
+Briefly, HDF 3.3 contains the following new features:
+
+    - A new SDS interface that has the following features:
+
+        * 'multi-file access': support for access to more than one 
+          file at a time, and more than one SDS at a time.
+        * 'name = value' style meta-data: support for a more general 
+          framework for meta-data within the SDS data model, allowing 
+        * support for an "unlimited dimension" within the SDS data
+          model
+        * The ability to read and write random hyperslabs
+        * the ability to subsample arrays
+        * the ability to access netCDF files via the SDS interface
+
+    - JPEG compression: the 8-bit and 24-bit interfaces now read and 
+      write JPEG compressed 24-bit and 8-bit raster images
+
+    - Support for the netCDF data model, with the following features:
+
+        * the ability to use the entire netCDF 2.3.2 interface to
+          write data to HDF files
+        * the ability to read SDS data via the netCDF interface
+        * the ability to read netCDF data from files in the netCDF
+          format developed at Unidata
+
+    - Improved conversion routines on the Cray, providing faster access
+      for SDS and Vdata I/O.
+
+    - The ability to read and write little-endian (PC native) mode
+      files on all platforms, expanding the capabilities of the
+      SDS and Vdata interfaces.
+
+    - Vset interface changes, including
+
+        * the ability to store more than one field of order greater
+          than one in a vdata
+        * several new routines for finding information about Vdata field
+          attributes
+        * the use of integers rather than pointers for Vgroup and Vdata
+          identifiers, to make them more compatible with the other HDF
+          interfaces.
+
+The HDF 3.3 library is composed of two main parts.  The first part, the 
+"base library" includes all interfaces that were supported prior to HDF 
+3.3, including any enhancements to those interfaces added in HDF 3.3.  
+The second part, the HDF/netCDF part, contains the new multi-file SDS 
+interface and the netCDF interface.  
+
+HDF 3.3 Release 1 has been tested successfully on the following 
+machines:.
+
+Platform                'base library'              HDF/netCDF
+Sun4                          X                         X
+IBM/RS6000                    X                         X
+SGI                           X                         X
+Convex                        X                         X
+Cray Y-MP                     X                         X
+NeXT                          X                         X
+HP                            X                         X
+DecStation                    X                         X
+Mac                           X                         *
+
+DEC Alpha                     X
+Fujitsu VP                    X
+IBM PC - MSDOS                **
+IBM PC - Windows              **
+VAX/VMS                       X
+
+  * The netCDF interface works but you currently are unable to read old 
+   netCDF(XDR) files. In addtion, the fortran interface and ncdump
+   utility has yet to be finished.
+
+ ** There is no FORTRAN support for either PC version of HDF 3.3.
+
+
+========================
+Update on HDF/contrib/
+========================
+
+Vsettools -- vs2ris and vs2ps:
+-----------------------------
+Fred Walsteijn, Institute for Marine and Atmospheric Research at
+Utrecht University of The Netherlands, upgraded the Vset
+conversion tools vs2ris and vs2ps to HDF3.2r4. The previous
+version (v2.1) compiled with HDF3.2r2 and was contributed by Fred 
+last year December.
+
+The programs, accompanied by README files and example data,
+are in directory HDF3.2r4.Vsettools/.
+
+inspectHDF:
+----------
+Last August Neil Buesing updated inspectHDF to HDF3.3b2 and 
+improved its functionality. The updated version is now available 
+in the subdirectory inspectHDF/.
+
+fits2hdf:
+--------
+Niall Ives Gaffney contributed a fits2hdf utility which
+converts FITS files into HDF files. The programs are in
+directory fits2hdf/. There are also README and a Makefile
+in the same directory. 
+
+
+
+====================
+Update on  XCollage:
+====================
+
+NCSA XCollage version 1.2 has now been released and is available on
+ftp.ncsa.uiuc.edu.  Here is a list of the changes and enhancements in the
+new version.
+
+Changes when generating a raster picture from a SDS :
+-----------------------------------------------------
+  - prompt user to modify the minimum and maximum that will be used to
+    compute a raster value from a float or integer value.
+  - default the output raster range to 30-254. Settable through X resources:
+        Collage.basePixel & Colllage.lastPixel
+  - optional bilinear interpolation.
+
+Changes in the Rasters Windows :
+-------------------------------
+  - By default, the first 30 entries of the colormap are the same as those 
+       of the system colormap so that it doesn't "flash" when you enter 
+       this window.
+  - In the palette menu, the current palette is shown with an indented
+       diamond.
+
+Changes in the Histogram tool :
+------------------------------
+  - when data come from a SDS, computation is made with the SDS data instead of 
+        the raster data, and so the labels show floating or integer values.
+  - User can change the number (hence, the size) of intervals thru the Options
+        menu.
+
+Changes in the Plot or Profile tool :
+-------------------------------------
+  - here too, when data come from a SDS, use the SDS data instead of the 
+        raster data and displays the data in the scale labels.
+
+Creates contours for images which were generated from SDS's.
+------------------------------------------------------------
+
+Changes in the Animation tool :
+------------------------------
+  - Three options when loading an animation :
+        you can use the X server memory (Pixmaps), client memory or
+        store the picture on disk.
+  - New slider to control the speed of animation
+  - when loading SDS, prompt the user for magnification (does not interpolate)
+
+Load a file from command line :
+-------------------------------
+  - the -load <file> option enables the user to load a file without going
+        through the browser.
+
+GIF, XWD support :
+-----------------
+  - Collage support reading images from GIF or XWD formatted files.
+
+New 3D features :
+----------------
+  -  pops up a new panel when you load three dimensionnal data enabling
+        the user to choose an axis and a plane perpendicular to this axis,
+        and display the plane either as a spreadsheet or a raster image.
+
+New communication features :
+--------------------------
+  - When generating a raster image from an SDS, the image is now sent to
+        everybody on the session and the receiving collage instances are
+        now able to link this raster image with the original SDS, in order
+        to use it in the profile & histogram tool.
+  - When sending the palette that goes with a raster image, we keep the
+        original name of the palette, instead of renaming it to the name
+        of the raster image. The receiving side is now able to link
+        the palette with the raster image using a new tag in the DTM header.
+
