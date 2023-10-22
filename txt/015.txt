@@ -1,0 +1,149 @@
+                           HDF NEWSLETTER #15
+
+                            October 20, 1994
+
+
+
+Contents
+
+  1. HDF3.3 Release 4
+  2. HDF3.3r4 documention update
+  3. Status of HDF4.0
+  4. New Contributions
+  5. Update on NCSA tools
+  6. New NCSA HDF Staff
+
+
+HDF3.3 Release 4
+====================
+
+NCSA is pleased to annouce yet another release of HDF, HDF3.3r4. HDF3.3r4
+is available on the NCSA ftp server (ftp.ncsa.uiuc.edu; new IP address
+141.142.3.135) in the directory HDF/HDF3.3r4/. The ABOUT_3.3r4 and README
+files in that directory and the README files in its subdirectories contain
+full details on the new features of HDF 3.3, as well as directions on how
+to download, install and use it.
+
+
+HDF3.3r4 contains the following new features:
+
+  - A FORTRAN version for DF24nimage
+
+  - A FORTRAN function d8sjpeg for setting JPEG parameters
+
+
+The following bugs have been fixed:
+
+  - Unsigned integers in mfhdf interface are now reported correctly
+
+  - Mfhdf interface reads back data strings and dimensions from old HDF files
+
+  - Long integers are now translated correctly on the DEC ALPHA
+
+  - Inordinately large blocks are no longer created for certain appendable
+  structures.
+
+  - Big-endian, IEEE floating-point I/O is faster with SD interface
+
+  - The mfhdf interface now reads slabs
+
+
+
+HDF3.3r4 Documentation update
+===============================
+
+Documentation for several functions has been added or corrected. We have
+put these updates on our ftp server so that users may access them before
+the next official revision of HDF documentation is available. The update
+file is in subdirectory:
+
+      HDF/Documentation/HDF3.3/Ref_Manual/Update.Oct94
+
+
+
+Status of HDF4.0
+==================
+
+In Newsletter #14 we described the next version of HDF, HDF 4.0, which we
+are currently working on. Our primary goal (among others) for HDF 4.0 was
+to support multi-file and multi-object access to all major HDF objects, and
+also to allow users to attach attributes of the form "parameter=value" to
+these objects. We are currently working on a new version of the raster
+image interface that will support these new features. This work is going
+slowly due to a variety of interruptions, but we hope to have it completed
+in the next couple of months.
+
+An Alpha version of HDF 4.0 is available for interested users. This version
+supports n-bit number types, contains a parallel I/O HDF interface for the
+CM-5, and reads certain CDF files. Please read ABOUT_4.0.alpha on the ftp
+server for more details.
+
+
+
+New Contributions
+==================
+
+The following are new contributions available on HDF/contrib:
+
+
+LinkWinds
+---------
+
+The Linked Windows Interactive Data System (LinkWinds) is contributed by
+Allan S. Jacobson, leader of the LinkWinds Development Task at NASA/JPL.
+
+LinkWinds is an integrated multi-application execution environment with a
+full graphical user interface (GUI). It provides a variety of functions to
+interactively access, display and analyze multidisciplinary datasets.
+
+LinkWinds accepts data in HDF and other formats. See "LinkWinds User's
+Guide" for more information.
+
+The contributed software and its documentation are in subdirectory:
+
+           HDF/contrib/LinkWinds/.
+
+
+
+hdf2mpeg converter
+------------------
+
+Recently, an HDF user was looking for a tool to convert her HDF RIS's into
+MPEG files. About a year and a half ago, David Thompson, an X developer of
+SDG at NCSA, wrote a program yuvconvert for other users with the same goal.
+With Dave's agreement we contributed this program to HDF users. The program
+is on our ftp server in subdirectory:
+
+          HDF/contrib/NCSA/HDF2MPEG
+
+Read the README file in that directory for more details.
+
+
+
+Update on NCSA tools
+====================
+
+Mosaic:
+
+XMosaic version 2.5 beta 2 was released on Oct. 11, 1994. Its binaries were
+linked with HDF3.3r3 library. The next release of XMosaic 2.5 will be
+linked with HDF3.3r4.
+
+XMosaic 2.5 beta 2 added several interesting new features, such as Common
+Client Interface, nested hotlists, etc. For more details, please read the
+"On Version 2.5b2" in the "Help" menu in Mosaic.
+
+
+New NCSA HDF Staff
+==================
+
+We are happy to announce the addition of three new staff members to the HDF
+group: Diana McElroy, Erik Tsui, and Wallace Su. Diana joins Shiming Xu in
+providing support for the HDF community, bringing 10 years of experience in
+academia and industry as a programmer, programmer analyst, and system
+administrator to this very important task. Erik and Wallace, both research
+assistants in the University of Illinois Department of Computer Science,
+will be involved primarily in software development. Erik's first task is to
+complete work on the HDF dumper, and Wallace's first task is to bring the
+X-Windows version of NCSA Collage up to date with the HDF library.
+
