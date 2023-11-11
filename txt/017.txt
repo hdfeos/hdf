@@ -1,0 +1,262 @@
+--------------------------------------------------------------------------
+To subscribe/unsubscribe to the hdfnews mailing list, please send your 
+request to hdfnews-request@ncsa.uiuc.edu
+--------------------------------------------------------------------------
+
+                      Newsletter #17
+                      August 4, 1995
+
+Contents
+
+    o HDF4.0 Beta1 release
+    o HDF User's Guide is on NCSA ftp
+    o hdfnews-request and sci.data.format
+    o Experimental Server-side HDF Web Browser
+    o Update of HDF home page and FAQ 
+    o NASA EOSDIS vendor workshop
+    o New Features of the Collage HDF Browser for X Windows
+
+HDF4.0 Beta1 release
+--------------------
+
+HDF 4.0, Beta Release No. 1, is now available on the NCSA anonymous ftp
+server (ftp.ncsa.uiuc.edu; HDF/HDF4.0.beta). HDF 4.0 represents a
+substantial revision and expansion of the HDF library over HDF 3.3.
+Although this is only a Beta release, we encourage you to try it out, as
+it represents a substantial improvement over HDF 3.3 in terms of features,
+performance, and code quality.
+
+Details about the new release can be found in the file ABOUT_4.0b1 that is
+distributed with the release.  The following text briefly describes the new
+features available in HDF 4.0, bugs fixed and known problems, and platforms
+tested so far.
+
+1. New features in HDF4.0 Beta 1 release
+
+   o Multi-file Annotation Interface (ANxxx)
+     The multi-file annotation Interface is for accessing
+     file/object label/description. It allows users to keep open
+     more than one file at a time, and to access more than one
+     annotation at a time.  It also allows multiple labels
+     and multiple descriptions to be applied to an HDF object
+     or HDF file.
+
+   o Multi-file Raster Image interface, with subsetting, subsampling
+     and general attribute support
+     The new Generic Raster (GR) interface provides a set of
+     functions for manipulating raster images of all kinds.
+     This interface allows users to keep open more than one
+     file at a time, and to "attach" more than one raster
+     image at a time.  It supports a more general framework
+     for attributes within the RIS data-model, allowing
+     'name = value' style metadata.  It allows access to
+     subsamples and subsets of images.
+     HDF4.0beta1 implements only the C interface. The Fortran
+     interface will be available in next beta release.
+
+   o New Compression Algorithms and interface
+     A new low-level compression interface has been added to
+     the HDF library which allows any data-object to be
+     compressed using a variety of algorithms.  Currently only
+     two compression algorithms are supported: Run-Length
+     Encoding (RLE) and adaptive Huffman.
+
+   o JPEG Group v5b library
+     HDF Version 4.0 libraries now use v5 of the Independent
+     JPEG Group (IJG) JPEG file access library.
+
+   o Compression and "n-bit" integer support for HDF SDS
+     Two new compression functions have been added to the
+     SD interface in this release to compress SDS datasets.
+     One function allows users to compress a scientific
+     dataset  using RLE encoding or adaptive Huffman
+     compression algorithms. Another one is for storing
+     a scientific dataset in 1-32 bit integer values
+     (instead of being restricted to 8, 16 or 32-bit sizes).
+
+   o External Path Handling
+     New functions have been added to allow applications to
+     specify directories to create or search for external
+     files.
+
+   o Parallel I/O for CM5
+     An extension using the parallel I/O in CM5 has been
+     added to the SDS interface.  Initial tests have resulted
+     in about 25 MBytes/second I/O throughput using the
+     SDA (Scalable Disk Array) file system. The library
+     provides interfaces for both C* and CMF programming
+     languages. 
+
+   o HDF dumper
+     Hdp is a command line utility designed for quick
+     display of contents and data of HDF3.3 objects, RIS,
+     SDS, Vdata and Vgroup. It can list the contents of
+     hdf files at various levels with different details.
+     It can also dump the data of one or more specific
+     objects in the file.
+
+     Currently hdp works on SunOS and LINUX only. 
+
+   o Auto configuration
+     It is now possible to automatically configure and build
+     both the HDF library and netCDF library with one command.
+
+
+2. Bugs fixed and known problems
+
+  Several bugs or problems, such as failure in setting
+  and getting scales for unlimited dimensions, missing
+  Fortran version of VSQxxxx functions, failure in
+  defining more than 36 fields in Vdatas, etc. were
+  fixed in this beta release.
+
+3. Platforms tested
+
+HDF4.0 Beta 1 has been tested on these systems:
+
+  SunOS 4.1.3, SunOS 5.3 (Solaris 2.3), SGI/IRIX5.3, Linux,
+  HP/UX 9.01, IBM RS6000/AIX (C only), C3880/ConvexOS,11.0,
+  DEC alpha/OSF (C only), DecStation/MIPSEL (C only), CM5,
+  Cray C90, Free BSD 2.0, Windows NT. See the INSTALL file
+  at the top level of HDF4.0b1 for more details.
+
+
+HDF 3.3 User's Guide now on NCSA ftp
+-------------------------------------
+
+A complete draft of the HDF 3.3 User's Guide has recently been completed and
+can be found on the NCSA anonymous ftp server (ftp.ncsa.uiuc.edu) in the
+directory: HDF/Documentation/HDF3.3/Users_Guide/HDF3.3_draft/. The document
+is available in two formats: Adobe PostScript (extension ".ps"), and
+Framemake mif (".mif").
+
+This User's Guide contains a chapter on each of the APIs supported in HDF
+3.3, as well as a chapter on HDF utilities.  For each API, there is a
+description of the data model supported by the API, a programming model for
+using the API, a description of each routine in the API, and examples.
+
+
+hdfnews-request and sci.data.format
+-----------------------------------
+
+We have created an email address for administration of the hdfnews list.
+It follows network convention and is called:
+
+        hdfnews-request@ncsa.uiuc.edu
+
+Please send all administrative requests concerning hdfnews to
+the above address (e.g., subscription, unsubscription, errors,
+problems, etc.) rather than directly to the list.
+
+There is also a newsgroup sci.data.format which was set up as a forum
+for discussion of HDF-related questions as well as other file formats.
+You may want to submit your questions there if you want to reach a larger
+audience.
+
+As always, if you have any questions you would like to send directly to the
+HDF group, you can send them to hdfhelp@ncsa.uiuc.edu.
+
+
+Experimental Server-side HDF Web Browser
+---------------------------------------
+
+The HDF group is working on an "HDF Experimental Scientific File Server" in
+the form of a WWW server-side version of the HDF brows-o-rama now available
+in the X-windows version of NCSA Mosaic.  This software sits on a WWW
+server and creates HTML versions of HDF files for browsing and examination.
+
+A major advantage of having brows-o-rama functionality at the server,
+rather than in the client, is that one can examine the contents of very
+large HDF files without having to transfer them first to a host machine.
+Another is that one can use any web browser on any platform to view HDF
+files.
+
+Some features of the server:
+
+  o In-line display of small, subsampled versions of raster images.
+  o Display of attributes for SDSs
+  o Display of annotations for objects and files
+  o Forms with scroll-boxes allowing you to select individual raster
+    images, SDSs, Vdatas, and Vgroups
+  o Ability to select and view subsets and subsamples of SDSs
+  o Display of Vgroup structures.
+
+If your browser allows you to load a file to disk, then you can load an SDS
+or Vdata directly into a file on your host, then import it into an
+application such as a spreadsheet program or word processor.
+
+Because the HDF library's support the netCDF format, you can also use the
+browser to examine the contents of netCDF files.
+
+Although the software currently exists as a very rough prototype, we invite
+you try it out.  But don't be surprised if some parts don't quite work.
+The temporary URL is
+
+       http://hdf.ncsa.uiuc.edu:4321/.
+
+Let us know what you think about it.  Send comments and suggestions to
+hdfhelp@ncsa.uiuc.edu.
+
+Update of HDF home page and FAQ
+-------------------------------
+
+The HDF home page at http://hdf.ncsa.uiuc.edu:8001 has been updated
+with such items as 'Future Plans for HDF', 'HDF Progress Report', 
+and this Newsletter.  We encourage you to take a look at it.
+
+The FAQ, available via anonymous ftp to ftp.ncsa.uiuc.edu in
+the HDF/ directory has also been updated.  The html version on the 
+HDF Information server will be updated the week of August 7th.
+
+NASA EOSDIS vendor workshop
+---------------------------
+
+NASA's Earth Science Data and Information System Project (ESDISP) is
+contacting vendors regarding their interest in learning more about EOS
+conventions and HDF. Information regarding the seminar is on the HDF
+home page (hdf.ncsa.uiuc.edu) under What's New.
+
+
+New Features of the Collage HDF Browser for X Windows
+-----------------------------------------------------
+
+NCSA Collage for X windows has undergone some changes.  The new version
+(NCSA Collage 1.3.1 for X windows), has the following changes:
+
+1. The browser in Collage now allows the user to look at different
+attributes of an HDF data set by selecting them with toggle buttons using
+the mouse. There is a new toggle frame containing the most frequently used
+6 attributes: name, long_name, valid_max, valid_min, format, unit, and the
+tag and reference number of the data set. There are also a "Default" toggle
+button that displays both tag and ref when pressed, and an  "All" toggle
+button that displays all the attributes listed above when pressed.
+
+2. There is now an interpolation feature that interpolates animations.  Now
+animation can be scaled by any factor x and Collage will take care of all
+the computations involved in proper enlargment of image.
+
+3. Error handling has been substantially improved, including
+   - Doodles are now clipped properly on white board
+   - White board used to crash occasionally, but the bugs have
+     been fixed so that whiteboard is now stable
+   - X Collage1.3 will now successfully connect with Windows Collage1.3,
+     which it would not do previously.
+   - Some DTM errors have been fixed
+
+4. Some new ports:
+   - The code has been ported to Motif 1.2 and X11R5
+   - The code has been compiled for Solaris 2.3 and 2.4, although the
+     collage_server is still buggy.
+
+5. Problems not yet solved:
+   - textboard is still not stable.
+   - server connections have been tested but still some errors may be
+     present, especially in low level dtm calls.
+
+
+
+
+
+
+
+
