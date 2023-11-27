@@ -1,0 +1,202 @@
+
+                           HDF Newsletter 21
+                             July 19, 1996
+
+CONTENTS
+
+. HDF 4.0r2 release
+     - New Features and Changes
+     - Changes in Compiling the Source Code
+     - Platforms Tested
+     - 16-bit support removed
+     - Known Problems
+. HDF Documentation
+. HDF Staff Update
+
+
+HDF 4.0r2 release
+-------------------
+
+HDF 4.0 release 2 is now available on the NCSA anonymous ftp
+server (ftp.ncsa.uiuc.edu; HDF/HDF4.0r2/) 
+
+1. New Features and Changes
+
+   o HDF now supports an unlimited number of access IDs and files IDs.
+
+   o The vdata field size limit has been increased from 32000 to 65535.
+
+   o The hdp utility has been updated to:
+      - view a GR object
+      - recognize the new compression methods
+      - view descriptive annotations
+      - display the library version of the HDF file
+
+   o SDsetattr and GRsetattr now check for both MAX_ORDER and 
+     MAX_FIELD_SIZE.
+
+   o The handling of DFNT_CHAR in all Fortran interfaces has been 
+     cleaned up.  See release_notes/Fortran_APIs.txt for more 
+     information.
+
+   o When appending compressed data onto the end of an unlimited
+     dimension SDS, the SD interface no longer writes the fill-values
+     in locations where they will immediately be over-written by data.
+     This was done for the compression layer, but has the added
+     enhancement of improving performance.
+
+   o On the Cray, there were boundary problems when foreign data did not
+     start from the 64-bit boundary.  This has been fixed.
+
+   o There are no longer the following name collisions with the HDF
+     libraries:
+        - AVS (HPread, HPwrite)
+        - Windows SDK (_hread)
+        - ODL library (_HDF_<constant>)
+
+   o The 32-bit mode for IRIX 6.1 previously used the '-32' option which
+     produces mips1 code.  It has been changed to use '-n32' which
+     produces mips4 code.  This runs faster on the Power Challenges.
+     Users who must use the '-32' option can link their code with
+     the IRIX 5.3 HDF library.
+
+   o The compression problems have been fixed when using HDF on IRIX 6.1
+     with the -n32 (see Known Problems below).
+
+   o The zlib and jpeg libraries have been updated.  The versions included
+     with HDF 4.0 Release 2 are:
+
+         zlib version 1.0.2
+         jpeg version 6a (7-Feb-96)
+       
+   o The hdfls utility has been updated to:
+       - support the new compression modes
+       - display the library version of the HDF file
+
+   o The directories separator in the directory variable used by the
+     function HXsetdir (Fortran equivalent: hxsdir) is the vertical bar
+     ('|') now.  It used to be the colon (':') symbol, but a colon is
+     a legal symbol for a file pathname in the MacOS system.
+
+   o The code has been rearranged so that most applications' binaries
+     will be smaller.
+
+   o A new routine, VSfpack(), has been added.  Please see the HDF man
+     page on how to use this routine.
+
+   o A new routine, GRluttoref(), has been added.  Please see the HDF man
+     page on how to use this routine.
+
+   o Several internal problems have been fixed with the GR interface.
+
+
+2. Changes in Compiling the Source Code:
+
+   o A new compile option, '-DHAVE_NETCDF', has been added, to avoid conflicts
+     in linking the HDF/MFHDF library with the original netCDF library.
+     We added this option because some users need to access Unidata's official
+     version of the netCDF library rather than the version that was merged with HDF. 
+     This is only available for the C-interface.  However, if you choose this 
+     option, keep in mind that you cannot read/write HDF files using the netCDF
+     libraries.  See section 2.4.3.2 in the INSTALL file for more information.
+
+   o When compiling and installing HDF, the default location to place the
+     binaries, has been changed from /usr/local/bin to NewHDF in the
+     source directory.  For example, assuming the library source is loaded
+     at /usr/local/src/hdf, the following commands will result in the HDF
+     binaries being placed in the directory   /usr/local/src/hdf/dev/NewHDF.
+
+           cd dev
+           ./configure -v
+           make
+           make test
+           make install
+
+   o The Fortran test output has been cleaned up and shortened, when 
+     running "make test".  Previously, the Fortran tests on the hdf/
+     side consisted of multiple Fortran programs invoked by a C frontend.  
+     The test programs were changed to subroutines and combined as one 
+     Fortran program.  The C frontend was also changed to produce a 
+     'directive' file, called fortest.arg, which contains directives to 
+     run the Fortran test program.
+
+
+3. Platforms Tested
+
+  HDF 4.0r2 has been tested on the following platforms:
+
+  Sun4(SunOS 4.1.3)                        DEC Alpha/Digital Unix v3.2                         
+  Sun4(Solaris 2.4)			   DEC Alpha/OpenVMS AXP v6.2
+  Sun4(Solaris 2.5)                        Fujitsu UXP/M-1800(SYS_V-4.0)
+  SGI-Indy(IRIX5.3)                        IBM PC - Intel Pentium
+  SGI-Indy(IRIX6.1_n32)                        Solarisx86
+  SGI-Indy(IRIX6.1_64)                         Linux(a.out) v1.2.4
+  HP9000/735(HPUX 9.03)                        Linux(elf)  1.2.13
+  Exemplar(HPUX 9.03)                          FreeBSD 2.0
+  Cray C90 (UNICOS 803.2)                  PowerPC(Mac-OS-7.5)
+  Cray YMP (UNICOS 803.2)                  68k-far/4i/8d(Mac-OS-7.5)
+  CM5 (Parallel I/O, 4.1.3_U1)             Windows NT/95
+  IBM RS6000/AIX v4.1                      T3D (v9.0.lai)
+  IBM SP2 (single node, v4.1)              VAX/VMS
+
+4. 16-bit support removed
+
+   o Support for the 16-bit architecture has been pulled out of HDF.
+
+5. Known Problems
+
+   o On the SunOS platform, there is a bug when using sfscal()/sfgcal() 
+     routines with gcc and f77.
+ 
+   o On the VMS platform, there is a bug with float64 data.
+
+   o For IRIX 6.1, the stdio.h file gives a false warning message if both 
+     the '-n32' and '-ansi' options are used for the C compiler.  We have 
+     temporarily removed the '-ansi' option from our autoconfiguration
+     for the Irix6_32 system, to avoid these messages.  We have verified
+     that the culprit in stdio.h has been corrected in IRIX 6.2, and plan
+     to put the '-ansi' option back in our next release.
+
+   o The compression tests produce errors for FLOAT32 data if the '-O'
+     option is used on IRIX 6.1, for both the '-64' bit and '-n32'
+     bit modes.  It did not produce errors when using the '-32' bit 
+     option or when not using the '-O' option.  We are unsure whether the 
+     errors are due to the compression code or the IRIX C optimizer.  For 
+     now, we have chosen to compile the HDF library without the '-O' option, 
+     while we investigate the problem. 
+
+
+HDF Documentation
+-----------------
+
+The HDF 4.0 User's Guide has been updated and is available on the NCSA ftp
+server in:
+
+     HDF/Documentation/HDF4.0r2/Users_Guide/.
+
+The HDF 4.0 Reference Manual is now available on the ftp server in:
+
+     HDF/Documentation/HDF4.0r2/Ref_Manual/.
+
+Compressed versions of the files located in the 'Users_Guide' and
+'Ref_Manual' directories are available in the subdirectory:
+
+     HDF/Documentation/HDF4.0r2/Compressed_Files/.
+
+We are working on more documentation, including a new Getting started
+manual and a new HDF Specification and Developer's Guide.  We will 
+announce the availability of these documents as they are completed.
+
+
+HDF Staff Update
+-----------------
+
+Don Gibson recently completed his M.B.A. degree at University of Illinois and
+has moved on to a position at Sears Company as a Programmer.  Don has proven 
+to be a great asset to the HDF group, assisting in project management and
+business planning (as well as sprucing up the HDF home page!)  We will miss
+Don and wish him much success in his endeavors.
+
+ 
+
+
