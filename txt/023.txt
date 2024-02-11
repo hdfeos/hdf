@@ -1,0 +1,213 @@
+--------------------------------------------------------------------------
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+--------------------------------------------------------------------------
+
+
+                              Newsletter #23
+                              December 9, 1996
+
+
+CONTENTS
+
+. HDF 4.1 Beta 1 Release
+  A. New Features and Changes
+  B. Platforms Tested
+  C. Known Problems
+  D. Important Fixes
+
+. The NCSA Collaborative HDF Viewer
+. How HDF mixes with Java
+. New Tools from Users  
+
+
+HDF 4.1b1 Release
+-----------------
+
+HDF 4.1 Beta 1 is now available on the NCSA anonymous ftp server
+(ftp.ncsa.uiuc.edu) in the directory HDF/HDF_4.1b1/.
+
+A. New Features and Changes:
+
+o Attributes are now supported in both the vdata and vgroup 
+  APIs.  In the vdata API, attributes can be attached to either 
+  vdata fields or vdatas; in the vgroup API, attributes can be 
+  attached to vgroups.  This new functionality can be used
+  to attach attributes to vdatas and vgroups created by earlier
+  versions of the HDF library.  However, the old versions of
+  the HDF library cannot read the new version vdatas and vgroups.
+  A vdata/vgroup having attributes will become a new version 
+  vdata/vgroup.  For more information, please refer to the file 
+  ../release_notes/vattr.txt, as well as the man pages for the
+  new functions.
+
+o Data chunking is now supported in SD scientific data sets.  
+  When data chunking is used, an n-dimensional SDS is stored 
+  as a series of n-dimensional chunks, improving performance on 
+  certain types of partial read operations.
+
+  New routines for creating and manipulating chunked SD 
+  scientific data sets have been provided, and two preexisting 
+  SD I/O routines, SDreaddata and SDwritedata, have also been 
+  modified to work with chunked SDSs.  For more information, please 
+  refer to the file ../release_notes/sd_chunk_examples.txt, as
+  well as the man page for sd_chunk.
+
+  More information will be included in the HDF 4.1 documentation,
+  which will be available with the release of HDF 4.1.  
+
+o Due to certain limitations in the way compressed SDS datasets are stored, 
+  data which has been compressed is not completely writable in ways that 
+  uncompressed datasets are.  The "rules" for writing to a compressed 
+  dataset are as follows:
+
+    (1) Write an entire dataset that is to be compressed.  i.e. build the
+        dataset entirely in memory, then write it out with a single call.
+ 
+    (2) Append to a compressed dataset.  i.e. write to a compressed dataset
+        that has already been written out by adding to the unlimited
+        dimension for that dataset.
+ 
+    (3) For users of HDF 4.1, write to any subset of a compressed dataset
+        that is also chunked.  
+
+  Please refer to the ../release_notes/comp_SDS.txt file for more information.
+
+o A new file, ../release_notes/compile.txt, contains instructions on
+  compiling applications on the supported platforms.  If you encounter
+  problems with it, please let us know at hdfhelp@ncsa.uiuc.edu. 
+
+o SGI has changed some compiler default settings in IRIX 6.2.
+  We decided to explicitly define the settings of various ABI related
+  options.  For the 64 bit OS ("uname -s" returns IRIX64), HDF uses
+  "-64 -mips4" code.  For the traditional 32 bit OS ("uname -s" returns
+  IRIX), HDF uses "-32 -mips2".  To use n32 mode on IRIX64, HDF uses
+  "-n32 -mips3" code.  Note that in the previous release (4.0r2), HDF
+  used only "-n32".  In IRIX 6.1 and before, "-n32" defaulted to
+  "-mips4" code but in IRIX 6.2, it defaults to mips3 or mips4 code.
+  We decided to explicitly set it to "-n32 -mips3".  Therefore,
+  applications linking with the HDF library must be compiled with
+  the same explicit ABI options.
+
+B. Platforms Tested:
+
+HDF 4.1b1 has been tested on the following platforms:
+
+  DEC Alpha/Digital Unix 3.2
+  DEC Alpha/OpenVMS AXP v6.2
+  DEC VAX OpenVMS v6.2
+  Free BSD 2.2
+  HP-UX 9.03
+  IRIX 5.3
+  IRIX 6.2_64
+  IRIX 6.2_n32 
+  Linux ELF 1.2.13 (C only)
+  Macintosh PowerPC (C only) (not ready yet)
+  SP2 4.1
+  Solaris 2.5
+  SunOS 4.1.3
+  Windows NT/95 (C only)
+  YMP 9.0.2asC
+
+C. Known Problems:
+
+o With the SD interface, you are unable to overwrite
+  existing compressed data, that is not stored in
+  "chunked" form.  This is due to compression algorithms 
+  not being suitable for "local" modifications in a compressed 
+  datastream.  For more information, please refer to 
+  the ../release_notes/comp_SDS.txt file. 
+
+o With 4.0r1p1, you could type "hdp list -a <HDF file>"
+  to get a list of the file attributes associated with
+  a file.  This does not currently work.
+
+o There are no plans to add the DF24writeref function 
+  to the DF24 interface.  This function will be removed
+  from the documentation.
+
+o When running "make test" on OpenVMS, Test 3 (float32) of the 
+  chunking tests fails, and has therefore been commented out.
+
+o When running the tests on Window NT/95, Test 2 (uint16) of the
+  chunking tests fails, and will be commented out.
+ 
+o The ncgen test failed on VAX/OpenVMS.
+
+D. Important Fixes:
+
+o If you opened a file in Read Only mode with the SD interface
+  (using SDstart), it would create the file if the file did not
+  exist.  This no longer occurs.
+
+o HDF 4.0r2 did not recognize JPEG images created by HDF 3.3r4.
+  This has been fixed.
+
+See the ../release_notes/bug_fixed.txt file for more information
+on bugs fixed in this release.
+
+
+The NCSA Collaborative HDF Viewer
+---------------------------------
+
+An alpha demonstration release of the NCSA Collaborative HDF Viewer
+is now available.  The Collaborative HDF Viewer was created by 
+adapting the stand-alone NCSA Java-based HDF Browser to use the
+NCSA Habanero Collaborative Framework.
+
+For information refer to:
+
+   http://hdf.ncsa.uiuc.edu/hdf/java/chdv/index.html 
+
+
+How HDF Mixes With Java
+-----------------------
+
+In the last few months, the HDF group has been mulling over
+what to do with Java and HDF.  Our investigation has led us
+to learn more than we really wanted to know about wrapping
+C libraries with Java and about Java's impoverished data
+types (compared to C).
+
+We still don't have a definite plan, but we do have some
+notes on what we've learned:
+
+    http://hdf.ncsa.uiuc.edu/horizon/java-and-hdf.html
+
+Many of the comments are relevant to any Java application
+that wants to wrap existing C libraries, so they may be
+useful to others.
+
+We'd welcome feedback, expressions of interest, and pointers
+to similar work.
+
+
+New Tools From Users
+--------------------
+
+Several users have let us know about new tools they have developed 
+that use HDF.  For more information on tools that users have developed, 
+please refer to the "What Tools use HDF?" section off of our home page 
+(http://hdf.ncsa.uiuc.edu/tools.html).  If you have an application that 
+you would like to add to the list, just let us know at 
+hdfhelp@ncsa.uiuc.edu.
+
+HDFLook 
+  HDFLook is a friendly Motif HDF viewer, useful for quality control of 
+  Scientific Datasets. It allows easy access to physical values and 
+  ancillary data, and includes 2-D graphics (radial, histogram). It is 
+  currently available for Alpha VMS 3.2, HP-UX 10.1, IRIX 5.3, and AIX. 
+  (ftp://loaser.univ-lille1.fr/)
+
+WIM
+  Windows Image Manager (WIM) is a general purpose image display and analysis
+  tool for the Microsoft Windows graphical user interface, with special 
+  features for analyzing satellite images.  (URL: http://spode.ucsd.edu/)
+
+HDF Browser 
+  Fortner Research has developed the HDF Browser, which is a free utility
+  that lets you open an HDF file, examine its hierarchy and components,
+  and then view and edit its pieces. It runs on Macintosh and Windows NT/95. 
+  (URL: http://www.fortner.com/docs/product_hdf_b.html)
+
