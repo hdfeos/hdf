@@ -1,0 +1,78 @@
+--------------------------------------------------------------------------
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+--------------------------------------------------------------------------
+
+
+                              Newsletter #25
+                               July 28, 1997
+
+CONTENTS
+
+HDFNOW Release 0.3 
+ A. New Features and Changes               *******************************
+ B. Software Requirements                  * Visit the HDF home page     * 
+ C. Platforms Supported                    * for up-to-date information  * 
+                                           * on HDF:                     *    
+                                           *   http://hdf.ncsa.uiuc.edu/ *  
+                                           ******************************* 
+                                         
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+HDFNOW Release 0.3
+==================
+
+HDFNOW Release 0.3 is now available on the HDF ftp server (hdf.ncsa.uiuc.edu)
+in the directory pub/HDFNOW.  Please refer to the release_notes file
+for information on installing HDFNOW.  If you have any questions or
+concerns, please email hdfparallel@ncsa.uiuc.edu.
+
+HDFNOW is a library that supports HDF for a Network of Workstations.  The 
+initial design supports the distributed Scientific Datasets for HDF files.
+
+The Distributed SD (DSD) interface is designed for those who are familiar 
+with the SD interface and experienced with message-passing programs. The
+DSD interface is a layer on top of the SD interface, which uses MPI for 
+interprocess communications.
+
+A. New Features and Changes
+
+ o  Linux is now supported.
+
+ o  Changes in HDF NOW file structure
+
+    -  A library generated string, DHDF_SetId, is stored in each of the 
+       distributed HDF files (DHDF).
+
+    -  A library assigned integer, DHDF_FileId, is stored in each DHDF.
+
+    -  The file information of all the files in the same DHDF represented by
+       a vdata is stored in the main HDF file (MHF). The file information in
+       an associated HDF file contains the information of the MHF and itself.
+ 
+    Please refer to man/HDFNOW.5 for more information.
+ 
+
+B. Software Requirements:
+
+ o  HDF distribution release 4.1r1
+ 
+ o  MPICH 1.1.0 distribution
+
+
+C. Platforms Supported:
+ 
+ o  HP-UX A.09.03
+ 
+ o  IRIX 5.3
+ 
+ o  Linux 2.0.30
+ 
+ o  SunOS 4.1.3
+
+
+For more information on HDF support for Parallel Computing Systems, take a 
+look at the Parallel HDF home page at:
+
+    http://hdf.ncsa.uiuc.edu/Parallel_HDF/
