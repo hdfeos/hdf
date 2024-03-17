@@ -1,0 +1,107 @@
+--------------------------------------------------------------------------
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+--------------------------------------------------------------------------
+
+
+                              Newsletter #26
+                              August 29, 1997
+
+CONTENTS
+
+NCSA HDF Java Products Release 2.0
+ A. The Java HDF Viewer (JHV) Version 2.0  *******************************
+      New Features and Changes             * Visit the HDF home page     *
+ B. The Java HDF Interface (JHI)           * for up-to-date information  *
+ C. Platforms Supported                    * on HDF:                     *
+                                           *   http://hdf.ncsa.uiuc.edu/ *
+                                           *******************************
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+NCSA HDF Java Products Release 2.0
+==================================
+
+The Java HDF Interface (JHI) and The Java HDF Viewer (JHV)
+
+ The new NCSA Java products are now available.  They include both 
+ the Java HDF Interface (JHI) for the HDF library and the Java-based 
+ HDF Viewer (JHV) version 2.0, as well as the full source code for 
+ both of these products.
+
+ For information about the products and how to download them,
+ please look at:
+
+    http://hdf.ncsa.uiuc.edu/java-hdf-html/
+
+ This official release is based on the Java Development Kit JDK
+ 1.1.
+
+
+A. The Java HDF Viewer (JHV) Version 2.0
+
+ The Java HDF Viewer version 2.0 contains significant changes from 
+ the beta version (JHV 1.20b) previously released.
+
+ Following are the new features and changes in JHV for this release:
+
+   o It is based on JDK 1.1, and uses new features of the Java 
+     environment that were not available in JDK 1.02.
+
+   o It uses and requires the JHI, described below.
+
+   o Palette manipulation has been made into a separate package
+     (`ncsa.hdf.palette'), which may be used independently of the
+     JHV or HDF library.
+
+   o There are many internal changes and bug fixes.
+
+ JHV 1.20b will work with JDK 1.1, but JHV 2.0 requires JDK 1.1
+ or above.  The collaborative version of JHV version 2.0 is not
+ available at this time.
+
+B. The Java HDF Interface (JHI)
+
+ The Java HDF Interface (JHI) provides an interface to essentially
+ all the functions of the NCSA HDF library. The JHI is analogous
+ to the FORTRAN interface already provided as part of the HDF
+ library release.
+
+ Any Java application can use the interface classes to read and
+ write HDF files using the Java package `ncsa.hdf.hdflib'. This
+ package ``wraps around'' the standard HDF 4.1r1 library, which is called
+ from Java through `native' methods.
+
+ Intended Use
+
+ The JHI is not a pure Java implementation of the HDF library. The
+ Java HDF interface uses the Java Native Method Interface (JNI)
+ to interface to the HDF library. The interface code also uses the
+ Java Core Reflection package to implement run-time type
+ discovery and data conversion of arrays.
+
+ The Java HDF interface is intended to be the foundation that
+ allows Java classes to read and write HDF files. The central class
+ of the `ncsa.hdf.hdflib' package is ` HDFLibrary' which has native
+ methods for all the entry points of the HDF library.
+
+ The JHI can be used by any Java application.
+
+C. Platforms Supported
+
+ This release has been tested and is supported on the following
+ platforms:
+   
+   Irix 5.3
+   Irix 6.2
+   Solaris 2.5
+   Solaris x86
+   Windows NT/95
+
+ For information on availability on different platforms, please
+ see the "Availability" page in the Installation section off of
+ the NCSA HDF Java Products web page: 
+
+    http://hdf.ncsa.uiuc.edu/java-hdf-html/availability.html
