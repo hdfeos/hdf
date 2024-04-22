@@ -1,0 +1,104 @@
+--------------------------------------------------------------------------
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+--------------------------------------------------------------------------
+ 
+ 
+                              Newsletter #27
+                              October 23, 1997
+ 
+CONTENTS
+ 
+HDF5 Prototype Release 
+HDF 4.1r1 for T3E                          *******************************
+HDF Tutorial                               * Visit the HDF home page     *
+                                           * for up-to-date information  *
+                                           * on HDF:                     *
+                                           *   http://hdf.ncsa.uiuc.edu/ *
+                                           *******************************
+ 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+HDF5 Prototype Release
+======================
+
+The HDF5 Prototype release is now available, and can be downloaded
+from the HDF ftp server (hdf.ncsa.uiuc.edu): 
+     /pub/outgoing/koziol/hdf5.tar.gz
+
+The documentation is included with the release, and is also accessible
+from the URL:
+     http://hdf.ncsa.uiuc.edu/nra/BigHDF/
+
+This release is intended primarily as a proof of concept and as a method 
+of familiarizing users with the intended functionality. 
+
+When complete, HDF5 will include the following features:
+
+ - A new file format designed to address some of the deficiencies
+   of the current version of HDF, particularly the need to store
+   larger files and more objects per file.
+
+ - A simpler, more comprehensive data model that includes only two
+   basic structures: a multi-dimensional array of record structures,
+   and a grouping structure.
+
+ - A simpler, better-engineered library, with improved support for
+   parallel I/O, threads, and other requirements imposed by
+   modern systems and applications.
+
+ - A new API.
+
+Limitations of the current prototype are:
+ - Multiple datasets may be created/read/written in an HDF5 file, but
+   access must be as an entire dataset, i.e. no slab/slice/subset code is
+   implemented yet.  The datasets must also be homogeneous, orthogonal
+   datasets, similar to the datasets which can be created in the
+   HDF4 "SD" interface.  Reducing these restrictions will be a major
+   effort of further development on the library.
+
+ - Datasets can be located in a hierarchy of groups in the file, however
+   user-level features for transitioning through the groups are not
+   implemented in this release.  Each dataset must be accessed through
+   its full "pathname" in the file, ie. "/foo/bar/dataset1",
+   "/foo/bar/dataset2", "/foo/data"
+ 
+HDF5 has been tested on the following Unix platforms:
+    Linux, FreeBSD, IRIX, Solaris and Digital Unix
+
+Machines which do not have IEEE floating-point representation or non 
+big- or little-endian memory representations are not supported in 
+this release. Most other machines should work correctly.
+
+
+HDF 4.1r1 for T3E
+=================
+
+We have made changes to the HDF 4.1r1 release to support the T3E
+platform.  This software did not go through a full QA cycle and
+is considered to be beta quality.  
+
+The netCDF (ncxxx) interfaces and ncdump, ncgen, and hdp do not 
+work properly in this T3E release.  
+
+The source code and pre-compiled HDF 4.1r1 software for the T3E can 
+be found on the NCSA ftp server (ftp.ncsa.uiuc.edu) in the directory:
+   /HDF/HDF_Current/bin/t3e/
+
+If you encounter any problems, please contact the HDF Helpdesk
+(hdfhelp@ncsa.uiuc.edu).
+
+
+HDF Tutorial
+============
+
+We have made a first cut of an HDF Tutorial.  It includes the
+SD, Vdata, Vgroup, multi-file annotations (AN), and GR interfaces.
+
+You can access it from the HDF home page under:
+  "Information about HDF -> Tutorials, Lectures, Examples ..."
+(http://hdf.ncsa.uiuc.edu/tutslects.html)
+
+If you have ideas for making it better, feel free to contact
+the HDF Helpdesk (hdfhelp@ncsa.uiuc.edu).
