@@ -1,0 +1,48 @@
+--------------------------------------------------------------------------
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+--------------------------------------------------------------------------
+ 
+                              Newsletter #31
+                              March 31, 1998
+
+CONTENTS
+                                            *******************************
+. HDF 4.1 Release 2 for VMS Platforms       * Visit the HDF home page     * 
+                                            * for up-to-date information  * 
+                                            * on HDF:                     *     
+                                            *   http://hdf.ncsa.uiuc.edu/ *  
+                                            ******************************* 
+                                         
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+HDF 4.1 Release 2 for VMS Platforms
+===================================
+
+HDF 4.1 Release 2 for VMS platforms is now available on the NCSA anonymous 
+ftp server (ftp.ncsa.uiuc.edu).  Pre-compiled binaries for VMS can be found
+in the directory:
+    
+    /HDF/HDF_Current/bin/
+
+The VMS source code can be found in the directory:
+   
+   /HDF/HDF_Current/tar/
+
+Following are the VMS platforms supported with HDF 4.1r2:
+
+   DEC Alpha/OpenVMS AXP v6.2
+   DEC Alpha/OpenVMS AXP v7.1
+   VAX OpenVMS AXP v6.2
+
+For information on what is new in HDF 4.1r2, please refer to
+Newsletter 30, accessible from the HDF home page, or from the NCSA
+ftp server, in the directory:
+
+   /HDF/newsletters/
+
+For questions or concerns regarding HDF, contact:
+
+   hdfhelp@ncsa.uiuc.edu
+
