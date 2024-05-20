@@ -1,0 +1,45 @@
+--------------------------------------------------------------------------
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+--------------------------------------------------------------------------
+ 
+                              Newsletter #32
+                              May 15, 1998
+
+CONTENTS
+                                            *******************************
+. HDF 4.1 Release 2 for Macintosh           * Visit the HDF home page     * 
+  PowerPC and Windows NT/95                 * for up-to-date information  * 
+                                            * on HDF:                     *     
+                                            *   http://hdf.ncsa.uiuc.edu/ *  
+                                            ******************************* 
+                                         
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+HDF 4.1 Release 2 for Macintosh PowerPC and Windows NT/95
+=========================================================
+
+HDF 4.1 Release 2 for the Macintosh PowerPC and for Windows NT/95 is
+now available on the NCSA anonymous ftp server (ftp.ncsa.uiuc.edu).  
+
+The source code and pre-compiled binaries for the Macintosh can be 
+found in the directory:
+    
+    /HDF/HDF_Current/hqx/
+
+The source code and pre-compiled binaries for Windows NT/95 can
+be found in the directory:
+   
+   /HDF/HDF_Current/zip/
+
+For information on what is new in HDF 4.1r2, please refer to
+Newsletter 30, accessible from the HDF home page, as well as from
+the NCSA ftp server in the directory:
+
+   /HDF/newsletters/
+
+For questions or concerns regarding HDF, contact:
+
+   hdfhelp@ncsa.uiuc.edu
+
