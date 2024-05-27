@@ -1,0 +1,61 @@
+--------------------------------------------------------------------------
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+--------------------------------------------------------------------------
+ 
+                              Newsletter #33
+                              June 30, 1998
+
+CONTENTS
+                                            *******************************
+. HDF 4.1r2 Documentation                   * Visit the HDF home page     * 
+. Java Products for Windows NT/95           * for up-to-date information  * 
+. IRIX 5.3 Support                          * on HDF:                     *     
+                                            *   http://hdf.ncsa.uiuc.edu/ *  
+                                            ******************************* 
+                                         
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+HDF 4.1r2 Documentation
+=======================
+
+The HDF 4.1r2 User's Guide is now available in PostScript and
+PDF formats.   A new revision of the HDF 4.1r2 Reference Manual
+is also available in PostScript and PDF.  The HTML versions of
+these manuals have not yet been completed. 
+
+You can download them from the HDF home page under HDF 4 
+Documentation:
+
+       http://hdf.ncsa.uiuc.edu/doc.html  
+
+They can also be downloaded directly from the NCSA ftp server
+(ftp.ncsa.uiuc.edu) in the directories:
+
+      /HDF/Documentation/HDF4.1r2/Ref_Manual/  - Reference Manual
+      /HDF/Documentation/HDF4.1r2/Users_Guide/ - User's Guide
+
+Please contact hdfhelp@ncsa.uiuc.edu if you need the documentation
+in FrameMaker format.
+
+
+Java Products for Windows NT/95  
+===============================
+
+In case you haven't already noticed, the pre-compiled binaries for 
+the Java Products on Windows NT/95 have been available since 
+June 1, 1998.
+
+
+IRIX 5.3 Support
+================
+We are planning on dropping support for IRIX 5.3 with future 
+releases of HDF.  
+
+
+For questions regarding these or other HDF issues, contact:
+
+   hdfhelp@ncsa.uiuc.edu
+
+
