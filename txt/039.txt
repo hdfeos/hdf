@@ -1,0 +1,121 @@
+--------------------------------------------------------------------------
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+--------------------------------------------------------------------------
+ 
+                              Newsletter #39
+                              January 7, 1999
+
+CONTENTS
+                                            *******************************
+Parallel Release of HDF5 version 1.0.1      * Visit the HDF home page     *
+   - Changes Since the Beta Release         * for up-to-date information  *
+   - Platforms Supported                    * on HDF:                     *
+                                            *   http://hdf.ncsa.uiuc.edu/ *  
+Release of HDF5 version 1.0 Beta for        *******************************
+   Windows NT/95
+
+HDF5 Utilities - h5dump and h5toh4
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Parallel Release of HDF5 version 1.0.1
+======================================
+
+We are pleased to announce the first official release of 
+the PARALLEL IMPLEMENTATION of HDF5, version 1.0.1.  It uses the 
+ROMIO version of the MPIO interface for parallel I/O support.
+
+Following are the supported features in this release:
+
+  - HDF5 files are accessed according to the communicator and INFO
+    object defined in the property list set by H5Pset_mpi.
+
+  - Independent read and write accesses can be made to fixed and extendible 
+    dimension datasets. 
+
+  - Collective read and write accesses can be made to fixed dimension datasets.
+
+The parallel HDF5 release distribution is located at:
+
+      ftp://hdf.ncsa.uiuc.edu/pub/dist/HDF5/hdf5-1.0.1/
+
+The web-site for HDF5 is located at:
+
+      http://hdf.ncsa.uiuc.edu/HDF5/
+
+
+Changes Since the Beta Release
+------------------------------
+  -  Support for Accessing Extendible Dimension Datasets has been
+     added.
+
+     Extendible dimension datasets must use chunked storage methods.
+     A new function, H5Dextend, was created to extend the current
+     dimensions of a dataset.  The current release requires the
+     MPI application to make a collective call to extend the
+     dimensions of an extendible dataset before writing to the
+     newly extended area.  (The serial HDF5 version does not require 
+     the call to H5Dextend.  The dimensions of an extendible
+     dataset are increased when data is written beyond the
+     current dimensions but within the maximum dimensions.)
+     The required collective call of H5Dextend may be relaxed
+     in a future release.
+
+     This release only supports independent read and write accesses
+     to extendible datasets.  Collective accesses to extendible
+     datasets will be implemented in a future release.
+
+  -  Collective access to fixed dimension datasets is supported, using 
+     the transfer property list argument of H5Dread and H5Dwrite.
+
+  -  HDF5 files are opened according to the Communicator and INFO object.
+     H5Dopen now records the communicator and INFO object set up by 
+     H5Pset_mpi and passes them to the corresponding MPIO open file calls 
+     for processing.
+
+
+Platforms Supported
+-------------------
+
+This release has been tested on the following platforms:
+
+   Intel Red
+   IBM SP2
+   SGI Origin 2000
+
+
+
+Release of HDF5 version 1.0 Beta for Windows NT/95
+==================================================
+
+A beta version of HDF5 version 1.0 is now available for
+Windows NT/95.  You can download this from:
+
+     ftp://hdf.ncsa.uiuc.edu/pub/dist/HDF5/hdf5-windows-beta/ 
+
+
+
+HDF5 Utilities - h5dump and h5toh4
+==================================
+
+Alpha source code is available which contains the h5toh4
+and improved h5dump utilities.  Binaries for Solaris 2.5 are
+also included.  The h5dump utility offers a convenient way to dump 
+the contents of an HDF5 file.  The h5toh4 utility enables you to 
+convert some HDF5 objects into HDF4 objects. 
+
+Both utilities are documented in the tools section of the HDF5 
+Reference Manual, which is included with the alpha source code.
+
+You can download this from:
+
+      ftp://hdf.ncsa.uiuc.edu/pub/dist/HDF5/hdf5-tools-alpha/
+
+
+--------------------------------------------------------------
+For questions regarding these or other HDF issues, contact:
+
+   hdfhelp@ncsa.uiuc.edu
+
