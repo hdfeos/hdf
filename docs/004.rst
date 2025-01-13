@@ -330,7 +330,7 @@ that they sent to us.
  hdftops.c - HDF image to PostScript image conversion utility
  This RCD (Raster Chart Display) utility converts an HDF image
  to either a PostScript program or
- to a PostScript compatilble hex file.
+ to a PostScript compatible hex file.
  This conversion will generate programs
  that use the colorimage operator
  (which is not  supported  by  all  PostScript  implementations)
