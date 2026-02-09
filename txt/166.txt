@@ -1,0 +1,6 @@
+Version 2.2.4 of the h4toh5 Conversion Library and Tools is now available from the HDF Support Portal’s Download h4h5tools page and directly from h4h5tools+2.2.4.
+This release was tested with HDF 4. مراهنات سباق الخيل 2.14, HDF5-1.8.21, and HDF5-1.10.3, and contains many improvements, including:
+A bug was fixed that caused h4toh5 to fail on NASA AIRS and MODIS files. (The fix was actually in the HDF5-1. تعلم اسرار الروليت 8.21 and HDF5-1.10.3 releases that h4h5tools 2.2.4 is built with.)
+Many improvements have been made to the CMake configuration.
+When an HDF4 SDS has a dimension name but not a dimension scale, the conversion tool will now check for a 1-dimensional SDS with the same name, and will use that as the dimension scale, if found. With this change, NASA MODIS level 1B products can successfully be converted to HDF5 files that follow the netCDF-4 data model. العاب اندرويد
+Please see the Release Notes for complete details on what is new in this release.

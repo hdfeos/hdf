@@ -1,0 +1,58 @@
+--------------------------------------------------------------------------
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+--------------------------------------------------------------------------
+
+                           Newsletter #63
+                           October 4, 2001
+
+
+CONTENTS
+                                            *******************************
+. Data Corruption Problem in HDF5-1.4.2     * Visit the HDF home page     *
+                                            * for up-to-date information  *
+                                            *                             *
+                                            *  http://hdf.ncsa.uiuc.edu/  *
+                                            *                             *
+                                            *******************************
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Data Corruption Problem in HDF5-1.4.2
+=====================================
+
+A data corruption problem has been found when reading or writing chunked
+data in a manner that requires a datatype conversion.  A datatype 
+conversion means that the read or write call uses a datatype that
+is different than the datatype of the dataset.  For example, if a 
+chunked dataset is of type H5T_IEEE_F32LE, and is written to using
+H5Dwrite with a datatype of H5T_NATIVE_DOUBLE, the resulting dataset
+may include corrupted data values.  There is NO indication that there
+is a problem when this occurs.
+
+If there is any possibility that you are using HDF5 in this manner, please
+check your datasets and download the patched version of HDF5-1.4.2 as soon
+as possible.  In any case, we recommend that you download the patch
+at your earliest convenience.
+
+The entire source code for 5-1.4.2-patch1 is available from:
+   ftp://ftp.ncsa.uiuc.edu/HDF/HDF5/current/src/
+
+You can obtain just the source files that changed from:
+   ftp://ftp.ncsa.uiuc.edu/HDF/HDF5/current/src/patched-files/
+
+Pre-compiled binaries which contain this fix are not yet available for all
+of the platforms we support.  These will be added to the ftp server in
+the next few days, as they are made available.
+
+We apologize for the inconvenience this may cause.  Thank you for
+supporting HDF5!
+
+
+--------------------------------------------------------------
+For questions regarding these or other HDF issues, contact:
+
+   hdfhelp@ncsa.uiuc.edu
+
+

@@ -1,0 +1,150 @@
+--------------------------------------------------------------------------
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+--------------------------------------------------------------------------
+
+                            Newsletter #87
+                            April 20, 2006 
+
+CONTENTS
+                                            *******************************
+. Release of HDF5 1.8.0 Alpha 1             *                             *
+  - New Features                            * Visit the HDF home page     *
+                                            * for up-to-date information  *
+                                            *                             *
+                                            *  http://hdf.ncsa.uiuc.edu/  *
+                                            *                             *
+                                            *******************************
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF5 1.8.0 Alpha 1 
+=============================
+
+The Alpha 1 release of HDF5 1.8.0 is now available from:
+   
+   http://hdf.ncsa.uiuc.edu/HDF5/release/alpha/obtain518.html
+
+Please note that this is an alpha release and not a formal release.
+We are making this available for users who are interested in trying
+out new features in the HDF5 1.8.0 release.
+
+The 1.8.0 release represents a major update in the HDF5 library 
+and utilities. Many new capabilities have been added, along with 
+improved performance. 
+
+However, the HDF5 1.8.0 Alpha 1 release does NOT include all functions
+that will be in the final 1.8.0 release, and some features (function 
+names, behavior) MAY CHANGE before the final 1.8.0 release. 
+
+In this release:
+
+ - Not all features are included.
+ - Not all platforms have been tested.
+ - The backward and forward compatibility of the software has NOT been
+   tested.
+
+
+New Features
+------------
+
+The new features available in HDF5 1.8.0 are described here.  To obtain
+more information about these new features, be sure to read the 
+"What's New in HDF5 1.8.0-alpha1" document located at:
+
+    http://hdf.ncsa.uiuc.edu/HDF5/doc_1.8pre/WhatsNew180.html
+
+The "What's New in HDF5 1.8.0-alpha1" document also includes information 
+about features in the Alpha 1 release that may change, as well as features 
+that are not yet in the Alpha 1 release, but will be in the final 1.8.0 
+release.
+
+The following features are stable and available in HDF5 1.8.0-alpha 1:
+ 
+o  Collective Chunk I/O in Parallel:  The library now attempts to use the 
+   MPI collective mode when performing I/O on chunked datasets when using 
+   the parallel I/O file driver.
+
+o  New Chunked Dataset Filters:  These new I/O filters allow better 
+   compression of certain types of data:
+
+    -  N-Bit Filter:  This filter compresses data which uses N-bit datatypes.
+
+    -  Scale+Offset Filter:  This filter compresses scalar (integer and 
+                     floating-point) datatypes that stay within a range.
+
+o  Transforms on Data Transfer:  This feature allows arithmetic operations 
+   (add/subtract/multiply/divide) to be performed on data elements as they 
+   are being written to/read from a file.
+   
+o  Text-to-datatype and datatype-to-text conversions:  This feature enables 
+   the creation of a datatype from a text definition of that datatype and 
+   the creation of a formal text definition from a datatype.  The text 
+   definition is in DDL format. 
+
+   H5LTtext_to_dtype() creates an HDF5 datatype based on a text 
+   description and returns a datatype identifier.  Given a datatype 
+   identifier, H5LTdtype_to_text() creates a DDL description of a 
+   datatype.
+
+o  Support for Integer-to-Floating-point Conversion:  It is now possible 
+   for the HDF5 library to convert between integer and floating-point 
+   datatypes.
+
+o  Revised Datatype Conversion Exception Handling:  It is now possible for 
+   an application to have greater control over exceptional circumstances 
+   (range errors, etc.) during datatype conversion.
+ 
+o  Serialized Datatypes and Dataspaces:  A set of routines has been added 
+   to serialize or deserialize HDF5 datatypes and dataspaces.  These 
+   routines allow datatype and dataspace information to be transmitted 
+   between processes or stored in non-HDF5 files.
+
+o  NULL Dataspace:  A new type of dataspace has been added, which allows 
+   datasets without any elements to be described.
+
+o  Extendible ID API:  A new set of ID management routines has been added, 
+   which allows an application to use the HDF5 ID-to-object mapping routines.
+
+o  Re-implementation of the Metadata Cache: The metadata cache has been
+   re-implemented to reduce the cache memory requirements when working 
+   with complex HDF5 files and to improve performance.  New functions have 
+   also been added for managing the metadata cache. 
+
+o  High-Level Fortran APIs:  Fortran APIs have been added for 
+   HDF5 Lite (H5LT), HDF5 Image (H5IM), and HDF5 Table (H5TB).
+
+o  New High-Level APIs: A Packet Table API has been added to the high-level 
+   interfaces.  These routines are designed to allow variable-length records 
+   to be added to tables easily.
+
+o  A Dimension Scales API has been added to the high-level interfaces.
+
+o  Tool Improvements: One new tool has been added, and existing tools were 
+   enhanced.
+
+      -  h5stat, a new tool, is still in development and may change. 
+         It allows HDF5 files to be analyzed in various ways to 
+         determine useful statistics about objects in the file.
+
+      -  Improved speed of h5dump:  Performance improvements have been 
+         made to h5dump to speed it up when dealing with files that have 
+         large numbers of objects.
+
+o  Better UNIX/Linux Portability:  This release now uses the latest GNU 
+   auto tools (autoconf, automake, and libtool) to provide much better 
+   portability between many machine and OS configurations.  Building the 
+   HDF5 distribution can now be performed in parallel (with the 
+   gmake "-j" flag), speeding up the process of building, testing and 
+   installing the HDF5 distribution.  Many other improvements have gone 
+   into the build infrastructure as well.
+ 
+
+
+-------------------------------------------------------------
+For questions regarding these or other HDF issues, contact:
+
+   hdfhelp@ncsa.uiuc.edu
+ 
+

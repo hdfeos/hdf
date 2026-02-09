@@ -1,0 +1,21 @@
+The HDF5 1.10.7 release is now available for download from:
+https://www.hdfgroup.org/downloads/hdf5/
+The user documentation and software can also be obtained from the Support Portal:
+https://portal.hdfgroup.org/display/support/Downloads
+This release contains many important new features and changes, including:
+HDF5 now supports building with the AEC library as a replacement library for SZip.
+CVE-2018-13870, CVE-2018-13869 and CVE-2018-17435 were fixed in this release.
+Metadata cache optimization was added to improve performance.
+A CMake option was added to link generated Fortran MOD files into the include directory.
+Autotools and CMake options were added to enable or disable file locking. C functions and C++, Fortran and Java wrappers were also added for setting and getting the file locking parameters.
+The Splitter VFD was added. It maintains separate R/W and W/O channels for ”concurrent” file writes to two files using a single HDF5 file handle.
+The Mirror VFD was added. It uses TCP/IP sockets to perform write-only (W/O) file I/O on a remote machine.
+Several hyperslab selection functions were added in this release.
+Internal memory sanity checking was disabled in Autotools debug builds by default. The sanity checking replaced C API malloc(3) and free(3) calls with HDF5 internal calls, which caused problems with the external filter plugins.
+Several tools issues were fixed (h5diff, h5repack).
+The High Level H5DSis_scale function was fixed to correctly handle CLASS and DIMENSION_SCALE attributes that were not written according to the Dimension Scales Specification.
+For details regarding these and other changes please be sure to see the release notes.
+Future Changes to Supported Compilers and Platforms
+Please be aware that we are dropping support for the following after this release:
+Windows 7
+Visual Studio 2010, 2012, and 2013

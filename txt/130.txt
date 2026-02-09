@@ -1,0 +1,67 @@
+--------------------------------------------------------------------------
+The HDF Group Home Page:         http://hdfgroup.org/
+Helpdesk & Mailing Lists Info:   http://hdfgroup.org/services/support.html
+--------------------------------------------------------------------------
+
+                            Newsletter #130
+                           November 15, 2012 
+
+CONTENTS
+ - Release of HDF-Java Products 2.9
+    . Highlights
+    . Future Changes to Supported Platforms
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF-Java Products 2.9
+================================
+
+The HDF-Java 2.9 release is now available. This release was built with
+HDF 4.2.8 and HDF5-1.8.10 using jdk 1.7.x. It can be obtained from The
+HDF Group Downloads page:
+
+   http://www.hdfgroup.org/downloads/index.html
+
+For information on HDF-Java, see the HDF-Java home page:
+
+   http://www.hdfgroup.org/hdf-java-html/
+
+
+Highlights
+----------
+
+This is a maintenance release with no major changes in functionality. It
+includes bug fixes and some minor enhancements.
+
+Here are the highlights:
+
+   Fixed 29 bugs including the following:
+        Fixed HDFView to display 64-bit unsigned integers
+        Fixed HDFView to display SCALAR arrays
+        Fixed a fill value problem on Mac machines
+        Fixed ImageView showing the wrong values for 3D arrays
+
+   Added 10 minor enhancements including the following:
+        Added a feature to show groups/attributes in creation order
+        Excluded fill values from data calculations
+        Added a 'reload' option to quickly close and reopen a file
+
+
+For more information on the current release, please read "About This Release"
+at:
+   http://www.hdfgroup.org/hdf-java-html/hdfview/UsersGuide/ug01introduction.html#ug01release
+
+
+
+Future Changes to Supported Platforms
+-------------------------------------
+
+Please note that this is the last release to support 32-bit Mac and 32-bit
+Solaris. Future releases will not support these two platforms. 
+
+
+-------------------------------------------------------------
+For questions regarding these or other HDF issues, contact:
+
+   help@hdfgroup.org 
+

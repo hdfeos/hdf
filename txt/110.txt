@@ -1,0 +1,112 @@
+--------------------------------------------------------------------------
+The HDF Group Home Page:         http://hdfgroup.org/
+Helpdesk & Mailing Lists Info:   http://hdfgroup.org/services/support.html
+--------------------------------------------------------------------------
+
+                            Newsletter #110
+                             March 2, 2010
+
+CONTENTS
+ . Release of HDF 4.2.5
+ . Release of H4 to H5 2.1.1
+ . Release of HDF5 1.8.4 Patch 1
+ . Dropping Support for VS 2005 and Intel 9.1
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF 4.2.5
+====================
+
+We are pleased to announce the release of HDF 4.2.5. It can be obtained
+from the HDF Downloads page:
+
+  http://www.hdfgroup.org/downloads/index.html#hdf4
+
+New features and changes in HDF 4.2.5 include:
+
+- SDgetchunkinfo now contains compression type and compression
+  information.  If a failure occurs while getting compression information,
+  the associated compression parameters will be set to -1 to indicate
+  that no compression information was retrieved (rather than simply failing).
+
+- A vgroup name and class name can now be more than the previous limit
+  of 64 characters.  Two public functions (Vgetnamelen, Vgetclassnamelen) have
+  been provided for applications to allocate sufficient space for these items.
+
+- SDreset_maxopenfiles was added to allow users to reset the number of files
+  that can be open at the same time to the system limit minus 3. 
+
+- "make installcheck" was added to build and test examples using h4cc and
+  h4fc.
+
+- The -k flag was added to "hdp dumpsds" to display SDSs in the order they are
+  specified on the command line.
+
+- The -V option to print the library version string was added to many tools.
+
+- Support was added for 64-bit Mac Intel.
+
+- Many bugs were fixed.
+
+Please see the HDF 4.2.5 release notes for complete details on what has changed
+in this release:
+
+   http://www.hdfgroup.org/ftp/HDF/HDF_Current/src/hdf-4.2.5-RELEASE.txt
+
+
+
+Release of H4 to H5 2.1.1
+=========================
+
+A new version of the H4 to H5 conversion software, version 2.1.1, is now
+available.  This version was built with HDF 4.2.5 and HDF5 1.8.4-patch1.
+
+The H4 to H5 web page is located here:
+
+   http://www.hdfgroup.org/h4toh5/
+
+The H4 to H5 software can be obtained from the HDF Downloads page:
+
+   http://www.hdfgroup.org/downloads/index.html#h4h5
+
+
+
+Release of HDF5 1.8.4 Patch 1
+=============================
+
+HDF5 1.8.4 Patch 1 was released recently to correct a corruption problem
+that was present in releases HDF5 1.8.0 through HDF5 1.8.4. If you missed
+that announcement, please be sure to see the bulletin that describes the
+problem:
+
+   http://www.hdfgroup.org/newsletters/bulletin20100226.html
+
+There was no new documentation for this patch release.
+
+The HDF5 home page is located here:
+
+   http://www.hdfgroup.org/HDF5/
+
+HDF5 1.8.4 Patch 1 can be obtained from the HDF Downloads page:
+
+   http://www.hdfgroup.org/downloads/index.html#hdf5
+
+The HDF5 1.8.4 Patch 1 release notes can be seen here:
+
+   http://www.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.8.4-patch1-RELEASE.txt
+
+
+
+Dropping Support for VS 2005 and Intel 9.1
+==========================================
+
+We plan to drop support for VS 2005 and Intel 9.1 on Windows for future
+releases.  Please contact the HDF Helpdesk if you have any concerns about
+this.
+
+
+-------------------------------------------------------------
+For questions regarding these or other HDF issues, contact:
+
+   help@hdfgroup.org
+

@@ -1,0 +1,151 @@
+
+--------------------------------------------------------------------------
+To subscribe to the THG news mailing list, please send an empty message
+to "news-subscribe@hdfgroup.org".  To unsubscribe, send a message to
+"news-unsubscribe@hdfgroup.org".
+--------------------------------------------------------------------------
+
+                            Newsletter #90
+                           January 19, 2007
+
+CONTENTS
+                                            *******************************
+. C# Prototype Release                      *                             *
+                                            * Visit the THG home page for *
+. Corruption Bug in HDF5                    * up-to-date information:     *
+                                            *                             *
+. Alpha Release of h5check Validation Tool  *    http://hdfgroup.org/     *
+                                            *                             *
+. Dropped/Added/Platforms                   *******************************
+
+. RFC Regarding Change to H5IM API
+
+. Tell Us About Your HDF-Related Projects!
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+C# Prototype Release
+====================
+
+We are pleased to announce the prototype release of a C# API for HDF5.
+It consists of C# wrappers for the HDF5 C library for the .NET environment.
+
+In this first prototype, wrappers are implemented for many of the basic C
+functions, and a detailed example is included.  A future prototype will
+provide a comprehensive set of C# wrappers for the HDF5 C library.
+
+This release is available, at:
+
+  ftp://ftp.ncsa.uiuc.edu/HDF/pub/outgoing/hdf5/Csharp-prototype/HDF5dotNet.zip
+
+Once you have downloaded and uncompressed the file, you can access
+the documentation from the following location:
+
+  .\HDF5DotNet\HDF5DotNet\doc\output\HDF5DotNet.chm (double-click on the file)
+
+The list of currently implemented wrappers along with general instructions
+for using the wrappers is provided in the release notes at:
+
+  ftp://ftp.ncsa.uiuc.edu/HDF/pub/outgoing/hdf5/Csharp-prototype/PrereleaseNotes.txt
+    
+
+
+Corruption Bug in HDF5
+======================
+
+We have encountered a corruption bug in the HDF5 code. If an
+application renames an attribute to a longer name, it is possible
+for the library to overwrite other parts of the object header (or even
+another object in the file, in rare cases).  If you have renamed
+any attributes in HDF5, please check your HDF5 files.
+
+This problem is fixed in the latest HDF5 1.6.6 snapshot (snap14)
+available from the snapshots directory at:
+
+   ftp://ftp.ncsa.uiuc.edu/HDF/pub/outgoing/hdf5/snapshots/
+
+It will be fixed in the HDF5-1.8.0 Alpha 6 release, when that is
+made available.
+
+
+Alpha Release of h5check Validation Tool
+========================================
+
+The h5check utility is a new tool for checking the validity of an
+HDF5 file.  It verifies that the content of an HDF5 file is encoded
+according to the HDF5 File Format Specification. Not only can this tool
+help determine whether HDF5 files are valid, but it may also help
+with invalid files, to pinpoint the invalid parts of a file.
+
+An alpha release of h5check is available.  If you would like to obtain
+it, please let us know.
+
+More information regarding h5check can be found at:
+
+    http://hdfgroup.com/RFC/H5CHK/
+
+
+Dropped/Added Platforms
+=======================
+
+We are planning on dropping the following platforms in the next
+release of HDF and HDF5.  If this will cause any problems for you,
+please let us know as soon as possible:
+
+ HP-UX 11.00              Linux 2.4
+ Cray SV1 and TS IEEE     Solaris 2.7, 2.8, 2.9
+ AIX 5.1 and 5.2          Windows 2000
+ SGI IRIX64-6.5           Mac OS X 10.3
+
+We will be adding the following platforms:
+
+ Mac OS X 10.4 (Intel)    Linux 2.6
+ Solaris 2.10  (Intel)    HP-UX 11.23
+ Cray XT3
+ Windows 64-bit (32-bit binary)
+
+We are hoping to fully support Windows 64-bit in a future HDF5 release. We
+are looking for extra funding to accelerate the current working process. 
+Please let us know if you are interested in this issue.
+
+We would also like to determine the interest in Windows Visual Studio 6.0
+as well as Compaq Visual Fortran 6.6c.  If you are a Windows user and
+would like for support to continue for either VS 6.0 or Compaq Visual 
+Fortran 6.6c, please let us know.
+
+
+RFC Regarding Change to H5IM API
+================================
+
+The HDF5 Image and Palette Specification allows for an HDF5 image to be
+written either as a 2D or 3D dataset.  Currently, however, the High Level
+API function H5IMmake_image_8bit only creates a 3D dataset.  We have had
+several requests for the H5IM API to write a 2D image dataset, instead
+of or in addition to the current 3D dataset.  We would like to add this
+capability to the Image API, and would like to know your opinion on what
+the default behavior should be.
+
+The HDF5 Image and Palette Specification can be found in the HDF5
+Application Developer's Guide at:
+
+     http://hdfgroup.org/HDF5/doc/ADGuide/ImageSpec.html
+
+
+Tell Us About Your HDF-Related Projects!
+========================================
+
+Do you have any publications in 2006 that are results of work in which
+HDF or HDF5 was used?
+
+Is there any material you would like to share with us and the rest of
+the HDF community about your HDF usage (success or failure stories)?
+
+If so, we would very much like to hear from you!
+
+
+
+-------------------------------------------------------------
+For questions regarding these or other THG issues, contact:
+
+   help@hdfgroup.org
+

@@ -1,0 +1,159 @@
+
+--------------------------------------------------------------------------
+THG Home Page:                   http://hdfgroup.org/
+Helpdesk & Mailing Lists Info:   http://hdfgroup.org/services/support.html
+--------------------------------------------------------------------------
+
+                            Newsletter #100
+                           February 15, 2008 
+
+CONTENTS
+
+  - Release of HDF5 1.8.0
+
+  - Release of HDF5 1.6.7
+
+  - Release of HDF 4.2r3
+
+  - FTP Site
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+This newsletter marks the release of three new versions of the HDF software:
+
+    HDF5 1.8.0, HDF5 1.6.7, and HDF 4.2r3
+
+HDF5 1.8.0 is a major release with file format changes, as well as many new
+features. The file format changes will affect backward/forward compatibility
+with previous releases.  For detailed information on how this may affect
+your existing HDF5 applications and files, please read the document on
+"New Features in Release 1.8.0 and Format Compatibility Considerations":
+
+    http://www.hdfgroup.org/HDF5/doc/ADGuide/CompatFormat180.html
+
+Not all users with existing applications will be willing or able to move to
+the HDF5 1.8.0 release because of these major changes.  We are therefore
+continuing to support the HDF5 1.6 branch of HDF5.  HDF5 1.6.7 is a point
+release with a few important changes, described below.
+
+The HDF 4.2r3 release is also a point release with a few changes.
+
+
+Release of HDF5 1.8.0
+=====================
+
+We are very pleased to announce the release of HDF5 1.8.0.
+HDF5 1.8.0 is a major release with many changes and new features.
+
+Links to the HDF5 1.8.0 source code, documentation, and additional
+materials can be found on the HDF5 web page at:
+
+  http://www.hdfgroup.org/products/hdf5/
+
+The HDF5 1.8.0 release can be obtained from:
+
+  http://www.hdfgroup.org/HDF5/release/obtain5.html
+
+User documentation for 1.8.0 can be accessed directly from:
+
+  http://www.hdfgroup.org/HDF5/doc/
+    
+The "What's New in HDF5 1.8.0" document describes the new features in
+HDF5 1.8.0:
+
+  http://www.hdfgroup.org/HDF5/doc/ADGuide/WhatsNew180.html
+
+All new and modified APIs are listed in detail in the "HDF5 Software Changes
+from Release to Release" document, in the section "Release 1.8.0 (current
+release) versus Release 1.6.x":
+
+  http://www.hdfgroup.org/HDF5/doc/ADGuide/Changes.html
+
+For detailed information on platforms supported, supported configuration
+features and known problems, please refer to the release notes:
+
+  ftp://ftp.hdfgroup.org/HDF5/current/src/hdf5-1.8.0-RELEASE.txt
+
+
+
+Release of HDF5 1.6.7
+=====================
+
+The latest release of HDF5 1.6, version 1.6.7, is now available from the
+HDF5 web page at:
+
+  http://www.hdfgroup.org/products/hdf5/
+
+The HDF5 1.6.7 release can be obtained from:
+
+  http://www.hdfgroup.org/HDF5/release/obtain516.html
+
+Documentation for HDF5 1.6.7 can be found at:
+
+  http://www.hdfgroup.org/HDF5/doc1.6/
+
+Changes in 1.6.7 include:
+
+  - The library's behavior has been changed when reading files that may have
+    had corrupted object header information.  By default, the library now
+    rebuilds the correct object header information instead of issuing an
+    error. The previous 'strict' file format interpretation can be
+    enabled with the "--enable-strict-format-checks" configure option.
+
+  - The stream I/O driver has been removed from the distribution.
+
+The "HDF5 Software Changes from Release to Release" document lists API-level
+changes between HDF5 1.6.7 and earlier releases:
+
+  http://www.hdfgroup.org/HDF5/doc1.6/ADGuide/Changes.html
+
+For detailed information on platforms supported, supported configuration
+features and known problems, please refer to the release notes:
+
+  ftp://ftp.hdfgroup.org/HDF5/current16/src/hdf5-1.6.7-RELEASE.txt
+
+
+
+Release of HDF 4.2r3
+====================
+
+HDF 4.2r3 is now available from the HDF 4 web page at:
+
+  http://www.hdfgroup.org/products/hdf4/
+
+HDF 4.2r3 can be downloaded from:
+
+  http://www.hdfgroup.org/release4/obtain.html
+
+The HDF 4.2r3 documentation will soon be available from:
+   
+  http://www.hdfgroup.org/doc.html
+
+Changes in HDF 4.2r3 include:
+   
+  - Support for Windows 64-bit.
+
+  - Improvements to the configuration when building without NetCDF-3:
+    The presence of the NetCDF-3 header files is no longer required to
+    build the HDF4 library with the --without-netcdf configuration flag.
+
+  - A fix for the problem where more than one variable has the same name.
+    New APIs were added to handle non-uniquely named variables.
+    (SDgetnumvars_byname, SDnametoindices)
+
+
+
+FTP Site
+========
+
+The recent problems with the THG ftp server have been corrected.  If
+you encounter any problems downloading software from the THG web site,
+please let us know.
+
+
+-------------------------------------------------------------
+
+For questions regarding these or other THG issues, contact:
+
+   help@hdfgroup.org
+

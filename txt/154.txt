@@ -1,0 +1,67 @@
+
+To view from a browser see:
+   https://support.hdfgroup.org/newsletters/newsletter154.pdf
+  
+--------------------------------------------------------------------------
+The HDF Group Home Page:                https://www.hdfgroup.org/
+Support Services:                       https://www.hdfgroup.org/support/
+--------------------------------------------------------------------------
+
+                            Newsletter #154 
+                              May 31, 2017 
+
+CONTENTS
+ . Release of HDFView 3.0.0 Beta 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDFView 3.0.0 Beta
+=============================
+
+A *beta* version of HDFView 3.0.0 is now available from The HDF Group home
+page:
+
+    https://www.hdfgroup.org/hdfview/
+
+This is a major release that includes the following new features and changes:
+
+ o It supports 64-bit object identifiers, and uses the HDF-Java wrappers
+   that were added to HDF5 (in HDF5-1.10) and HDF4 (in HDF 4.2.12).
+
+ o The GUI framework that HDFView uses was migrated from Swing to SWT,
+   which provides a more native application look and feel and advanced
+   support for tables.
+
+ o The data views have been separated from the main HDFView window. The
+   main HDFView window still displays open files and their structures on
+   the left side of the window, and it now displays any metadata on the
+   right side.
+
+ o This release includes improved support for various datatypes (compound,
+   array of compound, and opaque).
+
+For a complete list of the new features and changes in this release, please
+see the Release Notes:
+
+   https://support.hdfgroup.org/ftp/HDF5/releases/HDF-JAVA/hdfview-3.0.0/src/unpacked/docs/RELEASE.txt 
+
+Why use HDFView 3 ?
+
+HDFView 3 can read files created with any version of HDF5 or HDF4.
+
+The older HDFView 2.x software supports files created with HDF5-1.8 (or
+earlier) and any version of HDF4.  HDFView 2.x may be able to read some
+HDF5-1.10 files if they do not include any new features.
+
+Important Change:
+
+Please be aware that the change from Swing to SWT will affect users of the
+HDF-Java Object package. With earlier releases of HDF-Java, the Swing GUI
+framework library was required. This is no longer necessary in HDFView 3.
+
+
+-------------------------------------------------------------
+For questions regarding these or other HDF issues, contact:
+
+   help@hdfgroup.org
+

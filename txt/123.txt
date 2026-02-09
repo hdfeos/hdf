@@ -1,0 +1,107 @@
+--------------------------------------------------------------------------
+The HDF Group Home Page:         http://hdfgroup.org/
+Helpdesk & Mailing Lists Info:   http://hdfgroup.org/services/support.html
+--------------------------------------------------------------------------
+
+                            Newsletter #123
+                           September 2, 2011
+
+CONTENTS:
+
+ . Release of h5check 2.0.1
+ . Release of h5edit 1.0.0
+ . Release of h5augjpss 1.0.0
+ . HDF5 Birds-of-a-Feather (BOF) at SC11   
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of h5check 2.0.1
+========================
+
+A new release of the HDF5 Format Checker, h5check version 2.0.1, is now
+available. This version was tested with HDF5-1.8.7 and HDF5-1.6.10.
+
+The h5check home page is located at:
+
+   http://www.hdfgroup.org/products/hdf5_tools/h5check.html
+
+The h5check utility can be downloaded from The HDF Group Downloads page
+under "HDF5 Standalone Tools":
+
+   http://www.hdfgroup.org/downloads/index.html#tools
+
+The h5check utility is a validation tool for verifying that an HDF5
+file is encoded according to the HDF File Format Specification. Its
+purpose is to ensure data model integrity and long-term compatibility
+between evolving versions of the HDF5 library. 
+
+
+
+Release of h5edit 1.0.0
+=======================
+
+The first release of the HDF5 file editor, h5edit version 1.0.0, is now
+available for download from The HDF Group Downloads page under
+"HDF5 Standalone Tools":
+
+   http://www.hdfgroup.org/downloads/index.html#tools
+
+It can also be obtained from the JPSS Project Download page:
+
+   http://www.hdfgroup.org/projects/npoess/jpss_downloads.html
+
+The h5edit utility is a general tool for editing HDF5 files from the
+command line. The first release only supports commands for the creation
+and deletion of attributes of datasets and groups. Future releases will
+include support for more commands and other HDF5 objects. 
+
+For information on h5edit, see:
+
+   http://www.hdfgroup.org/projects/npoess/h5edit_index.html
+
+This tool is sponsored by the Joint Polar Satellite System (JPSS)
+and NPOESS Preparatory Project (NPP).
+
+
+Release of h5augjpss 1.0.0
+==========================
+
+The first release of h5augjpss, version 1.0.0, is now available from
+The HDF Group Downloads page under Projects (JPSS):
+
+   http://www.hdfgroup.org/downloads/index.html#projects
+ 
+It can also be obtained from the JPSS Project Download page:
+
+   http://www.hdfgroup.org/projects/npoess/jpss_downloads.html
+   
+This tool "augments" or adds modifications to Joint Polar Satellite
+System (JPSS) product files so that they conform to the netCDF-4 data
+model and can be readable by netCDF-4 tools. The h5augjpss utility
+is *not* a general tool, but may be of interest to others in the HDF
+community.
+
+For more information regarding this tool, see:
+
+   http://www.hdfgroup.org/projects/npoess/h5augjpss_index.html
+
+The h5augjpss utility is sponsored by the Joint Polar Satellite
+System (JPSS) and NPOESS Preparatory Project (NPP).
+
+
+HDF5 Birds-of-a-Feather (BOF) at SC11
+=====================================
+
+The HDF Group will be leading an HDF5 Birds-of-a-Feather (BOF)
+session at SC11 (Supercomputing 2011). SC11 will be held from
+November 12-18, 2011 in Seattle, Washington. Be sure to check
+the SC11 web page for more details when they are available:
+
+   http://sc11.supercomputing.org/index.php
+
+ 
+-------------------------------------------------------------
+For questions regarding these or other HDF issues, contact:
+
+   help@hdfgroup.org 
+

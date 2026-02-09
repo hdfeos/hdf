@@ -1,0 +1,55 @@
+--------------------------------------------------------------------------
+THG Home Page:                   http://hdfgroup.org/
+Helpdesk & Mailing Lists Info:   http://hdfgroup.org/services/support.html
+--------------------------------------------------------------------------
+
+                            Newsletter #99
+                           November 27, 2007  
+
+
+Release of HDF5 1.8.0 Beta 5
+============================
+
+We are pleased to announce the release of HDF5 1.8.0 Beta 5.
+
+This is the LAST beta version before the actual release of HDF5
+1.8.0, expected in mid-January, 2008.  The HDF5 1.8.0 Beta 5
+software is stable and no new features will be added from now
+until 1.8.0 is released.
+
+The HDF5 home page is located at:
+
+   http://hdfgroup.org/products/hdf5/index.html
+
+The HDF5 1.8.0 Beta page is accessible from the HDF5 home page and
+is located at:
+
+   http://www.hdfgroup.uiuc.edu/HDF5/release/beta/obtain518.html
+
+A list of the new features in HDF5 1.8.0 can be found at:
+
+    http://www.hdfgroup.uiuc.edu/HDF5/doc_1.8pre/WhatsNew180.html
+
+The API-level changes from release to release are described in:
+
+   http://www.hdfgroup.uiuc.edu/HDF5/doc_1.8pre/doc/ADGuide/Changes.html
+
+Documentation for HDF5 1.8.0 can be obtained from:
+
+    http://www.hdfgroup.uiuc.edu/HDF5/doc_1.8pre/
+
+Following are the major changes in this release from the last beta:
+
+ - Four new functions were added for recursively iterating over Links 
+   and Objects:
+
+     H5Lvisit, H5Lvisit_by_name
+     H5Ovisit, H5Ovisit_by_name
+ 
+ - The Stream VFD was removed, due to licensing issues.  We are 
+   investigating how we can make it available to the public as 
+   separate software.
+
+Please let us know if you have any questions regarding these
+or other THG issues!
+

@@ -1,0 +1,117 @@
+--------------------------------------------------------------------------
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+--------------------------------------------------------------------------
+
+                          Newsletter #48
+                          December 3, 1999
+
+CONTENTS
+                                            *******************************
+. Java Products Release 2.4                 * Visit the HDF home page     *
+. Platform to be Dropped                    * for up-to-date information  *
+. HDF5 Documentation in PostScript and PDF  *                             *
+                                            *   http://hdf.ncsa.uiuc.edu/ *
+                                            *******************************
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Java Products Release 2.4
+=========================
+
+Release 2.4 of the Java HDF Products is now available. It is a bug fix 
+release with a few new features for HDF 4.1r3.  For information, 
+documentation, and downloads see:
+
+        http://hdf.ncsa.uiuc.edu/java-hdf-html/
+
+Changes in this Release
+-----------------------
+
+  1.  All bugs in our database were fixed.
+  2.  The Java HDF Interface was upgraded:
+        * The HDF library is now accessed as 'static' native methods,
+          eliminating the need to explicitly initialize the HDFLibrary
+          class. See the JHI manual for more information.
+
+        * Support for Macintosh and Windows path names was added to
+          the Java HDF Interface.
+
+        * The HDFArray class was extended to handle arrays of any class
+          of 'Number', (i.e., 'Float' as well as 'float') and also
+          arrays of Java String objects.
+
+        * Additional exception handling was implemented.
+
+        * The JHI is now also distributed as a separate product.
+
+  3. The HDF Java Products were compiled and tested with JDK 1.2.
+     The non-graphic parts work with 1.2 (e.g., the JHI), but some
+     graphics components only work with JDK 1.1.
+
+  4. The JHI was successfully ported to Macintosh.
+
+New Features in this Release
+----------------------------
+
+Below is a list of new features in release 2.4. For a complete list
+of features, you can read the JHV User's Guide.
+
+  1. The Image window now provides an extra option to expand the
+     image 2, 4, and 8 times using pixel replication. (See Chapter
+     5 of the User's Guide.)
+
+  2. The Vdata spreadsheet has a new option to save data from a 2D
+     field.  A Vdata field with order > 1 (i.e, the entries are a 1D
+     array) may be selected and saved as a 2D HDF SDS. The saved
+     dataset can be read by the JHV or other tools to create plots
+     or images from the data.
+
+Limitations
+-----------
+
+The current implementation of JHV has the following limitations.
+
+  1.  The JHV cannot be compiled with versions of the JDK older
+      than 1.1.6.
+
+  2.  The JHV can be compiled with JDK 1.2, but some of the graphics
+      components do not work correctly with JFC.  All components work
+      with JDK 1.1.x.
+
+  3.  The Java HDF Viewer does not support HDF-5.  For more information
+      about Java products for HDF-5, see:
+        http://hdf.ncsa.uiuc.edu/java-hdf5-html/
+
+
+
+Platform to be Drop
+===================
+
+We are dropping support for the DEC Alpha NT with the next
+release of HDF 4.  
+
+
+
+HDF5 Documentation in PostScript and PDF
+========================================
+
+The HDF5 documentation is available in PostScript and PDF format,
+accessible from the HDF5 Home page at:
+
+    http://hdf.ncsa.uiuc.edu/HDF5/doc/PSandPDF/index.html
+
+This is also available in compressed format from the NCSA ftp server:
+    
+    ftp://ftp.ncsa.uiuc.edu/HDF/HDF5/docs/5-1.2.0-docs.tar
+
+
+
+--------------------------------------------------------------
+For questions regarding this or other HDF issues, contact:
+
+   hdfhelp@ncsa.uiuc.edu
+
+
+

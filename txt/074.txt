@@ -1,0 +1,133 @@
+--------------------------------------------------------------------------
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+--------------------------------------------------------------------------
+
+                            Newsletter #74
+                           October 24, 2003
+
+CONTENTS
+                                            *******************************
+. Release of HDF5-1.6.1                     *                             *
+  - New Features and Changes                * Visit the HDF home page     *
+  - Platforms Tested                        * for up-to-date information  *
+  - Known Problems                          *                             *
+                                            *  http://hdf.ncsa.uiuc.edu/  *
+                                            *                             *
+                                            *******************************
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF5-1.6.1
+=====================
+
+HDF5-1.6.1 is now available for download from the NCSA HDF5 home 
+page at:
+
+    http://hdf.ncsa.uiuc.edu/HDF5/
+
+The HDF5 documentation is included in the source code and can also
+be accessed from:
+
+    http://hdf.ncsa.uiuc.edu/HDF5/doc/
+
+This is a fully tested release.  The configuration features supported
+in this release can be viewed at:
+
+    http://hdf.ncsa.uiuc.edu/HDF5/release/SuppConfigFeats.html
+
+The RELEASE.txt file in the source code contains detailed information
+about this release:
+  
+ ftp://ftp.ncsa.uiuc.edu/HDF/HDF5/current/src/unpacked/release_docs/RELEASE.txt
+
+For information on functions that have changed in HDF5-1.6.1, see:
+
+    http://hdf.ncsa.uiuc.edu/HDF5/doc/ADGuide/Changes.html
+
+
+New Features and Changes
+------------------------
+
+The major new features and changes in HDF5-1.6.1 are:
+
+  o Added new H5Fget_freespace() routine to query the free space in a file.
+
+  o Added a few new C++ functions.
+ 
+  o Added support for gcc 3.3.1.
+
+  o Fortran90 APIs are being integrated into the main body of the HDF5 
+    Reference Manual (RM).  This process is complete in all RM sections
+    except H5P.
+
+  o Many bugs were fixed in this release, including the following: 
+
+     - Fixed potential file corruption bug when too many object header
+       messages (probably attributes, from a user perspective) were
+       inserted into an object header and certain other conditions were
+       met.  
+
+     - Corrected some problems with variable-length datatypes.
+
+     - Corrected some problems with the H5Tget_native_type function.
+ 
+     - Corrected bug where H5Gunlink caused file corruption.
+
+     - Corrected errors with using point selections to access data in
+       chunked datasets.  
+
+     - Modified library and file format to support storing indexed storage
+       (chunked dataset) B-tree's with non-default internal 'K' values.
+
+     - Fixed the error that caused "make install" to fail because of the
+       macro definition syntax of "prefix?=..."  
+
+
+Many other changes are also included in this release.  Please refer to the 
+RELEASE.txt file in the source code for a comprehensive list of changes.
+
+
+Platforms Tested
+----------------
+
+  AIX 
+  Cray T3E, SV1, T90IEEE
+  FreeBSD 
+  HP-UX 
+  IRIX 
+  IRIX64 (32 and 64 bit)
+  Linux 
+  OSF1 
+  Solaris (32 and 64 bit)
+  TFLOPS
+  IA-32 
+  IA-64
+  Windows 
+  Mac OS X
+  
+For further information please refer to the following page (or the 
+RELEASE.txt file):
+
+    http://hdf.ncsa.uiuc.edu/HDF5/release/platforms5.html
+                                  
+
+Known Problems
+--------------
+
+Known problems at release time are listed in the RELEASE.txt file that 
+comes with the source code.
+
+Further information on known problems can be found on the following page:
+
+  http://hdf.ncsa.uiuc.edu/HDF5/release/known_problems5.html
+
+
+-------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+   hdfhelp@ncsa.uiuc.edu
+
+

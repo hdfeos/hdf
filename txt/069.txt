@@ -1,0 +1,78 @@
+--------------------------------------------------------------------------
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+--------------------------------------------------------------------------
+
+                           Newsletter #69
+                           August 7, 2002
+
+CONTENTS
+                                            *******************************
+. Release of HDF Java Products Version 1.1  *                             *
+                                            * Visit the HDF home page     *
+. HDF5 Wins R&D Award for NCSA & DOE Labs   * for up-to-date information  *
+                                            *                             *
+. HDF-EOS Workshop Scheduled for December   *  http://hdf.ncsa.uiuc.edu/  *
+                                            *                             *
+                                            *******************************
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF Java Products Version 1.1
+========================================
+
+The second release of the HDF Java Products is now available 
+and can be downloaded from:
+
+   http://hdf.ncsa.uiuc.edu/hdf-java-html/
+
+NOTE:  With this release, JHV is no longer supported.  H5View is still 
+supported but will be phased out by the next release of HDFView.   
+
+The HDF Java Products include four components:
+
+ - The Java HDF Interface (JHI) to access the HDF4 library.  
+
+ - The Java HDF5 Interface (JHI5) to access the HDF5 library.
+
+ - The hdf-object package, a pure Java implementation of an abstract 
+   model of data, which can read data from either HDF4 or HDF5.
+
+ - HDFView, a Java-based tool for browsing and editing HDF4 and HDF5
+   files. This tool can do as much as JHV and H5View and also includes 
+   many new editing features.  For detailed information about HDFView, 
+   see:
+
+          http://hdf.ncsa.uiuc.edu/hdf-java-html/hdfview/ 
+
+The HDF Java Products have been tested on SGI IRIX, Linux, Solaris and 
+Windows platforms.
+
+
+HDF5 Wins R&D Award for NCSA & DOE Labs
+=======================================
+
+R&D Magazine, the magazine of research and development, will present a 
+2002 R&D 100 Award to HDF5, which has been developed by NCSA in 
+collaboration with the Lawrence Livermore, Sandia, and Los Alamos 
+National Laboratories.  For details, see:
+
+   http://www.ncsa.uiuc.edu/News/Access/Releases/020722.HDF5.html
+
+
+HDF-EOS Workshop Scheduled for December
+=======================================
+
+The next HDF-EOS workshop has been scheduled for December 2002 
+in San Francisco, CA, in conjunction with the Fall AGU meeting.
+For details regarding this, see the EOS Standards and Tools page at:
+
+   http://hdfeos.gsfc.nasa.gov/
+
+
+--------------------------------------------------------------
+For questions regarding these or other HDF issues, contact:
+
+   hdfhelp@ncsa.uiuc.edu
+

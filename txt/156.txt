@@ -1,0 +1,43 @@
+
+To view from a browser see:
+   https://support.hdfgroup.org/newsletters/newsletter156.pdf
+  
+--------------------------------------------------------------------------
+The HDF Group Home Page:                https://www.hdfgroup.org/
+Support Services:                       https://www.hdfgroup.org/support/
+--------------------------------------------------------------------------
+
+                            Newsletter #156
+                             June 29, 2017
+
+CONTENTS
+ o Release of HDF 4.2.13
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF 4.2.13
+=====================
+
+The HDF 4.2.13 release is now available. It can be obtained from the HDF4 home
+page:
+
+   https://support.hdfgroup.org/products/hdf4/
+
+HDF 4.2.13 is a minor release with a few changes, including:
+
+ o Support was added for macOS Sierra 10.12.5.
+
+ o Several memory leaks were fixed.
+
+ o The minimum CMake version supported is 3.2.2.
+  
+For detailed information regarding this release, please see the release notes:
+
+   https://support.hdfgroup.org/ftp/HDF/releases/HDF4.2.13/src/hdf-4.2.13-RELEASE.txt
+
+
+-------------------------------------------------------------
+For questions regarding these or other HDF issues, contact:
+
+   help@hdfgroup.org
+

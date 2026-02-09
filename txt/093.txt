@@ -1,0 +1,86 @@
+
+--------------------------------------------------------------------------
+THG Home Page:                  http://hdfgroup.org/
+THG Helpdesk:                   help@hdfgroup.org
+Mailing List Information:       http://hdfgroup.org/support.html
+--------------------------------------------------------------------------
+
+                            Newsletter #93
+                            July 17, 2007
+
+CONTENTS
+ - HDF5 1.8.0 Beta 2 Released
+ - HDF/HDF-EOS XI Workshop Scheduled
+ - MSVC++ 6.0 Support Update
+ - HDF5-OPeNDAP Handler
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+HDF5 1.8.0 Beta 2 Released
+==========================
+
+HDF5 1.8.0 Beta 2 was recently released.  Most features planned for
+HDF5 1.8.0 are now available and working.
+
+There are a lot of exciting new features in the 1.8.0 release.  We
+encourage you to try the HDF5 1.8.0 Beta 2 software, and would like to
+hear your comments.
+
+Please see the following page for the HDF5 1.8.0 Beta software and
+information:
+
+   http://www.hdfgroup.uiuc.edu/HDF5/release/beta/obtain518.html
+
+A list of the new features in HDF5 1.8.0 can be found at:
+
+   http://www.hdfgroup.uiuc.edu/HDF5/doc_1.8pre/WhatsNew180.html
+
+Documentation for HDF5 1.8.0 Beta 2 is at:
+   
+  http://www.hdfgroup.uiuc.edu/HDF5/doc_1.8pre/
+
+
+
+HDF/HDF-EOS XI Workshop Scheduled
+=================================
+
+The HDF/HDF-EOS XI Workshop has been scheduled for November 6-8, 2007,
+and a "Call for Topics" has been announced.
+
+This workshop is NOT just for HDF-EOS users.  All HDF users are welcome and
+encouraged to participate.   For details, see:
+
+   http://www.hdfeos.org/workshops/ws11/workshop_eleven.php
+
+
+
+MSVC++ 6.0 Support Update
+=========================
+
+In the previous newsletter, we mentioned that we would be dropping
+MSVC++ 6.0 support.  Since then, we have decided to continue
+MSVC++ 6.0 support in HDF5 1.6.6, which will be released soon.
+Support for MSVC++ 6.0 is currently in the HDF5 1.8.0 Beta software.
+However, it will NOT be included in the final release of HDF5 1.8.0.
+
+
+
+HDF5-OPeNDAP Handler
+====================
+
+The HDF Group and OPeNDAP are working together to develop software to access
+HDF5 data via OPeNDAP's Data Access Protocol. We are in the final process of
+developing an HDF5-OPeNDAP handler to access HDF5 data via OPeNDAP. Users
+can go to the following link to gather information on how to build the
+HDF5-OPeNDAP handler:
+
+   http://hdfdap.hdfgroup.uiuc.edu:8080/install.html
+
+We look forward to hearing your feedback.
+
+
+
+
+
+
+

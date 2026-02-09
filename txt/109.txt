@@ -1,0 +1,117 @@
+--------------------------------------------------------------------------
+The HDF Group Home Page:         http://hdfgroup.org/
+Helpdesk & Mailing Lists Info:   http://hdfgroup.org/services/support.html
+--------------------------------------------------------------------------
+
+                            Newsletter #109
+                           November 13, 2009 
+
+CONTENTS
+ . Release of HDF5 1.8.4 and HDF5 1.6.10
+ . Windows Compiler Support
+ . HDF-EOS Web Site Changes
+ . MATLAB Examples for HDF5 1.8
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+Release of HDF5 1.8.4 and HDF5 1.6.10
+=====================================
+
+The HDF5 1.8.4 and HDF5 1.6.10 releases are now available and can
+be accessed from the HDF5 Home Page at:
+
+  http://www.hdfgroup.org/HDF5/
+
+See the Downloads page for obtaining HDF5 (and other software):
+
+  http://www.hdfgroup.org/downloads/
+
+Both of these releases are minor releases with a few new features
+and changes. Important changes with these releases include:
+
+ HDF5 1.8.4:
+    
+  There were many improvements to the library and tools, including:
+
+    - The configure and make were modified to preserve the CFLAGS environment
+      variable provided by the user.
+
+    - The h5dump utility can display data pointed to by region references
+      (-R flag).
+
+    - The h5diff utility has an improved way of handling number comparison,
+      including infinity.
+   
+    - The library no longer modifies a file opened for R/W (by re-writing the
+      superblock) when no changes were made to the file.
+
+    - Several issues related to variable-length datatypes were resolved.
+
+
+ HDF5 1.6.10:
+
+    HDF5 1.6.10 is the LAST RELEASE of HDF5 1.6.
+
+
+Please refer to the Release Notes in each release for a detailed list
+of what changed:
+
+ HDF5 1.8.4:
+   http://www.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.8.4-RELEASE.txt
+
+ HDF5 1.6.10: 
+   http://www.hdfgroup.org/ftp/HDF5/current16/src/hdf5-1.6.10-RELEASE.txt
+
+
+Windows Compiler Support
+========================
+
+Please be advised that HDF5 1.8.4 is the last release of HDF5
+that will support Intel Fortran 9.1 on Windows.
+
+In addition, Visual Studio 2005 support will be dropped after
+Visual Studio 2010 is released (scheduled for Spring 2010).  At
+that time, Visual Studio 2008 and Intel Fortran 11 will become
+the standard HDF5 project configuration on Windows.
+
+
+
+HDF-EOS Web Site Changes
+========================
+
+Many changes have been made to the HDF-EOS Tools and Information
+Center web site at http://hdfeos.org/ to help HDF and HDF-EOS users
+handle NASA HDF data.
+
+A new section entitled "EXAMPLES" was added to the web site, which
+includes example code for accessing HDF-EOS Grid and Swath files using
+C, Fortran, IDL and Matlab, as well as examples of using tools to access
+HDF-EOS and HDF files.
+
+The libraries and tools under "SOFTWARE" have all been re-evaluated and
+updated where possible, and many new libraries and tools have been added.
+
+Lastly, a web forum was added to the web site to enable users to
+share knowledge related to handling NASA HDF and HDF-EOS data.
+
+
+MATLAB Examples for HDF5 1.8
+============================
+
+We are pleased to announce that The MathWorks has provided HDF5 1.8
+examples for using HDF5 with MATLAB (in addition to HDF5 1.6 examples).
+Both the 1.8 and 1.6 examples can be accessed from here:
+
+   http://www.hdfgroup.org/ftp/HDF5/examples/examples-by-api/
+
+If you have any questions regarding these examples, let us know.
+
+Many thanks to The MathWorks for their support of the HDF technologies.
+ 
+
+-------------------------------------------------------------
+For questions regarding these or other HDF issues, contact:
+
+   help@hdfgroup.org 
+

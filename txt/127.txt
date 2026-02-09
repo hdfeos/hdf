@@ -1,0 +1,72 @@
+--------------------------------------------------------------------------
+The HDF Group Home Page:         http://hdfgroup.org/
+Helpdesk & Mailing Lists Info:   http://hdfgroup.org/services/support.html
+--------------------------------------------------------------------------
+
+                            Newsletter #127
+                             May 15, 2012
+
+CONTENTS
+ - Release of HDF5-1.8.9
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF5-1.8.9
+=====================
+
+The HDF5-1.8.9 release is now available. Many thanks to the users who
+helped test this release.
+
+The HDF5-1.8.9 software can be obtained from the following page:
+
+    http://www.hdfgroup.org/HDF5/release/obtain5.html
+
+This page can be accessed from The HDF Group Downloads page:
+
+    http://www.hdfgroup.org/downloads/
+
+The HDF5-1.8.9 documentation is located in:
+
+    http://www.hdfgroup.org/HDF5/doc/
+
+For information on HDF5, see the HDF5 home page:
+
+    http://www.hdfgroup.org/products/hdf5/index.html
+
+HDF5-1.8.9 is a minor release, but contains several important new
+features and bug fixes. Changes in this release include the following:
+
+ - Committed datatypes can now be merged when copying objects, using
+   the new flag H5O_COPY_MERGE_COMMITTED_DTYPE_FLAG. Several new
+   API routines have been included in support of this feature.
+
+ - A file in memory can now be accessed in the same way as a file on
+   disk. New APIs were added to support this feature.
+
+ - Many changes to the tools have been made, including the following:
+
+   o The h5repack performance has been improved dramatically for large
+     chunked datasets. 
+ 
+   o The -S (or --summary) option was added to h5stat to display a
+     summary of the file space usage for a file.
+
+   o A wildcard can now be used with h5dump to specify multiple files.
+
+ - H5LTpath_valid was added to determine if a path is correct and a
+   link resolves to a valid object.
+
+ - The Fortran counterpart to H5Ocopy, h5ocopy_f, was added.
+
+This release contains many other changes and bug fixes not listed
+here. Please be sure to read the Release Notes for a comprehensive
+list of new features and bug fixes:
+
+   http://www.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.8.9-RELEASE.txt
+
+
+-------------------------------------------------------------
+For questions regarding these or other HDF issues, contact:
+
+   help@hdfgroup.org 
+

@@ -1,0 +1,87 @@
+--------------------------------------------------------------------------
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+--------------------------------------------------------------------------
+
+                            Newsletter #80
+                           November 18, 2004
+
+CONTENTS
+                                            *******************************
+. Release of HDF Java Products Version 2.1  *                             *
+                                            * Visit the HDF home page     *
+. h5diff Improvements                       * for up-to-date information  *
+                                            *                             *
+                                            *  http://hdf.ncsa.uiuc.edu/  *
+                                            *                             *
+                                            *******************************
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF Java Products Version 2.1
+========================================
+
+A new version of the HDF Java Products, version 2.1, was 
+recently released. This version was tested with HDF5-1.6.3.
+The HDF Java Products can be downloaded from the following
+page:
+
+  http://hdf.ncsa.uiuc.edu/hdf-java-html/
+
+Version 2.1 includes bug fixes and a few new features.  
+Following is a list of the major changes in this release:
+
+  - A seamless plugin for user modules has been added. HDFView 
+    will automatically detect and load a user's GUI and I/O 
+    modules. There is no need to register new modules. 
+ 
+  - HDFView can now open remote files with a URL.  For example,  
+    http://hdf.ncsa.uiuc.edu/hdf-java-html/hdf5_test.h5 or
+    ftp://ftp.ncsa.uiuc.edu/HDF/files/hdf5/hdf-java/hdf5_test.h5 
+
+  - A "HelpView" interface has been added to HDFView. Users can 
+    implement their own help view. 
+
+  - Metadata in a dataset can be easily viewed from the status bar, 
+    by clicking on "Metadata" at the bottom of the HDFView window. 
+
+  - An empty HDF5 compound dataset can be created with HDFView. 
+
+  - User blocks can be added or modified in HDFView.
+
+  - A static function was added to the FileFormat class to request 
+    an individual object without loading the entire structure of the 
+    file. 
+
+
+h5diff Improvements
+===================
+
+The h5diff utility in HDF5-1.6.3 has many new options and features.
+Please consult the h5diff documentation for complete details:
+ 
+   http://hdf.ncsa.uiuc.edu/HDF5/doc/Tools.html#Tools-Diff
+
+In addition, performance improvements have been made to h5diff since 
+HDF5-1.6.3 came out.  To obtain a version of h5diff with these changes, 
+download the modified files, insert them into the location specified
+below in the HDF5 source code, and then build HDF5.
+
+The files that changed can be obtained from:
+
+  ftp://ftp.ncsa.uiuc.edu/HDF/HDF5/current/src/patches/h5diff/
+
+The file names are:   h5diff.h, h5diff_array.c 
+
+These files replace the files with the same names in the following 
+location of the HDF5 source code:
+  
+   ./hdf5-1.6.3/tools/lib/ 
+
+
+-------------------------------------------------------------
+For questions regarding these or other HDF issues, contact:
+
+   hdfhelp@ncsa.uiuc.edu
+

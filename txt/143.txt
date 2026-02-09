@@ -1,0 +1,99 @@
+
+To view from a browser see:
+   http://www.hdfgroup.org/newsletters/newsletter143.pdf
+  
+--------------------------------------------------------------------------
+The HDF Group Home Page:                http://www.hdfgroup.org/
+Support Services:                       http://www.hdfgroup.org/services/
+--------------------------------------------------------------------------
+
+                            Newsletter #143 
+                           December 15, 2014 
+
+CONTENTS
+ . Release of HDF-Java Products 2.11
+ . HDF Software Highlights
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF-Java Products  2.11
+==================================
+
+Version 2.11 of the HDF-Java Products is now available. This release was built
+with HDF 4.2.10 and HDF5-1.8.14 using jdk 1.7.x. 
+
+HDF-Java 2.11 can be obtained from The HDF Group Downloads page: 
+
+   http://www.hdfgroup.org/downloads/index.html
+
+It can also be downloaded directly from the HDF-Java Products Download page: 
+
+   http://www.hdfgroup.org/products/java/release/download.html
+
+For more information on HDF-Java, see the HDF-Java Products Home page: 
+
+   http://www.hdfgroup.org/products/java/index.html
+
+This is a minor release with no major changes in functionality. The most
+important changes in this release include: 
+
+   o Support was added for writing an attribute with a simple, one
+     dimensional variable-length datatype.
+
+   o Several datatype issues were fixed (with bitfield, opaque, object and
+     region references, and compound).
+
+   o Issues with filters and dynamic loading were addressed.
+
+Please be sure to see the Release Notes for detailed information regarding
+platforms supported and changes in this release:
+
+   http://www.hdfgroup.org/ftp/HDF5/hdf-java/current/src/unpacked/docs/RELEASE.txt
+
+
+HDF Software Highlights
+=======================
+
+There have been updates to the high-level object and region reference library
+and the h5edit tool. This software, developed for the JPSS project, is
+available for general use and can be obtained from the JPSS project Download
+page:
+
+   http://www.hdfgroup.org/projects/jpss/jpss_downloads.html
+
+
+High-level library for handling HDF5 object and region references:
+
+A new release, version 1.1.3, of the high-level library for handling HDF5
+object and region references is now available. This library consists of C and
+Fortran APIs for creating, reading, and copying object and region reference
+data.
+
+This release includes the following changes:
+
+   o Support was added for Windows using CMake
+
+   o A fix was added to the Fortran API, H5LRmake_dataset_f.
+
+   o Fortran 2003 is now required.
+
+
+h5edit:
+
+Version 1.3.1 of h5edit is now available. The h5edit tool is a general command
+line tool to edit HDF5 files. The current version is limited to operations on
+attributes only.
+
+This release is a maintenance release with the following changes: 
+
+   o The software was ported to Mac OS X 10.9 Mavericks. 
+
+   o It includes a performance study on the Backup VFD feature that was
+     implemented in the 1.3.0 release. This study has been shown to improve
+     execution speed for incremental atomicity on large sized files.
+
+-------------------------------------------------------------
+For questions regarding these or other HDF issues, contact:
+
+   help@hdfgroup.org
+

@@ -1,0 +1,141 @@
+--------------------------------------------------------------------------
+The HDF Group Home Page:         http://hdfgroup.org/
+Helpdesk & Mailing Lists Info:   http://hdfgroup.org/services/support.html
+--------------------------------------------------------------------------
+
+                            Newsletter #124
+                           November 15, 2011 
+
+CONTENTS
+
+ . Release of HDF5-1.8.8
+ . Release of h4mapwriter 1.0.2
+ . Future Windows Support Changes
+ . Dropping Support for Solaris Binaries
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF5-1.8.8
+=====================
+
+The HDF5-1.8.8 release is now available. Many thanks to the users who
+helped test this release.
+
+The HDF5-1.8.8 software can be obtained from the following page:
+
+    http://www.hdfgroup.org/HDF5/release/obtain5.html
+
+This page can be accessed from The HDF Group Downloads page:
+
+    http://www.hdfgroup.org/downloads/
+
+The HDF5 1.8.8 documentation is located in:
+
+    http://www.hdfgroup.org/HDF5/doc/
+
+For information on HDF5, see the HDF5 home page:
+
+    http://www.hdfgroup.org/products/hdf5/index.html
+
+HDF5 1.8.8 is a minor release, but contains a few important new features
+and bug fixes. Changes in this release include the following:
+
+ - Changes to the Fortran interface:
+
+   o Fortran wrappers for the Dimension Scales APIs were added. For the
+     new subroutine signatures, see:
+
+       http://www.hdfgroup.org/HDF5/doc/HL/RM_H5DS.html
+
+   o The Fortran interface now uses the Fortran 2003 standard, enabling
+     a wider set of Fortran and HDF5 datatypes to be supported, including:
+
+       - Any kind of INTEGER or REAL
+       - Fortran derived types
+       - Fortran and HDF5 enumeration
+       - HDF5 variable-length datatypes
+       - HDF5 compound datatypes of any complexity
+
+     It also contains new subroutines corresponding to those C APIs which
+     have callback functions as parameters. For a general overview and
+     information on how to enable these new Fortran features, please see
+     the following paper:
+
+        http://www.hdfgroup.org/HDF5/doc/fortran/NewFeatures_F2003.pdf
+
+     HDF5 examples that use Fortran 2003 (with the suffix "F03") can be found
+     here:
+
+        http://www.hdfgroup.org/ftp/HDF5/examples/examples-by-api/api18-fortran.html
+
+     The --enable-fortran2003 configure flag was added to enable Fortran 2003
+     support in the HDF5 Fortran library. This flag should be used along with
+     the --enable-fortran flag and takes affect only when a Fortran compiler
+     is Fortran 2003 compliant.
+
+ - H5Tcreate now supports a string type (fixed-length and variable-length).
+
+ - New APIs, H5Pget_mpio_actual_chunk_opt_mode and H5Pget_mpio_actual_io_mode,
+   were added for querying whether/how a collective I/O operation completed.
+
+ - Numerous changes were made to the tools (h5diff, h5repack, h5jam, h5dump).
+ 
+This release contains many other changes not listed here. Please be sure to
+read the Release Notes for a comprehensive list of new features and bug
+fixes:
+
+    http://www.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.8.8-RELEASE.txt
+
+
+
+Release of h4mapwriter 1.0.2
+============================
+
+We are pleased to announce the release of h4mapwriter Version 1.0.2.
+
+The source code and documentation are available at:
+
+   http://www.hdfgroup.org/projects/h4map/h4map_writer.html
+
+This page also includes a test package and other materials.
+If you are new to the HDF4 Mapping Project, please read the User's Guide
+first.
+
+Version 1.0.2 provides these changes from the 1.0.1 version:
+
+   It handles various empty SDS cases consistently.
+   It generates the map according to the new schema version 1.0.1.
+
+We would like to thank all of the people who sent in bug reports and
+recommendations.
+
+Let us know if you have any questions or comments.
+
+
+Future Windows Support Changes
+==============================
+
+For the HDF5-1.8.* releases, we will continue to supply binaries and
+project files built with Visual Studio 2008 and Intel Fortran 10.1.
+These files will remain on the last Windows XP OS. However, our current
+Windows development and future releases will move to Windows 7 and will
+use Visual Studio 2010 with Intel Fortran 12 (XE2011) as the reference
+platform. CMake (current 2.8.6) will be the reference build system. The
+future HDF5-1.10 source will no longer contain the legacy windows
+directory or documents referencing that directory.
+
+
+Dropping Support for Solaris Binaries
+=====================================
+
+We no longer provide a link to the Solaris binaries from our web site
+due to few requests. If you have used the pre-built Solaris binaries
+in the past and would like us to continue to provide them, please let
+us know.
+
+
+-------------------------------------------------------------
+For questions regarding these or other HDF issues, contact:
+
+   help@hdfgroup.org 
+

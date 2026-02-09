@@ -1,0 +1,65 @@
+--------------------------------------------------------------------------
+The HDF Group Home Page:         http://hdfgroup.org/
+Helpdesk & Mailing Lists Info:   http://hdfgroup.org/services/support.html
+--------------------------------------------------------------------------
+
+                            Newsletter #112
+                             April 16, 2010 
+
+CONTENTS
+
+  . Release of BioHDF pipeline prototype
+
+     - Platforms Tested
+     - Major Improvements
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of BioHDF pipeline prototype
+====================================
+
+We are pleased to announce the release of the BioHDF pipeline prototype,
+built and tested using HDF5-1.8.4 Patch 1 (with the HDF5 1.6 compatibility
+flag).  This release is intended to demonstrate the capability of HDF5
+to store read, alignment, annotation and reference sequence data used in
+analyzing next-generation DNA sequencing (NGS) data.  It is implemented
+as a set of command-line tools similar to samtools.
+
+The BioHDF web page is located here:
+
+    http://www.hdfgroup.org/projects/biohdf/
+
+This release and some sample data can be obtained from the BioHDF web 
+page at:
+
+    http://www.hdfgroup.org/projects/biohdf/biohdf_downloads.html
+
+
+
+
+Platforms Tested
+----------------
+
+This release was built and tested on 32- and 64-bit linux systems on
+x86/x64 hardware.  It has not been tested on Windows though it is
+likely to work with Cygwin.  It is available as source code only
+(no binaries).
+
+
+
+Major Improvements
+------------------
+
+      * NCList-based indexing for alignment hits and annotations, ensuring
+        efficient and correct query results.
+      * SAM/BAM/samtools integration.
+
+
+-------------------------------------------------------------
+Feedback concerning BioHDF can be sent to Dana Robinson at:
+
+    derobins at hdfgroup.org
+
+We would really like to hear from the NGS and functional genomics
+community so please send us your feedback!
+

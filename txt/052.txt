@@ -1,0 +1,83 @@
+--------------------------------------------------------------------------
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+--------------------------------------------------------------------------
+
+                          Newsletter #52
+                          June 6, 2000
+
+
+CONTENTS
+                                            *******************************
+. Release of H5View, Version 1.0            * Visit the HDF home page     *
+  - Features                                * for up-to-date information  *
+  - Limitations                             *                             *
+                                            *  http://hdf.ncsa.uiuc.edu/  *
+                                            *******************************
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of H5View, Version 1.0
+==============================
+
+We are pleased to announce the release of H5View, a graphic utility for
+viewing the contents of HDF5 files.  H5View requires the Java HDF5 Interface.
+
+Version 1.0 is the first release of H5View.  It was intended to provide
+basic browsing of HDF5 files.  More advanced browsing and editing features 
+will be included in future releases and/or other tools.  
+
+You can download H5View from:
+ 
+   http://hdf.ncsa.uiuc.edu/java-hdf5-html/H5View/
+
+An H5View User's Guide is also available at:
+
+   http://hdf.ncsa.uiuc.edu/java-hdf5-html/H5View/UsersGuide/index.html
+
+
+Features:
+--------
+
+Following is a list of the features of the current H5View.  Please
+refer to the H5View User's Guide for detailed information regarding these
+features.
+
+ *  Loads HDF5, ASCII and Java supported image (e.g. gif, jpeg) files. 
+ *  Supports viewing multiple data objects. 
+ *  Displays the group structure of an HDF5 file. 
+ *  Shows the HDF5 metadata and user defined attributes of HDF5 objects. 
+ *  Displays a string-typed dataset in a text window. 
+ *  Displays HDF5 images (datasets with numerical data and associated 
+    color table). 
+ *  Displays a numerical dataset (up to 3 dimensions) in a "spreadsheet". 
+ *  Views the content of named datatypes. 
+ *  Zooms in/out image. 
+ *  Shows image palette. 
+
+
+Limitations: 
+-----------
+
+The current implementation of H5View has the following limitations. 
+
+ *  H5View does not support HDF4 files. 
+ *  H5View does not support editing/saving features. 
+ *  H5View does not support data subsetting. 
+ *  H5View displays data up to 3 dimensions. 
+ *  H5View does not support nested compound datatypes. 
+ *  Only supports 8-bit RGB color models. 
+ *  Opening a large image/data object may not work due to the 
+    limitations of the Java virtual machine. 
+ *  H5View is implemented in JavaTM 2 Platform. 
+    It does not work on JDK 1.x. 
+
+
+--------------------------------------------------------------
+For questions regarding these or other HDF issues, contact:
+
+   hdfhelp@ncsa.uiuc.edu
+
+
+

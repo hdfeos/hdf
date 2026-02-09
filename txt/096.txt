@@ -1,0 +1,148 @@
+--------------------------------------------------------------------------
+THG Home Page:                   http://hdfgroup.org/
+Helpdesk & Mailing Lists Info:   http://hdfgroup.org/services/support.html
+--------------------------------------------------------------------------
+
+                            Newsletter #96 
+                           October 9, 2007 
+
+CONTENTS
+
+ . Release of HDF 4.2r2
+   - New Features and Changes
+   - Platforms Tested  
+   - Known Problems
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF 4.2r2
+====================
+
+We are pleased to announce the release of HDF 4.2r2. It
+can be downloaded from the following location:
+
+    http://hdfgroup.org/release4/obtain.html
+
+The HDF 4 web page is located at:
+
+    http://hdfgroup.org/products/hdf4/index.html
+
+Not all of the pre-compiled binaries have been generated for
+HDF 4.2r2.  They should be available within the next week.
+
+The documentation for HDF 4.2r2 can be obtained from:
+
+    http://hdfgroup.org/doc.html
+
+The RELEASE.txt file in the source code contains detailed 
+information about this release:
+
+    ftp://ftp.hdfgroup.org/HDF/HDF_Current/src/RELEASE-4.2r2.txt
+    
+
+
+New Features and Changes
+------------------------
+
+o Several new APIs have been added to the SD and GR interfaces: 
+
+  + SDreset_maxopenfiles, SDget_maxopenfiles, SDget_numopenfiles: 
+    For modifying and checking the maximum allowed number of files.
+
+  + SDgetcompinfo, GRgetcompinfo: Gets compression information. These
+    functions replaced SDgetcompress and GRgetcompress. 
+
+  + SDgetfilename: Retrieves the name of the file, given its ID.
+
+  + SDgetnamelen: Retrieves the length of an object's name, given its ID.
+
+o SZIP compression has been added for Fortran, and SZIP compression has
+  also been added to the GR interface.
+
+o The problem has been fixed where corruption could occur when a 1-Dimensional
+  SDS had the same name as a dimension.  However, be aware that:
+
+  + It is impossible to recover the data that was already corrupted.
+
+  + For existing data that has not been corrupted, the problem was
+    fixed for multi-dimensional SDSs only.  If the SDS had only one
+    dimension, the results of subsequent accesses to the dimension
+    would still be unpredictable. 
+
+o SDS and Vgroup names are no longer limited to 64 characters.
+
+o The maximum number of files that can be opened at the same time is
+  no longer limited to 32.  In this release, if this limit is reached, the
+  library will increase it to the system limit, minus 3 to account for stdin,
+  stdout, and stderr.
+
+o A command-line option (-u) was added to ncdump to enable a user to
+  replace non-alphanumeric characters in SDS names with underscores, if 
+  desired.  The default behavior is to print what is actually in the file.
+
+o New error codes were added to the HDF library.  Please refer to the 
+  RELEASE.txt file and other HDF4 documentation for more information.
+
+o Several new platforms are supported: Mac Intel, FreeBSD 64-bit, 
+  Solaris 10 Intel, Linux 2.6 and HP-UX 11.23 (32-bit, 64-bit). 
+
+o Several changes were made to the HDF configuration, including:
+
+  . The --enable-netcdf flag was introduced.
+  . The autotools versions were updated.
+
+o Many bugs have been fixed in hrepack and hdiff.
+
+Please refer to the RELEASE.txt file for a comprehensive list of
+changes in this release.
+
+
+Platforms Tested
+----------------
+
+Platforms that were tested with this release are:
+ 
+   AIX 5.3 (32-bit, 64-bit)
+   Free BSD 6.2 (32-bit, 64-bit)
+   HP-UX B.11.23 (32-bit, 64-bit)
+   IRIX 64 v6.5 (32-bit, 64 bit)
+   Linux 2.4, 2.6
+   Linux ia64
+   Linux x86_64
+   Sun OS 5.8, 5.10 (32-bit, 64-bit) 
+   Windows XP, Vista
+   Mac OS X Intel
+
+For detailed information on platforms and compilers, please
+refer to the RELEASE.txt file.
+
+
+Known Problems
+--------------
+
+o  hdfcomp fails on HPUX 11.23 for the 64-bit version of the library
+
+o  This release does not support VMS systems.
+
+o  N-Bit compression is not supported with Fortran APIs.
+
+o  Using both fill-value and compression at the same time on an SDS 
+   does not work.
+
+o  When using PGI compilers, make sure that the JPEG library is also compiled
+   with a PGI C compiler; linking with JPEG built with gcc causes JPEG library
+   tests to fail.  To bypass the problem:
+
+       x Set LIBS flag to $PGI_JPEG_INSTALL_DIR/lib/libjpeg.a
+         where $PGI_JPEG_INSTALL_DIR points to the installation directory
+         for the PGI-compiled JPEG library:
+
+         setenv LIBS $PGI_JPEG_INSTALL_DIR/lib/libjpeg.a
+
+       x Use the --with-jpeg=$PGI_JPEG_INSTALL_DIR configure flag to
+         configure with the PGI-compiled JPEG library:
+
+         ./configure --with-jpeg=$PGI_JPEG_INSTALL_DIR --with-zlib....
+
+
+

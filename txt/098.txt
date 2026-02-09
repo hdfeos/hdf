@@ -1,0 +1,121 @@
+--------------------------------------------------------------------------
+THG Home Page:                   http://hdfgroup.org/
+Helpdesk & Mailing Lists Info:   http://hdfgroup.org/services/support.html
+--------------------------------------------------------------------------
+
+                            Newsletter #98
+                           October 31, 2007
+
+
+Release of HDF Java Products Version 2.4
+=======================================
+
+We are pleased to announce the release of the HDF Java Products,
+version 2.4, built with HDF 4.2r2 and HDF5 1.6.6.
+
+This version can be obtained from the HDF Java Products web page at:
+
+   http://hdfgroup.org/hdf-java-html/
+
+The ftp server location of the HDF Java Products source code and
+pre-built binaries is:
+ 
+   ftp://ftp.hdfgroup.org/HDF5/hdf-java/
+
+
+New Features
+------------
+
+There are many new features in this release. Following is a
+list of the major new features in HDFView:
+
+    * Support for compound datatypes containing 2D arrays (or greater)
+    * Ability to create/display named datatypes in an HDF5 file
+    * Ability to copy an object to the same group with a different name
+    * Ability to create a dataset with an enum type/named datatype
+    * Support for "filtering fillvalue" in the Image Viewer
+    * Ability to display the actual palette that results from palette manipulation
+    * Ability to create a chunked dataset with a compound datatype
+    * Ability to handle a large number of 8k x 8k 3D images by reuse of
+      the memory data buffer
+    * Addition of the -geometry switch to set the window size and location
+    * Support for large fonts in GUI components
+    * Ability to grab and drag to move/browse an image
+    * Addition of the autogain algorithm for image Brightness/Contrast
+
+
+Platforms Supported
+-------------------
+
+Version 2.4 of the HDF Java Products is supported on the following
+platforms:
+
+   32-bit Java 2 SDK
+
+    * Linux
+    * Solaris
+    * Mac PowerPC
+    * Mac Intel
+    * Windows (Vista/XP/2000)
+
+   64-bit Java 2 SDK
+
+    * Linux 64-bit AMD
+    * Solaris 64-bit
+
+
+Bug Fixes
+---------
+
+There are many bug fixes in HDF Java 2.4. One of the major fixes was the
+following memory leak:
+
+In HDF Java 2.3 (and earlier) an attribute and datatype were left open
+when the file structure was retrieved from a file. The following code could
+build up the memory leak until the machine was out of memory.
+
+while (true)
+{
+    H5File f=new H5File(fname, H5File.READ);
+    f.open();
+    f.close();
+}
+
+Another memory leak that was fixed was with compound datasets. When a compound
+dataset is opened, the datatypes of the compound fields are stored in memory so
+that they can be reused for better performance. However, these datatypes were not
+closed when the file was closed. The following code could make the JVM run out of
+memory.
+
+while (true)
+{
+    final H5File file = new H5File(fname, H5File.READ);
+    final Dataset dset = (Dataset)file.get("/Table0");
+    dset.init();
+
+    file.close();
+}
+
+
+Other Enhancements
+------------------
+
+  * Test Suite:
+
+    Using the junit test frame, we build a test suite to test all the public
+    APIs in the object package (ncsa.hdf.object) and the HDF5 object package
+    (ncsa.hdf.object.h5). The test suite was added into the source configuration
+    to make it easy to run with "make check".
+
+  * Improved Documentation:
+
+    All of the public APIs in the object package (ncsa.hdf.object) and the HDF5
+    object package (ncsa.hdf.object.h5) are fully documented.
+
+
+
+Please let the THG Helpdesk know if you have any questions.
+
+
+
+

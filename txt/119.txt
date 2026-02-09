@@ -1,0 +1,45 @@
+--------------------------------------------------------------------------
+The HDF Group Home Page:         http://hdfgroup.org/
+Helpdesk & Mailing Lists Info:   http://hdfgroup.org/services/support.html
+--------------------------------------------------------------------------
+
+                            Newsletter #119
+                           February 22, 2011
+
+CONTENTS
+ . Release of HDF-Java Products 2.7
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF-Java Products 2.7
+================================
+
+We are pleased to announce the release of HDF Java Products version 2.7,
+built and tested using JDK 1.6.x with HDF 4.2.5 and HDF5-1.8.6.
+
+This release can be obtained from the HDF Java Products web page:
+
+  http://www.hdfgroup.org/hdf-java-html/
+
+It can also be obtained from the HDF Downloads page:
+
+  http://www.hdfgroup.org/downloads/index.html
+
+Major changes in HDF-Java Products 2.7 include the following:
+
+  * Many (101) methods were added to the JHI5 to support HDF5 1.8
+  * New methods were added to the HDF-Java Object Layer to support HDF5 1.8
+    features
+  * Some HDF5 1.8 features, such as external links, were added to HDFView
+  * This release includes over 20 major bug fixes and enhancements
+
+For more information on the current release, please read "About This Release":
+
+  http://www.hdfgroup.org/hdf-java-html/hdfview/UsersGuide/ug01introduction.html#ug01release
+
+
+-------------------------------------------------------------
+For questions regarding these or other HDF issues, contact:
+
+   help@hdfgroup.org 
+

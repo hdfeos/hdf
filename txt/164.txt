@@ -1,0 +1,18 @@
+The HDF5 1.10.3 release is now available for download from:
+https://www.hdfgroup.org/downloads/hdf5/
+The source code (only) can also be obtained from:
+https://portal.hdfgroup.org/display/support/HDF5+1.10.3
+User documentation for HDF5 1.10 can be accessed here:
+https://portal.hdfgroup.org/display/HDF5/
+New features and changes in this release include:
+The H5Dread_chunk and H5Dwrite_chunk APIs were added to the HDF5 core library. They were previously located in the High Level Optimization library (H5DO).
+New versions of the H5Oget_info and H5Ovisit family of routines were added: H5Oget_info2, H5Oget_info_by_idx2, H5Oget_info_by_name2, H5Ovisit2, and H5Ovisit_by_name2. These new routines address performance issues with the previous versions.
+The H5DreadVL and H5AreadVL Java APIs were refactored to correct dataset and attribute reads.
+Several C++ wrappers were added or modified to provide additional support.
+The following CVEs were addressed in this release: CVE-2018-11202, CVE-2018-11203, CVE-2018-11204, CVE-2018-11206, and CVE-2018-11207
+Several bugs were fixed in parallel compression.
+Code changes were made to improve performance.
+Several Cygwin patches were applied.
+The gcc attribute (no_sanitize) was moved before the function name to eliminate build issues with gcc 8.
+A corruption issue was fixed that occurred when deleting the last attribute that is stored densely.
+For detailed information on the new features and changes in this release, please see the release notes.

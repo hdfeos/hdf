@@ -1,0 +1,122 @@
+
+--------------------------------------------------------------------------
+Please refer to "http://hdfgroup.org/support.html" for information on the
+THG Helpdesk and Mailing Lists. 
+--------------------------------------------------------------------------
+
+                            Newsletter 92
+                            April 20, 2007
+
+CONTENTS
+                                            *******************************
+. HDF5-1.8.0 Beta 1 Released                *                             *
+                                            * Visit the THG home page for *
+. HDF Corruption Problem                    * up-to-date information:     *
+                                            *                             *
+. Dropping Support for MSVC++ 6.0 and       *    http://hdfgroup.org/     *
+    Dec Visual Fortran 6.6                  *                             *
+                                            *******************************
+. "hdf-forum" Mailing List
+
+. HDF/HDF5 Conversion Tools ?
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+HDF5 1.8.0 Beta 1 Released
+==========================
+
+We are very pleased to announce that HDF5 1.8.0 Beta 1 has been released.
+
+Please see the following for HDF5 1.8.0 Beta software and information:
+
+   http://www.hdfgroup.uiuc.edu/HDF5/release/beta/obtain518.html
+
+A list of the new features in HDF5 1.8.0 can be found at:
+
+   http://www.hdfgroup.uiuc.edu/HDF5/doc_1.8pre/WhatsNew180.html
+
+Documentation for HDF5 1.8.0 Beta can be obtained from the following
+location:
+
+   http://www.hdfgroup.uiuc.edu/HDF5/doc_1.8pre/
+
+There are many bug fixes and new features in this release, and we
+encourage you to try it.  If you encounter any problems, please let
+the THG Helpdesk (help@hdfgroup.org) know as soon as possible.
+
+
+
+HDF Corruption Problem
+======================
+
+A corruption problem has been discovered in the HDF MFHDF (SD) library,
+which can occur when an SDS and a dimension have the same name.  In
+the HDF 4.2r1 release, one-dimensional datasets can be corrupted.  Prior
+to HDF 4.2r1, both one and two-dimensional datasets could be corrupted.
+
+HDF allows you to create a dimension with the same name as an SDS,
+although this should not be possible and is a violation of the netCDF
+model.  The corruption occurs when an attribute or a dimension scale is
+added to the dimension that has the same name as the existing SDS.
+
+Please refer to the HDF 4.2r1 Known Problems page for detailed information
+on this issue:
+
+   http://www.hdfgroup.org/release4/known_problems.html#corrupt
+
+We are working on a fix to correct this problem.
+
+
+
+Dropping Support for MSVC++ 6.0 and Dec Visual Fortran 6.6
+==========================================================
+
+We would like to drop support for MSVC++ 6.0 and Dec Visual
+Fortran 6.6.  If you would like for us to continue support
+for these compilers, please notify the THG Helpdesk (help@hdfgroup.org).
+
+
+
+"hdf-forum" Mailing List
+========================
+
+A mailing list is available to users for discussing HDF/HDF5 issues among
+each other.  The name of this list is:
+
+   hdf-forum@hdfgroup.org
+
+This list is intended for questions that are either beyond what the
+THG Helpdesk can answer or that are of interest to all users.
+
+To subscribe to this list, send a message to:
+    hdf-forum-subscribe@hdfgroup.org
+
+For more information, see the following page:
+
+   http://hdfgroup.org/support.html
+
+
+ 
+HDF/HDF5 Conversion Tools ?
+===========================
+
+Do you have HDF/HDF5 conversion tools (to or from NetCDF, geotiff,
+grib, ASCII, etc..) that you use?
+
+We would like to assemble links to HDF/HDF5 conversion tools,
+particularly any that are not already on our software tools pages:
+
+    http://hdfgroup.org/tools5.html
+    http://hdfgroup.org/tools.html
+
+If you know of any such tools, please consider contacting the THG
+Helpdesk (help@hdfgroup.org) with this information.  It could greatly
+benefit other users.
+
+
+-------------------------------------------------------------
+For questions regarding these or other THG issues, contact:
+
+   help@hdfgroup.org
+

@@ -1,0 +1,39 @@
+--------------------------------------------------------------------------
+The HDF Group Home Page:         http://hdfgroup.org/
+Helpdesk & Mailing Lists Info:   http://hdfgroup.org/services/support.html
+--------------------------------------------------------------------------
+
+                            Newsletter #117
+                           September 30, 2010 
+
+CONTENTS
+ . HDF-Java 2.7 (Beta) Release
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+HDF-Java 2.7 (Beta) Release
+===========================
+
+A beta version of HDF-Java Products 2.7 is now available for download
+from The HDF Group Downloads page:
+
+  http://www.hdfgroup.org/downloads/
+
+It can be downloaded directly from:
+
+  http://www.hdfgroup.org/ftp/HDF5/hdf-java-2.7/
+
+This release includes changes for supporting HDF5 1.8 features in the
+HDF-Java Products, as well as several bug fixes.
+
+Please view the RELEASE.txt file for complete details regarding this release:
+
+   http://www.hdfgroup.org/ftp/HDF5/hdf-java-2.7/RELEASE.txt
+
+The release of HDF-Java Products 2.7 is expected in November 2010.
+
+-------------------------------------------------------------
+For questions regarding these or other HDF issues, contact:
+
+   help@hdfgroup.org 
+

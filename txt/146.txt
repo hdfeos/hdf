@@ -1,0 +1,135 @@
+
+To view from a browser see:
+   http://www.hdfgroup.org/newsletters/newsletter146.pdf
+  
+--------------------------------------------------------------------------
+The HDF Group Home Page:                http://www.hdfgroup.org/
+Support Services:                       http://www.hdfgroup.org/services/
+--------------------------------------------------------------------------
+
+                            Newsletter #146 
+                           November 13, 2015 
+
+CONTENTS
+. Release of HDF5-1.8.16
+. Software Highlights
+. Dr. Michael Folk to Step Down as President and Executive
+    Director of The HDF Group
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF5-1.8.16
+======================
+
+The HDF5-1.8.16 release is now available. It can be obtained from The HDF
+Group Downloads page:
+
+   https://www.hdfgroup.org/downloads/
+
+It can also be obtained directly from the HDF5 download page:
+
+   https://www.hdfgroup.org/HDF5/release/obtain5.html
+
+HDF5-1.8.16 is a minor release with a few new features and changes.
+Important changes to be aware of are:
+   
+ o The CMake files have been updated to build both static and shared
+   libraries, with tools only built statically.
+
+ o The shared object version numbers for wrapper libraries have been
+   decoupled from the shared object version number for the HDF5 library.
+   These version numbers will be maintained on an individual basis according
+   to any interface changes specific to the corresponding wrapper libraries.
+
+ o The H5is_library_threadsafe() function was added for indicating if the
+   library was built with threadsafety enabled.
+ 
+ o C++ API Changes: 
+  
+   - Static global constant objects were changed to constant references to
+     dynamically allocated objects. This change was necessary because memory
+     leaks occurred as a result of the global constants not getting properly
+     deleted prior to termination of the C library. This was the change that
+     prompted the above mentioned modification of the shared object version
+     numbers for wrapper libraries. 
+
+   - The class H5::ObjCreatPropList was added for the object creation 
+     property list class.
+
+   - New wrappers were added for the C functions H5P[s/g]et_attr_phase_change
+     and H5P[s/g]et_attr_creation_order. 
+
+ o Windows support was added for Visual Studio 2015 with Intel Fortran 16.
+ 
+This release contains many other changes that are not listed here. Please be
+sure to read the Release Notes for a comprehensive list of new features and
+changes:
+
+   https://www.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.8.16-RELEASE.txt
+
+Changes that affect maintainers of HDF5-dependent applications are listed on
+the Software Changes from Release to Release page:
+
+   https://www.hdfgroup.org/HDF5/doc/ADGuide/Changes.html
+
+
+Future Changes to Supported Compilers and Platforms
+---------------------------------------------------
+
+After this release, we will be moving our CMake standard to 3.4 to make use
+of features that will improve our build environment on more platforms.
+
+Our Windows standard will remain Windows 7 with Visual Studio 2013 and
+Intel Fortran 15. After the release of HDF5-1.8.17 in May 2016 we plan to
+move the standard to Windows 10 with Visual Studio 2015 and Intel Fortran 16.
+
+We will continue to test Visual Studio 2012, Visual Studio 2013 and Intel
+Fortran 15 on Windows 7 and Windows 8.1.
+
+We plan to drop Mac OS X 10.8 after this release.
+
+
+Software Highlights
+===================
+
+We are developing several new HDF applications and welcome your input
+regarding them: 
+
+   HDF Compass: A new viewer for HDF5 and related formats.
+     See: https://www.hdfgroup.org/projects/compass/
+
+   HDF Server:  A Python-based web service that can be used to send
+     and receive HDF5 data using an HTTP-based REST interface.
+     See: https://www.hdfgroup.org/projects/hdfserver/
+
+   Product Designer:  A tool for designing HDF products and a framework for
+     sharing and re-using those designs across work groups and with others while
+     improving interoperability and compliance with community conventions.
+     See: https://wiki.earthdata.nasa.gov/display/HPD/HDF+Product+Designer
+
+   PyHexad: A Python-based Excel add-in for HDF5 that can be used to
+     read or write data in HDF5 files from Microsoft Excel on Windows. 
+     See: https://www.hdfgroup.org/projects/pyhexad/
+
+Let us know what you think!
+
+
+Dr. Michael Folk to Step Down as President and Executive Director
+of The HDF Group
+=================================================================
+
+After 27 years' stewardship of HDF, the last ten as President and Executive
+Director of The HDF Group, Mike Folk has announced that he will retire. 
+Mike will continue to provide his leadership to The HDF Group during this
+transition. See the Press Release on The HDF Group news page for
+complete details:
+
+   https://www.hdfgroup.org/news/index.html#mfolk 
+
+
+-------------------------------------------------------------
+ 
+For questions regarding these or other HDF issues, contact:
+
+   help@hdfgroup.org
+

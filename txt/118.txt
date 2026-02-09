@@ -1,0 +1,88 @@
+--------------------------------------------------------------------------
+The HDF Group Home Page:         http://hdfgroup.org/
+Helpdesk & Mailing Lists Info:   http://hdfgroup.org/services/support.html
+--------------------------------------------------------------------------
+
+                            Newsletter #118
+                            February 18,2011 
+
+CONTENTS
+. Release of HDF5-1.8.6
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF5-1.8.6
+=====================
+
+The HDF5-1.8.6 release is now available. Many thanks to the users on the
+HDF-Forum who helped us test this release.
+
+HDF5-1.8.6 can be downloaded from:
+
+    http://www.hdfgroup.org/HDF5/release/obtain5.html
+
+This page can be accessed from The HDF Group Downloads page:
+
+    http://www.hdfgroup.org/downloads/
+
+The HDF5 1.8.6 documentation is located in:
+
+    http://www.hdfgroup.org/HDF5/doc/
+
+For information on HDF5, see the HDF5 home page:
+
+    http://www.hdfgroup.org/products/hdf5/index.html
+
+HDF5 1.8.6 is a minor release, but contains important new features and
+bug fixes. New features and changes in this release include the following:
+
+ - Many improvements have been made for CMake support.
+
+ - Many memory issues were fixed. 
+
+ - Several performance improvements have been added.
+
+   Improvements were made to the library's internal mechanism for handling
+   partial I/O. The library can now detect situations where a memory selection
+   has the same shape and size as a selection in a dataset in the file. For
+   example, when writing a 2D array into a slice of the same shape and size of
+   a 3D array across the slowest changing dimension, performance has been
+   shown to improve by as much as 80x in our nightly performance regression
+   test framework. 
+
+ - Support was added for thread safety on Windows using the Windows
+   threads library. This feature is supported with Windows Vista and 
+   CMake.
+
+ - A bug was fixed that caused big endian machines to generate corrupt files
+   when using the scale-offset filter with floating point data or fill values.
+   Note that such datasets will NO LONGER BE READABLE by any machine after
+   this release. If you have been archiving data that used this filter please
+   contact us as soon as possible, so that we create a tool to correct
+   the problem. 
+
+ - In this release we have addressed the issue that affected applications
+   built with HDF5 versions 1.6.3 and earlier.
+
+   Applications (such as IDL 7.0) that were built with HDF5-1.6.3 or earlier,
+   were not able to read files created by HDF5-1.8 in spite of the fact that
+   the files did not contain any new features. For reading the files, the old
+   libraries relied on the presence of cached symbol table information found
+   in the groups' symbol table entries. With HDF5-1.8, this cached
+   information was deemed redundant and was removed, causing the problem.
+   HDF5-1.8.6 has been modified to address this issue. Specifically, the
+   library now always writes cached symbol table information to a group's
+   symbol table entry.
+
+This release contains many other important changes not listed here.
+Please be sure to read the Release Notes, for a comprehensive list of
+new features and bug fixes:
+
+    http://www.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.8.6-RELEASE.txt
+
+
+-------------------------------------------------------------
+For questions regarding these or other HDF issues, contact:
+
+   help@hdfgroup.org 
+

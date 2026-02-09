@@ -1,0 +1,94 @@
+
+To view from a browser see:
+   https://support.hdfgroup.org/newsletters/newsletter152.pdf
+  
+--------------------------------------------------------------------------
+The HDF Group Home Page:                https://www.hdfgroup.org/
+Support Services:                       https://www.hdfgroup.org/support/
+--------------------------------------------------------------------------
+
+                            Newsletter #152
+                           November 16, 2016
+
+CONTENTS
+ - Release of HDF5-1.8.18
+ - HDF Software Repository Moved to Git
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF5-1.8.18
+======================
+
+The HDF5-1.8.18 release is now available. It can be downloaded from The HDF
+Group Downloads page:
+
+   https://support.hdfgroup.org/downloads/
+
+It can also be obtained from:
+
+   https://support.hdfgroup.org/HDF5/release/obtain518.html
+
+HDF5-1.8.18 is a minor release with a few new features and changes. Important
+changes include:
+
+ o Changes were made to the HDF5 C++ library:
+
+   -  H5_NO_NAMESPACE was deprecated.
+   -  Several methods were added or removed.
+
+ o The High Level Packet Table (PT) API now correctly writes data when the
+   datatype is a compound type that has a string type as one of its members.
+   This issue was introduced in HDF5-1.8.15.
+
+ o A number of issues were fixed to ensure that the library fails gracefully
+   when reading from or writing to corrupted files.
+
+ o The h5repack utility now correctly parses User Defined (UD) filter
+   parameters.
+ 
+ o Problems building the HDF5 Fortran library with the NAG compiler have been
+   resolved.
+
+This release contains many other changes that are not listed here. Please be
+sure to read the Release Notes for a comprehensive list of new features and
+changes:
+
+   https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8/hdf5-1.8.18/src/hdf5-1.8.18-RELEASE.txt
+
+Changes that affect maintainers of HDF5-dependent applications are listed on
+the HDF5 Software Changes from Release to Release page. See:
+
+   https://support.hdfgroup.org/HDF5/doc1.8/ADGuide/Changes.html
+
+
+Future Changes to Supported Compilers and Platforms
+---------------------------------------------------
+
+After this release we will be dropping support for Visual Studio 2012. We
+will also be moving the required minimum CMake version from 3.1 to a version
+TBD once comprehensive testing has been completed.
+
+
+HDF Software Repository Moved to Git
+====================================
+
+The HDF software repository has moved from SVN to Git. For the current
+location of the software see:
+
+   https://bitbucket.hdfgroup.org/projects
+
+You can download the HDF5 development software by specifying:
+
+   git clone https://bitbucket.hdfgroup.org/scm/hdffv/hdf5.git
+
+Please note that the built autotools files are not included in the
+development branch of the software. If you have autotools on your machine
+you can run "autogen.sh" in the top directory of the HDF5 source code to
+install the required files.
+
+
+-------------------------------------------------------------
+For questions regarding these or other HDF issues, contact:
+
+   help@hdfgroup.org
+

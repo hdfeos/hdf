@@ -1,0 +1,132 @@
+--------------------------------------------------------------------------
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+--------------------------------------------------------------------------
+
+                            Newsletter #82
+                           February 18, 2005
+
+CONTENTS
+                                            *******************************
+. Release of HDF 4.2r1                      *                             *
+  - New Features and Changes                * Visit the HDF home page     *
+  - Platforms Tested                        * for up-to-date information  *
+  - Known Problems                          *                             *
+                                            *  http://hdf.ncsa.uiuc.edu/  *
+. Platforms to be Dropped                   *                             *
+                                            *******************************
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF 4.2r1
+====================
+
+The latest release of HDF, version 4.2r1, is now available.
+It can be downloaded from the HDF4 home page at:
+
+    http://hdf.ncsa.uiuc.edu/hdf4.html
+
+Not all of the pre-compiled binaries have been generated.  They
+should be available within the next week.
+
+The documentation for HDF 4.2r1 is not yet available, but will be soon.
+The HDF documentation can be downloaded from the following page:  
+
+    http://hdf.ncsa.uiuc.edu/doc.html
+
+The RELEASE.txt file in the source code contains detailed information
+about this release:
+  
+ ftp://ftp.ncsa.uiuc.edu/HDF/HDF/HDF_Current/src/unpacked/release_notes/RELEASE.
+txt
+
+
+New Features and Changes
+------------------------
+
+The major new features and changes in HDF 4.2r1 are:
+
+ o The implementation of SZIP compression in HDF 4.2r0 was broken, and
+   could result in data corruption.  The problems have been fixed in 4.2r1.
+   Please refer to the HDF 4.2r1 SZIP Release Notes for detailed 
+   information regarding this:
+     
+         http://hdf.ncsa.uiuc.edu/doc_resource/SZIP/SZIP_HDF4_2r1.pdf
+
+ o Several new compilers are supported in HDF 4.2r1:
+   
+       - Fortran IBM xlf v 8.1 and Absoft f95 version 8.2 on Mac OS X
+       - Absoft Fortran compiler f95 version 9.0 on Linux 2.4
+       - PGI C and Fortran compilers on Linux 2.4
+       - Intel C and Fortran compilers on Linux 2.4
+       
+ o The AMD Opteron is now supported. 
+
+ o The hdiff and hrepack utilities are now supported on Windows. 
+
+ o The Windows configuration, build and testing procedures have been changed.
+   Please see the INSTALL_WINDOWS.txt file in the source code for more
+   information.
+
+ o The h4fc utility could not create object files and now it can.
+
+Please refer to the RELEASE.txt file in the release_notes/ directory of
+the source code for more information on the new features and changes in 
+HDF 4.2r1.
+
+
+Platforms Tested
+----------------
+      
+    AIX 5.1 and 5.2 (32 and 64-bit)
+    Altix
+    AMD Opteron
+    Cray SV1 and TS IEEE
+    FreeBSD 4.9
+    HP-UX B.11.00
+    IRIX64 6.5 (64 and n32 bit)
+    Linux 2.4 
+    Mac OS X
+    IA32 and IA64
+    OSF1 v5.1
+    Solaris 2.7, 2.8, 2.9 (32 and 64 bit)
+    Windows 2000 and XP 
+
+For further information please refer to the following page (or the 
+RELEASE.txt file):
+
+    http://hdf.ncsa.uiuc.edu/release4/platforms.html
+
+
+Known Problems
+--------------
+
+Known problems at release time are listed in the RELEASE.txt file that 
+comes with the source code.
+
+Further information on known problems can be found on the following page:
+
+  http://hdf.ncsa.uiuc.edu/release4/known_problems.html
+
+
+Platforms to be Dropped
+=======================
+
+We are planning on dropping the following platforms for future
+releases of HDF and HDF5.  If this will cause problems for you,
+please let us know as soon as possible:
+
+   Solaris 2.7
+   HPUX B.11.00
+   Crays
+   VMS
+   Linux RH 7.* and 8.*
+
+
+
+-------------------------------------------------------------
+For questions regarding these or other HDF issues, contact:
+
+   hdfhelp@ncsa.uiuc.edu
+

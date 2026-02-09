@@ -1,0 +1,63 @@
+--------------------------------------------------------------------------
+The HDF Group Home Page:         http://hdfgroup.org/
+Helpdesk & Mailing Lists Info:   http://hdfgroup.org/services/support.html
+--------------------------------------------------------------------------
+
+                            Newsletter #115
+                             July 28, 2010
+
+CONTENTS
+
+ - Fix for HDF5 1.8.5 Problem Affecting Files with Non-default Address and
+     Length Sizes
+
+ - Next release of HDF5 1.8, H4toH5 and HDF-Java 2.7
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+Fix for HDF5 1.8.5 Problem Affecting Files
+with Non-default Address and Length Sizes
+==========================================
+
+A problem was discovered in HDF5 1.8.5 that affects files with non-default
+sizes of addresses and lengths as set by H5Pset_sizes().  The problem
+occurs when (sizeof_addr + 2*sizeof_size) is not a multiple of 8, unless
+using the new file format (H5Pset_libver_bounds()). Files created under
+these conditions by 1.8.5 will be readable by 1.8.5 but not by any other
+version of HDF5. Files created under these conditions by other versions of
+HDF5 will not be readable by 1.8.5.
+
+We recommend that those who use H5Pset_sizes or may deal with files that
+use this feature move to the latest snapshot (snap4) of HDF5 1.8.5.  If you
+have files created by 1.8.5 under these conditions that you wish to keep,
+you can fix this problem by using "h5repack -L" with the 1.8.5 version of
+h5repack to recreate the file with the new file format.  You can then read
+this file with any version since 1.8.0, and if desired use h5repack
+(without -L) again to move back to the old file format.
+
+The HDF5 1.8.5 Snapshot 4 software can be obtained from here:
+
+   ftp://ftp.hdfgroup.uiuc.edu/pub/outgoing/hdf5/snapshots/v18/hdf5-1.8.5-snap4.tar.gz
+
+The HDF5 Development Snapshots are accessible from the HDF Downloads page,
+here:
+
+   http://www.hdfgroup.org/downloads/
+
+
+   
+Next release of HDF5, H4toH5 and HDF-Java 2.7
+=============================================
+
+The Fall release of HDF5 1.8.6, the HDF-Java Products 2.7, and
+h4h5tools 2.1.2 will occur in mid-October this year. Maintenance
+releases of HDF5 typically occur in May and November, but will be early
+this year, due to an in-house move.
+
+
+-------------------------------------------------------------
+For questions regarding these or other HDF issues, contact:
+
+   help@hdfgroup.org 
+

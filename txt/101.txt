@@ -1,0 +1,104 @@
+--------------------------------------------------------------------------
+THG Home Page:                   http://hdfgroup.org/
+Helpdesk & Mailing Lists Info:   http://hdfgroup.org/services/support.html
+--------------------------------------------------------------------------
+
+                            Newsletter #101
+                             March 28, 2008
+CONTENTS:
+
+   - Release of h5check 1.0
+   - Release of HDF5-OPeNDAP Handler 1.2.2
+   - Second Prototype Release of HDF5 .NET APIs
+   - HDF5 and Python Pilot Study
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of h5check 1.0
+======================
+
+The first release of h5check is now available.  This tool
+is a validation tool for verifying that an HDF5 file is
+encoded according to the HDF5 File Format Specification.
+The purpose of this tool is to ensure data model integrity
+and long-term compatibility between evolving versions of the
+HDF5 library.
+
+The h5check tool can be obtained from the following location:
+
+   ftp://ftp.hdfgroup.org/HDF5/special_tools/h5check/
+
+For information on how to use it, please refer to the PDF
+documentation that comes with it, and which can be accessed
+from:
+
+   ftp://ftp.hdfgroup.org/HDF5/special_tools/h5check/h5check.pdf
+
+
+
+Release of HDF5-OPenDAP Handler 1.2.2
+=====================================
+
+The HDF5-OPeNDAP handler version 1.2.2 has been released through
+the OPeNDAP website at:
+
+   http://opendap.org/download/hdf5_handler.html
+
+This is a source-only beta release.
+
+The OPeNDAP software is a software framework that allows simple
+access to remote data. The HDF5-OPeNDAP handler allows remote HDF5
+files and subsets of HDF5 files to be accessed locally.
+
+
+Second Prototype Release of HDF5 .NET APIs
+==========================================
+
+A second release of the HDF5 .NET APIs is now available. Following
+are the new features in this release:
+
+  - H5A APIs were added.
+  - The set of H5T APIs for datatype discovery was extended.
+  - H5P APIs to support chunking and compression were added.
+  - It was built with HDF5 1.8.0.
+
+This software can be obtained from the HDF5 home page at:
+    
+  http://hdfgroup.org/products/hdf5/index.html
+
+The location of the software is:
+
+  ftp://ftp.hdfgroup.uiuc.edu/pub/outgoing/hdf5/HDF5dotNetEnv/
+ 
+Download and unzip the file:  hdf5DotNet18.zip
+
+The release notes can be found with the software and in:
+  ftp://ftp.hdfgroup.uiuc.edu/pub/outgoing/hdf5/HDF5dotNetEnv/ReleaseNotes18.pdf
+
+Please note that this version was built and tested with HDF5 1.8.0.
+The original prototype, which supports HDF5 1.6 is still accessible
+from the ftp server location.
+
+This software is not complete and therefore still considered a prototype.
+If your organization is interested in providing the resources to make
+this a fully supported and integrated product, just let us know!
+
+
+HDF5 and Python Pilot Study
+===========================
+
+THG will be conducting a pilot study on the feasibility of applying
+user-defined transform operations to data being read from an HDF5
+file.  This will be done using a dynamic programming language,
+initially with Python. An RFC outlining the work and seeking feedback
+is available at:
+
+  http://www.hdfgroup.uiuc.edu/RFC/HDF5/DynamicTransformations/
+
+
+
+-------------------------------------------------------------
+For questions regarding these or other THG issues, contact:
+
+   help@hdfgroup.org
+

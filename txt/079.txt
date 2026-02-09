@@ -1,0 +1,163 @@
+--------------------------------------------------------------------------
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+--------------------------------------------------------------------------
+
+                            Newsletter #79
+                           October 4, 2004 
+
+CONTENTS
+                                            *******************************
+. Release of HDF5-1.6.3                     *                             *
+  - New Features and Changes                * Visit the HDF home page     *
+  - Platforms Tested                        * for up-to-date information  *
+  - Known Problems                          *                             *
+                                            *  http://hdf.ncsa.uiuc.edu/  *
+. Patch for Problem Unlinking Chunked       *                             *
+    Datasets                                *******************************
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF5-1.6.3
+======================
+
+HDF5-1.6.3 is now available for download from the NCSA HDF5 home 
+page at:
+
+    http://hdf.ncsa.uiuc.edu/HDF5/
+
+The HDF5 documentation is included in the source code and can also
+be accessed from:
+
+    http://hdf.ncsa.uiuc.edu/HDF5/doc/
+
+This is a fully tested release.  The configuration features supported
+in this release can be viewed at:
+
+    http://hdf.ncsa.uiuc.edu/HDF5/release/SuppConfigFeats.html
+
+The RELEASE.txt file in the source code contains detailed information
+about this release:
+  
+ ftp://ftp.ncsa.uiuc.edu/HDF/HDF5/current/src/unpacked/release_docs/RELEASE.txt
+
+For information on functions that have changed in HDF5-1.6.3, see:
+
+    http://hdf.ncsa.uiuc.edu/HDF5/doc/ADGuide/Changes.html
+
+
+New Features and Changes
+------------------------
+
+The major new features and changes in HDF5-1.6.3 are:
+
+o Several improvements to the build, test, and installation for Windows.
+
+o HDF5 can now include SZIP compression with and without SZIP's
+  encoder, which is required for creating SZIP compressed files. 
+  The encoder is not required for reading SZIP compressed files.  
+  On our ftp server we provide all binaries with the SZIP encoder
+  included, but we also provide a few without the encoder.  Please
+  refer to the following page for information on SZIP and SZIP 
+  licensing:
+   
+     http://hdf.ncsa.uiuc.edu/doc_resource/SZIP/
+
+o A new API function H5Fget_filesize was added.  It returns the
+  actual file size of the opened file.
+
+o A new API function H5Fget_name was added.  It returns the name
+  of the file by object (file, group, data set, named data type,
+  attribute) ID.
+
+o The h5repack utility has been added to the tools suite.  It 
+  regenerates an HDF5 file from another HDF5 file, optionally
+  applying HDF5 filters (compression) and/or chunking to the 
+  copied file.  The filters options are read from the command
+  line.
+
+o New options have been added to h5dump to:
+  - print dataset filters, storage layout, and fill value information
+  - print a list of the file contents
+  - escape non-printable characters
+  - print the contents of the boot block
+  - print array indices with the data (default)
+
+o The following F90 subroutines have been added:  h5fget_filesize_f,
+  h5iget_file_id_f, h5premove_filter_f, and h5zget_filter_info_f.
+
+o New C++ wrappers have been added for variable length datatypes, as well
+  as for many other API functions.  
+
+o Added support for several platforms and compilers:
+  - PGI Fortran for Linux64 (x86-64)
+  - Absoft F95 for Linux 2.4 -32 bit 
+  - IBM XL Fortran and Absoft F95 for Mac OS X
+  
+This release also contains many bug fixes.  Please refer to the 
+RELEASE.txt file in the source code for a comprehensive list of 
+new features and changes.
+  
+
+Platforms Tested
+----------------
+
+  AIX 5.1 and 5.2 (32 and 64 bit)
+  Cray T3E, SV1, T90 
+  FreeBSD
+  HP-UX 
+  IRIX64 (32 and 64 bit)
+  Linux 2.4  
+  Mac OS X
+  OSF1
+  Solaris (32 and 64 bit)
+  TFLOPS
+  Windows
+
+For further information please refer to the following page (or the
+RELEASE.txt file):
+
+    http://hdf.ncsa.uiuc.edu/HDF5/release/platforms5.html
+
+
+Known Problems
+--------------
+
+Known problems at release time are listed in the RELEASE.txt file that
+comes with the source code.
+
+Further information on known problems can be found on the following page:
+
+  http://hdf.ncsa.uiuc.edu/HDF5/release/known_problems5.html
+
+
+Patch for Problem Unlinking Chunked Datasets
+============================================
+
+After testing began for HDF5-1.6.3, a problem was encountered with 
+unlinking chunked datasets, which caused the library to crash.  The 
+fix for this problem did not make it into the HDF5-1.6.3 release.  
+However, a patch is available for this problem, which can be 
+downloaded from the patches directory at:
+  
+   ftp://ftp.ncsa.uiuc.edu/HDF/HDF5/current/src/patches/
+
+Either:
+
+ 1) Download the HDF5-1.6.3 source code AND
+    download the H5Distore.c file from the patches directory, replacing 
+    the H5Distore.c file in the source code under ./hdf5-1.6.3/src/.  
+
+OR
+
+ 2) Download the patched HDF5-1.6.3 source code (hdf5-1.6.3-patch.tar.gz) 
+    from the patches directory. 
+
+Note that this fix is NOT included in the pre-compiled binaries we provide.
+
+-------------------------------------------------------------
+For questions regarding these or other HDF issues, contact:
+
+   hdfhelp@ncsa.uiuc.edu
+

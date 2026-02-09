@@ -1,0 +1,113 @@
+--------------------------------------------------------------------------
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+--------------------------------------------------------------------------
+
+                              Newsletter #42
+                              May 26, 1999
+
+CONTENTS
+
+. Release of Java Products v2.3
+                                            *******************************
+. GR interface supports JPEG compression    * Visit the HDF home page     *
+                                            * for up-to-date information  *
+                                            * on HDF:                     *
+                                            *   http://hdf.ncsa.uiuc.edu/ *
+                                            *******************************
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+Release of Java Products v2.3
+=============================
+
+A new release of the HDF Java Products is now available from:
+
+    http://hdf.ncsa.uiuc.edu/java-hdf-html/download.html
+
+This release includes many fixes and performance enhancements 
+to the Java HDF Viewer and Java HDF Interface.  This release
+also includes a complete implementation of the Java HDF Server,
+which supports transparent access to remote HDF files.  The
+release includes pre-built binaries (including the HDF library)
+for several popular platforms, and full source code.
+
+For complete information, see:
+
+   http://hdf.ncsa.uiuc.edu/java-hdf-html/
+
+Below is a list of new features in release 2.3 of the JHV.  
+For a complete list of features, see the JHV User's Guide. 
+(http://hdf.ncsa.uiuc.edu/java-hdf-html/jhv/index.html)
+
+  1.  Distributed with the newest released HDF library, HDF41r3. 
+  2.  Significant performance improvement to handle larger datasets. 
+  3.  Zoom in and out to navigate large images. 
+  4.  All new and improved "spreadsheet" package. 
+  5.  Transparent access to remote files with RMI server, servlet, 
+      or standalone server. 
+  6.  Ability to modify and save spreadsheet data. 
+  7.  A User Preferences Menu. 
+  8.  Both 'bounding-box' and entry form selection of a subset of 
+      an SDS array or raster image. 
+  9.  Field and record selections in the Vdata spreadsheet. 
+ 10.  Revised and updated Online User's Guide.
+
+The Java HDF products provide Java classes for reading and creating HDF 
+files.  These classes are designed to operate as a "data server" for HDF, 
+accepting requests (Java objects describing what to read) and returning 
+data and metadata from an HDF file (as Java objects).  The Java HDF Viewer
+uses these classes to access HDF files on local disk. 
+
+Starting with Release 2.3, the Java HDF Products also include classes to 
+transparently access HDF files across a network.  The HDF Java Products can 
+be run as a server on any system that wishes to share the contents of HDF 
+files with JHV clients across a network.  The Java HDF Server contains 
+exactly the same code as used in the Java HDF Viewer client, with 
+additional code to send the request to a remote system and return the 
+results as serialized Java objects via a network.   Release
+2.3 of the JHV contains the complete code for both the client and 
+server. 
+
+To access data on a remote system, the JHS must be installed and started.  
+The Java HDF server can be configured in three different ways: 
+
+  1.A standalone server 
+    The server runs as a standalone program which listens on a socket. 
+  2.A Servlet 
+    The server runs as a Servlet, plugged in to a Java Web server. 
+  3.An RMI Remote Object 
+    The server is accessed as a Java object using the Java Remote 
+    Invocation Method (RMI).
+
+A JHV client can use none, any, or all of these methods to access HDF 
+files on remote systems, depending on how the remote system's Java HDF 
+Server is configured.  In each case, the server functions identically, 
+and the results returned are the same from each, and for files on local 
+disk. The features and display are identical no matter where the HDF 
+file is located. 
+
+For more complete information about the Java HDF Server, see:
+
+   http://hdf.ncsa.uiuc.edu/java-hdf-html/jhs/index.html
+
+
+GR interface supports JPEG compression
+======================================
+
+Newsletter 41, announcing the release of HDF 4.1r3, failed to mention
+that the GR interface now supports JPEG compression.  Using C, you
+can now use GRsetcompress to compress a GR image with JPEG compression.
+However, the Fortran counterpart to this function (mgscompress) does not
+support JPEG compression.  We will be providing a new GR Fortran function
+that supports JPEG compression in the near future.
+
+
+--------------------------------------------------------------
+For questions regarding these or other HDF issues, contact:
+
+   hdfhelp@ncsa.uiuc.edu
+
+

@@ -1,0 +1,98 @@
+------------------------------------------------------------------------
+The HDF Group Home Page:         http://hdfgroup.org/
+Helpdesk & Mailing Lists Info:   http://hdfgroup.org/services/support.html
+--------------------------------------------------------------------------
+
+                            Newsletter #105
+                            February 3, 2009 
+
+CONTENTS
+
+ - Release of HDF 4.2r4
+ - Release of H4 to H5 Version 2.1
+ - Dropping VS 6.0
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF 4.2r4
+====================
+
+We are pleased to announce the release of HDF 4.2r4.
+It can be downloaded from the following location:
+
+   http://www.hdfgroup.org/release4/obtain.html
+
+The HDF4 home page is located at:
+
+   http://www.hdfgroup.org/products/hdf4/index.html
+
+The RELEASE.txt file in the source code contains
+detailed information about this release:
+
+   http://www.hdfgroup.org/ftp/HDF/HDF_Current/src/RELEASE-4.2r4.txt
+
+New Features and Changes in HDF 4.2r4 include:
+
+ o A new API, SDgetdatasize, was added to retrieve the compressed
+   and original sizes of an SDs' data.
+
+ o Several new SD Fortran APIs were added.
+
+ o The hdp and hrepack utilities can now display more compression
+   information.
+
+ o The configuration was upgraded to support Automake 1.10.1,
+   Autoconf 2.61 and Libtool 2.2.6a.
+    
+ o Several new platforms and compilers are supported:
+
+    - Linux 2.6 x86_64 for Fedora 10, Ubuntu 8.10, and OpenSuse 11.1
+      with GNU C and gfortran.
+
+    - Mac Intel with GNU C, gfortran, g95, and Intel 10.1 32-bit
+      compilers.
+   
+ o There were several bug fixes, including the incorrect HDF library
+   behavior exposed by applications working with netCDF files.
+
+Please refer to the RELEASE.txt file for a comprehensive list of
+changes in this release.
+
+
+Release of H4 to H5 Version 2.1
+===============================
+
+A new version of the H4 to H5 software, version 2.1,
+is now available.  This version was built with HDF5 1.8.2
+and HDF 4.2r4.
+
+Numerous enhancements and bug fixes have been added to this
+release, most of which are related to converting HDF-EOS2 files to
+HDF5 files that can be read by the netCDF-4 APIs. More information can
+be found in the RELEASE.txt file in the release_docs/ directory of the
+h4h5tools source code distribution.
+
+An optional "verify" tool has also been provided to enable applications
+that convert HDF-EOS2 files to netCDF-4 files to verify the correctness
+of the converted results.
+
+The H4 to H5 software can be downloaded from:
+
+ http://www.hdfgroup.org/h4toh5/
+
+
+Dropping VS 6.0
+===============
+
+We will be dropping Visual Studio 6.0 for both HDF4 and HDF5 1.6
+products, after the HDF 4.2r4 release.
+
+
+
+
+
+-------------------------------------------------------------
+For questions regarding these or other HDF issues, contact:
+
+   help@hdfgroup.org 
+

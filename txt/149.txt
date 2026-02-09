@@ -1,0 +1,101 @@
+
+To view from a browser see:
+   https://www.hdfgroup.org/newsletters/newsletter149.pdf
+  
+--------------------------------------------------------------------------
+The HDF Group Home Page:                https://www.hdfgroup.org/
+Support Services:                       https://www.hdfgroup.org/services/
+--------------------------------------------------------------------------
+
+                            Newsletter #149 
+                             May 13, 2016
+CONTENTS
+ . Release of HDF5-1.8.17
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF5-1.8.17
+======================
+
+The HDF5-1.8.17 release is now available. It can be downloaded from The HDF
+Group Downloads page:
+
+   https://www.hdfgroup.org/downloads/
+
+It can also be obtained from:
+
+   https://www.hdfgroup.org/HDF5/release/obtain5.html
+
+HDF5-1.8.17 is a minor release with a few new features and changes. Important
+changes include:
+
+ o Improvements were made to the High Level C and C++ Packet Table APIs,
+   including:
+
+   - The H5PTcreate function was added to provide control over creation
+     properties. It replaces the H5PTcreate_fl function. The corresponding
+     change in C++ is the addition of a new overloaded constructor to
+     FL_PacketTable that takes a property list identifier.
+ 
+   - H5PTget_dataset was added to return the identifier of the dataset
+     associated with a packet table. The corresponding member function added 
+     for C++ is PacketTable::GetDataset().
+
+   - H5PTget_type was added to return the identifier of the datatype used
+     by a packet table. The corresponding member function added for C++ is
+     PacketTable::GetDatatype().
+
+   - C++ member functions with "char*" as an argument now include overloaded
+     functions to provide a "const char*" argument.
+
+   - The source code was cleaned up to remove the obsolete variable length packet
+     table code. This included the following changes:
+ 
+       o H5PTis_varlen() was made available again. The corresponding C++
+         function VL_PacketTable::IsVariableLength() was moved to PacketTable.
+  
+       o H5PTfree_vlen_readbuff() was renamed H5PTfree_vlen_buff(). The
+         corresponding C++ function VL_PacketTable::FreeReadBuff() was
+         renamed to PacketTable::FreeBuff().
+
+ o The H5Pset/get_efile_prefix() functions were added for controlling the
+   search path for dataset external storage that has been configured with
+   H5Pset_external(). Additionally, the HDF5_EXTFILE_PREFIX environment
+   variable was added to control the search path.
+
+ o The following new member functions were added to C++:
+   
+   - DSetCreatPropList::setNbit() sets up N-bit compression for a dataset.
+
+   - New overloaded "const" member functions were added to ArrayType:
+     ArrayType::getArrayNDims() const and ArrayType::getArrayDims() const
+   
+ o Overloaded C++ methods with parameters that were not "const" (but
+   should have been) were removed.
+
+ o Support was added for Mac OS X 10.11.4 (El Capitan). 
+
+This release contains many other changes that are not listed here. Please be
+sure to read the Release Notes for a comprehensive list of new features and
+changes:
+
+   https://www.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.8.17-RELEASE.txt
+
+Changes that affect maintainers of HDF5-dependent applications are listed on
+the HDF5 Software Changes from Release to Release page. See:
+
+   https://www.hdfgroup.org/HDF5/doc1.8/ADGuide/Changes.html
+   
+
+Future Changes to Supported Compilers and Platforms
+---------------------------------------------------
+
+After this release we will be dropping support for Mac OS X 10.8.
+
+
+
+-------------------------------------------------------------
+For questions regarding these or other HDF issues, contact:
+
+   help@hdfgroup.org
+

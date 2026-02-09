@@ -1,0 +1,212 @@
+--------------------------------------------------------------------------
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+--------------------------------------------------------------------------
+
+                           Newsletter #68
+                           July 12, 2002
+
+CONTENTS
+                                            *******************************
+. Release of HDF5-1.4.4                     *                             *
+  - New Features and Changes                * Visit the HDF home page     *
+  - Platforms Tested                        * for up-to-date information  *
+                                            *                             *
+. Release of H4toH5 version 1.0             *  http://hdf.ncsa.uiuc.edu/  *
+                                            *                             *
+. Support for BZIP2 Compression             *******************************
+
+. Cray Support to Continue 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF5-1.4.4
+=====================
+
+HDF5-1.4.4 is now available for download.  You can obtain the
+HDF5-1.4.4 software from the HDF5 home page at:
+
+     http://hdf.ncsa.uiuc.edu/HDF5/
+
+The HDF5 documentation is included in the source code and can also
+be downloaded from:
+
+     http://hdf.ncsa.uiuc.edu/HDF5/doc/
+
+This is a fully tested release.  The configuration features supported
+in this release can be viewed at:
+
+    http://hdf.ncsa.uiuc.edu/HDF5/release/SuppConfigFeats.html
+
+New Features and Changes
+------------------------
+
+Important changes in HDF5 include:
+ 
+o Numerous performance changes were made to the HDF5 sequential and
+  parallel libraries.  
+
+  In general, the library should make fewer and larger I/O requests when 
+  accessing a file.  Additionally, improvements to the parallel I/O portions 
+  of the library should reduce the communications and barriers used in 
+  various internal algorithms, improving the performance of the library.
+   
+  However, with the extensive changes to some portions of the library that
+  were required for these improvements, some errors or unanticipated results 
+  may have been introduced.  Please report any problems encountered to 
+  hdfhelp@ncsa.uiuc.edu.
+
+  Hopefully these improvements will benefit all HDF5 applications, but if
+  there are particular I/O patterns that appear to be slower than necessary,
+  please let us know and include a sample program showing the problem 
+  behavior.
+
+o The H4 to H5 tools have been removed from the main source and are
+  now included in the H4toH5 conversion library.  The "--with-hdf4" 
+  command-line option during configure is no longer valid.  
+
+o Support for the Intel compilers has been added to HDF5. Intel C++ and
+  Intel F90 version 6.0 are both supported on Linux 2.4, and Intel C++ 
+  version 6.0 is supported on Windows 2000.
+
+o Support for zlib 1.1.4 has been added.
+
+o zlib has been removed from the Windows source release. Users can 
+  download the zlib library for windows from the NCSA ftp server at:
+      ftp://ftp.ncsa.uiuc.edu/HDF/gzip/windows/
+
+  The Windows binary release was built with zlib 1.1.3.  
+
+o Several corruption problems were fixed. 
+
+Please refer to the RELEASE.txt file that comes with the source code
+for detailed information:
+  
+  ftp://ftp.ncsa.uiuc.edu/HDF/HDF5/current/src/unpacked/release_docs/RELEASE.txt 
+
+
+Platforms Tested
+----------------
+
+    AIX 4.3.3.0 (IBM SP powerpc)  xlc 5.0.2.0
+                                  mpcc_r 5.0.2.0
+                                  xlf 07.01.0000.0002
+                                  mpxlf 07.01.0000.0002
+    AIX 4.3 (IBM SP RS6000)       C for AIX Compiler, Version 5.0.2.0
+                                  xlf 7.1.0.2
+                                  poe 3.1.0.12 (includes mpi)
+    AIX 5.1                       xlc 5.0.2.0 
+                                  xlf 07.01.0000.0002
+                                  mpcc_r 5.0.2.0; mpxlf_r 07.01.0000.0002
+    Cray T3E sn6711 2.0.5.57      Cray Standard C Version 6.5.0.3
+                                  Cray Fortran Version 3.5.0.4
+    Cray SV1 10.0.1.1             Cray Standard C Version 6.5.0.3 
+                                  Cray Fortran Version 3.5.0.4
+    FreeBSD 4.6                   gcc 2.95.4
+                                  g++ 2.95.4
+    HP-UX B.10.20                 HP C  HP92453-01 A.10.32.30
+                                  HP F90 v2.3
+    HP-UX B.11.00                 HP C  HP92453-01 A.11.01.20 
+                                  HP F90 v2.4
+    HP-UX B.11.00 SysV            HP C  HP92453-01 A.11.01.20 
+                                  HP F90 v2.4
+                                  HP MPI [not a product] (03/24/2000) B6060BA
+    IRIX 6.5                      MIPSpro cc 7.30
+    IRIX64 6.5 (64 & n32)         MIPSpro cc 7.3.1.3m
+                                  F90 MIPSpro 7.3.1.3m (64 only)
+    Linux 2.4.18                  gcc 2.95.3
+                                  g++ 2.95.3
+                                  Intel(R) C++ Version 6.0
+                                  Intel(R) Fortran Compiler Version 6.0
+                                  MPICH 1.2.2
+    Linux 2.2.18smp               gcc 2.95.2
+                                  gcc 2.95.2 with mpich 1.2.1
+                                  g++ 2.95.2
+                                  pgf90 3.2-4
+    OSF1 V5.1                     Compaq C V6.4-014
+                                  Compaq Fortran V5.5-1877-48BBF
+                                  gcc version 3.0 for C++
+    SunOS 5.7                     WorkShop Compilers 5.0 98/12/15 C 5.0
+     (Solaris 2.7)                WorkShop Compilers 5.0 98/12/15 C++ 5.0 
+                                  WorkShop Compilers 5.0 98/10/25 
+                                  FORTRAN 90 2.0 Patch 107356-04 
+    SunOS 5.8/32                  Sun WorkShop 6 update 1 C 5.2 2000/09/11
+     (Solaris 2.8)                Sun WorkShop 6 update 1 Fortran 95 6.1 
+                                          Patch 109503-07 2001/08/11
+                                  Sun WorkShop 6 update 1 C++ 5.2 Patch
+                                        109508-04 2001/07/11
+    SunOS 5.8/64                  Sun WorkShop 6 update 1 C 5.2 2000/09/11
+     (Solaris 2.8)                Sun WorkShop 6 update 1 Fortran 95 6.1 
+                                          Patch 109503-07 2001/08/11
+                                  Sun WorkShop 6 update 1 C++ 5.2 Patch
+                                        109508-04 2001/07/11
+    TFLOPS r1.0.4 v4.2.2 i386     pgcc Rel 3.1-4i with mpich-1.2.3 with
+                                          local modifications
+    IA-32 Linux 2.4.9             cc Intel 5.0.1
+                                  gcc 2.96
+                                  Intel(R) C++ Version 6.0
+                                  Intel(R) Fortran Compiler Version 6.0
+                                  
+    IA-64 Linux 2.4.16 ia64       gcc version 2.96 20000731
+                                  Intel(R) C++ Version 6.0
+                                  Intel(R) Fortran Compiler Version 6.0
+    Windows 2000 (NT5.0)          MSVC++ 6.0
+                                  DEC Visual Fortran 6.0
+    Windows NT4.0                 MSVC++ 6.0
+                                  DEC Visual Fortran 6.0
+    Windows NT4.0                 Code Warrior 6.0
+
+
+Release of H4toH5 version 1.0
+=============================
+
+Version 1.0 of the H4 to H5 conversion library is now available, 
+and can be downloaded from: 
+
+   http://hdf.ncsa.uiuc.edu/h4toh5/libh4toh5.html
+
+It includes the h4toh5 and h5toh4 utilities, as well as a library of 
+functions for converting HDF4 objects into HDF5 objects.
+
+We encourage users to try this software and we welcome feedback 
+regarding it.
+
+
+Support for BZIP2 Compression
+=============================
+
+We have done a performance study of using bzip2 with an HDF5 file. The 
+study focused on the performance comparison between bzip2 and gzip. 
+One important goal of this study was to help the HDF5 group decide whether 
+or not HDF5 should support bzip2 compression. 
+
+Based on the report, the following was observed: 
+
+Although bzip2 is always better than gzip in compression ratio within a few 
+percentage points, bzip2 always takes more processing time than gzip, 
+especially for decoding time. 
+
+Therefore, the HDF group has decided not to officially support the bzip2 
+library at this time. However, we have provided an example to show 
+how to use the bzip2 filter in a user application.
+
+Details regarding this can be found at: 
+
+     http://hdf.ncsa.uiuc.edu/HDF5/papers/bzip2/
+
+
+Cray Support to Continue
+========================
+
+In our last newsletter we had mentioned that we were considering dropping 
+support for the Cray computers.  We received several responses regarding 
+this, as well as help procuring new Cray accounts, and will be able to 
+continue supporting the Crays.
+
+
+--------------------------------------------------------------
+For questions regarding these or other HDF issues, contact:
+
+   hdfhelp@ncsa.uiuc.edu
+

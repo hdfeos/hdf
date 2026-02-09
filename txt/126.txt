@@ -1,0 +1,120 @@
+--------------------------------------------------------------------------
+The HDF Group Home Page:         http://hdfgroup.org/
+Helpdesk & Mailing Lists Info:   http://hdfgroup.org/services/support.html
+--------------------------------------------------------------------------
+
+                            Newsletter #126
+                           February 15, 2012 
+
+CONTENTS
+. Release of HDF 4.2.7
+. Release of H4toH5 Conversion Library and Tools Version 2.2.1
+. Changes to Windows Support in HDF4 and H4toH5 Conversion Library
+  and Tools 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF 4.2.7
+====================
+
+The release of HDF 4.2.7 is now available. It can be obtained from
+the HDF Downloads page:
+
+   http://www.hdfgroup.org/downloads/index.html#hdf4
+
+For the HDF 4.2.7 documentation, see:
+
+   http://www.hdfgroup.org/doc.html
+
+Important new features and changes in this release include:
+
+ o VSgetexternalfile and SDgetexternalfile were superseded by
+   VSgetexternalinfo and SDgetexternalinfo because their prototypes were
+   missing the parameter "length" for the external data length.
+
+ o This release adds support for building HDF (HDF4) using CMake 2.8.6
+   (see http://www.cmake.org/).
+
+   This is the first step in supporting CMake in HDF4. Initial work targets
+   building on Windows only, but CMake can be used on other platforms, as
+   well. Please refer to the ./release_notes/CMake.txt file in the source
+   code for more details on building HDF4 with CMake.
+  
+ o The Fortran wrappers vfgvgroups and vsfgvdatas have been added for
+   Vgetvgroups and VSgetvdatas, respectively.
+
+ o Support was added for IBM XL Fortran for Linux 64-bit and Linux 
+   PowerPC 64 Version 13.1.
+
+ o Numerous bug fixes were made.
+
+Please be sure to see the HDF 4.2.7 Release Notes for complete details on
+what has changed in this release:
+
+   http://www.hdfgroup.org/ftp/HDF/HDF_Current/src/hdf-4.2.7-RELEASE.txt
+
+
+
+Release of H4toH5 Conversion Library and Tools Version 2.2.1
+============================================================
+
+Version 2.2.1 of the H4toH5 Conversion Library and Tools is now
+available. This release has been tested with HDF5-1.8.8 and HDF 4.2.7.
+See the conversion library and tools web page for complete details
+regarding this release:
+
+   http://www.hdfgroup.org/h4toh5/
+
+The software can be obtained from the conversion library and tools
+web page, as well as the HDF Downloads page:
+
+   http://www.hdfgroup.org/downloads/index.html#h4h5
+
+The conversion software consists of command-line utilities (h4toh5,
+h5toh4) as well as a conversion library for converting individual
+HDF4 objects to HDF5 objects.
+
+Important new features and changes in this release include:
+
+ o The source code has been changed to use the HDF5 v1.8 API. This means
+   when using HDF5 v1.8 to build the library and tools, one no longer
+   needs to and should not use CPPFLAGS=-DH5_USE_16_API.
+
+ o The -nc4 and -nc4fakedim options for converting HDF-EOS2 to netCDF-4
+   are not supported in version 2.2.1, but may be supported again in a
+   future release.
+
+ o Support was added for Linux 2.6 PowerPC 64, using GCC v4.4.6.
+
+
+
+Changes to Windows Support in HDF4 and H4toH5 Conversion Library and Tools 
+==========================================================================
+
+The next release of both the HDF4 library and H4toH5 conversion software
+will include changes to how Windows is supported.
+
+CMake will be used exclusively to build the Windows libraries and
+executables. The windows/ directory will no longer be included in the
+source code, which means the VS 2008 project files will no longer be
+provided.
+
+CMake is a cross-platform build system generator. Projects specify their
+build process with platform-independent CMake listfiles. These are
+included in each directory of a source tree with the name CMakeLists.txt.
+Users build a project by using CMake to generate a build system for a
+native tool on their platform.
+
+More information on CMake can be found at the KitWare site:
+
+   http://www.cmake.org/
+
+We are also moving our Windows reference platforms to Windows 7 using
+Visual Studio 2010 and Intel Fortran 12.
+
+
+-------------------------------------------------------------
+For questions regarding these or other HDF issues, contact:
+
+   help@hdfgroup.org 
+

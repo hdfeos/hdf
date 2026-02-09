@@ -1,0 +1,78 @@
+
+To view from a browser see:
+   http://www.hdfgroup.org/newsletters/newsletter139.html
+  
+--------------------------------------------------------------------------
+The HDF Group Home Page:     http://www.hdfgroup.org/
+Support Services:            http://www.hdfgroup.org/services/
+--------------------------------------------------------------------------
+
+                            Newsletter #139
+                           February 14, 2014
+
+CONTENTS
+. Release of HDF 4.2.10
+  - Future Changes to Supported Compilers
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF 4.2.10
+=====================
+
+The HDF 4.2.10 release is now available. It can be obtained from the
+HDF Downloads page:
+
+   http://www.hdfgroup.org/downloads/index.html#hdf4
+
+The HDF (HDF4) home page is located at:
+
+   http://www.hdfgroup.org/products/hdf4/
+
+HDF 4.2.10 is a minor release with a few new features and changes,
+including the following:
+
+   o Support was added for Visual Studio 2012 with Intel Fortran 13
+     on Windows 7 and Windows 8.
+
+   o Many changes and improvements to the configuration files were
+     made, including:
+
+      - The default C compiler for Macintosh platforms was changed to
+        the Apple supported clang compiler.
+
+      - The -Xc (strict ansi standard) option is no longer specified by
+        default on Solaris.
+
+      - A few changes were made to the CMake support.
+    
+      - Configuration files for old platforms were removed.
+  
+
+This release contains other changes not listed here. Please be sure to
+refer to the HDF 4.2.10 Release Notes for a comprehensive list of new
+features and changes:
+
+   http://www.hdfgroup.org/ftp/HDF/HDF_Current/src/hdf-4.2.10-RELEASE.txt
+
+
+
+Future Changes to Supported Compilers
+-------------------------------------
+
+Please be aware of the following changes to future releases of HDF4:
+
+   o The HDF4 C library will be upgraded to the C99 standard.
+
+   o The HDF4 Fortran library will only be tested and supported
+     with Fortran 90 compilers.
+
+We strongly encourage you to upgrade if you are using HDF4 with a
+pre-C99 C compiler or a Fortran compiler prior to Fortran 90.
+
+
+-------------------------------------------------------------
+For questions regarding these or other HDF issues, contact:
+
+   help@hdfgroup.org
+

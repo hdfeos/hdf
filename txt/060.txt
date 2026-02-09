@@ -1,0 +1,177 @@
+--------------------------------------------------------------------------
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+--------------------------------------------------------------------------
+
+                          Newsletter #60
+                          August 3, 2001
+
+
+CONTENTS
+                                            *******************************
+. Release of HDF5-1.4.2                     * Visit the HDF home page     *
+  - New Features and Changes                * for up-to-date information  *
+  - Platforms Supported                     *                             *
+  - Known Problems                          *  http://hdf.ncsa.uiuc.edu/  *
+                                            *                             *
+. Release of Java HDF5 Products             *******************************
+    Version 2.2
+
+. Improved HDF5 XML Web Pages
+
+. Dropping Support of Solaris 2.6
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF5-1.4.2
+=====================
+
+HDF5-1.4.2 is now available for download.  You can obtain the HDF5-1.4.2 
+software from the HDF5 home page: 
+
+      http://hdf.ncsa.uiuc.edu/HDF5/
+
+Documentation is included in the source code and can also be found from:
+
+     http://hdf.ncsa.uiuc.edu/HDF5/doc/
+
+This is a fully tested release.  To see the configuration features
+supported with HDF5 see:
+
+   http://hdf.ncsa.uiuc.edu/HDF5/release/SuppConfigFeats.html
+
+
+New Features and Changes
+------------------------
+
+Important changes in HDF5 include:
+
+    * File sizes greater than 2GB are now supported on Linux systems with
+      kernel version 2.4.x and higher.
+  
+    * Fortran 90 is now supported for Windows (static library), 
+      HP-UX 10.20 and 11.00 and the IBM SP platforms.
+
+    * In order to support Fortran 90 on Windows, additional parameters were
+      added to the h5dread_f and h5dwrite_f subroutines.
+
+    * An H5 <-> GIF converter has been added to the utilities.
+
+    * Support has been added for Solaris 2.8 with the -64 bit option, for 
+      Linux in parallel mode, and for the Metrowerks Code Warrior compiler 
+      on Windows.
+
+    * Numerous bugs have been fixed and performance improvements added
+      for both parallel and serial HDF5.
+
+Please refer to the RELEASE.txt file that comes with the source code for 
+details:
+
+  ftp://ftp.ncsa.uiuc.edu/HDF/HDF5/current/src/unpacked/release_docs/RELEASE.txt  
+
+Platforms Supported 
+-------------------
+
+    AIX IBM SP powerpc (4.3.3.0) and IBM SP RS6000 (4.3)
+    Cray T3E sn6711 2.0.5.49a    
+    Cray SV1 10.0.0.8         
+    FreeBSD 4.3             
+    HP-UX B.10.20 and B.11.00
+    SGI IRIX 6.5, IRIX64 6.5 (64 & n32)
+    Linux 2.4.4 and 2.2.18smp
+    OSF1 V4.0  
+    Solaris 2.6, 2.7, 2.8 (32-bit and 64-bit)
+    TFLOPS r1.0.4 v4.0.7 i386  
+    Windows 2000 (NT5.0), NT4.0, 98 
+
+Please refer to the following page for a detailed list of the
+platforms supported:
+
+    http://hdf.ncsa.uiuc.edu/HDF5/release/platforms5.html
+
+
+Known Problems
+--------------
+
+Known problems in this release are listed in the RELEASE.txt file in the
+HDF5 source code:
+
+  ftp://ftp.ncsa.uiuc.edu/HDF/HDF5/current/src/unpacked/release_docs/RELEASE.txt
+
+For information on known problems that occur after the release, see:
+ 
+  http://hdf.ncsa.uiuc.edu/HDF5/release/known_problems5.html
+
+
+
+Release of Java HDF5 Products Version 2.2
+=========================================
+
+The latest version of the Java HDF5 Products, Version 2.2, which has
+been updated to work with HDF5-1.4.2 is available from:
+
+     http://hdf.ncsa.uiuc.edu/java-hdf5-html/
+
+The H5View tool contains several new features, in addition to fixes to
+major bugs reported from version 2.1.  New features in H5View include: 
+
+    * View a generic dataset as an image using a default palette. 
+
+    * Display image data in a spreadsheet. 
+
+    * View 24-bit image of pixel or plane interlace. 
+
+    * Show a line plot of row/column data in spreadsheet. 
+
+    * Show a histogram of pixel values of image. 
+
+    * Select the default palettes from Gray Scale, Rainbow, Nature and Wave. 
+
+    * Save the whole or subset of an HDF5 image as a JPEG image. 
+
+    * Save the whole or subset of a dataset to a text file with tab, space, 
+      comma or colon delimiter. 
+
+    * User preferences to set: 
+
+        * Web browser path. 
+        * H4toH5 tool path. 
+        * H5View users guide URL. 
+        * The default palette to use if a dataset does not have a palette. 
+        * The delimiter character when save spreadsheet data into text file. 
+
+    * A list of most recent files to the file menu. 
+
+    * Can add or change values of an attribute that is a one-dimensional array. 
+
+This release was tested with JDK 1.2.x. It should work with JDK1.3.1, but
+this has not been extensively tested. 
+
+This product contains the Xerces 1.4.1 from Apache (http://www.apache.org)
+
+NOTE:  The pre-built binaries for Windows platforms were linked with a 
+pre-release version of HDF5-1.4.2.  This will be updated soon.
+
+
+Improved HDF5 XML Web Pages
+===========================
+
+The HDF5 XML pages have been re-written to make it easier to find
+information:
+
+   http://hdf.ncsa.uiuc.edu/HDF5/XML/
+
+
+Dropping Support for Solaris 2.6
+================================
+
+HDF5-1.4.2 is the last release of HDF5 that supports Solaris 2.6.
+
+
+--------------------------------------------------------------
+For questions regarding these or other HDF issues, contact:
+
+   hdfhelp@ncsa.uiuc.edu
+
+

@@ -1,0 +1,66 @@
+
+--------------------------------------------------------------------------
+To subscribe to the THG news mailing list, please send an empty message
+to "news-subscribe@hdfgroup.org".  To unsubscribe, send a message to
+"news-unsubscribe@hdfgroup.org".
+--------------------------------------------------------------------------
+
+                            Newsletter #91
+                             March 6, 2007
+
+CONTENTS
+                                            *******************************
+. C# Prototype Release (Second Version)     *                             *
+                                            * Visit the THG home page     *
+. Beta Version of HDFView for Mac-Intel     * for up-to-date information  *
+                                            *                             *
+                                            *  http://hdfgroup.org/       *
+                                            *                             *
+                                            *******************************
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+C# Prototype Release (Second Version)
+=====================================
+
+A second C# prototype release for HDF5 is now available.  This version
+provides many additional wrappers for the HDF5 library.  These wrappers
+may be invoked from C#, C++/CLI, or from Visual Basic.
+
+This release can be obtained from:
+
+   ftp://ftp.hdfgroup.uiuc.edu/pub/outgoing/hdf5/Csharp-prototype/HDF5dotNet.zip
+
+Once you have downloaded and uncompressed this file, you can access the
+documentation from the following location:
+
+  .\HDF5DotNet\HDF5DotNet\doc\output\HDF5DotNet.chm (double-click on the file)
+
+The list of currently implemented wrappers along with general instructions for
+using the wrappers is provided in the release notes at:
+
+  ftp://ftp.hdfgroup.uiuc.edu/pub/outgoing/hdf5/Csharp-prototype/ReleaseNotes.pdf
+
+
+
+Beta Version of HDFView for Mac-Intel
+=====================================
+
+A beta version of HDFView 2.4 for the Mac Intel is available
+from:
+
+   ftp://ftp.hdfgroup.org/HDF5/hdf-java24-beta/hdfview/hdfview_install_macosx_intel_novm.zip
+
+This version is built using HDF5 1.6.5 and a development version
+of HDF4 that includes Mac Intel support.
+
+Please let us know if you encounter any problems using it.
+
+
+
+-------------------------------------------------------------
+For questions regarding these or other HDF issues, contact:
+
+   help@hdfgroup.org
+

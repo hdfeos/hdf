@@ -1,0 +1,90 @@
+--------------------------------------------------------------------------
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+--------------------------------------------------------------------------
+
+                            Newsletter #84
+                          September 6, 2005
+
+CONTENTS
+                                            *******************************
+. High Level API Changes                    *                             *
+                                            * Visit the HDF home page     *
+. File Format Changes in HDF5-1.7           * for up-to-date information  *
+                                            *                             *
+. Windows MPICH Support                     *  http://hdf.ncsa.uiuc.edu/  *
+                                            *                             *
+. Web Site to Obtain HDF-EOS Software       *******************************
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+High Level API Changes
+======================
+
+A proposal has been made to change the names of the attributes used in
+the Image and Table APIs to names that are unique to HDF5.  Some users
+already have attributes defined with the names that are currently used, 
+which has caused problems.  However, changing the names of the attributes 
+will affect all users of the High Level APIs and will require changes 
+to their software.  To ease this inconvenience we would plan on 
+keeping the old attribute names for a number of releases.
+
+We would like to know how many users are currently using the High Level 
+APIs and the impact that this change will make on them.  Please send
+this information to:  help@hdfgroup.org
+
+
+
+File Format Changes in HDF5-1.7 
+===============================
+
+Users of the development software that we provide, need to be aware of 
+the changes that we will be adding from now until the release of HDF5-1.8.  
+The development code is provided as odd-numbered releases or 'snapshots'.  
+The current development software is 5-1.7, which, when completed, will 
+become the 5-1.8 release.
+
+Please note that the developers are making changes to 5-1.7 that will 
+modify the file format.  These format changes are likely to be modified 
+further in later snapshots before the 5-1.8 release.  Some of these 
+changes may not be carried over into the final 1.8 release, so that 
+your files created with a 1.7 snapshot may not be readable by HDF5-1.8 or 
+any future release. 
+
+We will thoroughly document these changes in the release notes of the 
+snapshots.
+
+
+Windows MPICH Support
+=====================
+
+We have investigated what is needed to support MPICH on Windows.
+We would like to get a feel for how many users are interested in
+this, so that we can determine what level of support to offer.
+At minimum, we will provide detailed instructions on how to use it. 
+
+If you are interested in Windows MPICH support, please send us
+a message at:  help@hdfgroup.org
+
+
+Web Site to Obtain HDF-EOS Software 
+===================================
+
+The HDF-EOS project's Tools and Information web page is not 
+active.  If you need to obtain the HDF-EOS, EOSView or SDP Toolkit 
+software, it is available from the following page:
+
+   http://newsroom.gsfc.nasa.gov/sdptoolkit/toolkit.html
+
+
+-------------------------------------------------------------
+For questions regarding these or other HDF issues, contact:
+
+   help@hdfgroup.org
+
+
+
+
+

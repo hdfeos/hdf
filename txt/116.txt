@@ -1,0 +1,113 @@
+--------------------------------------------------------------------------
+The HDF Group Home Page:         http://hdfgroup.org/
+Helpdesk & Mailing Lists Info:   http://hdfgroup.org/services/support.html
+--------------------------------------------------------------------------
+
+                            Newsletter #116
+                           September 3, 2010 
+
+CONTENTS:
+
+ - Release of HDF5 1.8.5-patch1
+ - New HDF5 High Level functions for region references, hyperslabs, and bit-fields
+ - Pre-release snapshot of HDF-Java 2.7
+ - RFC for h5edit tool
+ - Events
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF5 1.8.5-patch1
+============================
+
+HDF5 1.8.5-patch1 has been released.  It is a full source code release,
+containing a few important changes and bug fixes, which include:
+
+ - Numerous memory issues were fixed.
+
+ - A bug was fixed that could cause file corruption when using non-default
+   sizes of addresses and/or lengths.  This bug, introduced in HDF5 1.8.5,
+   could also cause uncorrupted files with this property to be unreadable.
+
+ - CMake support for parallel Fortran was added.
+
+To Obtain HDF5 1.8.5-patch1, go directly to:
+   http://www.hdfgroup.org/HDF5/release/obtain5.html
+
+This link can be reached from the HDF Downloads page:
+   http://www.hdfgroup.org/downloads/index.html
+
+The release notes contain detailed information regarding HDF5 1.8.5-patch1:
+   http://www.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.8.5-patch1-RELEASE.txt
+
+The documentation did not change for this release:
+   http://www.hdfgroup.org/HDF5/doc/index.html
+
+The HDF5 1.8.6 release will be available in October 2010, for those who prefer
+to wait.
+
+
+New HDF5 High Level functions for region references, hyperslabs, and bit-fields
+===============================================================================
+
+We are pleased to announce a new set of C and Fortran convenience functions
+designed to facilitate access to remote sensing data in HDF5. The data will be
+gathered by a new generation of low earth orbiting satellites that monitor
+environmental conditions for long-range weather and climate forecasts.
+(Refer to the NPOESS project for details: http://www.hdfgroup.org/projects/npoess/)
+
+The source code, installation instructions and a draft of the User's Guide are
+available from:
+
+   http://www.hdfgroup.uiuc.edu/ftp/pub/outgoing/NPOESS/source/
+
+The Reference Manual can be found at:
+
+   http://www.hdfgroup.org/projects/npoess/HL_NPOESS/doc/index.html
+
+While these functions were created to facilitate access to NPOESS data, some
+of them may be useful to anyone working with HDF5 region references, hyperslab
+selections, or bit-fields. For a quick introduction to region references and
+hyperslab selections see the HDF5 Tutorial:
+
+   http://www.hdfgroup.org/HDF5/Tutor/advanced.html
+
+We are looking forward to receiving your comments on this new set of
+routines.
+
+
+Pre-release snapshot of HDF-Java 2.7
+====================================
+
+A pre-release snapshot of HDF-Java 2.7 is available for download from:
+
+   http://www.hdfgroup.org/ftp/HDF5/hdf-java-2.7-snapshot/snapshot2/
+
+This version of HDFView includes a new feature to display bit-field data
+packed into an integer (a.k.a. NPOESS quality flags). It also includes
+wrappers to support HDF5 1.8 features. For more information see:
+
+   http://www.hdfgroup.org/ftp/HDF5/hdf-java-2.7-snapshot/snapshot2/RELEASE.txt
+
+
+RFC for h5edit tool
+===================
+
+We are actively seeking input regarding a new tool, h5edit, that is under
+development.  This tool is a command-line tool for editing HDF5 files.
+See the Request For Comments (RFC) page for more information:
+
+   http://www.hdfgroup.org/pubs/rfcs/
+
+
+Events
+======
+
+September 28-30, 2010: 
+   HDF and HDF-EOS Workshop XIV (http://www.hdfeos.org/workshops/ws14/workshop_fourteen.php)
+
+
+-----------------------------------------------------------------------
+For questions or comments regarding these or other HDF issues, contact:
+
+   help@hdfgroup.org 
+

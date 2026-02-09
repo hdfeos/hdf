@@ -1,0 +1,74 @@
+--------------------------------------------------------------------------
+The HDF Group Home Page:         http://hdfgroup.org/
+Helpdesk & Mailing Lists Info:   http://hdfgroup.org/services/support.html
+--------------------------------------------------------------------------
+
+                            Newsletter #120
+                              May 13, 2011 
+
+CONTENTS
+ . Release of HDF5-1.8.7
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF5-1.8.7
+=====================
+
+The HDF5-1.8.7 release is now available. Many thanks to the users who
+helped test this release.
+
+HDF5-1.8.7 can be downloaded from:
+
+    http://www.hdfgroup.org/HDF5/release/obtain5.html
+
+This page can be accessed from The HDF Group Downloads page:
+
+    http://www.hdfgroup.org/downloads/
+
+The HDF5 1.8.7 documentation is located in:
+
+    http://www.hdfgroup.org/HDF5/doc/
+
+For information on HDF5, see the HDF5 home page:
+
+    http://www.hdfgroup.org/products/hdf5/index.html
+
+HDF5 1.8.7 is a minor release, but contains a few important new features
+and bug fixes. Changes in this release include the following:
+
+ - The ability to cache files opened through external links was added to the
+   library. See the new functions, H5Pset_elink_file_cache_size(),
+   H5Pget_elink_file_cache_size(), and H5Fclear_elink_file_cache().
+
+ - Shared C++ and High Level libraries can now be built on AIX.
+
+ - The library now allows a dataspace dimension size to be zero. In the
+   past, the library only allowed this if the maximum dimension size was
+   unlimited. There is no longer this restriction, but data cannot be
+   written to this kind of dataset.
+
+ - Many improvements were made to the tools, particularly h5dump, h5diff,
+   h5ls, and h5copy. A few important changes include:
+  
+    o A new "verbose with levels" option, '-vN, --verbose=N', was added
+      to h5diff.
+    o Improvements were made to the h5diff performance.
+    o Improvements were made with how h5diff compares attributes.
+    o The h5copy utility was fixed to enable copying an object into
+      the same HDF5 file.
+
+ - A few fixes were made to the High Level Fortran APIs.
+
+This release contains many other changes not listed here. Please be sure to
+read the Release Notes for a comprehensive list of new features and bug
+fixes:
+
+    http://www.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.8.7-RELEASE.txt
+
+
+
+-------------------------------------------------------------
+For questions regarding these or other HDF issues, contact:
+
+   help@hdfgroup.org 
+

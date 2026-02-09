@@ -1,0 +1,91 @@
+--------------------------------------------------------------------------
+THG Home Page:                  http://hdfgroup.org/
+Helpdesk & Mailing Lists Info:  http://hdfgroup.org/services/support.html
+--------------------------------------------------------------------------
+
+                            Newsletter #94
+                           August 24, 2007 
+
+CONTENTS
+
+ . Release of HDF5 1.6.6
+ . Release of SZIP 2.1
+ . New Web Pages!
+ . Dropping Fortran Support in HDF5 1.8 on .NET 2003 
+  
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF5 1.6.6
+=====================
+
+HDF5 1.6.6 is now available for download from:
+
+  http://hdfgroup.org/HDF5/release/obtain5.html
+
+The HDF5 web page is located at:
+  
+  http://hdfgroup.org/HDF5/
+
+The HDF5 documentation is included in the source code and can be accessed
+from the web page at:
+   
+  http://hdfgroup.org/HDF5/doc/
+
+This is a fully tested release.  The configuration features supported in
+this release can be viewed at:
+
+  http://hdfgroup.org/HDF5/release/SuppConfigFeats.html
+
+The RELEASE.txt file in the source code contains detailed information
+about this release:
+
+  ftp://ftp.hdfgroup.org/HDF5/current/src/unpacked/release_docs/RELEASE.txt
+
+For information on functions that have changed in HDF5 1.6.6, see:
+
+  http://hdfgroup.org/HDF5/doc/ADGuide/Changes.html
+ 
+
+Release of SZIP 2.1
+===================
+
+A new release of the SZIP source code (version 2.1), is available from
+the following location:
+
+   ftp://ftp.hdfgroup.org/lib-external/szip/2.1/
+
+The changes in SZIP 2.1 were only in the configuration, so there was no
+need to include new binaries.  The SZIP 2.0 binaries can still be used.
+These are located in the following directory:
+
+  ftp://ftp.hdfgroup.org/lib-external/szip/2.0/bin/
+
+
+
+New Web Pages!
+==============
+
+We are very pleased to announce that we have updated our web
+pages, at: 
+
+  http://www.hdfgroup.org/
+
+We encourage you to look at them, and if you have comments or
+encounter any problems, please do let us know!
+
+
+Dropping Fortran Support in HDF5 1.8 on .NET 2003
+=================================================
+
+We (The HDF Group) are considering dropping Intel Fortran support in
+HDF5 1.8 under the .Net 2003 environment. We would like this to happen
+even in the future HDF5 1.8.0 Beta release, as it is very hard for us to
+maintain.  Please let us know if this will greatly affect your
+applications.
+
+We will still support Intel Fortran 9.1 under VS 2005, as well as HDF5 C
+and C++ on .Net 2003 and .Net 2005.
+
+
+

@@ -1,0 +1,124 @@
+--------------------------------------------------------------------------
+The HDF Group Home Page:         http://hdfgroup.org/
+Helpdesk & Mailing Lists Info:   http://hdfgroup.org/services/support.html
+--------------------------------------------------------------------------
+
+                            Newsletter #129
+                           November 13, 2012
+
+CONTENTS:
+
+ - Release of HDF5-1.8.10
+   . New Features and Changes
+   . Future Changes to Supported Platforms
+
+ - Release of HDF4 File Content Map Writer 1.0.4
+
+ - Retirement of HDF-EOS5 to NetCDF4 Converter (eos5nc4)
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF5-1.8.10
+======================
+
+The HDF5-1.8.10 release is now available from The HDF Group Downloads page:
+
+    http://www.hdfgroup.org/downloads/
+
+It can also be obtained directly from:
+ 
+    http://www.hdfgroup.org/HDF5/release/obtain5.html
+
+The HDF5-1.8.10 documentation is located in:
+
+    http://www.hdfgroup.org/HDF5/doc/
+
+For information on HDF5, see the HDF5 home page:
+
+    http://www.hdfgroup.org/products/hdf5/index.html
+
+
+New Features and Changes
+------------------------
+
+HDF5-1.8.10 is a minor release, but contains several important new
+features and bug fixes. Changes in this release include the following:
+
+ o Two new query APIs were added to the Parallel library:
+
+    H5Pget_mpio_no_collective_cause - retrieves reasons why the
+         collective I/O was broken during read/write I/O access.
+
+    H5Pget_mpio_actual_io_mode_f - Fortran counterpart to
+         H5Pget_mpio_actual_io_mode (already in library for retrieving
+         the parallel I/O type performed).
+
+ o The h5import utility now allows the use of h5dump output as input
+   into h5import.
+
+ o The conversion tests no longer fail in dt_arith.c on Mac OS X 10.7
+   or 10.8.
+
+ o The windows pre-built binaries are now provided with debug information.
+   This enables users to debug their HDF5 applications using the pre-built
+   binaries.
+
+This release contains many other changes and bug fixes not listed here,
+including fixes to various tools. Please be sure to read the Release
+Notes for a comprehensive list of new features and bug fixes:
+
+   http://www.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.8.10-RELEASE.txt
+
+
+
+Future Changes to Supported Platforms
+-------------------------------------
+
+We will be dropping support for the following platforms after this
+release:
+
+ o VS 2008 and Windows XP
+ o Mac OS X Snow Leopard 10.6.8 32-bit
+
+Also, we will no longer provide the VS project files for Windows after
+this release, and will be moving to CMake 2.8.10. 
+
+
+
+Release of HDF4 File Content Map Writer 1.0.4
+=============================================
+
+We are pleased to announce the release of HDF4 File Content Map Writer
+version 1.0.4.
+
+This release provides a fix for handling some NASA OCTS Level 3
+products (e.g., O19963061996335.L3m_MO_CHLO) that involve palettes.
+
+Please see the h4mapwriter web page for complete details regarding this
+release:
+
+      http://www.hdfgroup.org/projects/h4map/h4map_writer.html
+
+
+
+
+Retirement of HDF-EOS5 to NetCDF4 Converter (eos5nc4)
+=====================================================
+
+The HDF Group plans to retire the HDF-EOS5 to NetCDF-4 Converter (eos5nc4)
+tool effective Dec 31, 2012.
+
+If you are using the eos5nc4 tool and would like for it to continue to be
+maintained, please either send a message to eoshelp@hdfgroup.org or post
+a message to the HDF-EOS Forum by no later than December 19, 2012.
+
+Please see the HDF-EOS Forum announcement for more information:
+
+  http://www.hdfeos.org/forums/showthread.php?p=1254#post1254
+
+
+
+-------------------------------------------------------------
+For questions regarding these or other HDF issues, contact:
+
+   help@hdfgroup.org

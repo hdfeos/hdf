@@ -1,0 +1,117 @@
+--------------------------------------------------------------------------
+The HDF Group Home Page:         http://hdfgroup.org/
+Helpdesk & Mailing Lists Info:   http://hdfgroup.org/services/support.html
+--------------------------------------------------------------------------
+
+                            Newsletter #111
+                             March 5, 2010 
+
+CONTENTS
+
+ . Release of HDF Java Products 2.6.1
+
+   - Platforms Tested
+   - Major Improvements
+   - Major Bug Fixes
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF Java Products 2.6.1
+==================================
+
+We are pleased to announce the release of HDF Java Products 2.6.1, built
+and tested using JDK 1.6.x with HDF 4.2.5 and HDF5-1.8.4 Patch 1 (with
+the HDF5 1.6 compatibility flag).
+
+The HDF Java Products web page is located here:
+  
+   http://www.hdfgroup.org/hdf-java-html/
+   
+This release can be obtained from the HDF Java Products web page, as well
+as the HDF Downloads page at:
+
+   http://www.hdfgroup.org/downloads/index.html
+
+HDF Java Products 2.6.1 includes bug fixes, new features, a test suite, and
+improved documentation.
+
+For more information about this release, see:
+
+   http://www.hdfgroup.org/hdf-java-html/hdfview/UsersGuide/ug01introduction.html#ug01release
+
+
+
+Platforms Tested
+----------------
+
+This release was built and tested for the following platforms:
+
+ 32-bit distribution -- runs on 32-bit systems or 64-bit systems with 32-bit
+ JRE
+
+    * Linux
+    * Mac Intel
+    * Solaris
+    * Windows
+
+ 64-bit distribution -- runs on 64-bit systems with 64-bit JRE
+
+    * Linux x86_64
+    * Linux ia64
+    * Mac Intel
+    * Solaris 64-bit
+
+
+Major Improvements
+------------------
+
+    * Memory leak fixed in the HDF-Java native.
+    * Added H5.getOpenIDCount() and H5.getOpenID() to track any open IDs.
+      These functions can be very useful for checking memory leaks for
+      applications. 
+    * Added features to show data pointed to by object references
+      and region references.
+    * Added find/search dataset from HDFView.
+    * Added user option to open a file directly with read-only mode.
+    * It now shows unsigned 64-bit integer.
+    * It supports netcdf3 files for the NETCDF module (ncsa.hdf.object.nc2.NC2File).
+
+
+Major Bug Fixes
+---------------
+
+    * HDFView: Incorrectly displays data-type: character array
+    * HDFView: if change palette then flip image, original colorscale is used
+    * Local version of HDFView doc has broken links etc.
+    * HDView: indices changed between 2.3 and 2.4. Why?
+    * HDFView does not show preceding spaces for attribute values that begin
+      with spaces
+    * HDFView uses incorrect image values
+    * HDFView: "Show Value" is always 0 if show image for 32-bit unsigned
+      array
+    * HDF4 object package failed on reading data
+    * Incorrect Size of variable length dataset
+    * Problem on import/export strings in compound datasets in HDFView
+    * HDFView doc does not mention can save to PNG, GIF, BMP
+    * HDFView: rainbow palette selection is different depending on where it is
+      selected
+    * Remove HDFCDataTypes from web page
+    * HDFView: can't view contents of group if has same name as file
+    * HDFView - Get error if open a compound dataset with string and reference
+    * H5Sselect_hyperslab parameter order in header comment is wrong
+    * High dim label is wrong
+    * 16-bit and 32-bit images do not scale properly if set range
+    * Use better memory allocation in HDF4 JNI to avoid crash on OutOfMemory
+      error on large dataset.
+    * Show some HDF-EOS attributes stored in HDF4 vdata.
+    * Fix a problem of displaying information for HDF4 vdata without name.
+    * Add HDF-Java logging levels to HDF5 JNI and set default level to
+      "SEVERE".
+
+
+
+-------------------------------------------------------------
+For questions regarding these or other HDF issues, contact:
+
+   help@hdfgroup.org 
+

@@ -1,0 +1,98 @@
+--------------------------------------------------------------------------
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+--------------------------------------------------------------------------
+
+                            Newsletter #85
+                          November 21, 2005
+
+CONTENTS
+                                            *******************************
+. Release of HDF5-1.6.5                     *                             *
+  - New Features and Changes                * Visit the HDF home page     *
+  - Platforms Tested                        * for up-to-date information  *
+  - Known Problems                          *                             *
+                                            *  http://hdf.ncsa.uiuc.edu/  *
+                                            *                             *
+                                            *******************************
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF5-1.6.5
+=====================
+
+HDF5-1.6.5 is now available for download from the NCSA HDF5 home
+page at:
+
+    http://hdf.ncsa.uiuc.edu/HDF5/
+
+The HDF5 documentation is included in the source code and can also
+be accessed from:
+
+    http://hdf.ncsa.uiuc.edu/HDF5/doc/
+
+This is a fully tested release.  The configuration features supported
+in this release can be viewed at:
+
+    http://hdf.ncsa.uiuc.edu/HDF5/release/SuppConfigFeats.html
+
+The RELEASE.txt file in the source code contains detailed information
+about this release:
+
+ ftp://ftp.ncsa.uiuc.edu/HDF/HDF5/current/src/unpacked/release_docs/RELEASE.txt
+
+For information on functions that have changed in HDF5-1.6.5, see:
+
+    http://hdf.ncsa.uiuc.edu/HDF5/doc/ADGuide/Changes.html
+
+
+New Features and Changes
+------------------------
+
+The major new features and changes in HDF5-1.6.5 are:
+
+o MD5 checksumming has been added to HDF5.  Releases will now
+  produce an .md5 file as well as a .tar archive.  md5sum can be
+  used to verify the archive with the .md5 checksum.
+
+o Mpich2 is now supported.
+
+o Added support for: HPUX 11.23 (64-bit, C ONLY), Cray X1, RedStorm, BG/L 
+
+o Numerous bug fixes.
+
+Please refer to the RELEASE.txt file in the source code for a
+comprehensive list of new features and changes.
+
+
+Platforms Tested
+----------------
+  AIX 5.1, 5.2, 5.3  
+  AMD Opteron
+  Cray X1
+  FreeBSD
+  HP-UX 11.00, 11.23
+  IRIX64 v6.5 (-64, -n32)
+  Linux 2.4
+  Mac OS X
+  OSF1 v5.1
+  SGI Altix
+  Solaris (-32, -64)
+  Windows
+
+Known Problems
+--------------
+
+Fortran support is not included for Windows XP MSVC++ 6.0 or .NET, 
+due to numerous test and compilation failures.
+
+Please refer to the RELEASE.txt file in the source code for a
+comprehensive list of the known problems at release time.
+
+
+-------------------------------------------------------------
+For questions regarding these or other HDF issues, contact:
+
+   hdfhelp@ncsa.uiuc.edu
+

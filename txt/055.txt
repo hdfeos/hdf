@@ -1,0 +1,94 @@
+--------------------------------------------------------------------------
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+--------------------------------------------------------------------------
+
+                          Newsletter #55
+                          September 12, 2000
+
+
+CONTENTS
+                                            *******************************
+. New Release of HDF5 Java Products         * Visit the HDF home page     *
+  - H5View: *New Features*                  * for up-to-date information  *
+  - h5gen: XML to HDF5 (*New Product*)      *                             *
+  - Java HDF5 Interface (JHI5) now          *  http://hdf.ncsa.uiuc.edu/  *
+      uses HDF5-1.2.2                       *                             *
+                                            *******************************
+. Revisions to the HDF5 XML Document
+    Type Definition (DTD)
+ 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+New Release of HDF5 Java Products
+=================================
+
+A new release of the HDF5 Java Products is now available from: 
+
+   http://hdf.ncsa.uiuc.edu/java-hdf5-html/
+
+See below for details on what is new with this release. 
+
+H5View: *New Features*
+----------------------
+
+Version 2.0 of the H5View tool introduces visual editing capabilities. The
+editing features include:
+
+   * Create a new file with options of file creation properties.
+   * Save the current file into a new file. The new file will not contain
+     "inaccessible" (i.e., deleted) objects from the old file.
+   * Insert a data object from one file into another file.
+   * Add/delete HDF5 objects (Groups, Datasets) from the file.
+   * Modify and save data values from the spreadsheet.
+   * Create a new dataset out of an existing dataset.
+   * Copy/insert a dataset and preserve its properties.
+   * Copy and paste data between datasets.
+   * Import data from a text file to fill the data array.
+   * Create a new image out of an existing image.
+   * Delete an image from the file.
+   * Create/delete attributes.
+   * Change the value of an attribute.
+
+h5gen: XML to HDF5 (*New Product *)
+-----------------------------------
+
+The h5gen utility reads an XML description of an HDF5 file and 
+generates the corresponding HDF5 file. The XML input must conform
+to the HDF5 Document Type Definition (DTD)
+(http://hdf.ncsa.uiuc.edu/DTDs/HDF5-File.dtd).
+
+The h5gen tool uses the Xerces XML parser developed by the Apache
+Software Foundation (http://www.apache.org/).
+
+Java HDF5 Interface (JHI5) now uses HDF5-1.2.2
+----------------------------------------------
+
+The Java HDF5 Interface (JHI5) has been updated to HDF5-1.2.2.  Due
+to minor changes in the HDF5 API, the JHI5 is not compatible with
+earlier releases of HDF5-1.2.
+
+Note that linking the new JHI5 with an older revision of HDF5
+may result in loading errors on some platforms that indicate the
+library cannot be found.  This can be caused by mismatches between
+the C function names in Java and the function names in the
+library.
+
+
+Revisions to the HDF5 XML Document Type Definition (DTD)
+========================================================
+
+Development of the h5gen tool uncovered several 'bugs' in the HDF5 DTD,
+which have been changed.  For information about the changes, see:
+
+  http://hdf.ncsa.uiuc.edu/HDF5/XML/Release2/index.html
+
+
+--------------------------------------------------------------
+For questions regarding these or other HDF issues, contact:
+
+   hdfhelp@ncsa.uiuc.edu
+
+

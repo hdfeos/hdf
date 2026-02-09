@@ -1,0 +1,42 @@
+--------------------------------------------------------------------------
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+--------------------------------------------------------------------------
+
+                          Newsletter #47
+                          November 10, 1999
+CONTENTS
+                                            *******************************
+. Release of Java HDF5 Interface            * Visit the HDF home page     *
+  Version 1.0                               * for up-to-date information  *
+                                            *                             *
+                                            *   http://hdf.ncsa.uiuc.edu/ *
+                                            *******************************
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of Java HDF5 Interface Version 1.0
+==========================================
+
+The Java HDF5 Interface (JHI5), version 1.0, is now available at:
+
+   http://hdf.ncsa.uiuc.edu/java-hdf5-html/
+
+It is a Java package (ncsa.hdf.hdf5lib) that ``wraps'' the NCSA 
+HDF5 library. The JHI5 may be used by any Java application that 
+needs to access HDF5 files.  It is extremely important to emphasize 
+that this package is not a pure Java implementation of the HDF5 library.
+
+This is a very "low-level" interface, intended for Java developers.
+In the near future, we will release Java classes that implement
+the HDF5 data model as Java objects, and other higher level
+interfaces which will be more useful for scientific applications.
+
+--------------------------------------------------------------
+For questions regarding this or other HDF issues, contact:
+
+   hdfhelp@ncsa.uiuc.edu
+
+
+

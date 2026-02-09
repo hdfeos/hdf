@@ -1,0 +1,117 @@
+
+To view from a browser see:
+   http://www.hdfgroup.org/newsletters/newsletter142.pdf
+  
+--------------------------------------------------------------------------
+The HDF Group Home Page:                http://www.hdfgroup.org/
+Support Services:                       http://www.hdfgroup.org/services/
+--------------------------------------------------------------------------
+
+                            Newsletter #142 
+                           November 14, 2014 
+
+CONTENTS:
+
+  - Release of HDF5-1.8.14
+  - Book Release:  "High Performance Parallel I/O"
+  - HDF Software Highlights
+
+
+Release of HDF5-1.8.14
+======================
+
+The HDF5-1.8.14 release is now available and can be downloaded from The HDF
+Group Downloads page:   http://www.hdfgroup.org/downloads/
+
+It can also be obtained directly from:
+   http://www.hdfgroup.org/HDF5/release/obtain5.html
+
+HDF5-1.8.14 is a minor release with a few new features and changes. Important
+changes include:
+
+ o The "can't insert duplicate key" issue that occurred in HDF5-1.8.13 has been
+   resolved. A new internal structure had been introduced in anticipation for
+   handling 64-bit object identifiers in a future release. An unanticipated
+   side-effect of this new structure was that when objects were closed, the
+   memory was not being properly freed. Applications that open and close many
+   objects and which use HDF5-1.8.13 should be moved to HDF5-1.8.14.
+
+ o The shared library version number (soname) changed due to renamed symbols in H5Ppublic.h.
+
+ o CMake 3.* is required in this release.
+
+ o Several issues with string handling were resolved in the HDF5 High-level APIs.
+
+This release contains many other changes that are not listed here. Please be
+sure to read the Release Notes for a comprehensive list of new features and
+changes:
+
+   http://www.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.8.14-RELEASE.txt
+
+Changes that affect maintainers of HDF5-dependent applications are listed on
+the HDF5 Software Changes from Release to Release page. See:
+
+   http://www.hdfgroup.org/HDF5/doc/ADGuide/Changes.html
+
+
+Future Changes to Supported Platforms:
+
+After this release, support will be dropped for CentOS 5 i686 and x86_64, as
+well as Mac OS X 10.7. Support will be added for Mac OS X 10.10 and CentOS 7
+x86_64.
+
+
+Book Release: "High Performance Parallel I/O"
+============================================
+
+"High Performance Parallel I/O" was released at the end of October.  This
+book, edited by Prabhat (Lawrence Berkeley National Laboratory) and Quincey
+Koziol (The HDF Group), draws on insights from leading practitioners,
+researchers, software architects, developers, and scientists who shed light on
+the parallel I/O ecosystem. For complete details, see:
+
+   http://www.crcpress.com/product/isbn/9781466582347
+
+
+HDF Software Highlights
+=======================
+
+New HDF tools and applications are continually being developed. Although The
+HDF Group does not endorse any particular product, we are pleased that these
+products support HDF. For those who might be interested, here are some of the
+new (and new versions of) applications that we are aware of:
+
+   h4mapwriter 1.0.7 was released and now supports HDF 4.2.10. This utility creates
+   an HDF4 file content map for a given HDF4 file. For details see:
+      http://www.hdfgroup.org/projects/h4map/h4map_writer.html
+
+   The HDF4 OPeNDAP Handler 3.11.6 and HDF5 OPeNDAP Handler 2.2.3 were released.
+   They include performance enhancements and CF support for more HDF5 Earth
+   Science data products. For details, see the home pages for these handlers at:
+      http://www.hdfeos.org/software/hdf4_handler.php and
+      http://www.hdfeos.org/software/hdf5_handler.php
+
+   H5FD_sec2j is a user implementation of journaling for the default SEC2 file
+   driver in HDF5. See:  http://algoholic.eu/sec2j-journalling-for-hdf5/
+
+   LVHDF5 Toolkit v1.0 provides a nearly complete interface between LabVIEW and
+   HDF5. See:  http://www.upvi.net/main/index.php/products/lvhdf5
+
+   Ceemple v0.6.9 (C++ technical computing environment) now includes the latest
+   version of HDF5.  It is available from the Ceemple web site:
+      http://www.ceemple.com/
+
+We would like to continue highlighting applications that use HDF. Please let
+us know about your software if you have not already done so. You can do so by
+filling out a Registration Form, joining and sending a message to the
+HDF-Forum, or sending a message to the HDF Helpdesk:
+
+   Registration Form: http://www.hdfgroup.org/downloads/registration.php 
+   HDF-Forum / Helpdesk: http://www.hdfgroup.org/services/community_support.html
+
+
+-------------------------------------------------------------
+For questions regarding these or other HDF issues, contact:
+
+   help@hdfgroup.org
+

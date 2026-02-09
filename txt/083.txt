@@ -1,0 +1,211 @@
+--------------------------------------------------------------------------
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+--------------------------------------------------------------------------
+
+                            Newsletter #83
+                            March 25, 2005
+
+CONTENTS
+                                            *******************************
+. Release of HDF5-1.6.4                     *                             *
+  - New Features and Changes                * Visit the HDF home page     *
+  - Platforms Tested                        * for up-to-date information  *
+  - Known Problems                          *                             *
+                                            *  http://hdf.ncsa.uiuc.edu/  *
+. H4 to H5 Tools Release 1.2                *                             *
+                                            *******************************
+. HDF Java Products Release 2.2
+
+. Fix for hrepack 
+
+. HDF Web-browser Plugin (revisited)
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF5-1.6.4
+=====================
+
+HDF5-1.6.4 is now available for download from the NCSA HDF5 home
+page at:
+
+    http://hdf.ncsa.uiuc.edu/HDF5/
+
+The HDF5 documentation is included in the source code and can also
+be accessed from:
+
+    http://hdf.ncsa.uiuc.edu/HDF5/doc/
+
+This is a fully tested release.  The configuration features supported
+in this release can be viewed at:
+
+    http://hdf.ncsa.uiuc.edu/HDF5/release/SuppConfigFeats.html
+
+The RELEASE.txt file in the source code contains detailed information
+about this release:
+
+ ftp://ftp.ncsa.uiuc.edu/HDF/HDF5/current/src/unpacked/release_docs/RELEASE.txt
+
+For information on functions that have changed in HDF5-1.6.4, see:
+
+    http://hdf.ncsa.uiuc.edu/HDF5/doc/ADGuide/Changes.html
+
+
+New Features and Changes
+------------------------
+
+The major new features and changes in HDF5-1.6.4 are:
+
+o  The High-Level (HL) C APIs have been added to HDF5.  The HL
+   library, libhdf5_hl.a(so), is built and installed by default.
+   Use --disable-hl configure flag to disable the HL library. 
+
+o  This version of HDF5 was built and tested with SZIP 2.0.
+
+o  A new utility, h5jam, is now available.  This utility allows
+   the contents of a text file to be added to the "user block" at 
+   the beginning of an HDF5 file. 
+
+o  Many changes were made to the library to improve performance,
+   especially for variable length datatypes and the metadata cache.
+
+Please refer to the RELEASE.txt file in the source code for a 
+comprehensive list of new features and changes.
+
+
+Platforms Tested
+----------------
+
+  AIX 5.1 and 5.2 (32 and 64 bit)
+  AMD Opteron
+  Cray T90, SV1
+  FreeBSD
+  HP-UX
+  IRIX64 (32 and 64 bit)
+  Linux 2.4
+  Mac OS X
+  OSF1
+  SGI Altix
+  Solaris (32 and 64 bit)
+  Windows
+
+
+For further information please refer to the following page (or the
+RELEASE.txt file):
+
+    http://hdf.ncsa.uiuc.edu/HDF5/release/platforms5.html
+
+
+Known Problems
+--------------
+
+Known problems at release time are listed in the RELEASE.txt file that
+comes with the source code.
+
+Further information on known problems can be found on the following page:
+
+  http://hdf.ncsa.uiuc.edu/HDF5/release/known_problems5.html
+
+
+H4 to H5 Tools Release 1.2
+==========================
+
+The latest release, version 1.2, of the H4 to H5 conversion
+library and tools is now available.  For information, see:
+
+   http://hdf.ncsa.uiuc.edu/h4toh5/
+
+The source code, as well as the pre-compiled binaries, can be 
+obtained from the following directory: 
+
+  ftp://ftp.ncsa.uiuc.edu/HDF/HDF5/h4toh5/
+
+Pre-compiled binaries are provided for:
+
+    AIX 5.1 (-32 bit, -64 bit)
+    AMD Opteron 
+    FreeBSD version 4.11
+    HP-UX B.11.00
+    SGI IRIX64 version 6.5 (-n32, -64 bit)
+    Linux 2.4 
+    Mac OS X 
+    Solaris 2.8 (-32bit, -64 bit)
+    Windows 
+  
+
+HDF Java Products Release 2.2
+=============================
+
+The latest version of the HDF Java Products, version 2.2, 
+is available.  This version was tested with HDF5-1.6.4 and
+HDF 4.2r1.  The HDF Java Products can be downloaded from the 
+following page:
+
+  http://hdf.ncsa.uiuc.edu/hdf-java-html/
+
+Version 2.2 includes bug fixes and a few new features.  
+Following is a list of the major changes in HDFView with this
+release: 
+
+ o You can now view datasets with:
+   - A compound or nested compound variable length datatype
+   - An Enum Datatype
+
+ o You can view compound variable-length attributes
+
+ o Added an indicator of attributes (objects with attribute attached)
+
+ o Added a slider bar for modifying image threshold range 
+   
+
+Fix for hrepack
+===============
+
+There was a problem with the hrepack tool that came with
+HDF 4.2r1.  This problem affected datasets for which no data 
+had been written.  The hrepack tool was incorrectly exiting in           
+this case.  The correct behavior for hrepack is to continue, 
+creating the output as an empty dataset.
+
+The changes which enable hrepack to continue for empty datasets 
+can be obtained from the directory:
+ 
+  ftp://ftp.ncsa.uiuc.edu/HDF/HDF/HDF_Current/src/patches/
+
+The file containing the changed files is:
+    4.2r1-hrepack-patch.tar
+
+Only one file (hrepack_sds.c) is required.  However, tests are also
+included with the patch.
+  
+Download 4.2r1-hrepack-patch.tar, untar it, and replace the files in 
+the ./HDF4.2r1/mfhdf/hrepack/ directory of the HDF 4.2r1 source code, 
+with these files.
+
+
+HDF Web-browser Plugin (revisited)
+==================================
+
+In case you missed reading about it in a previous newsletter, 
+we now have the HDF Web-browser Plugin, which can extend a web 
+browser to display HDF4 and HDF5 files. 
+
+This version of the HDF Web-browser Plugin is for Windows 
+Only.  It can be downloaded from the following page:
+
+  http://hdf.ncsa.uiuc.edu/plugins/
+
+The HDF Web-browser Plugin is different from HDFView.  Unlike 
+HDFView, it is a 'light browser', with less browsing features 
+and no editing features.  It is also not an applet.  It is 
+downloaded and installed once, whereas an applet is downloaded 
+with each invocation.
+
+Please try it out and let us know what you think about it.
+
+-------------------------------------------------------------
+For questions regarding these or other HDF issues, contact:
+
+   hdfhelp@ncsa.uiuc.edu
+

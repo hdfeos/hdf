@@ -1,0 +1,217 @@
+--------------------------------------------------------------------------
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+--------------------------------------------------------------------------
+
+                            Newsletter #72
+                             July 11, 2003
+
+CONTENTS
+                                            *******************************
+. Release of HDF5-1.6.0                     *                             *
+  - New Features and Changes                * Visit the HDF home page     *
+  - Platforms Tested                        * for up-to-date information  *
+  - Known Problems                          *                             *
+  - SZIP License Information                *  http://hdf.ncsa.uiuc.edu/  *
+                                            *                             *
+. Release of H4 to H5 Conversion Library    *******************************
+  Version 1.1
+
+. Release of HDF5 High Level APIs Version 1.2.0
+
+. HDF and HDF-EOS Workshop VII
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF5-1.6.0
+=====================
+
+We are pleased to announce the release of HDF5-1.6.0.  
+
+HDF5-1.6.0 is now available for download from the NCSA HDF5 home 
+page at:
+
+    http://hdf.ncsa.uiuc.edu/HDF5/
+
+The HDF5 documentation is included in the source code and can also
+be accessed from:
+
+    http://hdf.ncsa.uiuc.edu/HDF5/doc/
+
+This is a fully tested release.  The configuration features supported
+in this release can be viewed at:
+
+    http://hdf.ncsa.uiuc.edu/HDF5/release/SuppConfigFeats.html
+
+The RELEASE.txt file in the source code contains detailed information
+about this release:
+  
+ ftp://ftp.ncsa.uiuc.edu/HDF/HDF5/current/src/unpacked/release_docs/RELEASE.txt
+
+For information on functions that have changed in HDF5-1.6.0, see:
+
+    http://hdf.ncsa.uiuc.edu/HDF5/doc/ADGuide/Changes.html
+
+
+New Features and Changes
+------------------------
+
+The major new features in HDF5-1.6.0 are:
+
+  o Generic properties to give applications more flexibility and better
+    organization.  
+
+    The HDF5 properties were redesigned to implement the property list
+    as an object.  In addition to the predefined property lists, users
+    can now create or modify their own property lists.  
+
+  o Compact storage layout for datasets. This layout allows small datasets
+    to be stored in the object header, to improve performance. 
+
+  o Redesigned I/O for better performance.  The internal design of
+    chunked data I/O has been changed to better handle data caching.  
+    Also, the internal design of hyperslab selection has been improved 
+    in a variety of ways.  Several new hyperslab functions have been
+    added to the API, as well.
+
+  o New filters:  
+       - An external compression filter for szip.  Please refer to
+         the following page regarding szip compression and license
+         information:
+            http://hdf.ncsa.uiuc.edu/HDF5/doc_resource/SZIP/index.html
+
+       - An internal shuffling filter.  The combination of shuffling
+         and compression can be used to improve the data compression ratio.
+       
+       - An internal checksum filter (Fletcher32 Error Detection Code)  
+         allows you to check the integrity of an HDF5 file.
+   
+    The RELEASE.txt file contains more information on these filters.
+
+  o The addition of space allocation time and value filling time 
+    properties.  
+
+    API calls have been added to set not only the fill value, but
+    also the space allocation and value-filling time for a dataset.    
+    These parameters allow the user to control when the library
+    allocates space for data and writes fill values.
+   
+
+Other important changes in HDF5 include:
+
+  o Added a new API function to get the name of an object using an
+    open ID (hid_t).
+
+  o The library now correctly reuses space when objects are deleted in 
+    the file.  This works properly except with datasets that use 
+    variable-length datatypes.
+
+  o Added two new scripts, h5fc and h5c++, for compiling F90
+    and C++ HDF5 applications.
+
+  o A new function (H5Fget_obj_count) has been added to retrieve the
+    open IDS for objects in a file.    
+
+  o The h5diff utility has been added for comparing two HDF5 files.
+
+  o The h5import utility has been added to import ASCII and binary
+    data to an HDF5 file.
+
+Please refer to the RELEASE.txt file in the source code for further
+details.
+  
+
+
+Platforms Tested
+----------------
+
+    AIX 5.1  (32 and 64-bit)      
+    Cray T3E sn6606 2.0.6.08   
+    Cray SV1 sn9617 10.0.1.2     
+    Cray T90IEEE 10.0.1.01y       
+    FreeBSD 4.7               
+    HP-UX B.11.00        
+    IRIX 6.5                     
+    IRIX64 6.5 (64 & n32)  
+    Linux 2.4.18            
+    OSF1 V5.1              
+    SunOS 5.7  (Solaris 2.7) (32 and 64-bit)    
+    SunOS 5.8  (Solaris 2.8) (32 and 64-bit)        
+    TFLOPS r1.0.4 v4.3.3 i386   
+    IA-32 Linux 2.4.9           
+    IA-64 Linux 2.4.16 ia64    
+    Windows 2000 (NT5.0)      
+    Windows XP                
+    MAC OS X              
+
+For compiler information please refer to the following page or to the 
+RELEASE.txt file:
+
+    http://hdf.ncsa.uiuc.edu/HDF5/release/platforms5.html
+                                  
+
+
+Known Problems
+--------------
+
+Known problems at release time are listed in the RELEASE.txt file that 
+comes with the source code.
+
+Further information on known problems can be found on the following page:
+
+  http://hdf.ncsa.uiuc.edu/HDF5/release/known_problems5.html
+
+
+SZIP License Information
+------------------------
+
+This is the first release for which we support SZIP compression 
+in HDF5.
+
+For SZIP license information, as well as other SZIP information, please 
+refer to the following page:
+
+   http://hdf.ncsa.uiuc.edu/HDF5/doc_resource/SZIP/index.html
+
+
+Release of H4 to H5 Conversion Library Version 1.1
+==================================================
+
+A new release of the H4 to H5 Conversion Library, version 1.1,
+is now available for download from the following page:
+
+   http://hdf.ncsa.uiuc.edu/h4toh5/
+
+This version was tested with HDF5-1.6.0.  Pre-compiled
+binaries are not included with this release.
+
+
+Release of HDF5 High Level APIs Version 1.2.0
+=============================================
+
+A new release of the HDF5 High Level APIS, version 1.2.0,
+is now available for download from the following page:
+
+   http://hdf.ncsa.uiuc.edu/HDF5/hdf5_hl/
+
+This version was tested with HDF5-1.6.0.  Pre-compiled
+binaries are not included with this release.  
+
+
+HDF and HDF-EOS Workshop VII
+============================
+
+The HDF and HDF-EOS Workshop VII was announced.  It will be held
+from September 23-25th in Silver Spring, MD.  For details, see:
+
+    http://hdfeos.gsfc.nasa.gov/hdfeos/index.cfm
+ 
+
+-------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+   hdfhelp@ncsa.uiuc.edu
+
+

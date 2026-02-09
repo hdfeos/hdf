@@ -1,0 +1,58 @@
+
+Release of HDF5-1.8.21 -  Newsletter #161 
+June 6, 2018 
+
+CONTENTS
+. Release of HDF5-1.8.21
+. Future of HDF5-1.8
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF5-1.8.21
+======================
+
+The HDF5-1.8.21 release is now available, and can be accessed from both the
+HDF5 download page and Support Portal:
+
+ HDF5 Download page:  https://www.hdfgroup.org/downloads/hdf5/
+ Support Portal:      https://portal.hdfgroup.org/display/support/HDF5+1.8.21
+
+HDF5-1.8.21 is a minor release with a few new features and changes. Important
+changes include:
+
+ o The following vulnerability issues were addressed:
+
+   CVE-2017-17505 https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-17505
+   CVE-2017-17506 https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-17506
+   CVE-2017-17508 https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-17508
+   CVE-2017-17509 https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-17509
+
+ o Several changes were made to CMake:
+
+   - The minimum version of CMake changed to 3.10.
+   - pkg-config file generation was added for the C, C++, HL, and HL C++ libraries.
+   - The h5cc and similar compile scripts are now created when building on Linux.
+
+ o Many C++ APIs were added or modified to better reflect the HDF5 model. 
+
+ o Several tools bugs were fixed (in h5repack, h5dump, and h5diff). 
+
+This release contains many other changes that are not listed here. Please be 
+sure to read the Release Notes for a comprehensive list of new features and changes:
+
+  https://portal.hdfgroup.org/display/support/HDF5%201.8.21#releasenotes
+
+Changes that affect maintainers of HDF5-dependent applications are listed
+on the HDF5 Software Changes from Release to Release page. See:
+
+  https://portal.hdfgroup.org/display/HDF5/Software+Changes+from+Release+to+Release+for+HDF5-1.8
+
+Future of HDF5-1.8 
+------------------
+
+Please be aware that this is one of the last releases for HDF5-1.8. We encourage
+users to move to HDF5-1.10, particularly after HDF5-1.10.3 is released later this
+year. All major changes for HDF5-1.10 are in HDF5-1.10.2 and HDF5-1.10.3 will
+include performance improvements for several of the new features.
+
+

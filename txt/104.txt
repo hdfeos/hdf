@@ -1,0 +1,159 @@
+--------------------------------------------------------------------------
+The HDF Group Home Page:         http://hdfgroup.org/
+Helpdesk & Mailing Lists Info:   http://hdfgroup.org/services/support.html
+--------------------------------------------------------------------------
+
+                            Newsletter #104
+                           November 14, 2008 
+
+CONTENTS
+  . Release of HDF5 1.8.2
+  . Release of HDF5 1.6.8
+  . Minor Change to SZIP Configuration 
+  . FTP Provider Changes
+  . MATLAB Examples
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF5 1.8.2
+=====================
+
+The HDF5 1.8.2 release is now available, and can be downloaded from:
+
+   http://www.hdfgroup.org/HDF5/release/obtain5.html
+
+This page can be accessed from the HDF5 Home page, at:
+
+   http://www.hdfgroup.org/products/hdf5/index.html
+
+The documentation for 1.8.2 is located in:
+
+   http://www.hdfgroup.org/HDF5/doc/
+
+HDF5 1.8.2 is a minor release with a few new features and several bug
+fixes. New Features include:
+
+  - Libtool was upgraded to version 2.2.6a
+
+  - Two new public routines are now available for working with
+    external links (H5Pget_elink_fapl, H5Pset_elink_fapl).
+
+  - Support was added for Intel 10.1 on Mac OS X 10.5.4
+
+  - Improvements were made to the free space tracking performance.
+
+  - Additional capabilities have been added to the h5repack, h5ls,
+    h5dump, h5diff, and h5import utilities.
+  
+
+Some of the bugs that were fixed are included here:
+
+  - Failure when building with "make check install".
+
+  - When using the shared SZIP library, you had to add the path to
+    LD_LIBRARY_PATH.
+
+  - Several problems when mounting files.
+
+  - Object header test failure due to deficiency in mktime() on
+    Windows. 
+
+  - Several problems with the tools (h5import, h5diff, h5dump).
+
+
+Please refer to the Release Notes for a comprehensive list of new features
+and changes in this release:
+
+   ftp://ftp.hdfgroup.org/HDF5/current/src/hdf5-1.8.2-RELEASE.txt
+
+
+Release of HDF5 1.6.8
+=====================
+
+The HDF5 1.6.8 release is now available and can be downloaded from:
+
+   http://www.hdfgroup.org/HDF5/release/obtain516.html
+
+This page is accessible from the HDF5 home page, at:
+
+   http://www.hdfgroup.org/products/hdf5/index.html
+
+The documentation for 1.6.8 is located in: 
+
+   http://www.hdfgroup.org/HDF5/doc1.6/
+
+HDF5 1.6.8 is a minor release with a few new features and several bug
+fixes. New Features and changes include:
+
+  - Additional capabilities have been added to the h5repack, h5ls,
+    h5dump, h5diff, and h5import utilities.
+
+  - Version compatibility macros were added for functions changed in 1.8.
+
+  - The GASS and SRB virtual file drivers have been retired and removed
+    from the HDF5 library. 
+
+
+Some of the bugs that were fixed are included here:
+
+  - Failure when building with "make check install".
+
+  - Several problems with the tools (h5import, h5diff, h5dump).
+
+
+Please refer to the Release Notes for a comprehensive list of new features
+and changes in this release:
+
+   ftp://ftp.hdfgroup.org/HDF5/current16/src/hdf5-1.6.8-RELEASE.txt
+
+
+
+Minor Change to SZIP Configuration
+==================================
+
+A minor configuration change was made to the SZIP source code.  It fixed
+the problem where the math library was not getting included when building
+SZIP.
+
+The change did not affect the pre-built binaries. 
+
+You can obtain the updated SZIP source code from the following location:
+
+  ftp://ftp.hdfgroup.org/lib-external/szip/2.1/src/
+
+Please note that the SZIP version was not updated for this change.
+
+
+
+FTP Provider Changes
+====================
+
+Due to problems in the past, we have instituted changes to our FTP provider,
+and have hopefully resolved all of the issues. Also note that the FTP server
+can now be accessed from the HDF web pages, for those who are interested:
+
+   http://www.hdfgroup.org/ftp/
+
+If you encounter any problems with the HDF Group web or FTP site, please
+send the HDF Helpdesk the error message you are getting, along with the time
+and timezone, and your IP Address.
+
+
+Matlab Examples
+===============
+
+The Mathworks graciously provided us with example programs for using HDF5 with
+MATLAB.  These can be found on the HDF5 home page, and the link to them is:
+
+  http://www.hdfgroup.uiuc.edu/UserSupport/matlab-examples/api16-m.html
+
+If you have any questions regarding them, please let us know.
+
+
+
+
+-------------------------------------------------------------
+For questions regarding these or other HDF issues, contact:
+
+   help@hdfgroup.org 
+
