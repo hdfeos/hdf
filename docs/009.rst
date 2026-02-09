@@ -1,0 +1,158 @@
+=================
+HDF Newsletter #9
+=================
+
+ June 15, 1993
+
+Contents:
+
+ Status of HDF documentation
+
+ . Current HDF Documentation
+
+ . Next generation of HDF documentation
+
+ Get HDF documentation from NCSA ftp server
+
+ Order hard-copies of HDF documentation
+
+ Documentation for HDF 3.3 Beta
+
+-------------------------------------------------------------------------------
+
+
+1. Status of HDF documentation.
+
+ . Current HDF Documentation
+
+ "HDF Calling Interfaces and Utilities" was designed for users
+ who use HDF to store or manipulate their data. It describes
+ the type of data each interface deals with and all the
+ routines contained in each interface. HDF command-line
+ utilities are also described in this manual. It has been
+ updated to HDF3.2.
+
+ "HDF Specifications" was designed for those who need detailed
+
+.. code-block:: fortran
+
+    information about HDF, such as HDF application program interface
+    developers. It describes the basic structure, components, and
+    software layers of HDF; specifies supported HDF tags and discusses
+    the portability of HDF. It has been updated to HDF3.2.
+    The current version is a draft and is now undergoing editing. We
+    expect a final version to be ready by mid-July.
+
+    We are working on the documentation for HDF3.2 Vset interface.
+    Currently, users may use "HDF Vset 2.0", "vset2.1.extra.doc" and
+    the Vset section of HDF3.2 MigrationNotes as temporary reference
+    for HDF Vset.
+
+
+ "HDF Vset 2.0" was designed for users who use HDF Vset to store
+ and manipulate their data. It describes the organization of data
+ within vdatas, vgroups and vsets, routines that manipulate vdatas
+ and vgroups, and vset utilities that manipulate vsets.
+
+ "Vset2.1.extra.doc" describes routines added in Vset2.1 and not covered
+ by "HDF Vset 2.0".
+
+ The "MigrationNotes" of HDF3.2 addesses differences between HDF3.2 and
+ HDF3.1, and explains how to migrate existing application programs from
+ HDF3.1 to HDF3.2.
+
+ . Next generation of HDF documentation
+
+ The next generation of HDF documentation is planned to have the following
+ volumes:
+
+ Getting Started -- Overview of HDF with simple examples. Its draft is
+ completed and is titled as "Getting Started With NCSA HDF".
+
+ User's Guide -- Full coverage of all HDF routines and command-line utilities
+
+ Reference Manual -- An alphabetical listing of all HDF routines and
+ command-line utilities
+
+ HDF Specifications -- Same as the current HDF Specifications
+
+2. Getting HDF documentation from NCSA ftp server.
+
+ On the NCSA anonymous ftp server users can find the drafts for
+ "HDF Specifications", "HDF Calling Interfaces and Utilities",
+ and "Getting Started with NCSA HDF", as well as the documentation
+ for HDF Vset. They are in different subdirectories within the
+ directory Documentation/ (on ftp). There is a README file in each
+ subdirectory, which explains briefly what is contained in that
+ subdirectory and related information.
+
+ The following is a list showing where (which subdirectory) each
+ documentation resides in on NCSA ftp:
+
+
+ Documentation subdirectory
+ ------------------- --------------------
+
+ HDF Specifications Documentation/HDF.Specs/
+ (Draft)
+
+ HDF Calling Interfaces Documentation/HDF3.2/
+ and Utilities (Draft)
+
+ HDF Vset 2.0 Documentation/HDF.Vset2.1/
+
+ vset2.1.extra.doc Documentation/HDF.Vset2.1/
+
+ Getting Started with Documentation/HDF_getting_started/
+ NCSA HDF (Draft)
+
+ MigrationNotes HDF/HDF3.2r4/unpacked/
+
+ "HDF Specifications", "HDF Calling Interfaces" and "HDF Vset 2.0" were
+ written using MicroSoft Word. In each subdirectory the *.sit.hqx file
+ is the MS Word version of the documentation and is stuffed using
+ Stuffit.1.5. The *.asc.tar file is the text version of the MS Word file.
+ It is missing all figures and formatting , so it is not very readable.
+
+ "Getting Started" was created using FrameMaker. This document is
+ available only in postscript form.
+
+ MigrationNotes and vset2.1.extra.doc are text files.
+
+3. Order hard-copies of HDF documentation.
+
+ NCSA accepts orders for hard copies of HDF Specs, HDF Calling Interfaces,
+ HDF Vset 2.0 and Getting Started. Interested users should contact the
+ office of NCSA Documentation Orders at:
+
+ (217)244-4130
+ docorder@ncsa.uiuc.edu (Internet)
+ docorder@ncsagate (BITNET)
+ or
+ Attention: Documentation Orders
+ NCSA
+ University of Illinois at Urbana-Champaign
+ 605 Springfield Ave.
+ Champaign, IL 61820
+
+
+ Before the new documentation is officially published, NCSA supplies drafts
+ of the documentation only. Don't be surprised if you see the big sign "DRAFT"
+ on the top page when you receive the new documentation!
+
+ MigrationNotes is contained in HDF3.2 releases. Users having difficulties
+ in geting these two files should contact softdev@ncsa.uiuc.edu.
+
+
+4. Documentation for HDF 3.3 Beta
+
+ The README file in HDF/HDF3.3-Beta/ and README files in its subdirectories
+ explain the differences between HDF3.2r4 and HDF3.3.Beta. Those README files
+ and HDF3.2 documentation supply most necessary information to HDF3.3 users.
+
+
+
+
+
+
+

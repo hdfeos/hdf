@@ -1,0 +1,16 @@
+===================
+HDF Newsletter #186
+===================
+
+HDFView version 3.1.4 is now available from the HDFView Download page.
+The software can also be obtained from the HDFView 3.1.4 page on the HDF Support Portal.  This version was built and tested with HDF5-1.10.9, HDF 4.2.15, and openjdk 15.
+This is a maintenance release with a number of new features and changes, including:
+HDFVIEW-197 (incorrectly displaying image data) has been fixed. The problem was that the initial starting values for calculation of minimum and maximum data values were invalid. In addition, an option to allow dynamic data ranges has been added.
+The ability to display and edit attribute data in table views, the same way as the datasets
+Incorrect displays of dimension for scalar types and of new attribute creation dialog were fixed.
+The default file search directory was incorrectly set to always use the installation folder. This was fixed to allow a user specified folder
+The User Properties dialog was fixed to allow the user to set the default search folder.
+The search folder will appear first in the recent files list.
+The default search directory is specified by the system property, user.dir, which is usually the current user location from which HDFView was launched.
+New supported platforms include macOS 11.*.
+Please see the release notes for complete details on what is new in this release.

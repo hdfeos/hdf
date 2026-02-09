@@ -1,0 +1,55 @@
+===================
+HDF Newsletter #113
+===================
+
+The HDF Group Home Page: http://hdfgroup.org/
+Helpdesk & Mailing Lists Info: http://hdfgroup.org/services/support.html
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #113
+ April 22, 2010
+
+CONTENTS
+
+ . Release of h5check version 2.0
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of h5check version 2.0
+
+-------------------------------------------------------------------------------
+
+
+Version 2.0 of the HDF5 Format Checker (h5check) is now available.
+
+The h5check utility is a validation tool for verifying that an HDF5 file
+is encoded according to the HDF File Format Specification. Its purpose
+is to ensure data model integrity and long-term compatibility between
+evolving versions of the HDF5 library. This tool does not link with the
+HDF5 library and does not use HDF5 library API calls.
+
+The h5check web page is located here:
+
+ http://www.hdfgroup.org/products/hdf5_tools/h5check.html
+
+Information on how to build and use h5check can be accessed from the
+h5check web page.
+
+The h5check software can be downloaded from The HDF Group Downloads page,
+or from:
+
+ http://www.hdfgroup.org/downloads/h5check-download.html
+
+THe HDF Group Downloads page is located here:
+
+ http://www.hdfgroup.org/downloads/
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ help@hdfgroup.org
+

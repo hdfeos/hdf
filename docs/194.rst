@@ -1,0 +1,16 @@
+===================
+HDF Newsletter #194
+===================
+
+The HDF5 library and tools 1.14.1 release is now available from the HDF5 Download page.
+This is a maintenance release with a few changes and updates:
+Added a Subfiling VFD configuration file prefix environment variable.
+Added H5Pset_selection_io(), H5Pget_selection_io(), and H5Pget_no_selection_io_cause() API functions to manage the selection I/O feature. This can be used to enable collective I/O with type conversion, or it can be used with custom VFDs that support vector or selection I/O.
+
+.. code-block:: c
+
+   Added H5Pset_modify_write_buf() and H5Pget_modify_write_buf() API functions to allow the library to modify the contents of write buffers, in order to avoid malloc/memcpy. Currently only used for type conversion with selection I/O.
+   Multiple bug, memory leak, and buffer overrun fixes, particularly when parsing malformed files.
+   NOTE: HDF5 1.14.1-2 binaries are also available (these are now the default on the website). This is a patch release where the Autotools files were generated using Autoconf 2.71, which is required for using Intel’s oneAPI. There are no code changes in HDF5 1.14.1-2.
+   Please see the full release notes for detailed information regarding this release, including a detailed list of changes.
+   We also maintain a release schedule for all HDF5 library versions in the README on Github. As always, feel free to post on the forum with any questions.

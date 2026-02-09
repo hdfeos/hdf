@@ -1,0 +1,90 @@
+==================
+HDF Newsletter #36
+==================
+
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #36
+ August 10, 1998
+
+CONTENTS
+
+-------------------------------------------------------------------------------
+
+Release of Java Products version 2.2 * Visit the HDF home page *
+
+ - New Features * for up-to-date information *
+ - Bugs Fixed * on HDF: *
+ - Platforms Supported * http://hdf.ncsa.uiuc.edu/ *
+
+-------------------------------------------------------------------------------
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of Java Products version 2.2
+
+-------------------------------------------------------------------------------
+
+
+Java Products version 2.2 is now available. It requires HDF 4.1r2
+and JDK 1.1.3 (or above).
+
+You can access information regarding Java Products version 2.2 at:
+
+ http://hdf.ncsa.uiuc.edu/java-hdf-html/
+
+The software can be downloaded from:
+
+ http://hdf.ncsa.uiuc.edu/java-hdf-html/download.html
+
+
+New Features in this Release:
+
+-------------------------------------------------------------------------------
+
+
+ * JHV can now save selected data as an HDF file or a simple ASCII file
+ (HAIF).
+
+ * The User's Guide has been completely rewritten, and is available from
+ the "Help" menu. The User's Guide is accessible from the HDF home page
+ at:
+
+ http://hdf.ncsa.uiuc.edu/java-hdf-html/jhv/UsersGuide/JHV2.2/index.html
+
+ A compressed file containing the User's Guide in HTML format can also be
+ downloaded from:
+
+ ftp://ftp.ncsa.uiuc.edu/HDF/Documentation/HDF4.1r2/Java/
+
+ * JHV is now available bundled with the Java Runtime Environment on
+ those platforms which support the JRE. Users have a choice of
+ downloading full source, compiled code, or compiled code plus the JRE.
+
+
+Bugs Fixed:
+----------
+
+ * Dimension scales are displayed correctly.
+
+ * Attributes are now displayed in a more readable format.
+
+
+Platforms Supported:
+-------------------
+ Irix 5.3, Irix 6.3, Linux, Solaris, Solaris x86, Windows NT/95
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+For questions regarding these or other HDF issues, contact:
+
+ hdfhelp@ncsa.uiuc.edu
+
+

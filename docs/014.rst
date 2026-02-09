@@ -1,0 +1,194 @@
+==================
+HDF Newsletter #14
+==================
+
+ May 23, 1994
+
+
+Contents
+========
+
+1. HDF 4.0: Status and Plans
+2. HDF4.0 Alpha release
+3. Important change in the names of the FORTRAN include files
+4. New URL for the HDF information server
+5. New contributions
+6. Update on NCSA tools
+7. NCSA ftp server clogged
+8. Thanks and good luck, Chris!
+
+
+
+HDF 4.0: Status and Plans
+
+-------------------------------------------------------------------------------
+
+
+The HDF group has been working for some time on a next version
+of HDF, which we are calling HDF 4.0. The defining
+
+.. code-block:: fortran
+
+   characteristic of HDF 4.0 will be that it supports multi-file
+   and multi-object access to all major HDF objects. The full
+   list of features we have planned for HDF 4.0 includes the
+   following:
+
+
+1. Interfaces that support multi-file/multi-object access for
+ raster images and annotations, similar to the current SDS
+ interface.
+
+.. code-block:: fortran
+
+   2. Support for n-bit integer data within the SDS interface.
+   3. Support for parallel I/O on the Thinking Machines' CM-5.
+   4. Limited support for reading CDF files.
+   5. Support for compression for SDSs.
+   6. Support for chunked storage of SDSs.
+
+
+As the next article indicates, we now have an alpha version of
+HDF 4.0, which includes some of the items on the list. Our
+original plans were to have a full beta version of HDF 4.0
+ready by mid-summer. However, with the loss of Chris Houck
+(see final article), the release will almost certainly be
+delayed. We are considering postponing one or more of the
+above features (probably the chunked storage, maybe the
+annotations) in order to speed up the release, but have not
+decided yet for sure. We welcome your thoughts about these
+features.
+
+HDF4.0 Alpha release
+
+-------------------------------------------------------------------------------
+
+
+HDF Version 4.0 is ready for enthusiastic HDF users to run an
+alpha test now. The new version supports n-bit number types, a
+parallel I/O HDF interface for CM5, and reads CDF files.
+Please read ABOUT_4.0.alpha for more details.
+
+ o In order to increase the clarity and maintainability of HDF
+ code, we are moving towards the use of ANSI C conforming
+ compilers. HDF 4.0 Alpha is the first trial release.
+ o Users of Scientific data sets have been asking for ways to
+
+.. code-block:: fortran
+
+    store datasets which are composed of integer number types
+    that don't fall into any of our current pre-defined number
+    types. For example, users would like to be able to read and
+    write 10-bit integers using an HDF SDS interface. HDF 4.0
+    includes several new routines to let users define, write
+    and read n-bit Scientific data sets.
+    o HDF 4.0 is able to read CDF files.
+    o HDF 4.0 also added a CM5 parallel I/O interface.
+
+
+Important change in the names of the FORTRAN include files
+
+-------------------------------------------------------------------------------
+
+
+HDF FORTRAN users, please notice that the constant.i has been
+renamed as hdf.inc and dffunct.i as dffunct.inc. If your
+existing programs include those *.i files , you need to change
+them correspondently before you compile them with HDF4.0. The
+ABOUT_4.0.alpha explains why the names were changed.
+
+New URL for the HDF information server
+
+-------------------------------------------------------------------------------
+
+
+An HDF information server is set up. Its URL is:
+
+http://hdf.ncsa.uiuc.edu:8001/. The server has the Online
+Hypertext Version of the HDF Reference Manual. There is a
+fill-out form in the home page for users to submit questions
+to the HDF team.
+
+New contributions
+=================
+
+HDF and XDS extensions to support blocked SDS. Hugo Patterson,
+graduate research fellow of Carnegie Mellon University
+contributed the extensions made to HDF3.2r3 and XDS2.2 to
+support read/ write/display of blocked scientific data sets.
+The contribution is in HDF/contrib/HDF3.2r3.Blocked_SDS/ on
+the NCSA ftp server. Read the README file in that directory
+for more information.
+
+Update on NCSA tools
+
+-------------------------------------------------------------------------------
+
+
+Collage release 1.3 for X Window System.
+
+New features in 1.3:
+
+ o Full support of int16 (short) HDF type.
+ o Support of int8 HDF type.
+ o Backspace works when doodling text in image or whiteboard.
+ o Contour works for all data type.
+ o Animation of a 3d data along an arbitrary axis can be
+ generated from the 3d panel.
+ o A bug was fixed that occurs when the default number of
+ colorcells is less than 256.
+ o Options were added for naming of SDSs (use of annotation or
+ not...).
+ o Screen capture on SGI works better.
+ o Delete buttons were added so that you can recover some
+ memory.
+ o A private copy button was added on the spreadsheet.
+
+Distribution:
+
+The software is available through anonymous ftp for both
+binaries and source code. ftp ftp.ncsa.uiuc.edu
+(141.142.20.50) and answer anonymous to the Name question.
+Than cd /UNIX/XCollage/Collage1.3, get DOCS, quit ftp, read
+DOCS and download the binaries that you need.
+
+NCSA ftp server clogged
+
+-------------------------------------------------------------------------------
+
+
+If you have tried recently to get anything from the NCSA ftp
+server (ftp.ncsa.uiuc.edu), you have probably noticed that it
+is very hard to connect. This is caused by an overwhelming
+increase in the number of accesses over the past couple of
+months, most likely a side effect of the popularity of NCSA
+Mosaic and the NCSA World Wide Web server.
+
+This is just to let you know that we are aware of the problem,
+we regret the inconvenience it is causing many of you, and we
+are taking measures to fix it. We hope to have it solved
+within a month.
+
+Thanks and good luck, Chris Houck!
+
+-------------------------------------------------------------------------------
+
+
+Chris Houck is leaving NCSA and the HDF group to pursue
+opportunities in the commercial world.
+
+Chris has been a joy to work with and a tremendous asset to
+the HDF project during the two and a half years that he has
+been with us. He was responsible for the enormous task of
+merging the netCDF interface into HDF, for rewriting the SDS
+interface to make it completely compatible with the netCDF and
+CDF data models, and for making a countless improvements and
+fixes to practically all parts of the HDF code. Chris has
+continuously contributed important insights and opinions about
+how to approach HDF-related problems and issues. In addition
+to all this, Chris has consistently and cheerfully provided
+support to the growing population of HDF users.
+
+Chris, obviously we will really miss you, we are enormously
+grateful for your contributions to HDF, and we wish you all
+the best.

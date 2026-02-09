@@ -1,0 +1,67 @@
+===================
+HDF Newsletter #128
+===================
+
+The HDF Group Home Page: http://hdfgroup.org/
+Helpdesk & Mailing List Info: http://hdfgroup.org/services/support.html
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #128
+ August 15, 2012
+
+CONTENTS
+
+ - Release of HDF 4.2.8
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF 4.2.8
+
+-------------------------------------------------------------------------------
+
+
+The HDF 4.2.8 release is now available. It can be obtained from the
+HDF Downloads page:
+
+ http://www.hdfgroup.org/downloads/index.html#hdf4
+
+For the HDF 4.2.8 documentation, see:
+
+ http://www.hdfgroup.org/doc.html
+
+HDF 4.2.8 is a minor release with a few new features and changes,
+including the following:
+
+ o Modifications were made in support of the HDF Mapping Project:
+
+ - The function, GRgetpalinfo, was added to allow applications to get
+ information about palettes.
+
+ - Support was added to the library and hdp to detect IMCOMP
+ compression.
+
+.. code-block:: c
+
+    - A new function, GRgetcomptype, was added for returning an image's
+    compression, including IMCOMP.
+
+
+ o Support was added for Mac OS X 10.7.4 with GNU gcc and gfortran.
+
+
+Please be sure to review the HDF 4.2.8 Release Notes for complete details on
+what has changed in this release:
+
+ http://www.hdfgroup.org/ftp/HDF/HDF_Current/src/hdf-4.2.8-RELEASE.txt
+
+
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ help@hdfgroup.org
+

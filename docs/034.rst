@@ -1,0 +1,124 @@
+==================
+HDF Newsletter #34
+==================
+
+To view from a browser see:
+ http://www.hdfgroup.org/newsletters/newsletter134.html
+
+-------------------------------------------------------------------------------
+
+The HDF Group Home Page: http://www.hdfgroup.org/
+Helpdesk/Mailing List Info: http://www.hdfgroup.org/services/support.html
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #134
+ May 15, 2013
+
+CONTENTS
+ . Release of HDF5-1.8.11
+ . Release of h4mapwriter 1.0.5
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF5-1.8.11
+
+-------------------------------------------------------------------------------
+
+
+The HDF5-1.8.11 release is now available, and can be downloaded from the
+HDF Group Downloads page:
+
+ http://www.hdfgroup.org/downloads/
+
+It can also be obtained directly from:
+
+ http://www.hdfgroup.org/HDF5/release/obtain5.html
+
+HDF5-1.8.11 is a minor release, with several important new features and
+changes, including:
+
+ o The library can now load filter libraries dynamically during runtime.
+ Users can set a search path through an environment variable
+
+.. code-block:: c
+
+    (HDF5_PLUGIN_PATH) and call H5Pset_filter to enable the dynamic filter.
+    For further information see:
+
+
+ http://www.hdfgroup.org/HDF5/doc/Advanced/DynamicallyLoadedFilters/HDF5DynamicallyLoadedFilters.pdf
+
+ o Several new API functions were added:
+
+ - H5Dscatter and H5Dgather enable data to be scattered to and
+ gathered from a selection within a memory buffer.
+
+ - Many Fortran APIs were added:
+
+ h5odecr_refcount_f, h5oexists_by_name_f, h5oget_comment_f,
+ h5oget_comment_by_name_f, h5oincr_refcount_f, h5oopen_by_idx_f,
+ h5oset_comment_f, h5oset_comment_by_name_f
+
+ F2003: h5oget_info_f, h5oget_info_by_idx_f, h5ovisit_by_name_f
+
+ - A new High Level API, H5DOwrite_chunk, writes a data chunk directly
+ into a file, bypassing hyperslab selection, data conversion, and the
+ filter pipeline. For more information see:
+
+ http://www.hdfgroup.org/HDF5/doc/HL/RM_HDF5Optimized.html
+ http://www.hdfgroup.org/HDF5/doc/Advanced/DirectChunkWrite/UsingDirectChunkWrite.pdf
+
+ o Support was added for Sun OS 5.11 (32-bit, 64-bit) with the Sun C/C++
+ 5.12 compiler and the Sun Fortran 95 8.6 compiler.
+
+ o Support was added for Visual Studio 2012 with Intel Fortran 13 on
+ Windows 7.
+
+ We are working on porting HDF5 to Windows 8. If you are interested in
+ using HDF5 with Windows 8, please contact The HDF Group Helpdesk at
+ help@hdfgroup.org.
+
+ o The CMake build on Windows will no longer use legacy naming for the
+ libraries. The "dll" tag will no longer be added to the name of *.lib
+ and *.dll.
+
+ o Numerous changes were made to the tools, including a performance
+ improvement to h5diff, when comparing HDF5 files with many attributes.
+
+This release contains many other changes that are not listed here. Please
+be sure to read the Release Notes for a comprehensive list of new features
+and changes:
+
+ http://www.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.8.11-RELEASE.txt
+
+The interface-level changes in this release are also described in the
+"HDF5 Software Changes from Release to Release" document found here:
+
+ http://www.hdfgroup.org/HDF5/doc/ADGuide/Changes.html
+
+
+Release of h4mapwriter 1.0.5
+
+-------------------------------------------------------------------------------
+
+
+Version 1.0.5 of the h4mapwriter utility is now available, and can be
+obtained from the h4mapwriter project page:
+
+ http://www.hdfgroup.org/projects/h4map/h4map_writer.html
+
+This release supports HDF 4.2.9 (HDF4).
+
+The h4mapwriter utility creates an HDF4 file content map in XML for a
+given HDF4 file. It enables the data to be retrieved from an HDF4 file
+without relying on the HDF4 library.
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ help@hdfgroup.org
+

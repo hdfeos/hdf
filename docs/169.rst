@@ -1,0 +1,12 @@
+===================
+HDF Newsletter #169
+===================
+
+HDFView 3.1 is now available from the HDFView home page:
+https://www.hdfgroup.org/downloads/hdfview/
+This release was built and tested with HDF5-1.10.5, HDF 4.2.14, and Open JDK 11. It includes several important new features and changes:
+The HDFView software was reworked to reduce code duplication and to improve the display of objects. This will help significantly in maintaining the software.
+HDFView can now be built without the HDF4 library.
+Support was added for PPC64LE with GTK+-3.0.
+Many bugs have also been fixed in this release. For a complete list of the new features and changes, please see the Release Notes.
+Please be aware that we currently are not able to provide HDFView packaged on Mac OS X because of changes in Oracle’s licensing of Java. We have moved to the latest version of OpenJDK. However, OpenJDK does not supply a JRE, which is required by the Java Mac packager used by HDFView. We are currently investigating other packaging alternatives. Please contact help@hdfgroup.org for more information regarding this issue.

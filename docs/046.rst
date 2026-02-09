@@ -1,0 +1,100 @@
+==================
+HDF Newsletter #46
+==================
+
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #46
+ October 27, 1999
+
+
+CONTENTS
+
+-------------------------------------------------------------------------------
+
+. Fortran 90 API for HDF5-1.2.0 * Visit the HDF home page *
+. HCR Tools Release 3.0v1 * for up-to-date information *
+
+ * *
+ * http://hdf.ncsa.uiuc.edu/ *
+
+-------------------------------------------------------------------------------
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+Fortran 90 API (prototype) for HDF5-1.2.0
+
+-------------------------------------------------------------------------------
+
+
+A prototype of the HDF5 Fortran 90 API is now available
+from the NCSA FTP server in the directory:
+
+ ftp://ftp.ncsa.uiuc.edu/HDF/HDF5/current/fortran/
+
+This prototype was tested on the following platforms:
+
+ SunOS 5.6 and 5.7
+ OSF1 V4.0
+ IRIX64 6.5 (64bit)
+
+In order to install it, you must have HDF5-1.2.0 installed
+and the GZIP library. For your convenience, we provide on
+the NCSA ftp server the compiled GZIP libraries that were
+used to test HDF5-1.2.0:
+
+ ftp://ftp.ncsa/uiuc.edu/HDF/gzip/
+
+
+HCR Tools Release 3.0v1
+
+-------------------------------------------------------------------------------
+
+
+HDF Configuration Record (HCR) Tools Release 3.0v1 is freely available
+for public access. HCR is a tools suite that provides an easy interface
+to create, modify and access HDF-EOS and HDF files. This release has been
+upgraded to work with the latest official releases of the HDF-EOS library
+(2.4v1.00) and HDF library (v4.1r3).
+
+The differences between Version 3.0v1 and prior versions are that HDF
+objects have been added, including GR, SDS, Palette, Vdata, Vgroup and
+Annotation objects. Similar to HDF-EOS files, you can create HDF objects in
+ODL format and use the tools (only hcr2hdf and hdf2hcr currently) to convert to
+HDF files or vice versa. For HDF-EOS files, there are four tools
+available (hcr2hdf, hdf2hcr, hcrhdfdiff, hcr_edit).
+
+It has also been ported to several platforms. The following compiled HCR
+executable files in binary form are provided:
+
+ hcr_solaris2.6.tar.gz -- For Sun Solaris2.6(SunOS 5.6).
+ hcr_irix6.5.tar.gz -- For SGI IRIX(or IRIX64) 6.5. It was
+ compiled in n32 object mode.
+ hcr_hpux10.2.tar.gz -- For HP-UX 10.20.
+ hcr_dec.tar.gz -- For DEC OSF1 v4.0.
+
+The software can be retrieved via anonymous ftp at the following
+URL: ftp://hdf.ncsa.uiuc.edu/pub/HCR/Software/
+
+To install, download one of them, uncompress the file ("gunzip
+filename.gz", "tar -xf filename.tar") and display the README file for
+installation instructions.
+
+The HCR Home page can be found at:
+
+ http://hdf.ncsa.uiuc.edu/hcr.html
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ hdfhelp@ncsa.uiuc.edu
+

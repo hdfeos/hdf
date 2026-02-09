@@ -1,0 +1,145 @@
+===================
+HDF Newsletter #138
+===================
+
+To view from a browser see:
+ http://www.hdfgroup.org/newsletters/newsletter138.html
+
+-------------------------------------------------------------------------------
+
+The HDF Group Home Page: http://www.hdfgroup.org/
+Helpdesk/Mailing List Info: http://www.hdfgroup.org/services/support.html
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #138
+ December 18, 2013
+
+CONTENTS
+. Release of HDF-Java Products version 2.10
+. Release of h5edit version 1.2.1
+. Release of HDF-EOS5 Augmentation Tool version 2.4
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF-Java Products version 2.10
+
+-------------------------------------------------------------------------------
+
+
+Version 2.10 of the HDF-Java Products is now available. This release was
+built and tested with HDF 4.2.9, HDF5-1.8.12, and JDK 1.7. It can be
+obtained from The HDF Group Downloads page:
+
+ http://www.hdfgroup.org/downloads/index.html
+
+It can also be downloaded directly from the HDF-Java Products Download
+page:
+
+ http://www.hdfgroup.org/products/java/release/download.html
+
+For more information on HDF-Java, see the HDF-Java Products Home page:
+
+ http://www.hdfgroup.org/products/java/hdf-java-html/
+
+(Please note that the location of the HDF-Java Products web pages
+changed with this release.)
+
+Although this release is a maintenance release with no major changes in
+functionality, it does include major changes in the packaging and
+installation:
+
+ o This release was built using CMake.
+
+ o Separate HDFView binaries are no longer provided. As of this release,
+ HDFView is included only within the HDF-Java Products software.
+
+ o Java is not bundled with the HDF-Java Products on Unix platforms, and
+ will need to be installed separately in order to use this software.
+
+Other important changes in this release include:
+
+ o HDFView can now display datasets with user-defined plugins. For
+ information on this feature, see:
+
+ http://www.hdfgroup.org/HDF5/doc/Advanced/DynamicallyLoadedFilters/HDF5DynamicallyLoadedFilters.pdf
+
+ o A problem with the display and editing of unsigned 64-bit data in
+ HDFView was fixed. This issue caused corruption when editing and
+ saving data to a dataset with a compound datatype that included an
+ unsigned 64-bit field.
+
+ o Command-line options can now be specified correctly with HDFView.
+
+For more information about this release, please see:
+
+ http://www.hdfgroup.org/products/java/hdf-java-html/hdfview/UsersGuide/ug01introduction.html#ug01release
+
+
+
+Future Changes to Supported Platforms
+
+-------------------------------------------------------------------------------
+
+
+Please be aware that after this release the standard platform
+configuration for Windows will move to VS 2012 instead of VS 2010.
+The minimum CMake version will be 2.8.14 for all platforms.
+
+
+
+Release of h5edit 1.2.1
+
+-------------------------------------------------------------------------------
+
+
+Version 1.2.1 of the h5edit tool is now available, and can be downloaded
+from the JPSS project Download page:
+
+ http://www.hdfgroup.org/projects/jpss/jpss_downloads.html
+
+This release is a maintenance release with the following changes:
+
+.. code-block:: fortran
+
+    o Added support to allow "_" as a valid character of attribute names.
+    o Fixed the MODIFY command to handle STRING type attributes.
+
+   The h5edit tool is a general command line tool to edit HDF5 files. The
+   current version is limited to operations on attributes only. For more
+   information see:
+
+
+ http://www.hdfgroup.org/projects/jpss/h5edit_index.html
+
+
+
+Release of HDF-EOS5 Augmentation Tool version 2.4
+
+-------------------------------------------------------------------------------
+
+
+Version 2.4 of the HDF-EOS5 Augmentation Tool is now available from
+the HDF-EOS Tools and Information Center:
+
+ http://www.hdfeos.org/
+
+The software can be downloaded directly from the HDF-EOS5 Augmentation
+Tool web page:
+
+ http://hdfeos.org/software/aug_eos5.php
+
+See the announcement on the HDF-EOS Forum for details regarding this
+release:
+
+ http://hdfeos.org/forums/showthread.php?p=1328#post1328
+
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ help@hdfgroup.org
+

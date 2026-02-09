@@ -1,0 +1,231 @@
+==================
+HDF Newsletter #38
+==================
+
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #38
+ November 6, 1998
+
+CONTENTS
+
+-------------------------------------------------------------------------------
+
+Release of HDF5 version 1.0.0 * Visit the HDF home page *
+
+ - Changes Since the Beta Release * for up-to-date information *
+ - Changes Since the Second Alpha * on HDF: *
+ - Changes Since the First Alpha * http://hdf.ncsa.uiuc.edu/ *
+ - Platforms Supported *******************************
+
+HDF 4.1r2 Windows NT/95 Release with DLL Support
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF5 version 1.0.0
+
+-------------------------------------------------------------------------------
+
+
+We are pleased to announce the first official release of HDF5,
+version 1.0.0.
+
+HDF5 is a completely new file format and library designed to address
+some of the limitations of the HDF4 library, and to address current and
+anticipated requirements of modern systems and applications.
+
+Improvements over HDF4 include support for large files and datasets
+(>2GB), a simpler data model and a better engineered library and API.
+
+This first release ONLY officially includes support for the serial
+implementation of HDF5. The parallel implementation is in place, but
+we have encountered some problems with it. Feel free to try it, as
+long as you keep in mind that it has some problems.
+
+The HDF5 release distribution is located at:
+
+ ftp://hdf.ncsa.uiuc.edu/pub/dist/HDF5/
+
+The web-site for HDF5 is located at:
+
+ http://hdf.ncsa.uiuc.edu/HDF5/
+
+
+Changes Since the Beta Release
+
+-------------------------------------------------------------------------------
+
+
+* Fill values have been added for datasets. For contiguous datasets fill
+ value performance may be quite poor since the fill value is written to
+ the entire dataset when the dataset is created. This will be remedied
+
+.. code-block:: c
+
+    in a future version. Chunked datasets using fill values do not
+    incur any additional overhead. See H5Pset_fill_value().
+
+
+* Multiple hdf5 files can be "mounted" on one another to create a
+ larger virtual file. See H5Fmount().
+
+* Object names can be removed or changed but objects are never
+ actually removed from the file yet. See H5Gunlink() and H5Gmove().
+
+* A tuning mechanism for B-trees has been added to insure that sequential
+ writes to chunked datasets use less overhead. See H5Pset_btree_ratios().
+
+* Various optimizations and bug fixes.
+
+
+Changes Since the Second Alpha
+
+-------------------------------------------------------------------------------
+
+
+* Strided hyperslab selections in dataspaces are now working.
+
+* The compression API has been replaced with a more general filter
+ API. See Filters in the User's Guide for details.
+
+* Alpha-quality 2d ragged arrays are implemented as a layer built on
+ top of other hdf5 objects. The API and storage format will almost
+ certainly change.
+
+* More debugging support including API tracing. See Debugging in
+ the User's Guide.
+
+.. code-block:: fortran
+
+   * C and Fortran style 8-bit fixed-length character string types are
+    supported with space or null padding or null termination and
+    translations between them.
+
+
+* The function H5Fflush() has been added to write all cached data
+ immediately to the file.
+
+* Datasets maintain a modification time which can be retrieved with
+ H5Gstat().
+
+* The h5ls tool can display much more information, including all the
+ values of a dataset.
+
+
+Changes Since the First Alpha
+
+-------------------------------------------------------------------------------
+
+
+* Two of the packages have been renamed. The data space API has been
+ renamed from `H5P' to `H5S' and the property list (template) API has
+ been renamed from `H5C' to `H5P'.
+
+* The new attribute API `H5A' has been added. An attribute is a small
+ dataset which can be attached to some other object (for instance, a
+ 4x4 transformation matrix attached to a 3-dimensional dataset, or an
+ English abstract attached to a group).
+
+* The error handling API `H5E' has been completed. By default, when an
+
+.. code-block:: c
+
+    API function returns failure an error stack is displayed on the
+    standard error stream. The H5Eset_auto() controls the automatic
+    printing and H5E_BEGIN_TRY/H5E_END_TRY macros can temporarily
+    disable the automatic error printing.
+
+
+* Support for large files and datasets (>2GB) has been added. There
+ is an html document that describes how it works. Some of the types
+ for function arguments have changed to support this: all arguments
+ pertaining to sizes of memory objects are `size_t' and all arguments
+ pertaining to file sizes are `hsize_t'.
+
+* More data type conversions have been added although none of them are
+ fine tuned for performance. There are new converters from integer
+
+.. code-block:: fortran
+
+    to integer and float to float, but not between integers and floating
+    points. A bug has been fixed in the converter between compound
+    types.
+
+
+* The numbered types have been removed from the API: int8, uint8,
+ int16, uint16, int32, uint32, int64, uint64, float32, and float64.
+ Use standard C types instead. Similarly, the numbered types were
+ removed from the H5T_NATIVE_* architecture; use unnumbered types
+ which correspond to the standard C types like H5T_NATIVE_INT.
+
+* More debugging support was added. If tracing is enabled at
+ configuration time (the default) and the HDF5_TRACE environment
+ variable is set to a file descriptor then all API calls will emit
+
+.. code-block:: c
+
+    the function name, argument names and values, and return value on
+    that file number. There is an html document that describes this.
+    If appropriate debugging options are enabled at configuration time,
+    some packages will display performance information on stderr.
+
+
+* Data types can be stored in the file as independent objects and
+ multiple datasets can share a data type.
+
+* The raw data I/O stream has been implemented and the application can
+ control meta and raw data caches, so I/O performance should be
+ improved from the first alpha release.
+
+* Group and attribute query functions have been implemented so it is
+ now possible to find out the contents of a file with no prior
+ knowledge.
+
+* External raw data storage allows datasets to be written by other
+ applications or I/O libraries and described and accessed through
+ HDF5.
+
+* Hard and soft (symbolic) links are implemented which allow groups to
+ share objects. Dangling and recursive symbolic links are supported.
+
+* User-defined data compression is implemented although we may
+ generalize the interface to allow arbitrary user-defined filters
+ which can be used for compression, checksums, encryption,
+ performance monitoring, etc. The publicly-available `deflate'
+ method is predefined if the GNU libz.a can be found at configuration
+ time.
+
+* The configuration scripts have been modified to make it easier to
+ build debugging vs. production versions of the library.
+
+* The library automatically checks that the application was compiled
+ with the correct version of header files.
+
+
+Platforms Supported
+-------------------
+
+This release has been tested on UNIX platforms only; specifically:
+Linux, FreedBSD, IRIX, Solaris & Dec UNIX.
+
+
+
+HDF 4.1r2 Windows NT/95 Release with DLL Support
+
+-------------------------------------------------------------------------------
+
+
+A new release of HDF 4.1r2 for Windows NT/95 is available.
+New in this release is the support for multi-threaded DLL
+import libraries.
+
+The HDF library names have changed with this release. Please
+see STEP III, 'Building the Libraries, tests and utilities', in
+the install_NT_95 file for more details on the libraries that get
+created.
+

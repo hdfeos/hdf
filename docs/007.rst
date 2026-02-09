@@ -1,0 +1,160 @@
+=================
+HDF Newsletter #7
+=================
+
+ March 2, 1993
+
+
+CONTENTS
+
+ 1. HDF3.2 Release 4
+
+ 2. XDataSlice now takes new number types
+
+ 3. HDF3.3 Alpha release 4
+
+ 4. HDF 3.2 is slow on the Mac
+
+
+HDF3.2 Release 4
+----------------
+
+HDF 3.2 release 4 merges the source code of 3.2 release 3 and
+the patch files which contain the bug fixes since release 3 has
+been officailly released. See CODECHANGES in HDF/HDF3.2r4/unpacked/
+for details.
+
+In HDF3.2 release 1, 2 and 3 there is a bug in writing data label,
+
+.. code-block:: c
+
+   unit and format. When writing an SDS, if only DFSDsetdatastrs()
+   was called and no DFSDsetdimstrs() was called the bug will appear
+   in the hdf file. If none of DFSDsetdimstrs() and
+   DFSDsetdatastrs() was called, or both of them were called, or
+   only DFSDsetdimstrs() was called, there will be no such bug in
+   the hdf file. The bug might cause segmentation fault on SGI and
+   other platforms when DFSDgetdims or DFSDgetdata is called to read
+   in that SDS. The bug was fixed and the fix was included in the patch
+   file patch01 in HDF/HDF3.2r3/patches/. Also, a patched dfsd.c was in
+   HDF/HDF3.2r3/patches/patchedsrc/src/. Besides, there were other
+   bug fixes in dfan.c and utility programs in patch01 and patch02.
+
+
+Since some users downloaded HDF programs without downloading the patches
+at the same time, we feel need to update HDF on ftp with the patch files
+
+.. code-block:: c
+
+   merged into the code to avoid users' writing wrong hdf files. If you
+   haven't patched your HDF3.2r3 using the patch files please download
+   3.2r4 and reinstall your HDF library.
+
+
+The executable code on NCSA platforms: CRAY-2, CRAY-YMP, CONVEX and REL
+was updated on Feb. 24 and 25. If you have any question please contact
+sxu@ncsa.uiuc.edu.
+
+If you have used HDF3.2 release 1, 2 or 3 to write SDSs with the bugs
+mentioned above, you need to rewrite the hdf file. We are trying to make
+a utility which will search for the bug through an hdf file and rewrite
+the SDS data strings. We will send another notice when the utility is
+ready.
+
+We are very sorry for having not caught the bug and fixed it earlier.
+
+
+
+XDataSlice now takes new number types
+
+-------------------------------------------------------------------------------
+
+
+Gilles Bourhis, visitor from France, has upgraded NCSA XDataSlice
+to accept all number types supported by HDF3.2. The new release,
+XDataSlice version 2.2 is on NCSA ftp server (ftp.ncsa.uiuc.edu), in
+subdirectory:
+
+ UNIX/XDataSlice/XDS2.2
+
+
+HDF3.3 Alpha release 4
+
+-------------------------------------------------------------------------------
+
+
+
+HDF 3.3 alpha release 4 has been installed on the NCSA ftp server. This
+alpha release contains most of the new features that will be available in
+the full release of HDF 3.3. (As soon as all features are available, we
+will distribute a beta release.)
+
+HDF version 3.3 release 4 supplies the following features that are not
+available in HDF 3.2:
+
+ o Support for reading and writing JPEG compressed 24-bit and
+ 8-bit raster images
+
+ o A utility for ingesting JPEG images into an HDF file.
+
+ o Support for reading and writing Little-Endian (PC Native)
+ mode files on all platforms in Vdatas and SDSs.
+
+ o Improved I/O performance on Cray and VMS platforms.
+
+ o Support for the netCDF interface and data model. It is
+
+.. code-block:: c
+
+    now possible, via the netCDF interface to do the
+    following:
+    * read XDR-based (Unidata format) netCDF file
+    * read and write HDF-based netCDFs to HDF files
+    * read HDF SDSs.
+
+
+ o An SDS interface with the following features:
+
+ * support for simultaneous access to more than
+ one file (uses file handles)
+ * support for simultaneous access to more than
+ one HDF object (uses object handles)
+ * support for reading and writing hyperslabs at
+ random places in an SDS.
+ * support for an unlimited dimension in an SDS.
+ * faster access to files with many data sets
+ * faster access on Crays
+ * transparent access to netCDFs that conform to
+ the SDS data model.
+
+Other features that are planned for HDF 3.3:
+
+ o The ability to store SDS dimension scales of a different
+ data type than that of the corresponding data.
+ o The ability to store a palette with an SDS.
+ o The ability to subsample data in an SDS.
+
+
+HDF3.3 Alpha releases 1, 2 and 4 are on NCSA ftp server in subdirectory:
+
+ HDF/HDF3.3-ALPHA/
+
+The README file in that directory lists the features for each release
+and the new functions in each interfaces.
+
+This is an "alpha" release and is bound to have bugs. You can help us a
+great deal by reporting any problems you have with the library, as well as
+any other suggestions or comments.
+
+
+HDF 3.2 is slow on the Mac
+
+-------------------------------------------------------------------------------
+
+
+We have had reports that HDF 3.2 is running much slower on the Mac than did
+earlier versions of HDF. We are trying to track down the reasons for this
+but have not yet been able to find them. If you have any ideas, please
+share them with us.
+
+

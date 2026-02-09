@@ -1,0 +1,59 @@
+==================
+HDF Newsletter #81
+==================
+
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #81
+ January 6, 2005
+
+CONTENTS
+
+-------------------------------------------------------------------------------
+
+. HDF Web-browser Plugin * *
+
+ * Visit the HDF home page *
+ * for up-to-date information *
+ * *
+ * http://hdf.ncsa.uiuc.edu/ *
+ * *
+
+-------------------------------------------------------------------------------
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+HDF Web-browser Plugin
+
+-------------------------------------------------------------------------------
+
+
+We are pleased to announce the HDF Web-browser Plugin. This software
+will extend a web browser to display HDF4 and HDF5 files. This first
+version of the HDF Web-browser Plugin is for Windows Only. It can be
+downloaded from the following page:
+
+ http://hdf.ncsa.uiuc.edu/plugins/
+
+The HDF Web-browser Plugin is different from HDFView. Unlike HDFView,
+it is a 'light browser', with less browsing features and no editing
+features. It is also not an applet. It is downloaded and installed
+once, whereas an applet is downloaded with each invocation.
+
+This product is new, and is therefore not extensively tested. If you
+encounter any problems with it, please let us know!
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ hdfhelp@ncsa.uiuc.edu
+
+

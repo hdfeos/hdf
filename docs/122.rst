@@ -1,0 +1,78 @@
+===================
+HDF Newsletter #122
+===================
+
+The HDF Group Home Page: http://hdfgroup.org/
+Helpdesk & Mailing Lists Info: http://hdfgroup.org/services/support.html
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #122
+ July 8, 2011
+
+CONTENTS
+ . Release of h4toh5 2.2.0
+ . Release of h4mapwriter 1.0.0
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of h4toh5 2.2.0
+
+-------------------------------------------------------------------------------
+
+
+Version 2.2.0 of the h4toh5 conversion library and tools is now available.
+This release has been tested with HDF 4.2.6, HDF5-1.6.10 and HDF5-1.8.7
+(using the 1.6 APIs). See the h4toh5 web page for complete details
+regarding this release:
+
+ http://www.hdfgroup.org/h4toh5/
+
+The software can be obtained directly from The HDF Group Downloads page:
+
+ http://www.hdfgroup.org/downloads/index.html#h4h5
+
+The h4toh5 software consists of command-line utilities (h4toh5, h5toh4)
+as well as a conversion library for converting between individual HDF4
+and HDF5 objects.
+
+Please be aware that this is the last release of the h4toh5 software
+to be tested with HDF5-1.6, and future releases will only support the
+1.8 APIs in HDF5-1.8.
+
+
+Release of h4mapwriter 1.0.0
+
+-------------------------------------------------------------------------------
+
+
+We are pleased to announce the release of h4mapwriter, version 1.0.0.
+This utility enables data in HDF4 files to be retrieved independently
+from the HDF4 libraries.
+
+h4mapwriter will allow access to HDF4 data far into the future,
+regardless of the availability of the HDF4 libraries. This is critical
+for projects such as the NASA Earth Observing System (EOS), which has
+several petabytes of data stored in HDF4.
+
+The h4mapwriter 1.0.0 source code and documentation are available at:
+
+ http://www.hdfgroup.org/projects/h4map/h4map_writer.html
+
+For detailed information regarding the HDF4 Mapping Project, see:
+
+ http://www.hdfgroup.org/projects/h4map/
+
+The h4mapwriter utility creates a content map in XML that describes the
+file structure, file metadata, and offset/length of raw data in an HDF4
+file. The map can be used to retrieve data from an HDF4 file without
+relying on the HDF4 library.
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ help@hdfgroup.org
+

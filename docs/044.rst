@@ -1,0 +1,70 @@
+==================
+HDF Newsletter #44
+==================
+
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #44
+ August 10, 1999
+
+CONTENTS
+
+-------------------------------------------------------------------------------
+
+. Release of HCR Tools 2.0v1.3 * Visit the HDF home page *
+
+ * for up-to-date information *
+ * *
+ * http://hdf.ncsa.uiuc.edu/ *
+
+-------------------------------------------------------------------------------
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HCR Tools 2.0v1.3
+
+-------------------------------------------------------------------------------
+
+
+The HDF Configuration Record (HCR) Tools Release 2.0v1.3 is freely available
+for public access. HCR is a tools suite that provides an easy interface
+to create, modify and access HDF-EOS files. This release has been
+upgraded to work with the latest official releases of the HDF-EOS library
+(2.4v1.00) and HDF library (v4.1r3 mostly). It has also been ported to
+several platforms. Below are the compiled HCR executable files in binary
+form for the supported platforms:
+
+ hcr_solaris2.6.tar -- For Sun Solaris2.6(SunOS 5.6).
+ hcr_irix.tar -- For SGI IRIX 5.3 or higher including IRIX64 6.2
+ or higher. It was compiled in the old o32
+ object mode.
+ hcr_irix6.5.tar -- For SGI IRIX(or IRIX64) 6.5. It was compiled
+ in new n32 object mode.
+ hcr_hpux10.20.tar -- For HP-UX 10.20.
+ hcr_dec.tar -- For DEC OSF1 v4.0.
+
+The software can be retrieved via anonymous ftp at the following
+URL: ftp://hdf.ncsa.uiuc.edu/pub/HCR/Software/
+
+For installation instructions, download the compressed tar file for
+one of files listed above, untar the file ("tar -xf filename") and
+view the README file.
+
+The HCR home page is located at:
+ http://hdf.ncsa.uiuc.edu/hcr.html
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ hdfhelp@ncsa.uiuc.edu
+
+
+

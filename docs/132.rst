@@ -1,0 +1,69 @@
+===================
+HDF Newsletter #132
+===================
+
+To view from a browser see:
+ http://www.hdfgroup.org/newsletters/newsletter132.html
+
+-------------------------------------------------------------------------------
+
+The HDF Group Home Page: http://www.hdfgroup.org/
+Helpdesk/Mailing List Info: http://www.hdfgroup.org/services/support.html
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #132
+ February 15, 2013
+
+CONTENTS
+
+ . Release of HDF 4.2.9
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF 4.2.9
+
+-------------------------------------------------------------------------------
+
+
+The HDF 4.2.9 release is now available. It can be obtained from the
+HDF Downloads page:
+
+ http://www.hdfgroup.org/downloads/index.html#hdf4
+
+The HDF 4.2.9 documentation is located in:
+
+ http://www.hdfgroup.org/doc.html
+
+HDF 4.2.9 is a minor release with a few new features and changes,
+including the following:
+
+ - Support was added for Mac OS X 10.8 (Mountain Lion) with the Clang and
+ Intel compilers. The Clang compiler is the default C compiler.
+
+ - The SDgetcompress API has been deprecated in this release. It is still
+ available by default in the library, but is no longer documented. Users
+ should use SDgetcompinfo instead. The SDgetcompress function can be
+ removed from the HDF4 library by specifying -DH4_NO_DEPRECATED_SYMBOLS
+ when compiling.
+
+ - HDF can now build on Cygwin (version 1.7) using TI-RPC (Transport
+ Independent RPC).
+
+Please refer to the HDF 4.2.9 Release Notes for complete details on what
+has changed in this release:
+
+ http://www.hdfgroup.org/ftp/HDF/HDF_Current/src/hdf-4.2.9-RELEASE.txt
+
+For more information, see the HDF (HDF4) home page:
+
+ http://www.hdfgroup.org/products/hdf4/
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ help@hdfgroup.org
+

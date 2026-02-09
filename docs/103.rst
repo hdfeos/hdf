@@ -1,0 +1,63 @@
+===================
+HDF Newsletter #103
+===================
+
+THG Home Page: http://hdfgroup.org/
+Helpdesk & Mailing Lists Info: http://hdfgroup.org/services/support.html
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #103
+ July 21, 2008
+
+CONTENTS:
+
+ - HDF and HDF-EOS Workshop XII
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+HDF and HDF-EOS Workshop XII
+
+-------------------------------------------------------------------------------
+
+
+NASA Goddard Space Flight Center's Earth Sciences Data and Information System
+Project and The HDF Group are presenting the HDF and HDF-EOS Workshop XII to
+discuss use of the HDF standards in satellite observations of the Earth and
+related applications.
+
+The location and date of the workshop are:
+
+ Aurora, Colorado
+ October 15-17, 2008
+
+Please see the following page for complete details:
+
+ http://www.hdfeos.org/workshops/ws12/workshop_twelve.php
+
+The workshop will be held at the Doubletree Hotel in Aurora, CO and will
+consist of presentations, discussions, tutorials and demonstrations of tools.
+You can take a look at past years' workshops on the HDF-EOS Tools and Information
+Center web site, at:
+
+ http://www.hdfeos.org/
+
+Suggestions for topics that you'd like to see on the agenda can also be
+contributed and are welcomed.
+
+The theme this year is:
+
+ Moving Forward with HDF - New Missions, New Opportunities, a New Generation of Users
+
+Bring your ideas, needs, successes, and challenges.
+
+There will be a poster area. Presenters have the option of bringing a poster
+and giving a 5 minute 'express' talk or giving a longer talk.
+
+Please send an email with a few paragraphs describing your intent to present
+or desired topic discussion to: Daniel.J.Marinelli@nasa.gov
+
+
+
+

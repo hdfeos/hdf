@@ -1,0 +1,148 @@
+==================
+HDF Newsletter #19
+==================
+
+ Feb. 9, 1996
+
+Contents
+
+ . HDF4.0r1 release
+ . HDF4.0 documentation
+ . Progress in HDF related projects
+ . Platforms to be dropped
+ . New HDFers
+
+HDF4.0r1 release
+================
+
+ We are very glad to announce that HDF4.0r1 is now officially
+ released. HDF4.0 represents a substantial revision, expansion
+ and improvement of the HDF library over HDF3.3. Its new
+ features include:
+ . Interfaces that support multi-file/multi-object access for
+ raster images and annotations, similar to the multifile SDS
+ interface.
+
+.. code-block:: fortran
+
+    . Support for n-bit integer data within the SDS interface.
+    . Support for RLE, adaptive Huffman and Gzip deflation
+    compression for SDSs.
+    . Uses v5 of Independent JPEG Group (IJG) JPEG file access library
+    . Support low level function for RLE, adaptive Huffman
+    and Gzip deflation compression for any object.
+    . Support for creation and search for external elements.
+    . Support for external vdata elements.
+    . Unified auto-configuration that eases the installation and test
+    of HDF package on UNIX platforms.
+    . A new version of dimension record decreasing the size of
+    HDF files which contain large 1-dimensional SDS's.
+    . A new HDF utility hdp -- an HDF file dumper
+    . Full support for SGI Power Challenge running IRIX6.1
+    . Support for parallel I/O on the Thinking Machines'CM-5.
+    . Modifications in the implementation of memory management
+    that decrease the required memory size and execution time.
+    . Integration of Pablo performance measurement software.
+    . I/O performance improvements
+    . Limited support for reading CDF files.
+
+
+ Details are listed in the $(toplevel)/release_notes/ABOUT_4.0r1.
+
+ HDF4.0r1 has been tested on: SunOS 4.1.4, Solaris 2.4,
+ Solaris 2.5, IRIX5.3, IRIX6.1 (both 32-bit and 64-bit modes),
+ HPUX 9.03, UNICOS 803, CM5, AIX v3.2, Digital Unix v3.2,
+ OpenVMS AXP v6.2, Solarisx86, Linux(a.out) v1.2.4, and
+ Free BSD 2.0. More details are included in the $(toplevel)/INSTALL
+ file.
+
+ Many thanks to the HDF4.0 alpha and beta testers for their
+ feedback, comments and suggestions.
+
+HDF4.0 documentation
+
+-------------------------------------------------------------------------------
+
+
+ An HDF 4.0 User's Guide is available on the NCSA ftp server,
+ ftp.ncsa.uiuc.edu, in subdirectory:
+
+ /HDF/Documentation/HDF4.0/Users_Guide/.
+
+ We are working on more documentation, including a new Getting started
+ manual, a new HDF 4.0 Reference Manual, and a new HDF Specification
+ and Developer's Guide. We will announce the availability of these
+ documents as they are completed.
+
+Progress in HDF related projects
+
+-------------------------------------------------------------------------------
+
+
+BigHDF
+------
+
+ In the last Newsletter we described the BigHDF project, in which we
+ are building a prototype next-generation HDF. A proposed
+ specification for the prototype is available on the web at
+
+ http://hdf.ncsa.uiuc.edu/internal/NRA/BigHDFSpec.html
+
+ There is also a reproduction of talk on BigHDF entitled "HDF: The
+ Next Generation," given by Mike Folk and Quincey Koziol, at
+
+ http://hdf.ncsa.uiuc.edu/nra/BigHDF/talk/coverpage.html
+
+ We welcome your comments and ideas about BigHDF.
+
+
+HDF Support for Parallel Computing Environment
+
+-------------------------------------------------------------------------------
+
+
+ With support from NASA's Advanced Information Systems Research
+ project (AISR), we are designing new features to provide HDF
+ library support for the parallel computing environment of
+ Network of Workstations (HDF-NOW).
+ Preliminary design has completed and we are in the stage of
+ functional definitions. We plan to release a prototype version
+ this year.
+ Tentative platforms are the IBM SP2 and network of workstations
+ like HP, SGI and Sun. More details are available at
+
+ "http://hdf.ncsa.uiuc.edu/parallel_hdf.html".
+
+
+Platforms to be dropped
+
+-------------------------------------------------------------------------------
+
+
+ Due to lack of resources and waning interest, we have decided to stop
+ supporting HDF on the following platforms:
+
+ DecStation/MIPSEL
+ NeXT/Next-STEP
+ Fujitsu VP/UXPM
+ Intel i860
+ IRIX4.0
+ IRIX5.2
+ VAX/VMS
+
+ If you need HDF support on these platforms, please contact us and we
+ will try to help you port HDF 4.0 to them.
+
+New HDFers
+==========
+
+Don Gibson, a University of Illinois M.B.A. student, has been working
+with the HDF group for several months. Don is helping to manage the
+concurrent HDF projects and assisting in the development of future projects.
+He is currently helping to write an HDF business plan.
+
+Barbara Jones recently joined us to help provide user-support to the HDF
+community. She comes to us with 16 years of programming and technical support
+experience. Barbara moved here from Providence, Rhode Island where she spent
+the last 6 years as a Technical Support Specialist at Cadre Tech.
+

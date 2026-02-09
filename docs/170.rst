@@ -1,0 +1,19 @@
+===================
+HDF Newsletter #170
+===================
+
+The HDF5-1.10.6 release is now available for download from:
+https://www.hdfgroup.org/downloads/hdf5/
+The user documentation and source code (only) can be obtained from the Support Portal:
+https://portal.hdfgroup.org/display/support
+This release contains several important new features and changes, including:
+Improvements were made to the CMake support:
+Support was added for VS 2019 on Windows (with CMake 3.15).
+Support was added for MinGW using a toolchain file on Linux (C only).
+The S3 and HDFS Virtual File Drivers (VFDs) were added.
+Support was added for macOS versions 10.13.6 (Darwin 17.7.0) and 10.14.6 (Darwin 18.7.0).
+Performance was improved when creating a large number of small datasets.
+Numerous bugs were fixed.
+For details regarding these and other changes please see the Release Notes.
+Windows 7 Support
+Please be aware that we will be dropping support for Windows 7 at the end of this year. It will be dropped for all HDF products in 2020.

@@ -1,0 +1,15 @@
+===================
+HDF Newsletter #202
+===================
+
+The HDF 1.14.4 release is now available from the HDF5 1.14.4 download page.
+This is a maintenance release with several nice improvements and additions:
+
+.. code-block:: c
+
+   Added support for the _Float16 16-bit floating-point datatype to allow for more efficient storage and improved performance.
+   Improved performance when converting datatypes.
+   Cloud-optimized HDF5 changes and improvements including some changes for page buffering and support for temporary credentials with the read-only S3 VFD.
+   Build system changes, fixes for CVE issues (HDF5 is still CVE-free!), and many other improvements and bug fixes.
+   Please see the full release notes for detailed information regarding this release.
+   We maintain a release schedule in the README on Github. As always, feel free to post on the forum with any questions.

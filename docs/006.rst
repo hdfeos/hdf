@@ -1,0 +1,397 @@
+=================
+HDF Newsletter #6
+=================
+
+Contents:
+
+ HDF Email Group
+ NSF Supports netCDF/HDF Project
+ HDF 3.2 update
+ No-transpose plans for HDF 3.2
+
+
+
+-------------------------------------------------------------------------------
+
+
+ HDF Email Group: hdfnews
+
+In an effort to increase communication within the HDF community we
+have set up an HDF email group called "hdfnews@ncsa.uiuc.edu". IF YOU
+ARE PART OF THE HDFNEWS GROUP, YOU SHOULD ALREADY HAVE RECEIVED A COPY
+OF THIS NEWSLETTER. IF NOT, AND YOU WISH TO CONTINUE RECEIVING THE
+NEWSLETTERS, AS WELL AS ALL OTHER HDFNEWS CORRESPONDENCE, YOU NEED TO
+JOIN THE GROUP.
+
+If you join the hdfnews email group, you can both send and receive
+hdfnews mail. Any mail you send to hdfnews@ncsa.uiuc.edu will be
+broadcast to all members of the group.
+
+The mail group is managed by a mail list server whose address is
+stglistserv@ncsa.uiuc.edu. There are a number of things you can do
+with the mail server. For a full list of capabilities, send email to
+stglistserv@ncsa.uiuc.edu, and include the word "help" (no quotes) as
+the first and only line in your mail message.
+
+TO JOIN THE HDFNEWS GROUP, send mail to stglistserv@ncsa.uiuc.edu with
+the following message:
+
+subscribe hdfnews <your name>
+
+To remove yourself from the hdfnews list, send mail to
+stglistserv@ncsa.uiuc.edu with the following message:
+
+unsubscribe hdfnews
+
+To get a listing of all members, send the message:
+
+recipients hdfnews
+
+We welcome your thoughts on this way of distributing HDF information.
+And your participation.
+
+-------------------------------------------------------------------------------
+
+
+ NSF Supports netCDF/HDF Project
+
+We are very excited to announce that the National Science
+Foundation's Division of Advanced Scientific Computing,
+recently announced that they will support a project to
+combine the features of Unidata's netCDF programming
+interfaces and data models with NCSA's HDF file format.
+NetCDF provides an elegant and powerful data model that can
+be used with widely varying scientific data sets.
+
+This NSF support represents an enormous opportunity to unify
+a large segment of the scientific community. The project
+will have immediate benefit to scientists who use either
+netCDF or HDF, for it will combine important features of each
+into one data storage format and access library, making
+available to scientists a rich set of general applications
+for analyzing, displaying, and sharing data.
+
+The objectives of the project are
+
+ (1) to adapt the HDF file structure to the netCDF data
+ model, incorporating the netCDF interface in the HDF
+ library,
+ (2) to adapt NCSA visualization software to read netCDF
+ objects stored in HDF files,
+ (3) to adapt NCSA software to read both netCDF and HDF
+ files, and
+ (4) to investigate the possibility of incorporating NASA's
+ CDF, a forerunner of netCDF, into the resultant
+ package.
+
+Chris Houck, a member of the NCSA HDF team, is the primary
+developer in the project. Chris has set up an HDF-netcdf
+news group, which you are welcome to join and participate in.
+To join the HDF-netcdf news group, send email to HDF-netcdf-
+request@ncsa.uiuc.edu asking to be put on the list. (Note:
+this is different from the way "hdfnews" works. Sorry, we
+switched technologies.)
+
+Chris has been making real headway since he started working
+on it several months ago. He should have a prototype ready
+soon. Stay tuned...
+
+-------------------------------------------------------------------------------
+
+
+
+ HDF 3.2 Beta Update
+
+We have just put a new version of HDF 3.2 beta on the
+anonymous ftp server (ftp.ncsa.uiuc.edu; IP address
+141.142.20.50) in the directory HDF/HDF3.2beta.
+
+Platforms supported
+===================
+
+The new version has been ported and fully tested on the Sun Sparc, and
+almost fully tested on SGI (IRIX 4.0), Cray 2 (UNICOS), Cray Y-MP
+(UNICOS), IBM RS/6000 (AIX), DecStation 5000, and Convex. (The only
+part that hasn't been tested on the non-Sparc machines is the non-
+transposing SDS code. See "No-transpose" below.)
+
+The Mac and PC versions are close to being done, but have not been
+tested. An HP version has been created by Brian Wallace at
+Oak Ridge, and we will be testing it as soon as we can. We plan
+to work on the VMS version in the next couple of weeks.
+
+No-transpose
+============
+
+As mentioned in the last newsletter, the HDF 3.2 SDS Fortran interface
+will no longer transpose arrays when writing them to a file. A full
+description of the implications of this are described in the next
+article ("No-transpose Plans") in this newsletter. If you use Fortran
+at any stage in workingwith HDF files, you probably should read the
+article.
+VSETS
+=====
+The most important change to the Vset interface is that the constants
+for data types have changed. Previously the type of data had been
+specified with constants such as 'LOCAL_INTTYPE'. This was a problem
+in two ways:
+
+.. code-block:: fortran
+
+   1) Not every machine's local integer is the same size, but Vsets
+   treated them all as the same.
+
+   2) It made the Vset interface incompatible with the new data
+   conversion routines used by all of the other interfaces.
+
+
+So, with this release, rather than specifying the type of data as
+'LOCAL_XXXTYPE' you should now use the same type specifier as if you
+were storing the data through the SDS interface:
+
+DFNT_INT8, DFNT_INT16, DFNT_INT32, DFNT_FLOAT32...
+
+
+Vsets also now allow the modification of existing VDatas. By
+attaching to an existing VData with write access you are now allowed
+to seek (via. VSseek()) to any location and place new data (via.
+VSwrite()). If it is necessary to increase the size of an existing
+VData, rather than deleting it and rewriting it, you should call:
+
+VSappendable(VDATA *vs)
+
+You will then be able to seek or write past the previous end of the
+VData. You will also be permitted to read passed the end of the valid
+data in the VData. It is currently the application programmer's
+responsibility to detect and handle this case.
+
+
+Efficiency
+==========
+
+Slight improvements have been made to the "H-Layer", the lowest level
+of the HDF library, these improvements should benefit the users of
+every interface. In addition, the efficiency of the code in the VSet
+interface has been improved; these changes will, obviously, only
+benefit people using the VSet interface.
+
+Still to do
+===========
+
+The three remaining tasks we have are:
+
+ * to convert the command-line utilities to work in HDF 3.2,
+
+.. code-block:: c
+
+    * to redo the documentation, and
+    * to fully test the new (non-transposing) SDS code on all
+    machines. (It has been tested on Sun-Sparc only.)
+
+   We plan to do an official release by the end of this month, even
+   if we do not finish the documentation or all of the utilities
+   conversions.
+
+
+Thanks to all you adventurous souls who have given us
+feedback on earlier beta versions. It has been enormously
+helpful.
+
+-------------------------------------------------------------------------------
+
+
+ No-transpose Plans
+
+In newletter #5 we proposed to not transpose the data array
+when HDF functions are called from Fortran programs to read
+data from or write data to an HDF file. All the responses
+from users voted for no transpose, with some concerns about
+how to convert old HDF files written by Fortran programs and
+how the no-transpose interface will look.
+
+We also presented a module dfsd_notranspose.c which replaces
+dfsd.c to build a transposeless HDF library. With
+dfsd_notranspose, Fortran calling programs are required to
+set dimension sizes in a reverse order verses that in HDF3.1.
+
+However, since the reversal of the order of dimension sizes
+would require modification of old programs in order to link
+them with new library, we decided to change the dimension
+
+.. code-block:: c
+
+   orders back to that of HDF 3.1 and let HDF 3.2 do the reversal
+   for Fortran programs. In this way, old programs need not
+   be changed, and the dimension orders are more natural to
+   Fortran programmers.
+
+
+
+
+The following is what we plan to do:
+
+1. HDF3.2 will no longer transpose the data arrays when
+
+reading or writing scientific data sets from Fortran
+programs.
+
+.. code-block:: fortran
+
+   2. Fortran programs call the no-transpose interface in the
+   same way they call the 3.1 interface. For example, suppose
+   there is a data array declared as data(3,4,5) in a Fortran
+   program. Before calling DFSDputdata we should set up
+   dimension information as:
+
+
+ rank = 3
+ dims(1) = 3
+ dims(2) = 4
+ dims(3) = 5
+
+ and call
+
+ dfsdputdata(filename, rank, dims, data).
+
+This means that dim(1) is the first dimension in the
+declaration of the array, which changes fastest in terms of
+the internal storage of an array in Fortran. Dim(3) is the
+last dimension and the slowest-changing dimension. Similarly,
+
+ dfsdgetdata(filename, rank, bufsizes, indata)
+
+.. code-block:: c
+
+   returns data starting at indata and the values in bufsizes
+   should be the same as those in dims, bufsizes(1)=3,
+   bufsizes(2)=4, and bufsizes(3)=5.
+
+   3. There will be no change in the C program interface either.
+   If the data array is declared as data[100][10][12],
+   DFSDputdata should be called with:
+
+
+ rank = 3;
+ dims[0] = 100;
+ dims[1] = 10;
+ dims[2] = 12;
+
+.. code-block:: c
+
+    DFSDputdata(filename, rank, dims, data);
+
+
+Here, dims[0] is also the first dimension in the declaration
+of the array. However, in C language, the first dimension is
+the slowest-changing dimension in terms of internal storage
+of the array.
+
+4. The data elements in the data array will be written to the
+
+HDF file in the same sequence as they are stored in memory,
+no matter what the programming language is. The information
+about how these elements are grouped together is contained in
+the values of dimension sizes. C and Fortran represent the
+information differently: the first dimension in C changes
+slowest while in Fortran it changes fastest. To standardize,
+HDF can take only one of them, C order or Fortran order. We
+have adopted C order. This means, in the HDF file, the first value
+of the dimension sizes is the size of the slowest changing
+dimension and the last value is the size of the fastest-
+changing dimension. In other words, HDF functions dfsdputdata()
+and dfsdgetdata() will reverse the order of dimension sizes
+when they are called from Fortran programs. This reversal is
+done by HDF. Application programmers just use the interface
+as shown above. No extra transposition is needed in
+application programs.
+
+5. Are HDF files written by old (HDF3.1) library readable by
+
+.. code-block:: c
+
+   3.2? Yes. When DFSDgetdata or DFSDgetslice is called from
+   Fortran programs, they will read the data according to the
+   version of the library. If the dataset was written by 3.1
+   (or earlier), it will be read back in the way 3.1 does, the
+   data will be transposed and the dimension sizes will not be
+   reversed. If the dataset was written by 3.2, it will be read
+   back in 3.2 method: the data will not be transposed while the
+   dimension sizes will be reversed as appropriate. When
+   DFSDgetdata() or DFSDgetslice() is called from C programs, they
+   do the same as 3.1 in C.
+
+
+6. Are HDF files written by new (3.2) library readable by
+
+.. code-block:: c
+
+   3.1? If the dataset is of 32-bit-floating-point number type,
+   it can be read by 3.1. However, the dimension sizes in the
+   file are ordered from the slowest-changing dimension to the
+   fastest-changing dimension, which is different from Fortran
+   order. The old library will transpose the data and not
+   reverse the dimension sizes when it is called from Fortran
+   programs. In many cases this is not a big problem. However,
+   it must be taken care of by the application programmers when
+   it does become a problem.
+
+
+7. Scales, labels, units and formats for each dimension are
+
+written to the 3.2 HDF files in C order, from slowest to the
+fastest. When dfsdgetdimstrs(1, label, unit, format) is
+called from Fortran program, it will distinguish whether the
+SDS was written by 3.1 or 3.2. If the SDS was written by 3.1,
+no reverse will take place. The first values of label, unit
+
+.. code-block:: c
+
+   and format (of the SDS) in the file will be returned; with
+   3.2 files, dfsdgetdimstrs() will return the last values of
+   label, unit and format (of the SDS) in the file.
+
+
+For the same reason mentioned in 6, Fortran application
+programs need to be modified when they are using the HDF3.1
+library to read 3.2 HDF files. The order of dimension-order-
+related information is by C order in 3.2 HDF files.
+
+Summary:
+
+1. In HDF files written by Fortran programs using the HDF3.2
+
+library, the data array is stored in the same order as it is
+in memory, while the orders of dimension-related information
+such as dimension sizes, scales, labels, units and formats
+are reversed comparing the dimension order in the declaration
+of the array.
+
+2. The format of HDF3.2 Fortran interface for reading from
+
+and writing to an HDF file is the same as that of the HDF3.1
+interface.
+
+3. 3.2 reads SDS from HDF 3.1 files in the way 3.1 does so
+
+that old files can be read by new library without any extra
+programming.
+
+.. code-block:: fortran
+
+   4. When the HDF3.2 library is called by a Fortran program to
+   read HDF3.2 SDS, it returns dimension-related information in
+   the reversed order from that in the file.
+
+   5. When the HDF3.1 library is called by a Fortran program to
+   read 3.2HDF SDS, it returns dimension-related information in
+   the same order as that in the file.
+
+
+-------------------------------------------------------------------------------
+
+
+
+-------------------------------------------------------------------------------
+
+
+

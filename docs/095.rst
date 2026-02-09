@@ -1,0 +1,94 @@
+==================
+HDF Newsletter #95
+==================
+
+THG Home Page: http://hdfgroup.org/
+Helpdesk & Mailing Lists Info: http://hdfgroup.org/services/support.html
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #95
+ September 4, 2007
+
+CONTENTS
+
+ . RFCs:
+
+ - HDF5 Indexing
+ - Crash Proofing HDF5
+ - Using Skip Lists for Indexing Chunk Locations
+ With One-dimensional Unlimited Datasets
+
+ . Request for Use Cases - h5import and text data
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+RFCs
+====
+
+RFCs (Requests For Comments) are documents posted by developers,
+requesting feedback regarding new features or changes being proposed
+for the HDF software.
+
+Following are three new RFCs for HDF5, which may be of interest to
+users (Please note that the location of the RFCs listed below
+is different than the THG home page.):
+
+ HDF5 Indexing:
+ =============
+ http://www.hdfgroup.uiuc.edu/RFC/HDF5/hdf5Indexing/
+
+ Provides an indexing scheme to enable scientists to
+ efficiently extract information from large, complex datasets.
+
+ Crash Proofing HDF5:
+ ===================
+ http://www.hdfgroup.uiuc.edu/RFC/HDF5/journaling/Metadata_Journaling_RFC.pdf
+
+ Uses journaling to provide periodic rollback points, so as to minimize
+ file corruption in HDF5.
+
+ Using Skip Lists for Indexing Chunk Locations
+ With One-dimensional Unlimited Datasets:
+
+-------------------------------------------------------------------------------
+
+ http://www.hdfgroup.uiuc.edu/RFC/HDF5/SkipListChunkIndex/SkipListChunkIndex.html
+
+ Provides performance improvements for unlimited 1-dimensional chunked
+ datasets, by use of Skip Lists.
+
+Comments regarding RFCs can be sent to either the developer or the THG
+Helpdesk (help@hdfgroup.org).
+
+
+Request for Use Cases - h5import and text data
+
+-------------------------------------------------------------------------------
+
+
+.. code-block:: fortran
+
+   h5import is an HDF5 tool that converts floating point or integer
+   data stored in ASCII or binary files into the HDF5 format.
+   Currently h5import only processes numeric data. The HDF Group
+   plans to add support for importing text data into HDF5 using
+   h5import.
+
+
+We are now soliciting use cases that will guide the design of the
+text import feature in h5import. Please consider text
+you might want to import and how you would want to access that
+text once it is in the HDF5 file, and send your use cases to
+pvn@hdfgroup.org before September 17, 2007.
+
+Thank you for your help as we strive to improve our tools.
+
+
+
+
+
+
+

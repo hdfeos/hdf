@@ -1,0 +1,20 @@
+===================
+HDF Newsletter #172
+===================
+
+We are very pleased to announce the release of HDF5 1.12.0, which can now be obtained from the HDF5 Download page. Information about this release can be found on the Support Portal as follows:
+HDF5 documentation
+New Features in HDF5 Release 1.12
+Software Changes from Release to Release
+HDF5 1.12.0 is a major release containing the following important new features:
+The Virtual Object Layer (VOL) was introduced. The VOL is an abstraction layer within the HDF5 library that enables different methods for accessing data and objects that conform to the HDF5 data model. The VOL intercepts all HDF5 API calls that potentially modify data on disk and forwards those calls to a plugin “object driver”. The data on disk can be a different format than the HDF5 format.
+HDF5 references were extended to support attributes, and object and dataset selections that reside in another HDF5 file.
+The hyperslab selection code was optimized to achieve better performance. In general, performance improved by an order of magnitude. In the case of reading a regular selection from a 20GB dataset into a one dimensional array performance was improved by a factor of 6000.
+Several hyperslab selection APIs were introduced, which allow a user to flexibly operate on two hyperslab selections.
+For detailed information regarding this release, please see the release notes on the download page.
+Compatibility with Previous Releases
+This release required changes to existing APIs. Applications that were created with earlier HDF5 releases may not compile with 1.12 by default. The API Compatibility Macros in HDF5 allow users to work around this issue. Users can specify a compatibility macro mapping for the version of HDF5 that an application was built with. For example, a 1.10 application can be built with 1.12 using either an application or library mapping as follows:
+To compile an application built with a version of HDF5 that includes deprecated symbols (the default), specify: -DH5_USE_110_API (autotools) or –DH5_USE_110_API:BOOL=ON (CMake)
+To build an HDF5 library with the 1.10 APIs specify --with-default-api-version=v110 (Autotools) or -DDEFAULT_API_VERSION:STRING=v110 (CMake).
+However, users will not be able to take advantage of some of the new features in 1.12 if using these compatibility mappings.
+Also be aware that the CMake minimum version is now 3.12 and CMake 3.15 is recommended for the best build experience. Windows requires a minimum of CMake 3.14 and CMake 3.15 is required for VS 2019 support.

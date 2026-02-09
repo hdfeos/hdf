@@ -1,0 +1,16 @@
+===================
+HDF Newsletter #204
+===================
+
+The HDF5 1.14.5 release is now available from the HDF5 1.14.5 download page.
+This is a maintenance release with several nice improvements and additions:
+The release process now provides signed and notarized Windows and Mac installation binaries in addition to the Debian and rpm installation binaries. The Mac binaries are built as universal binaries on an ARM-based Mac. The executables have permission errors on Macs since HDF5 is a set of utilities and libraries and not a single application; if you have experience with solving this problem, please reach out to us at help@hdfgroup.org.
+
+.. code-block:: c
+
+   New routines have been added for interacting with error stacks: H5Epause_stack, H5Eresume_stack, and H5Eis_paused. These routines can be used to manage when errors from a call to an HDF5 routine should not be pushed on to an error stack. This is useful when performing “speculative” operations.
+   Added a warning that HDF5 threads cannot be left running at exit time in doc/threadsafety-warning.md, along with a discussion for developers.
+   Added an option to set the page buffer size in the command-line tools (e.g., h5dump) to better work with cloud-optimized HDF5 files
+   GitHub issues #3790, #3843, #4216 and #4448 as well as others have been fixed.
+   Please see the full release notes for detailed information regarding this release.
+   We maintain a release schedule in the README on Github. As always, feel free to post on the forum with any questions.

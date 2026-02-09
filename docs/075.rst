@@ -1,0 +1,148 @@
+==================
+HDF Newsletter #75
+==================
+
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #75
+ December 11, 2003
+
+CONTENTS
+
+-------------------------------------------------------------------------------
+
+. Release of HDF 4.2r0 * *
+
+ - New Features and Changes * Visit the HDF home page *
+ - Platforms Tested * for up-to-date information *
+ - Known Problems * *
+ * http://hdf.ncsa.uiuc.edu/ *
+ * *
+
+-------------------------------------------------------------------------------
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF 4.2r0
+
+-------------------------------------------------------------------------------
+
+
+We are pleased to announce the release of HDF 4.2r0. It is available
+for download from the HDF4 home page at:
+
+ http://hdf.ncsa.uiuc.edu/hdf4.html
+
+The HDF 4.2r0 documentation is not yet ready but will be available before
+the new year. You will be able to download it from the following page:
+
+ http://hdf.ncsa.uiuc.edu/doc.html
+
+
+The RELEASE.txt file in the source code contains detailed information
+about this release:
+
+ ftp://ftp.ncsa.uiuc.edu/HDF/HDF/HDF_Current/src/unpacked/release_notes/RELEASE.txt
+
+
+New Features and Changes
+
+-------------------------------------------------------------------------------
+
+
+The major new features and changes in HDF 4.2r0 are:
+
+ o The configuration has changed. The ZLIB and JPEG libraries were
+ removed from the HDF4 distribution source. ZLIB and JPEG must be
+ installed on the system before the HDF4 library can be built or the
+ HDF4 pre-compiled binaries can be used.
+
+ Please read the INSTALL file in the top HDF4 directory for instructions
+ on how to build the HDF4 library and applications.
+
+ o HDF4 now optionally supports the SZIP compression method. Please
+ refer to the INSTALL file for instructions on how to build with/without
+ the SZIP library. SZIP in HDF4 is free for non-commercial use. For
+ information regarding commercial use, see:
+
+ http://hdf.ncsa.uiuc.edu/doc_resource/SZIP/Commercial_szip.html
+
+ For more information about SZIP compression, see:
+
+ http://hdf.ncsa.uiuc.edu/doc_resource/SZIP/
+
+ NOTE: The pre-compiled binaries were built with SZIP compression
+ enabled, except on the Cray T3E, Cray SV1 and Linux 2.4 SuSE x86_64.
+ To use these binaries, you must download and install the SZIP library.
+
+ o The following new utilities have been added:
+
+ hrepack - Copies an HDF file to a new file with or without
+ compression or chunking
+ hdiff - Compares two HDF files and reports the differences
+ hdfimport - Imports ASCII or binary data into HDF
+
+ The fp2hdf utility has been removed and replaced by hdfimport.
+
+ o Scripts have been added to facilitate compiling:
+
+ h4cc - Compiles a C application with the HDF4 libraries
+ h4fc - Compiles a Fortran application with the HDF4 libraries
+ h4redeploy - Updates paths in h4cc/h4fc after the HDF4 pre-compiled
+ binaries have been installed in a new location
+
+ o HDF4 has been ported to AIX 5.1 -64 bit, Mac OS X, and Linux 2.4
+ for RH8, RH9, RH8 64-bit, SuSE 64-bit, IA-64, and SGI Altrix.
+
+ o Several bugs have been fixed in HDF 4.2r0.
+
+Please refer to the RELEASE.txt file in the release_notes/ directory of
+the source code for more information on the new features and changes in
+HDF 4.2r0.
+
+
+Platforms Tested
+----------------
+
+ AIX 5.1
+ Cray T3E, SV1
+ FreeBSD
+ HP-UX
+ IRIX64 (32 and 64 bit)
+ Linux 2.4 (RH8, RH9, SuSE, Intel, IA-32, IA-64)
+ Mac OS X
+ OSF1
+ Solaris 2.7 and 2.8 (32 and 64 bit)
+ Windows
+
+For further information please refer to the following page (or the
+RELEASE.txt file):
+
+ http://hdf.ncsa.uiuc.edu/release4/platforms.html
+
+
+Known Problems
+--------------
+
+Known problems at release time are listed in the RELEASE.txt file that
+comes with the source code.
+
+Further information on known problems can be found on the following page:
+
+ http://hdf.ncsa.uiuc.edu/release4/known_problems.html
+
+
+-------------------------------------------------------------------------------
+
+
+For questions regarding these or other HDF issues, contact:
+
+ hdfhelp@ncsa.uiuc.edu
+
+

@@ -1,0 +1,247 @@
+==================
+HDF Newsletter #16
+==================
+
+ Apr. 6, 1995
+
+CONTENTS
+
+ o Conflict user-definable tag ranges
+ o HDF3.3r4 patch04
+ o Release binaries for UNIX machines
+ o Correction on Mac version number
+ o Update on HDF User's Guide
+ o Status of HDF new releases
+ o New contributions
+ o Update on Collage and Mosaic
+ o HDF home page and fill-out forms
+
+
+Conflict user-definable tag ranges
+
+-------------------------------------------------------------------------------
+
+
+We want to thank the users in the Space Radiation Lab of Caltec for bringing
+a serious problem to our attention.
+
+On page 1.2 of HDF Specifications and Developer's Guide, version 3.2
+Sept. 1993 the following range of tags is defined:
+
+ 32768 -- 64999 user-definable
+
+However, on page 4.1 of HDF Specifications (for HDF version 3.1) ,
+March 1989 a different range is defined:
+
+ Tags in the range 16,000-32,000 are user-definable.
+
+This means the user-definable tag range for HDF3.2 and later verions
+conflicts with the tag ranges specified previously. The new library
+(HDF3.2 or later versions) interprets tags in 16384 -- 32767 as HDF
+special elements, based on the new Specification. If users defined
+their own private tags within the range 16,000-32,000, new libraries
+(HDF3.2 or later versions) will interpret those tags as HDF
+special elements based on the new Specification, and unpredictable
+results may happen.
+
+We are sending this message to ask you:
+
+1. to define private tags in the range 32768 -- 64999 if you need them
+2. to contact us if you have defined your private tags in the range
+ 16000 -- 32000 in your old hdf files. We will work with you to
+ convert those tags into the new range.
+
+We apologize for any inconvenience this might cause you.
+
+HDF3.3r4 patch04
+----------------
+
+Patch4 contains several bugs fixes and changes. The following bugs
+have been fixed:
+
+1. After being called too many times with non-HDF files, Hishdf failed.
+2. Fortran function sfiscvar() was missing on some platforms.
+3. SDwritedata sometimes wrote out the incorrect number of bytes for
+ odd dimension sizes if the first dimension was UNLIMITED.
+4. The file name hdf/MAKE.IRIS4 was missleading. It has been
+ renamed as hdf/MAKE.IRIX.
+5. Minor fixes.
+
+The patch files are in ftp.ncsa.uiuc.edu:/HDF/HDF3.3r4/patches/
+and the patched source code is in
+ftp.ncsa.uiuc.edu:/HDF/HDF3.3r4/patches/patchedsrc/
+
+Release binaries for UNIX machines
+
+-------------------------------------------------------------------------------
+
+
+A bin/ subdirectory has been added in ftp.ncsa.uiuc.edu:/HDF/HDF3.3r4/
+for executable code of HDF libraries and utilities on the following
+UNIX systems: SunOS_4.1.2, Solaris 2.3(SunOS_5.3), HPUX, AIX(no
+Fortran), OSF(no Fortran), C90, IRIX_5.3, IRIX_6.0.1_32 (32-bit mode),
+and IRIX_6.0.1(64-bit mode, hdf/ part only). Binaries for other
+platforms will be added later.
+
+Correction on Mac version number
+
+-------------------------------------------------------------------------------
+
+
+The hdf3.3r4p2.*.hqx files in ftp.ncsa.uiuc.edu:/HDF/HDF3.3r4/hqx/
+directory were stuffed with wrong directory names. After being
+unstuffed, they would create directory HDF3.3r5/ which should be
+HDF3.3r4.
+
+To correct the mistake, the hdf3.3r4p2.*.hqx files have been replaced
+by HDF3.3r4p2.*.hqx on the ftp server.
+
+Update on HDF User's Guide
+
+-------------------------------------------------------------------------------
+
+
+The drafts of chapters RIS8, RIS24, Palette, Vdata, Vgroup, and SD
+of HDF User's Guide are completed and are available on the NCSA
+ftp server. They are in
+
+	/HDF/Documentation/HDF3.3/Users_Guide/HDF3.3_drafts/.
+
+Each chapter is stored in two formats:
+
+ (1) postscript, and
+ (2) mif (framemaker interchange format).
+
+More chapters will be added to that directory as soon as they
+are completed. We welcome your comments and suggestions.
+
+Status of HDF new releases
+
+-------------------------------------------------------------------------------
+
+
+HDF4.0:
+ o The multi-file annotation interface is completed.
+ o The multi-file raster interface is currently being implemented.
+ o Data object compression with multiple compression algorithms
+ is completed.
+ o JPEG library has been separated from main HDF library source
+ and has been upgraded to use the Independent JPEG Group V5b
+ code.
+
+.. code-block:: fortran
+
+    o Support for n-bit integer data within the SDS interface is
+    completed.
+    o Support for parallel I/O on the Thinking Machines' CM-5 is
+    completed.
+    o Limited support for reading CDF files is completed.
+
+
+ We plan to have a beta release ready in June. (We have dropped
+ our plan to add chunking support in HDF4.0. We now plan to add
+ this in a later version.)
+
+HDF3.3: originally we planned to have a new release by the middle of
+ April. However, since HDF4.0 is very close to the beta test,
+ it seems there is no need for HDF3.3r5. We decided to not
+
+.. code-block:: c
+
+    do a new release for HDF3.3 so that we can concentrate
+    our efforts on HDF4.0. We will patch HDF3.3r4 as needed.
+
+
+New contributions
+-----------------
+
+HDF3.3r4 on the Power PC (C interfaces)
+ James L. Anderson of Idaho National Engineering Laboratory
+ contributed his port of HDF3.3r4 to Power PC. His contribution
+ is in /HDF/contrib/HDF3.3r4.PPC/.
+
+DataScope for PPC
+ Tim Snider, Tim_Snider@Mindlink.bc.ca, ported the NCSA DataScope
+ and HDF to the Power PC. His contribution is in
+ /HDF/contrib/DataScope.PPC/.
+
+Absoft Fortran version of HDF3.3r4
+ Robert A Managan of Lawrence-Livermore National Laboratory compiled
+ HDF3.3r4 with Absoft's MacFortran successfully. He contributed to us
+ the changes he made in Makefile files and HDF programs. The
+ contribution is in /HDF/contrib/HDF3.3r4.Absoft/.
+
+Reformat
+ Xinjian Lu, a visitor in CS department of UIUC added
+ conversion functions to the NCSA Reformat and donated
+ his new version to us. Reformat now can convert HDF raster
+ images into GIF, TIFF, XWD and SunRaster formats.
+ Currently this augmentation is only in the text version.
+ The contribution is in /HDF/contrib/NCSA/Reformat/.
+
+Update on Collage and Mosaic
+
+-------------------------------------------------------------------------------
+
+
+Collage HDF browser
+
+ Features available in the next release of Collage:
+
+ - After opening an HDF file, users will be able to view different data
+ sets within the file as well as the attributes associated with each
+ data set.
+ - Users will be able to view attributes of data sets as they currently
+ view the data sets themselves by clicking the toggle buttons.
+
+ There will be enhancements to Collage's visualization and collaborative
+ aspects as well.
+
+Mosaic HDF browser
+
+.. code-block:: fortran
+
+    Bug fix: Number type mistakes in displaying integer attribute values,
+    thanks to Frank Chen of GSFC, NASA.
+
+
+ Features available in the next release of Mosaic:
+
+ - for SDS, the browser will now display <name> followed by <longname> in
+ parentheses.
+
+.. code-block:: c
+
+    - for 'old-style' SDS (DFSDxxxx SDS) the browser will now displaay
+    "Data-set-<x>" followed by <label> in parentheses.
+
+    The binary code for HP9000, SGI and SUN SPARC for the new versions of Mosaic
+    can be found on HDF anonymous ftp server, hdf.ncsa.uiuc.edu or
+    141.142.21.14, in subdirectory:
+
+
+	/pub/outgoing/wallace/mosaic-fix.
+
+ New features in XMosaic2.6, in addition to the improvemnets in HDF browser
+ mentioned above:
+
+ inline JPEG images
+ mailto: URL
+ much improved news reading functionality
+
+.. code-block:: c
+
+    PostScript print option includes headers (URL and page #)
+    CCI POST functionality
+
+
+
+HDF home page and fill-out forms
+
+-------------------------------------------------------------------------------
+
+
+ The HDF feedback and request fill-out forms on the HDF http home page are
+ working again. Please contact hdfhelp@ncsa.uiuc.edu if you have trouble
+ sending the forms or if you don't hear back from us in a week after the
+ forms were sent to us.

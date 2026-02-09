@@ -1,0 +1,110 @@
+==================
+HDF Newsletter #67
+==================
+
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #67
+ April 18, 2002
+
+
+CONTENTS
+
+-------------------------------------------------------------------------------
+
+ * *
+
+. HDF Java Products Release * Visit the HDF home page *
+
+ * for up-to-date information *
+
+. Beta Release of H4toH5 Conversion * *
+ Library * http://hdf.ncsa.uiuc.edu/ *
+
+ * *
+
+. Cray Support *******************************
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+HDF Java Products Release
+
+-------------------------------------------------------------------------------
+
+
+We are pleased to announce the first release of the HDF Java Products.
+
+We have revised and reorganized the earlier Java HDF Products into a new
+product called HDF Java Products. The first release of the new software
+contains:
+
+ - The Java HDF Interface (JHI) to access the HDF4 library.
+
+ - The Java HDF5 Interface (JHI5) to access the HDF5 library.
+
+ - The new hdf-object package, a pure Java implementation of an
+ abstract model of data, which can read data from either HDF4 or HDF5.
+
+ - HDFView, a Java-based tool for browsing and editing HDF4 and HDF5
+ files.
+
+The web page for the new HDF Java Products is located at:
+
+ http://hdf.ncsa.uiuc.edu/hdf-java-html/
+
+This software has been tested on SGI IRIX 6.5, Linux, Solaris,
+and Windows platforms.
+
+NOTE: This software will eventually replace both the Java HDF Products
+for HDF 4.x and the Java HDF5 Products for HDF5.
+
+
+
+Beta Release of H4toH5 Conversion Library
+
+-------------------------------------------------------------------------------
+
+
+A beta release of the H4toH5 conversion library is now available.
+
+This release contains both the H4toH5 conversion library as well as
+the h4toh5 and h5toh4 utilities. (These utilities are the same
+as those provided with the HDF5-1.4.3 release.)
+
+Pre-compiled binaries (library and utilities) are available
+for the following platforms:
+
+ HP-UX 11.00
+ IRIX 6.5
+ IRIX64 6.5
+ Linux 2.2.18smp
+ Solaris 2.7
+ Windows NT 5.0
+
+The software can be obtained from the H4toH5 Conversion Library page:
+ http://hdf.ncsa.uiuc.edu/h4toh5/libh4toh5.html
+
+For further details on HDF4 vs. HDF5 issues, see the page:
+ http://hdf.ncsa.uiuc.edu/h4toh5/
+
+
+Cray Support
+============
+
+The Cray computers that we use for building HDF/HDF5 are being retired.
+We are therefore considering dropping support for the Crays. If you are a
+Cray user and you use HDF or HDF5, please let us know as soon as possible.
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ hdfhelp@ncsa.uiuc.edu
+

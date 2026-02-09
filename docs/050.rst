@@ -1,0 +1,118 @@
+==================
+HDF Newsletter #50
+==================
+
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #50
+ February 22, 2000
+
+
+CONTENTS
+
+-------------------------------------------------------------------------------
+
+. VisAD HDF-5 Data Adapter * Visit the HDF home page *
+
+ * for up-to-date information *
+
+. JHI5 version 1.1 for HDF5-1.2.1 * *
+
+ * http://hdf.ncsa.uiuc.edu/ *
+
+. Pre-compiled binaries for HDF5-1.2.1 *******************************
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+VisAD HDF-5 Data Adapter
+
+-------------------------------------------------------------------------------
+
+
+The VisAD HDF-5 Data Adapter is now available. It enables VisAD applications
+to read data from HDF5 files.
+
+VisAD (from the University of Wisconsin-Madison) is a Java toolkit for
+constructing interactive and collaborative visualization and analysis of
+numerical data.
+
+.. code-block:: c
+
+   The VisAD HDF-5 Data Adapter consists of Java classes which call the NCSA
+   Java HDF-5 Interface (JHI5), which calls the native HDF5 library. It
+   follows the VisAD standard interface, so it can be used by any VisAD
+   application.
+
+
+For further details, see:
+
+ http://hdf.ncsa.uiuc.edu/java-hdf5-html/VisAD_HDF5_DataAdapter/
+
+
+
+JHI5 version 1.1 for HDF5-1.2.1
+
+-------------------------------------------------------------------------------
+
+
+The Java HDF5 Interface (JHI5) version 1.1 for HDF5-1.2.1 is now
+available.
+
+JHI5 version 1.1 is a bug fix release. The changes in JHI5 1.1 are:
+
+ 1. H5.H5Sselect_elements() -- The arguments were incorrectly passed from
+ Java to C. This is fixed.
+
+ 2. Object references and region references did not work correctly.
+
+ - The class HDF5Reference was eliminated. All object references should
+ be passed as Java byte[], length 8 (object reference) or 12 (region
+ reference).
+
+ - All H5R* interfaces changed to use byte[] instead of HDF5Reference.
+
+ - Region references are implemented and work correctly.
+
+ 3. The Unix Makefile built the class HDF5CDataTypes, but failed to include
+ it in 'jhdf5.jar' when running 'make install'. This is fixed.
+
+
+See the Java-HDF5 Home Page for futher details:
+
+ http://hdf.ncsa.uiuc.edu/java-hdf5-html/
+
+
+
+Pre-compiled binaries for HDF5-1.2.1
+
+-------------------------------------------------------------------------------
+
+
+HDF5-1.2.1 was released in December, 1999. However, at that time only
+the source code was available and not the pre-compiled binaries for
+the platforms tested.
+
+The pre-compiled binaries can now be downloaded from:
+
+ ftp://ftp.ncsa.uiuc.edu/HDF/HDF5/current/bin/
+
+The HDF5 Home page is at:
+
+ http://hdf.ncsa.uiuc.edu/HDF5/
+
+For information on the changes in HDF5-1.2.1 see Newsletter 49:
+
+ http://hdf.ncsa.uiuc.edu/newsletters/newsletter49.html
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ hdfhelp@ncsa.uiuc.edu
+

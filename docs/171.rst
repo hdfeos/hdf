@@ -1,0 +1,16 @@
+===================
+HDF Newsletter #171
+===================
+
+The HDF 4.2.15 release is now available from the HDF 4.2.15 download page on the HDF Support Portal. For information on HDF, see the HDF4 page.
+While this is a minor release there are several important changes to be aware of:
+Many improvements were made to the CMake configuration, including:
+The configuration variables between systems were synchronized and HDF4 can now build on 64-bit platforms.
+The system library that provided XDR functions on Mac does not function properly in 64-bit. To resolve this issue the XDR library provided with HDF was ported to 64-bit (which it did not previously support), and newer 64-bit Macs (10.13 and above) must be built using HDF’s XDR version. This can be done by specifying the following option:
+Autotools: add "--enable-hdf4-xdr"
+CMake: add "HDF4_BUILD_XDR_LIB:BOOL=ON"
+Support was added for VS 2019 (which requires CMake 3.15).
+Support was added for Mac OS X 10.13.6 and 10.14.6.
+For detailed information regarding this release, please see the release notes on the download page.
+Windows 7 Support
+Please be aware that after this release support for Windows 7 will be dropped.

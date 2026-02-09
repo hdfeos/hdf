@@ -1,0 +1,13 @@
+===================
+HDF Newsletter #167
+===================
+
+As part of our commitment to providing the open source community with the latest core library, the HDF5 1.10.4 release is now available for download from:
+https://www.hdfgroup.org/downloads/hdf5/
+The user documentation and source code (only) can be obtained from the Support Portal:
+https://portal.hdfgroup.org/display/support
+This release has just a few new features and changes. Important changes include:
+A bug was fixed in the parallel library that caused an application to hang if a collective read/write of a chunked dataset occurred when collective metadata reads were enabled and some of the ranks had no selection in the dataset’s dataspace.
+Enhanced support was added for using the cross compiling variables in CMake. However, only limited testing was done in this release, and it is not currently well documented.
+Default rpaths can now be added for loading dependent libraries without requiring LD_LIBRARY_PATH to be set.
+For detailed information on the new features and changes in this release, please see the release notes.

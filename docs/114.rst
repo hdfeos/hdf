@@ -1,0 +1,121 @@
+===================
+HDF Newsletter #114
+===================
+
+The HDF Group Home Page: http://hdfgroup.org/
+Helpdesk & Mailing Lists Info: http://hdfgroup.org/services/support.html
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #114
+ June 15, 2010
+
+CONTENTS
+
+ - Release of HDF5 1.8.5
+ - HDF and HDF-EOS Workshop XIV
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF5 1.8.5
+
+-------------------------------------------------------------------------------
+
+
+The HDF5 1.8.5 release is now available. Many thanks to the users on the
+HDF Forum who helped us with this release!
+
+HDF5 1.8.5 can be downloaded from:
+
+ http://www.hdfgroup.org/HDF5/release/obtain5.html
+
+This page can be accessed from The HDF Group Downloads page:
+
+ http://www.hdfgroup.org/downloads/
+
+The HDF5 1.8.5 documentation is located in:
+
+ http://www.hdfgroup.org/HDF5/doc/
+
+For information on HDF5, see the HDF5 home page:
+
+ http://www.hdfgroup.org/products/hdf5/index.html
+
+HDF5 1.8.5 is a minor release, but includes some important new features
+and several bug fixes.
+
+New features and changes in this release include the following:
+
+ - This release adds support for building HDF5 using CMake 2.8.1 (See
+ http://www.cmake.org/).
+
+ This is the first step in supporting CMake with HDF5. Only a subset of
+ the configuration features is available with CMake. The subset includes
+ the C, Fortran, C++ and High-Level shared and static libraries, and the
+ gzip and szip compression methods.
+
+ Initial work targets building on Windows only, but CMake can be used on
+ other platforms, as well. Please refer to the CMake.txt file in the
+ release_docs/ directory of the source code for more details on building
+ HDF5 with CMake.
+
+ We would like to thank John Biddiscombe and Michael Jackson for introducing
+ us to CMake, for contributing the code, fixing bugs and testing on different
+ platforms. We would also like to thank Sean McBride for testing HDF5 CMake
+ and Solomon Gibbs for sharing his private SZIP library distribution that
+ builds with CMake.
+
+ - Various "strict aliasing" problems were fixed in HDF5, allowing higher
+ levels of compiler optimization (in particular, allowing '-O3' to work
+ with recent versions of GCC).
+
+ - We substantially improved parallel and sequential performance when
+ extending a dataset with early allocation. This improvement reduces the
+ overhead (i.e. the time spent doing everything but writing to disk) by up
+ to 2 orders of magnitude.
+
+ - Packaging has changed for the pre-built binaries that are provided on
+ the obtain5.html page. The SZIP and ZLIB external libraries are now
+ included within the pre-built binaries to simplify using them. We also
+ provide RPMS for 32 and 64-bit Linux platforms. For information on
+ installing the RPMS, please see the README:
+
+ http://www.hdfgroup.org/ftp/HDF5/current/bin/RPMS/README
+
+ - Several fixes and changes have been made to the tools (h5diff, h5ls,
+ h5copy, h5repack and h5dump). Among them are improvements to the handling
+ of symbolic links and datasets with object and region references, and a new
+ feature to display bits packed into an integer.
+
+ - Several C++ changes are included.
+
+ - AIX 6.1 was added to the list of the tested platforms (sequential only).
+
+For more information, please refer to the RELEASE.txt file that is included
+in the source code. It can be accessed from The HDF Group web site here:
+
+ http://www.hdfgroup.org/ftp/HDF5/current/src/unpacked/release_docs/RELEASE.txt
+
+
+HDF and HDF-EOS Workshop XIV
+
+-------------------------------------------------------------------------------
+
+
+The fourteenth HDF and HDF-EOS Workshop has been announced.
+It will be held in the home city of The HDF Group, in Champaign, Illinois,
+from September 28th - 30th, 2010.
+
+For more information regarding the workshop, please visit the workshop
+web site:
+
+ http://www.hdfeos.org/workshops/ws14/workshop_fourteen.php
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ help@hdfgroup.org
+

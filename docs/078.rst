@@ -1,0 +1,105 @@
+==================
+HDF Newsletter #78
+==================
+
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #78
+ June 14, 2004
+
+CONTENTS
+
+-------------------------------------------------------------------------------
+
+. Flexible Parallel HDF5 Alpha1 Release * *
+
+ * Visit the HDF home page *
+ * for up-to-date information *
+ * *
+ * http://hdf.ncsa.uiuc.edu/ *
+ * *
+
+-------------------------------------------------------------------------------
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Flexible Parallel HDF5 Alpha1 Release
+
+-------------------------------------------------------------------------------
+
+
+The Alpha1 release of Flexible Parallel HDF5 (FPHDF5) is now available.
+It is a prototype implementation with limited features. Its purpose
+is to test the general concept and programming interface of the
+Flexible Parallel HDF5 API. You will find more design and implementation
+details on the following webpage:
+
+ http://hdf.ncsa.uiuc.edu/Parallel_HDF/PHDF5/FPH5/
+
+
+How to build
+------------
+Download:
+
+ ftp://hdf.ncsa.uiuc.edu/pub/outgoing/hdf5/FPH5/hdf5-1.7.24-fph5_alpha1.gz
+
+Untar it and follow the configure command in the next paragraph.
+
+If you need more detailed instructions on how to build the HDF5 software,
+you can read the file, README.txt, in the untarred directory and follow
+it from there.
+
+
+CONFIGURE
+---------
+
+.. code-block:: c
+
+   To configure the FPHDF5 feature, do the usual parallel HDF5
+   configure plus "--enable-fphdf5". E.g.,
+
+
+ env CC=mpicc ./configure --enable-parallel --enable-fphdf5
+
+
+Features Supported
+------------------
+
++ Create groups and datasets independently
++ Support fixed dimension datasets only
+
+
+Machines supported
+------------------
+LANL QSC
+LANL Theta
+LLNL Blue, Frost
+SNL Tflops
+Linux Mpich
+NCSA Coppper (AIX 5.1)
+
+
+PHDF5 Example Code
+------------------
+In the source directory, check out this file,
+ testpar/t_fphdf5.c
+
+
+Known problems
+--------------
+Limited up to 9 processes. Will fail when run with 10 or more processes.
+
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding this or other HDF issues, contact:
+
+ hdfhelp@ncsa.uiuc.edu
+

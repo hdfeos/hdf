@@ -1,0 +1,190 @@
+==================
+HDF Newsletter #71
+==================
+
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #71
+ February 10, 2003
+
+CONTENTS
+
+-------------------------------------------------------------------------------
+
+. Release of HDF5-1.4.5 * *
+
+ - New Features and Changes * Visit the HDF home page *
+ - Platforms Tested * for up-to-date information *
+ * *
+
+. Release of HDF5 High Level APIs * http://hdf.ncsa.uiuc.edu/ *
+
+ * *
+
+. Release of HDF Java Products 1.2 *******************************
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF5-1.4.5
+
+-------------------------------------------------------------------------------
+
+
+HDF5-1.4.5 is now available for download. You can obtain the
+HDF5-1.4.5 software from the HDF5 home page at:
+
+ http://hdf.ncsa.uiuc.edu/HDF5/
+
+The HDF5 documentation is included in the source code and can also
+be accessed from:
+
+ http://hdf.ncsa.uiuc.edu/HDF5/doc/
+
+This is a fully tested release. The configuration features supported
+in this release can be viewed at:
+
+ http://hdf.ncsa.uiuc.edu/HDF5/release/SuppConfigFeats.html
+
+
+New Features and Changes
+
+-------------------------------------------------------------------------------
+
+
+Important changes in HDF5 include:
+
+o The following platforms are now supported: AIX 5.1 (-64 bit) and Mac OS X.
+
+o The following compilers are now supported on Linux 2.4: The Portland
+ Group compilers (pgcc. pgf90, pgCC) and gcc (and g++) 3.2.
+
+o Several missing Fortran 90 APIs have been added to the library.
+
+o Numerous bug fixes and enhancements to Parallel HDF5 have been added.
+
+Numerous bugs have been fixed in the software, as well. Detailed information
+regarding changes to the software can be found in the RELEASE.txt that comes
+with the source code:
+
+ ftp://ftp.ncsa.uiuc.edu/HDF/HDF5/current/src/unpacked/release_docs/RELEASE.txt
+
+
+Platforms Tested
+----------------
+
+ AIX 5.1 (32 and 64-bit) C for AIX Compiler, Version 6
+ xlf 8.1.0.2
+ poe 3.2.0.11
+ Cray T3E sn6606 2.0.6.08 Cray Standard C Version 6.6.0.1.3
+ Cray Fortran Version 3.6.0.0.12
+ Cray SV1 10.0.1. 0 Cray Standard C Version 6.6.0.1.3
+ Cray Fortran Version 3.6.0.0.12
+ Cray T90IEEE 10.0.1.01u Cray Standard C Version 6.4.0.2.3
+ Cray Fortran Version 3.4.0.3
+ FreeBSD 4.7 gcc 2.95.4
+ g++ 2.95.5
+ HP-UX B.11.00 HP C HP92453-01 A.11.01.20
+ HP F90 v2.4
+ IRIX 6.5 MIPSpro cc 7.30
+ IRIX64 6.5 (64 & n32) MIPSpro cc 7.3.1.3m
+ F90 MIPSpro 7.3.1.3m (64 only)
+ Linux 2.4.18 gcc 3.2.1
+ g++ 3.2.1
+ Intel(R) C++ Version 6.0
+ Intel(R) Fortran Compiler Version 6.0
+ PGI compilers (pgcc, pgf90, pgCC) version 4.0-2
+ pgf90 3.2-4
+ OSF1 V5.1 Compaq C V6.4-014
+ Compaq Fortran X5.4A-1684
+ gcc version 3.0 for C++
+ SunOS 5.7 WorkShop Compilers 5.0 98/12/15 C 5.0
+ (Solaris 2.7) WorkShop Compilers 5.0 98/12/15 C++ 5.0
+ WorkShop Compilers 5.0 98/10/25
+ FORTRAN 90 2.0 Patch 107356-04
+ SunOS 5.8/32 Sun WorkShop 6 update 1 C 5.2 2000/09/11
+ (Solaris 2.8) Sun WorkShop 6 update 1 Fortran 95 6.1
+ Patch 109503-07 2001/08/11
+ Sun WorkShop 6 update 1 C++ 5.2 Patch
+ 109508-04 2001/07/11
+ SunOS 5.8/64 Sun WorkShop 6 update 1 C 5.2 2000/09/11
+ (Solaris 2.8) Sun WorkShop 6 update 1 Fortran 95 6.1
+ Patch 109503-07 2001/08/11
+ Sun WorkShop 6 update 1 C++ 5.2 Patch
+ 109508-04 2001/07/11
+ TFLOPS r1.0.4 v4.3.3 i386 pgcc Rel 3.1-4i with mpich-1.2.4 with
+ local modifications
+ IA-32 Linux 2.4.9 gcc 2.96
+ Intel(R) C++ Version 7.0
+ Intel(R) Fortran Compiler Version 7.0
+
+ IA-64 Linux 2.4.16 ia64 gcc version 2.96 20000731
+ Intel(R) C++ Version 7.0
+ Intel(R) Fortran Compiler Version 7.0
+ Windows 2000 (NT5.0) MSVC++ 6.0
+ DEC Visual Fortran 6.0
+ Windows XP .NET
+ Windows NT4.0 Code Warrior 6.0
+ MAC OS X Darwin 6.2
+ gcc and g++ Apple Computer, Inc. GCC
+ version 1161, based on gcc version 3.1
+
+
+
+Release of HDF5 High Level APIs
+
+-------------------------------------------------------------------------------
+
+
+The latest release of the HDF5 High Level APIs, which was tested
+using HDF5-1.4.5, is now available from:
+
+ http://hdf.ncsa.uiuc.edu/hdf5_hl/
+
+This is the first release of the HDF5 High Level APIs for which
+pre-compiled binaries are provided.
+
+The HDF5 High Level APIs are a set of functions built on top of the
+basic HDF5 library which define simple interfaces for some common
+operations and uses.
+
+The HDF5 HL library includes:
+
+ H5LT API: "higher-level" functions which create and read simple
+ datasets and attributes in a few calls.
+
+ H5IM API: Create and read HDF5 Images and Palettes
+
+ H5TB API: Create and read HDF5 Tables
+
+The HDF5 HL library requires the HDF5 library.
+
+
+Release of HDF Java Products 1.2
+
+-------------------------------------------------------------------------------
+
+
+The latest official release of the HDF Java Products built
+with HDF5-1.4.5 is now available. It can be downloaded from:
+
+ http://hdf.ncsa.uiuc.edu/hdf-java-html/
+
+Several new features have been added to HDFView with this release,
+including the ability to configure it with HDF4, HDF5, or both.
+It can also convert HDF4/HDF5 images to and from JPEG now. For a
+list of the new features in HDFView see the HDFView page at:
+
+ http://hdf.ncsa.uiuc.edu/hdf-java-html/hdfview/
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ hdfhelp@ncsa.uiuc.edu
+

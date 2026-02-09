@@ -1,0 +1,18 @@
+===================
+HDF Newsletter #195
+===================
+
+The HDF 4.2.16-2 release is now available from the HDF 4.2.16-2 download page on the HDF Support Portal. For information on HDF4, see the HDF4 page.
+A fix for HXsetdir in 4.2.16 (HDFFR-1607) introduced a new bug due to a flag not being reset. This has been fixed in this release (HDFFR-1609).
+The Java wrappers in 4.2.16 used the wrong macros when allocating and freeing memory for float and double arrays, which would lead to invalid pointer dereferences. In particular, this was a problem when using HDFView with HDF 4.2.16. The macros are now correct (GH #355).
+Fixed a NULL pointer access when using Vattach (HDFFR-1520).
+A small memory leak in the atom code is now fixed.
+Fixed several configure options that complicated building the Fortran wrappers.
+CMake: the "warnings as errors" scheme that prevented building the jackets.c file was removed.
+Autotools: -fallow-argument-mismatch is now set with GCC 10 and later
+Fixed the CMake generated pkg-config file which had the order and placement of the  libraries wrong. Also added support for debug library names.
+Specifying CC on the command line and --enable-production now works correctly in the Autotools.
+Several tests that previously reported "failed," yet did not cause 'make check' or CTest to fail, have been fixed. These were due to problems in the test programs, not library bugs.
+Many other small Autotools fixes and improvements
+Please see the full release notes for detailed information regarding this release including an extensive list of changes.
+We would like to hear from you about HDF4 (or our other projects!) We have added an area on our forum devoted to HDF4. Please let us know your needs, wants, and issues with HDF4.

@@ -1,0 +1,5 @@
+===================
+HDF Newsletter #197
+===================
+
+The HDFView 3.3.1 release is now available from the HDFView 3.3.1 download page. This release was built and tested with HDF 4.2.16 and HDF5 1.14.2.

@@ -1,0 +1,87 @@
+==================
+HDF Newsletter #89
+==================
+
+ December 15, 2006
+
+CONTENTS
+
+-------------------------------------------------------------------------------
+
+. The HDF Group (THG) Update * *
+
+ * Visit the THG home page *
+
+. Newsletter Address Change * for up-to-date information *
+
+ * *
+ * http://hdfgroup.org/ *
+ * *
+
+-------------------------------------------------------------------------------
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+The HDF Group (THG) Update
+
+-------------------------------------------------------------------------------
+
+
+As many of you are aware, The HDF Group (THG) separated from the
+University of Illinois' National Center for Supercomputing
+Applications and formed a not-for-profit corporation. Being
+an independent entity is critical to the long-term sustainability
+of the HDF technologies.
+
+THG's web site can be found at:
+
+ http://www.hdfgroup.org/
+
+As part of this spin-off, we are (slowly) moving the HDF/HDF5 software
+from the NCSA machines to systems of our own. For now, the HDF/HDF5
+software remains available from NCSA's FTP server; the software's move
+to THG's FTP servers will be announced in a future edition of this
+newsletter.
+
+Thank you for bearing with us through all of these changes.
+
+
+Newsletter Address Change
+
+-------------------------------------------------------------------------------
+
+
+Also as a part of the spin-off, the hdfnews@ncsa.uiuc.edu mailing list
+is moving.
+
+This message is the LAST newsletter to be sent to the
+hdfnews@ncsa.uiuc.edu address. The new mailing list for HDF news is:
+
+ news@hdfgroup.org
+
+The current hdfnews@ncsa.uiuc.edu subscription list will be moved to
+the new mailing list; you should NOT need to subscribe to the new
+list if you already receive the newsletter.
+
+This mailing list will ONLY be used to disseminate HDF news and
+related announcements. Users will not be able to send messages to
+this list. We will add a new list in the future enabling users to
+discuss HDF issues.
+
+To subscribe to this list send an empty message to:
+ news-subscribe@hdfgroup.org
+
+To unsubscribe send an empty message to:
+ news-unsubscribe@hdfgroup.org
+
+Thank you for all of your support and have a safe and happy
+holiday season!
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ help@hdfgroup.org
+

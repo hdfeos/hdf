@@ -1,0 +1,110 @@
+===================
+HDF Newsletter #160
+===================
+
+CONTENTS
+. Release of HDF5-1.10.2
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF5-1.10.2
+
+-------------------------------------------------------------------------------
+
+
+The HDF5-1.10.2 release is now available for download from:
+
+ https://www.hdfgroup.org/downloads/hdf5/
+
+The source code (only) can also be obtained from:
+
+ https://portal.hdfgroup.org/display/support/HDF5+1.10.2
+
+User documentation for HDF5-1.10 can be accessed here:
+
+ https://portal.hdfgroup.org/display/HDF5/
+
+This release contains several major new features and changes, including the following:
+
+ o Parallel HDF5 includes several improvements:
+
+ . Compressed datasets can now be written using the MPI I/O driver.
+ . Optimizations were added to improve performance of the HDF5 parallel open/close/flush operations.
+ . MPI I/O transfers now allow reading or writing of more than 2GB of data in a single I/O operation.
+
+ o The following vulnerabilities were addressed:
+
+ . CVE-2017-17505: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-17505
+ . CVE-2017-17506: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-17506
+ . CVE-2017-17508: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-17508
+ . CVE-2017-17509: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-17509
+
+ o The following changes were added to the HDF5 library:
+
+.. code-block:: c
+
+    . The H5F_LIBVER_V18 parameter can now be specified in the H5Pset_libver_bounds() function to
+    provide control over object creation and ensure that files are fully compatible with HDF5-1.8.
+
+
+ In addition, H5_LIBVER_LATEST is now set to H5F_LIBVER_V110. Please note that any applications
+
+.. code-block:: c
+
+    that call H5Pset_libver_bounds to specify the latest file format will use HDF5-1.10 as the
+    latest file format as of this release. (However, the h5format_convert utility can be used to
+    change the file format version, if need be.)
+
+
+ . The issue has been addressed where the path to VDS source files was interpreted (incorrectly)
+ as relative to the directory where the executable ran (HDFFV-9724). The location of the
+
+.. code-block:: c
+
+    source files can now be set with a function call or with an environment variable. For details,
+    see H5Pset_virtual, and the new APIs H5Pset_virtual_prefix and H5Pget_virtual_prefix.
+
+
+ . The H5DOread_chunk and H5Dget_chunk_storage_size functions were added to enable and support
+ reading a raw data chunk directly from a dataset in a file into a buffer.
+
+ . The H5Fget_eoa and H5Fincrement_filesize functions were added for retrieving and setting
+
+.. code-block:: c
+
+    a file's EOA/EOF. New options were also added to h5clear to do the same:
+
+    --filesize Print the file’s EOA and EOF
+    --increment=C Set the file’s EOA to the maximum of (EOA, EOF) + C for the file
+
+
+ . The H5FDdriver_query function was added to query a VFL driver for its feature flags when a file is not
+ available.
+
+ o Several changes to CMake were added:
+
+ . The minimum CMake version required was changed to 3.10.
+ . pkg-config file generation was added.
+ . The creation of h5cc and similar compile scripts in builds was added for Linux.
+
+ o C++ API wrappers and classes were added for link operations.
+
+ o Several Java wrappers were added.
+
+There are many other changes not listed here. Please see the release notes for details:
+
+ https://portal.hdfgroup.org/display/support/HDF5+1.10.2
+
+Also refer to the HDF5 Software Changes from Release to Release for HDF5-1.10:
+
+ https://portal.hdfgroup.org/display/HDF5/Software+Changes+from+Release+to+Release+for+HDF5-1.10
+
+Future Changes to Supported Compilers and Platforms
+
+-------------------------------------------------------------------------------
+
+
+Please be aware that after this release, we will be dropping support for VS 2013 and adding
+support for VS 2017.
+
+

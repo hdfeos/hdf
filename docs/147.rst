@@ -1,0 +1,95 @@
+===================
+HDF Newsletter #147
+===================
+
+To view from a browser see:
+ https://www.hdfgroup.org/newsletters/newsletter147.pdf
+
+-------------------------------------------------------------------------------
+
+The HDF Group Home Page: https://www.hdfgroup.org/
+Support Services: https://www.hdfgroup.org/services/
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #147
+ December 30, 2015
+
+CONTENTS
+
+ - Release of HDF5-1.10.0-alpha0
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF5-1.10.0-alpha0
+
+-------------------------------------------------------------------------------
+
+
+We are very pleased to announce the release of HDF5-1.10.0-alpha0. It can
+be obtained from The HDF Group Downloads page:
+
+ https://www.hdfgroup.org/downloads/
+
+It can also be obtained directly from:
+
+ https://www.hdfgroup.org/HDF5/release/obtain5110.html
+
+Documentation can be found in:
+
+ https://www.hdfgroup.org/HDF5/docNewFeatures/
+
+HDF5-1.10 is a major release containing many new features. The alpha0
+release contains some but not all of the features that will be in HDF5-1.10.
+More features will be added in upcoming alpha releases.
+
+PLEASE BE AWARE that the file format is not yet stable. DO NOT keep files
+until further notice.
+
+Following are the new features in the HDF5-1.10.0-alpha0 release:
+
+ o Concurrent Access to an HDF5 File: Single Writer / Multiple Reader (SWMR)
+
+ The Single Writer / Multiple Reader or SWMR feature enables users to read
+ data while concurrently writing it. Communications between the processes
+ and file locking are not required. An HDF5 file under SWMR access must
+ reside on a file system that complies with POSIX write() semantics.
+
+ o Virtual Dataset (VDS)
+
+ The VDS feature enables access to data stored in datasets in different
+ HDF5 files using the standard H5D interface without rewriting or
+ rearranging the data. Please note that the VDS feature can be used with
+ SWMR.
+
+ o Scalable Chunk Indexing
+
+ The indexing structure for chunked datasets has been changed to
+ significantly improve performance.
+
+ o Persistent Free File Space Tracking
+
+ Usage patterns when working with an HDF5 file sometimes result in wasted
+ space within the file. This can also impair access times when working with
+ the resulting files. The new file space management feature provides
+ strategies for managing space in a file to improve performance in both of
+ these arenas.
+
+We would greatly appreciate any feedback you might have regarding this release.
+Please send your comments to The HDF Helpdesk (help@hdfgroup.org). If sending a
+
+.. code-block:: fortran
+
+   bug report, please include a C example program that we can use to reproduce the
+   issue.
+
+
+Happy New Year!
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ help@hdfgroup.org
+

@@ -1,0 +1,7 @@
+===================
+HDF Newsletter #190
+===================
+
+We are very pleased to announce the release of HDF5 1.8.23, which can now be obtained from the HDF5 Download page. Information about this release can be found on the HDF5 1.8.23 release page, including a complete list of changes for this version in the Release Notes.
+Please be aware that this will be the last release for HDF5 1.8. We encourage users to move to HDF5 1.10 or HDF5 1.14. Please refer to the release schedule for future releases of these versions.
+HDF5 1.8.23 is a maintenance release with build system changes and updates and bug and issue fixes, including an issue with a memory leak. Please read the Release Notes for a comprehensive list of new features and changes. Although there are no changes to the APIs for this version, other changes that may affect maintainers of HDF5-dependent applications are listed on the HDF5 Software Changes from Release to Release page.

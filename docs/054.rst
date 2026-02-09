@@ -1,0 +1,79 @@
+==================
+HDF Newsletter #54
+==================
+
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #54
+ July 18, 2000
+
+
+CONTENTS
+
+-------------------------------------------------------------------------------
+
+. Release of Fortran 90 Prototype for * Visit the HDF home page *
+ HDF5-1.2.2 * for up-to-date information *
+
+ * *
+ * http://hdf.ncsa.uiuc.edu/ *
+
+-------------------------------------------------------------------------------
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of Fortran 90 Prototype for HDF5-1.2.2
+
+-------------------------------------------------------------------------------
+
+
+The latest version of the Fortran 90 prototype, tested with
+HDF5-1.2.2, is now available from the NCSA ftp server:
+
+ ftp://ftp.ncsa.uiuc.edu/HDF/HDF5/fortran/
+
+This prototype was tested on the following platforms:
+
+ DEC Alpha OSF1 version 4.0
+ IRIX64 6.5 (-64 bit option)
+ IRIX64 6.5 (-64 bit option) parallel -- NOT fully tested **
+ Linux RedHat 6.1, Kernel 2.2.12
+ Solaris 2.6 and 2.7
+
+ **The parallel IRIX64 6.5 version was ONLY tested for "proof of concept".
+
+Pre-compiled binaries are available for the platforms tested,
+under:
+
+ ftp://ftp.ncsa.uiuc.edu/HDF/HDF5/fortran/bin/
+
+The updated Reference Manual for the Fortran 90 API is also available:
+
+ http://hdf.ncsa.uiuc.edu/HDF5/doc_dev_snapshot/Fortran90.ProtoR1_2/
+
+In order to install and use this prototype, you must have the
+HDF5-1.2.2 and GZIP libraries installed. For your convenience we
+provide compiled GZIP libraries on the NCSA ftp server:
+
+ ftp://ftp.ncsa.uiuc.edu/HDF/gzip/
+
+The HDF5-1.2.2 software can be obtained from the HDF5 home page
+at:
+
+ http://hdf.ncsa.uiuc.edu/HDF5/
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ hdfhelp@ncsa.uiuc.edu
+
+
+

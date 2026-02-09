@@ -1,0 +1,114 @@
+==================
+HDF Newsletter #73
+==================
+
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #73
+ August 1, 2003
+
+CONTENTS
+
+-------------------------------------------------------------------------------
+
+. Release of HDF Java Products 1.3 * *
+
+ * Visit the HDF home page *
+
+. Data Corruption Bug in HDF5 * for up-to-date information *
+
+ * *
+
+. SGI IRIX64 and HP-UX 11.00 Support * http://hdf.ncsa.uiuc.edu/ *
+
+ * *
+
+-------------------------------------------------------------------------------
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF Java Products 1.3
+
+-------------------------------------------------------------------------------
+
+
+The latest release of the HDF Java Products, version 1.3,
+is now available for download from:
+
+ http://hdf.ncsa.uiuc.edu/hdf-java-html/
+
+This release was built and tested with HDF5-1.6.0.
+
+For a list of the new features that are available with HDFView
+in this release, see the HDFView page at:
+
+ http://hdf.ncsa.uiuc.edu/hdf-java-html/hdfview/
+
+
+Data Corruption Bug in HDF5
+
+-------------------------------------------------------------------------------
+
+
+There is a data corruption problem in HDF5-1.6.0 and previous releases
+which affects users who use the H5Pset_istore_k and H5Pget_istore_k
+functions to control B-trees for indexing chunked datasets. This feature
+has been disabled in the HDF5-1.4.5-post8 snapshot, and fixed in the
+HDF5-1.6.0-post* and development (HDF5-1.7*) snapshots. The fix required
+a slight change to the HDF5 format.
+
+The latest HDF5 snapshots can be downloaded from:
+
+ ftp://ftp.ncsa.uiuc.edu/HDF/pub/outgoing/hdf5/snapshots/
+
+Detailed Information:
+
+The HDF5 library provides API calls to control B-trees for indexing chunked
+datasets. The non-default 'K' value can be set up during file creation
+time and retrieved from the file creation property list by using the
+H5Pset_istore_k and H5Pget_istore_k functions.
+
+The HDF5 library (1.6.0 release and any earlier releases) has the
+following problem:
+
+When a non-default indexed storage B-tree internal 'K' value is set, the
+chunked datasets created in the file use the user's 'K' value. The data
+can be accessed correctly until the file is closed. After the file is
+closed, the non-default 'K' value is lost, since it is not stored in the
+file. This may cause data corruption for the chunked datasets with the
+non-default 'K' value.
+
+In HDF5-1.4.5-post8, the H5Pset_istore_k function will not allow the
+default 'K' value to be changed, so no error is generated. In the
+HDF5-1.6.0-post* and HDF5-1.7* snapshots, the library properly stores and
+uses the user-defined 'K' value.
+
+If your application uses non-default 'K' values for chunked datasets, we
+strongly recommend that you move to the next appropriate version of the
+library.
+
+
+SGI IRIX64 and HP-UX 11.00 Support
+
+-------------------------------------------------------------------------------
+
+
+We will be losing access to the SGI IRIX64 and HP-UX 11.00 machines
+that we use. If you have a machine running one of these platforms,
+and can give us an account on it, please let us know.
+
+
+-------------------------------------------------------------------------------
+
+
+For questions regarding these or other HDF issues, contact:
+
+ hdfhelp@ncsa.uiuc.edu
+
+

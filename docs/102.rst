@@ -1,0 +1,112 @@
+===================
+HDF Newsletter #102
+===================
+
+THG Home Page: http://hdfgroup.org/
+Helpdesk & Mailing Lists Info: http://hdfgroup.org/services/support.html
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #102
+ June 3, 2008
+
+CONTENTS:
+
+ . Release of HDF5 1.8.1
+ . Release of H4-H5 Conversion Software Version 2.0
+ . HDF5-OpeNDAP Handler Update
+ . ITT Visual Information Solutions and HDF5 Collaboration
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+Release of HDF5 1.8.1
+
+-------------------------------------------------------------------------------
+
+
+The HDF5 1.8.1 release is now available from the HDF5 home
+page:
+
+ http://www.hdfgroup.org/products/hdf5/index.html
+
+It can be downloaded from this page:
+
+ http://www.hdfgroup.org/HDF5/release/obtain5.html
+
+The documentation for 1.8.1 can be accessed from:
+
+ http://www.hdfgroup.org/HDF5/doc/
+
+HDF5 1.8.1 is a minor release with several bug fixes. The
+most significant change is the addition of an expanded set
+of Fortran90 APIs, enabling all the new C library features of
+release 1.8.0. See the following for details on these APIs:
+
+ http://hdfgroup.org/HDF5/doc/ADGuide/Changes.html
+
+Also, refer to the Release Notes for detailed information on
+this release:
+
+ ftp://ftp.hdfgroup.org/HDF5/current/src/hdf5-1.8.1-RELEASE.txt
+
+
+Release of H4-H5 Conversion Software Version 2.0
+
+-------------------------------------------------------------------------------
+
+
+A new release of the H4-H5 Conversion Software, version 2.0,
+is now available. This version was built with HDF5 1.8.1 and
+HDF 4.2r3. The H4toH5 Conversion Library, an element of the
+H4-H5 Conversion Software, has not changed.
+
+The software can be downloaded from:
+
+ http://hdfgroup.org/h4toh5/
+
+
+HDF5-OPeNDAP Handler Update
+
+-------------------------------------------------------------------------------
+
+
+The HDF5-OPeNDAP handler version 1.2.2 has been released through the
+OPeNDAP website at:
+
+ http://opendap.org/download/hdf5_handler.html
+
+The OPeNDAP software is a software framework that allows simple access to
+remote data. The HDF5-OPeNDAP handler allows remote HDF5 files and subsets
+of HDF5 files to be accessed locally. One can use the HDF5-OPeNDAP handler
+and OPeNDAP clients such as IDV, GrADS, Ferret, ncBrowse, Matlab, NCL, and
+ODC to visualize HDF-EOS5 Grid files.
+
+For more information, check the HDF5-OPeNDAP website at:
+
+ http://hdfdap.hdfgroup.uiuc.edu/joomla/
+
+
+ITT Visual Information Solutions and HDF5 Collaboration
+
+-------------------------------------------------------------------------------
+
+
+THG and ITT Visual Information Solutions (makers of IDL and ENVI) have
+begun a collaboration on the development of HDF functionality in IDL.
+ITT VIS (http://www.ittvis.com/) has provided THG with IDL software
+and licenses; THG will work with the ITT VIS technical staff to
+improve the process of integrating the new versions of the HDF software
+with IDL. ITT VIS and THG expect this collaboration to help HDF users who
+rely on the IDL software to get timely access to the improved HDF libraries.
+The collaboration will also allow THG to enable IDL clients to access HDF5
+files on remote servers via the OpenDAP protocol.
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other THG issues, contact:
+
+ help@hdfgroup.org
+

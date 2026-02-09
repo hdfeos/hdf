@@ -1,0 +1,20 @@
+===================
+HDF Newsletter #174
+===================
+
+May 15, 2020
+HDFView 3.1.1 is now available from the HDFView Download page:
+
+https://www.hdfgroup.org/downloads/hdfview/
+
+The HDFView source code is also available on the HDF Support Portal.
+
+This is a maintenance release with a few changes including:
+
+It was built and tested with HDF5-1.10.6, HDF 4.2.15, and Open JDK 11.
+The metadata information for NetCDF (3) files now displays properly under the “Get Object Info” tab.
+Binaries are provided for Linux, Mac, and Windows. The Mac binary is not signed.
+
+In future releases, Windows 7 will no longer be supported.
+
+Please contact help@hdfgroup.org if you have questions or issues regarding this release.

@@ -1,0 +1,74 @@
+===================
+HDF Newsletter #155
+===================
+
+To view from a browser see:
+ https://support.hdfgroup.org/newsletters/newsletter155.pdf
+
+-------------------------------------------------------------------------------
+
+The HDF Group Home Page: https://www.hdfgroup.org/
+Support Services: https://www.hdfgroup.org/support/
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #155
+ June 16, 2017
+
+CONTENTS
+ . Release of HDF5-1.8.19
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF5-1.8.19
+
+-------------------------------------------------------------------------------
+
+
+The HDF5-1.8.19 release is now available. It can be obtained from the
+HDF5 Download page:
+
+ https://www.hdfgroup.org/downloads/hdf5/
+
+It can also be obtained directly from:
+
+ https://support.hdfgroup.org/HDF5/release/obtain518.html
+
+HDF5-1.8.19 is a minor release with a few new features and changes. Important
+changes include:
+
+ o Several H5PL (C) APIs were added to manipulate the entries of the plugin
+ path table: H5PLappend, H5PLget, H5PLinsert, H5PLprepend, H5PLremove,
+ H5PLreplace, and H5PLsize.
+
+ o H5Dget_chunk_storage_size (C) was added to obtain the storage size of a
+ chunk in the file. This API was specifically added in support of
+ H5DOread_chunk, but may also be useful for other purposes.
+
+ o H5DOread_chunk (High Level C) was added to read a raw data chunk directly
+ from a dataset in a file, bypassing HDF5's internal data transfer pipeline,
+ including filters.
+
+ o Numerous C++ APIs were added or modified to better reflect the HDF5 model.
+
+ o Support was added for OpenMPI 2.0.1 compiled with GCC 4.9.3.
+
+This release contains many other changes that are not listed here. Please be
+sure to read the Release Notes for a comprehensive list of new features and
+changes:
+
+ https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8/hdf5-1.8.19/src/hdf5-1.8.19-RELEASE.txt
+
+Changes that affect maintainers of HDF5-dependent applications are listed on
+the HDF5 Software Changes from Release to Release page. See:
+
+ https://support.hdfgroup.org/HDF5/doc1.8/ADGuide/Changes.html
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ help@hdfgroup.org
+

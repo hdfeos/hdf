@@ -1,0 +1,158 @@
+==================
+HDF Newsletter #20
+==================
+
+ April 2, 1996
+
+
+HDF4.0r1 patch 01 is on the NCSA ftp server. Changes include:
+
+ 1. Port to the PowerPC/68k Macintosh using the MetroWerks
+ CodeWarrior(8) C compiler. The Fortran interface is not
+ available yet. In addition, the netCDF interface works
+ but currently you are unable to read old netCDF (XDR)
+ files. You need at least CW8 to use this version of the
+ library as previous versions had problems with the ANSI-C
+ memory allocation routines. Precompiled code and source
+ code can be found on the NCSA ftp server in:
+
+ /HDF/HDF4.0r1/hqx/.
+
+ As there was no HDF 4.0r1 release for the Macintosh, please
+ refer to the /HDF/HDF_Current/release_notes/ABOUT_4.0r1 file
+ as well as the /HDF/newsletters/Newsletter19.txt file on the
+ NCSA ftp server, for information on what has changed in this
+ release.
+
+ 2. Port to Windows NT/95 using Visual C++ 4.0. The Fortran
+ interface is not available yet. Precompiled code and
+ source code can be found on the NCSA ftp server in:
+
+ /HDF/HDF4.0r1/zip/.
+
+ As there was no HDF 4.0r1 release for Windows NT/95, please
+ refer to the /HDF/HDF_Current/release_notes/ABOUT_4.0r1 file
+ as well as the /HDF/newsletters/Newsletter19.txt file on the
+ NCSA ftp server for information on what has changed in this
+ release.
+
+ 3. A bug has been fixed on the SDS interface. Now the record
+ number will be updated for UNLIMITED dimensions when
+ ncsync (ncsnc) is called to write data to hdf files.
+
+ 4. A bug has been fixed in the UNLIMITED dimension record to
+ improve backward compatibility.
+
+ 5. An option to generate binary output has been added to
+ dumprig and dumpsds in hdp, the HDF dumper. It is in beta
+ test stage.
+
+ 6. Parameter 'class' in vffndcls() has been changed to 'vgclass'
+
+.. code-block:: c
+
+    to avoid conflicts with the C++ reserved word 'class'.
+
+
+ 7. All definitions for the names and classes of vdatas and
+ vgroups that are created by the GR or SD interfaces and
+ are used in hdf files have been moved to hdf/src/hlimits.h.
+ These names and classes are reserved by HDF.
+ Users' applications should not name their vdatas/vgroups
+ using these reserved words. Pre-defined attribute names
+ are included in hlimits.h as well.
+ A list of these reserved names (and classes) is attached
+ at the end of this newsletter.
+
+ 8. Other bug fixes.
+
+
+ Patch files are located in
+
+ /HDF/HDF4.0r1/patches/
+
+ For HDF 4.0r1 patch 01, the entire source distribution, including
+ the patch, is located in:
+
+ /HDF/HDF4.0r1/patches/patchedsrc/
+
+ The READMEs in these directories explain how to apply the patch.
+
+ HDF4.0r1 patch 01 has been tested on the Macintosh PowerPC and 68K,
+ HPUX, IRIX5.3, IRIX6.1_64, IRIX6.1_32, SunOS4.1.4, Solaris 2.5,
+ and Dec Alpha OpenVMS. Precompiled executables for these UNIX
+ (except IRIX6.1_32) and OpenVMS platforms in /HDF/HDF4.0r1/bin/
+ on the NCSA ftp server, have been updated to HDF4.0r1 patch 01. Due
+
+.. code-block:: c
+
+    to limited resources we do not plan to update the executables for
+    other platforms. If any user has problems compiling patch 01 on
+    other platforms please contact hdfhelp@ncsa.uiuc.edu. We will try
+    our best to work with you.
+
+
+
+Known problems:
+
+1. Hdp needs to be upgraded to dump objects created by the GR
+ and AN interfaces.
+
+.. code-block:: c
+
+   2. Fortran routines (for example vsfwrit) that have a parameter
+    that may be a character type or numeric type, do not work
+    correctly on some systems, such as VMS and T3D. This problem
+    will be corrected in the next release.
+   3. Some users indicated that the current limits on the number
+    of accessible files/objects and size of vdata fields
+    restricted their applications. These limits will be extended
+    in future releases and versions.
+
+
+------------- reserved names and classes ------------------------
+By GR interface
+
+Vdata/vgroup names and classes:
+
+"RIG0.0" -- name of the Vgroup containing all the images in GR
+"RI0.0" -- name of a Vgroup containing information about one image
+ in GR
+"RIATTR0.0N" -- name of a Vdata containing an attribute in GR
+"RIATTR0.0C" -- class of a Vdata containing an attribute
+
+Atrribute names:
+
+"FillValue" -- name of an attribute containing the fill value
+
+By SD interface
+
+Vdata/vgroup names and classes:
+
+"Attr0.0" -- class of a Vdata containing SD interface attribute
+"Var0.0" -- class of a Vgroup representing an SD NDG
+"Dim0.0" -- class of a Vgroup representing an SD dimension
+"UDim0.0" -- class of a Vgroup representing an SD UNLIMITED dimension
+"DimVal0.0" -- class of a Vdata containing an SD dimension size
+ and fake values
+"DimVal0.1" -- class of a Vdata containing an SD dimension size
+"CDF0.0" -- class of a Vgroup representing all SD SDSs in a file
+"Data0.0" -- defined but not used yet
+"VALUES" -- field name of a vdata which contains values of an
+ SD attribute
+
+Atrribute names:
+
+"_FillValue" -- user defined fill value
+"long_name" -- data/dimension label string
+"units" -- data/dimension unit string
+"format" -- data/dimension format string
+"coordsys" -- data coordsys string
+"valid_range" -- valid range of data values
+"scale_factor" -- data calibration factor
+"scale_factor_err" -- data calibration factor error
+"add_offset" -- calibration offset
+"add_offset_err" -- calibration offset error
+"calibrated_nt" -- data type of uncalibrated data
+
+

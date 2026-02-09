@@ -1,0 +1,157 @@
+===================
+HDF Newsletter #107
+===================
+
+The HDF Group Home Page: http://hdfgroup.org/
+Helpdesk & Mailing Lists Info: http://hdfgroup.org/services/support.html
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #107
+ May 15, 2009
+
+CONTENTS
+
+ . Release of HDF5 1.8.3
+ . Release of HDF5 1.6.9
+ . Status of HDF5 1.6
+ . Support Status of .NET 2003
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF5 1.8.3
+
+-------------------------------------------------------------------------------
+
+
+As of May 14th, the HDF5 1.8.3 release has been made available from the
+HDF5 home page.
+
+ PLEASE NOTE: If you downloaded the 1.8.3 software prior to May 14, 2009,
+ you may encounter some performance issues, as discussed in the following
+ document:
+
+ http://www.hdfgroup.org/HDF5/faq/mcacheconf.html
+
+ Please download the software again to ensure that you have the latest
+ officially released version.
+
+The HDF5 Home Page is located here:
+
+ http://www.hdfgroup.org/products/hdf5/index.html
+
+To download HDF5 1.8.3, see this page:
+
+ http://www.hdfgroup.org/HDF5/release/obtain5.html
+
+There are several new features and changes in HDF5 1.8.3,
+which include:
+
+ o The addition of new C functions (and some Fortran counterparts).
+
+ The following functions have been added to enable raw data chunk
+ cache properties to be set on a dataset access property list:
+
+ H5Pset_chunk_cache (h5pset_chunk_cache_f)
+ H5Pget_chunk_cache (h5pget_chunk_cache_f)
+ H5Dget_access_plist (h5dget_access_plist_f)
+
+ For further details, see the RFC:
+ http://www.hdfgroup.org/pubs/rfcs/RFC_chunk_cache_functions.pdf
+
+ The following functions have been added to allow greater flexibility
+ when traversing external links:
+
+ H5Pset_elink_cb
+ H5Pget_elink_cb
+ H5Pset_elink_acc_flags
+ H5Pget_elink_acc_flags
+
+ For further details, see the RFC, at:
+ http://www.hdfgroup.org/pubs/rfcs/RFC_elink_callback.pdf
+
+ Other new functions are:
+
+ H5Iis_valid (h5iis_valid_f)
+ H5set_free_list_limits
+
+ o API versioning was added to the H5Z_class_t structure. H5Z_class_t is
+ the structure used to define a user-defined filter. With this change,
+ it will be easier to migrate applications that use user-defined filters
+ to 1.8, and no changes to the code for registering the filter should be
+ necessary. HOWEVER, this can cause problems for existing applications
+ that link with the HDF5 1.8 library and use the 1.6 API, as H5Z_class_t
+ will now map to the old structure definition. This can be fixed by
+ modifying the code to take this into account, so the old version of the
+ structure is used whenever compiling against 1.8.3. It can also be fixed
+ by defining the macro H5Z_class_t_vers to 2 before including hdf5.h, to
+ force the library to use the newer H5Z_class_t regardless of the API
+ setting.
+
+ o The contents of the libhdf5.settings file has been embedded
+ into the hdf5 executables so that "orphaned" executables can
+ display (via the Unix strings command, for example) the library
+ settings used to build the executables.
+
+ o Many bug fixes
+
+
+Please refer to the Release Notes for a comprehensive list of new features
+and changes in this release:
+
+ http://www.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.8.3-RELEASE.txt
+
+
+
+Release of HDF5 1.6.9
+
+-------------------------------------------------------------------------------
+
+
+The HDF5 1.6.9 release is now available, and can be downloaded from
+the HDF5 Home Page, at:
+
+ http://www.hdfgroup.org/products/hdf5/index.html
+
+The download page for HDF5 1.6.9 is located here:
+
+ http://www.hdfgroup.org/HDF5/release/obtain516.html
+
+HDF5 1.6.9 is a minor release with a few new features and changes.
+Please refer to the Release Notes for a detailed list of what changed
+in this release:
+
+ http://www.hdfgroup.org/ftp/HDF5/current16/src/hdf5-1.6.9-RELEASE.txt
+
+
+
+Status of HDF5 1.6
+==================
+
+Please note that there will only be one more release of HDF5 1.6
+(version HDF5 1.6.10), due out in November 2009. Although it is
+not yet urgent to move to the HDF5 1.8 release, users are encouraged to
+
+.. code-block:: c
+
+   do so when possible.
+
+
+
+Support Status of .NET 2003
+
+-------------------------------------------------------------------------------
+
+
+HDF5 1.6.9 and HDF5 1.8.3 are the last HDF5 releases to
+support .NET 2003.
+
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ help@hdfgroup.org
+

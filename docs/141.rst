@@ -1,0 +1,62 @@
+===================
+HDF Newsletter #141
+===================
+
+To view from a browser see:
+ http://www.hdfgroup.org/newsletters/newsletter141.html
+
+-------------------------------------------------------------------------------
+
+The HDF Group Home Page: http://www.hdfgroup.org/
+Support Services: http://www.hdfgroup.org/services/
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #141
+ June 2, 2014
+
+CONTENTS
+ . Release of HDF-Java Products 2.10.1
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF-Java Products 2.10.1
+
+-------------------------------------------------------------------------------
+
+
+Version 2.10.1 of the HDF-Java Products is now available.
+This release was built with HDF 4.2.10 and HDF5-1.8.13 using jdk 1.7.x.
+
+HDF-Java 2.10.1 can be obtained from The HDF Group Downloads page:
+
+ http://www.hdfgroup.org/downloads/index.html
+
+It can also be downloaded directly from the HDF-Java Products Download page:
+
+ http://www.hdfgroup.org/products/java/release/download.html
+
+For more information on HDF-Java, see the HDF-Java Products Home page:
+
+ http://www.hdfgroup.org/products/java/index.html
+
+This is a minor release with no major changes in functionality. The most
+important changes in this release include:
+
+ Fixes and improvements for the handling of several datatypes (variable
+ length string (attributes), bit-field, unsigned 64-bit, H5T_ARRAY, region
+ references, and compound datatypes).
+
+For detailed information regarding platforms supported and changes in this
+release, please be sure to see the Release Notes:
+
+ http://www.hdfgroup.org/ftp/HDF5/releases/HDF-JAVA/hdf-java-2.10.1/src/unpacked/docs/RELEASE.txt
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ help@hdfgroup.org
+

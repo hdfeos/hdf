@@ -1,0 +1,266 @@
+==================
+HDF Newsletter #37
+==================
+
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #37
+ September 18, 1998
+
+CONTENTS
+
+-------------------------------------------------------------------------------
+
+Beta release of HDF5 version 1.1.0 * Visit the HDF home page *
+
+ - Changes Since the Second Alpha * for up-to-date information *
+ - Changes Since the First Alpha * on HDF: *
+ - Parallel HDF5 Changes * http://hdf.ncsa.uiuc.edu/ *
+ - Platforms Supported *******************************
+ - Release Information for Parallel HDF5
+
+HCR Tools Release 2.0v1.2
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Beta release of HDF5 version 1.1.0
+
+-------------------------------------------------------------------------------
+
+The HDF5 beta release version 1.1.0 is now available. The release
+distribution is located at:
+
+ ftp://hdf.ncsa.uiuc.edu/pub/dist/HDF5/
+
+The web-site for HDF5 is located at:
+
+ http://hdf.ncsa.uiuc.edu/HDF5/
+
+
+Changes Since the Second Alpha
+
+-------------------------------------------------------------------------------
+
+
+* Strided hyperslab selections in dataspaces are now working.
+
+* The compression API has been replaced with a more general filter
+ API. See Filters in the User's Guide for details.
+
+* Alpha-quality 2d ragged arrays are implemented as a layer built on
+ top of other hdf5 objects. The API and storage format will almost
+ certainly change.
+
+* More debugging support has been added including API tracing. See
+ Debugging in the User's Guide.
+
+.. code-block:: fortran
+
+   * C and Fortran style 8-bit fixed-length character string types are
+    supported with space or null padding or null termination and
+    translations between them.
+
+
+* The function H5Fflush() has been added to write all cached data
+ immediately to the file.
+
+* Datasets maintain a modification time which can be retrieved with
+ H5Gstat().
+
+* The h5ls tool can display much more information, including all the
+ values of a dataset.
+
+
+Changes Since the First Alpha
+
+-------------------------------------------------------------------------------
+
+
+* Two of the packages have been renamed. The data space API has been
+ renamed from `H5P' to `H5S' and the property list (template) API has
+ been renamed from `H5C' to `H5P'.
+
+* The new attribute API `H5A' has been added. An attribute is a small
+ dataset which can be attached to some other object (for instance, a
+ 4x4 transformation matrix attached to a 3-dimensional dataset, or an
+ English abstract attached to a group).
+
+* The error handling API `H5E' has been completed. By default, when an
+
+.. code-block:: c
+
+    API function returns failure an error stack is displayed on the
+    standard error stream. H5Eset_auto() controls the automatic
+    printing, and the H5E_BEGIN_TRY/H5E_END_TRY macros can temporarily
+    disable the automatic error printing.
+
+
+* Support for large files and datasets (>2GB) has been added. There
+ is an html document that describes how it works. Some of the types
+ for function arguments have changed to support this: all arguments
+ pertaining to sizes of memory objects are `size_t' and all arguments
+ pertaining to file sizes are `hsize_t'.
+
+* More data type conversions have been added although none of them are
+ fine tuned for performance. There are new converters from integer
+
+.. code-block:: fortran
+
+    to integer and float to float, but not between integers and floating
+    points. A bug has been fixed in the converter between compound
+    types.
+
+
+* The numbered types have been removed from the API: int8, uint8,
+ int16, uint16, int32, uint32, int64, uint64, float32, and float64.
+ Use standard C types instead. Similarly, the numbered types were
+ removed from the H5T_NATIVE_* architecture; use unnumbered types
+ which correspond to the standard C types like H5T_NATIVE_INT.
+
+* More debugging support was added. If tracing is enabled at
+ configuration time (the default) and the HDF5_TRACE environment
+ variable is set to a file descriptor then all API calls will emit
+
+.. code-block:: c
+
+    the function name, argument names and values, and return value on
+    that file number. There is an html document that describes this.
+    If appropriate debugging options are enabled at configuration time,
+    some packages will display performance information on stderr.
+
+
+* Data types can be stored in the file as independent objects and
+ multiple datasets can share a data type.
+
+* The raw data I/O stream has been implemented and the application can
+ control meta and raw data caches, so I/O performance should be
+ improved from the first alpha release.
+
+* Group and attribute query functions have been implemented so it is
+ now possible to find out the contents of a file with no prior
+ knowledge.
+
+* External raw data storage allows datasets to be written by other
+ applications or I/O libraries and described and accessed through
+ HDF5.
+
+* Hard and soft (symbolic) links are implemented which allow groups to
+ share objects. Dangling and recursive symbolic links are supported.
+
+* User-defined data compression is implemented although we may
+ generalize the interface to allow arbitrary user-defined filters
+ which can be used for compression, checksums, encryption,
+ performance monitoring, etc. The publicly-available `deflate'
+ method is predefined if the GNU libz.a can be found at configuration
+ time.
+
+* The configuration scripts have been modified to make it easier to
+ build debugging vs. production versions of the library.
+
+* The library automatically checks that the application was compiled
+ with the correct version of header files.
+
+
+Parallel HDF5 Changes
+
+-------------------------------------------------------------------------------
+
+
+* Parallel support has been added for fixed dimension datasets with
+ contiguous or chunked storage. Also, support has been added for
+ unlimited dimension datasets which must use chunk storage. When a
+ dataset is extended in a PHDF5 file, all processes that open the file
+
+.. code-block:: c
+
+    must collectively call H5Dextend with identical new dimension sizes.
+    No parallel support is included for compressed datasets.
+
+
+* Collective data transfer for H5Dread/H5Dwrite has been added.
+ For now, this only includes collective access support for fixed
+ dimension datasets with contiguous storage.
+
+* H5Pset_mpi and H5Pget_mpi no longer have the access_mode
+ argument. It is taken over by the data-transfer property list
+ of H5Dread/H5Dwrite.
+
+* New functions H5Pset_xfer and H5Pget_xfer have been added to handle the
+ specification of an independent or collective data transfer_mode
+ in the dataset transfer properties list. The properties
+ list can be used to specify data transfer mode in the H5Dwrite
+ and H5Dread function calls.
+
+
+Platforms Supported
+-------------------
+This release has been tested on UNIX platforms only; specifically:
+Linux, FreedBSD, IRIX, Solaris & Dec UNIX.
+
+
+Release Information for Parallel HDF5
+
+-------------------------------------------------------------------------------
+
+
+* Current release supports independent access to fixed dimension datasets
+ only.
+
+* The comm and info arguments of H5Cset_mpi are not used. All parallel
+ I/O are done via MPI_COMM_WORLD. Access_mode for H5Cset_mpi can be
+ H5ACC_INDEPENDENT only.
+
+* This release of parallel HDF5 has been tested on IBM SP2 and SGI
+ Origin 2000 systems. It uses the ROMIO version of MPIO interface
+ for parallel I/O supports.
+
+* Useful URL's.
+ Parallel HDF webpage: "http://hdf.ncsa.uiuc.edu/Parallel_HDF/"
+ ROMIO webpage: "http://www.mcs.anl.gov/home/thakur/romio/"
+
+.. code-block:: c
+
+   * Some to-do items for future releases
+    support for Intel Teraflop platform.
+    support for unlimited dimension datasets.
+    support for file access via a communicator besides MPI_COMM_WORLD.
+    support for collective access to datasets.
+    support for independent create/open of datasets.
+
+
+
+HCR Tools Release 2.0v1.2
+
+-------------------------------------------------------------------------------
+
+
+HDF Configuration Record (HCR) Tools Release 2.0v1.2 is freely avilable
+for public access. HCR is a tools suite that provides an easy interface
+to create, modify and access HDF-EOS files. This release has been
+upgraded to work with the latest official releases of the HDF-EOS library
+(2.3v1.00) and HDF library (v4.1r2). It has also been ported to the
+following platforms:
+
+solaris -- Sun4 SPARC running SunOS 5.5.
+irix6.2 -- SGI running IRIX version 6.2 n32-bit mode.
+hpux10.20 -- HP9000/755 running HP-UX 10.20.
+dig-unix -- DEC Alpha running Digital Unix v4.0.
+
+The software can be retrieved via anonymous ftp at the following
+URL: ftp://hdf.ncsa.uiuc.edu/pub/HCR/Software/HCR2.0v1.2.tar
+
+Untar the file and display the README file for installation instructions.
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+For questions regarding these or other HDF issues, contact:
+
+ hdfhelp@ncsa.uiuc.edu
+
+

@@ -1,0 +1,48 @@
+===================
+HDF Newsletter #157
+===================
+
+To view from a browser see:
+ https://support.hdfgroup.org/newsletters/newsletter157.pdf
+
+-------------------------------------------------------------------------------
+
+The HDF Group Home Page: https://www.hdfgroup.org/
+Support Services: https://www.hdfgroup.org/support/
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #157
+ July 27, 2017
+
+Release of HDFView 2.14 and HDF Java 3.3.2
+
+-------------------------------------------------------------------------------
+
+
+The HDFView 2.14 and HDF Java 3.3.2 release is now available. This release
+supports HDF5-1.8 and 32-bit object identifiers and was tested with
+HDF5-1.8.19 and HDF 4.2.13. It can be obtained from:
+
+ https://support.hdfgroup.org/downloads/index.html
+
+It can also be obtained directly from:
+
+ https://support.hdfgroup.org/products/java/release/download.html
+
+More information on this release can be found on the HDF Java home page:
+
+ https://support.hdfgroup.org/products/java/
+
+This is a maintenance release with a few bug fixes. It includes changes to
+the error exception handling in the HDF Java wrappers. These changes fix
+an issue affecting the display of HDF4 files in HDFView.
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ help@hdfgroup.org
+

@@ -1,0 +1,99 @@
+==================
+HDF Newsletter #62
+==================
+
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #62
+ September 18, 2001
+
+
+CONTENTS
+
+-------------------------------------------------------------------------------
+
+. The h4toh5 Library (alpha release) * Visit the HDF home page *
+. HDF5 High Level APIs (beta release) * for up-to-date information *
+
+ * *
+ * http://hdf.ncsa.uiuc.edu/ *
+ * *
+
+-------------------------------------------------------------------------------
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+The h4toh5 Library (alpha release)
+
+-------------------------------------------------------------------------------
+
+
+An alpha version of the h4toh5 library is now available.
+
+The h4toh5 library consists of a utility (h4toh5) for converting a
+whole HDF 4 file into an equivalent HDF5 file, as well as a set of C
+library routines that perform part or all of this conversion when called
+from a C program.
+
+The software can be obtained from:
+
+ ftp://ftp.ncsa.uiuc.edu/HDF/HDF5/h4toh5/h4toh5lib1.0alpha.tar
+
+The HDF4 to HDF5 Library Home page is located at:
+
+ http://hdf.ncsa.uiuc.edu/h4toh5/libh4toh5.html
+
+A User's Guide and Reference Manual can be obtained from this page.
+
+
+HDF5 High Level APIs (beta release)
+
+-------------------------------------------------------------------------------
+
+
+A beta version of the HDF5 High Level APIs is available from:
+
+ http://hdf.ncsa.uiuc.edu/HDF5/hdf5_hl/
+
+.. code-block:: c
+
+   The HDF5 High Level APIs consist of higher-level functions which do more
+   operations per call than the basic HDF5 interface. The purpose is
+   to simplify and standardize operations within HDF5.
+
+
+There are currently two APIs:
+
+HDF5 Lite (HDF5LT):
+
+.. code-block:: c
+
+    Consists of general higher level functions which do more operations
+    per call than the basic HDF5 interface. This version of the API
+    has two sets of functions - dataset and attribute related functions.
+
+
+HDF5 Image API (HDF5IM):
+ Defines a standard storage for HDF5 datasets that are intended to
+ be interpreted as images. The specification for this API is
+ presented in another document: "HDF5 Image and Palette Specification".
+ This version of the API is primarily concerned with two dimensional
+ raster data similar to HDF4 Raster Images. The HDF5 Image API uses
+ the HDF5 Lite functions.
+
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ hdfhelp@ncsa.uiuc.edu
+
+

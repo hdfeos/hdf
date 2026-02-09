@@ -1,0 +1,116 @@
+==================
+HDF Newsletter #88
+==================
+
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #88
+ July 18, 2006
+
+CONTENTS
+
+-------------------------------------------------------------------------------
+
+. Corruption Bug in HDF5 * *
+
+ * Visit the HDF home page *
+
+. Release of HDF5-1.8.0 Alpha 4 * for up-to-date information *
+
+ * *
+
+. Any Interest in C# ? * http://hdf.ncsa.uiuc.edu/ *
+
+ * *
+
+-------------------------------------------------------------------------------
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+Corruption Bug in HDF5
+
+-------------------------------------------------------------------------------
+
+
+An extremely rare corruption problem has been discovered in the HDF5-1.6.5
+and earlier releases, as well as in the HDF5-1.8.0 Alpha 1-3 releases.
+After attributes are added and deleted more than once, an incorrect count
+of the number of messages may get recorded in an object header.
+
+If you open an object and receive errors similar to the following, then
+that object has been affected by this problem:
+
+ "unable to load entry"
+or
+ "corrupt object header - too few messages"
+
+A tool is available for fixing this problem. The source code for this tool
+and a few binaries (for AIX, Linux, Solaris, and Windows) can be obtained
+from the following location:
+
+ ftp://ftp.ncsa.uiuc.edu/HDF/HDF5/special_tools/
+
+This problem has been fixed in the HDF5-1.8.0 Alpha 4 release and
+the HDF5-1.6.6-snap0 development snapshot. This release and snapshot
+have not been tested on all supported platforms. Please refer to the
+RELEASE.txt file that comes with them for more information on this problem.
+
+The 1.6.6-snap0 snapshot can be obtained from:
+ ftp://ftp.ncsa.uiuc.edu/HDF/pub/outgoing/hdf5/snapshots/
+
+Information on the 1.8.0 Alpha 4 release is described below.
+
+Please contact the HDF Helpdesk if you have any questions or concerns
+regarding this issue.
+
+
+Release of HDF5-1.8.0 Alpha 4
+
+-------------------------------------------------------------------------------
+
+
+The HDF5-1.8.0 Alpha 4 release is available from:
+
+ http://hdf.ncsa.uiuc.edu/HDF5/release/alpha/obtain518.html
+
+Please refer to the following document for what is new in the Alpha
+releases:
+
+ http://hdf.ncsa.uiuc.edu/HDF5/doc_1.8pre/WhatsNew180.html
+
+The RELEASE.txt file for 1.8.0 Alpha 4 is available at:
+
+ ftp://ftp.ncsa.uiuc.edu/HDF/pub/outgoing/hdf5/hdf5-1.8.0-pre/hdf5-1.8.0-alpha4-RELEASE.txt
+
+Note that the corruption problem described in the section above IS fixed
+in this release.
+
+
+Any Interest in C# API ?
+
+-------------------------------------------------------------------------------
+
+
+If you are interested in a C# API for HDF5, please let us know.
+
+A few users have asked about this, and we want to determine what the
+level of interest is among all HDF5 users.
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ hdfhelp@ncsa.uiuc.edu
+or
+ help@hdfgroup.org
+
+

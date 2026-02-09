@@ -1,0 +1,109 @@
+==================
+HDF Newsletter #77
+==================
+
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #77
+ April 19, 2004
+
+CONTENTS
+
+-------------------------------------------------------------------------------
+
+. New Release of High Level APIs * *
+
+ * Visit the HDF home page *
+
+. Release of HDF Java Products version 2.0 * for up-to-date information *
+
+ * *
+ * http://hdf.ncsa.uiuc.edu/ *
+ * *
+
+-------------------------------------------------------------------------------
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+New Release of High Level APIs
+
+-------------------------------------------------------------------------------
+
+
+A new release of the HDF5 High Level APIs is now available for
+download from the following page:
+
+ http://hdf.ncsa.uiuc.edu/HDF5/hdf5_hl/
+
+This version was fully tested with HDF5-1.6.2.
+
+Pre-compiled binaries for many of the platforms we support are
+available from this page.
+
+Please note that with this release, several read/write functions in
+
+.. code-block:: c
+
+   the Table API were changed to include an extra parameter.
+
+
+
+
+Release of HDF Java Products version 2.0
+
+-------------------------------------------------------------------------------
+
+
+A new release of the HDF Java Products, version 2.0, was
+released in March. This version was tested with HDF5-1.6.2.
+The HDF Java Products can be downloaded from the following
+page:
+
+ http://hdf.ncsa.uiuc.edu/hdf-java-html/
+
+The main difference with this version is that HDFView is built
+with replaceable I/O and GUI modules. It consists of several
+interfaces that enable users to write and use alternative
+implementations to replace default modules. The current
+replaceable modules include:
+
+ File I/O
+ Image View
+ Table View
+ Metadata View
+ Tree View
+ Palette View
+
+For detailed information regarding "Modular" HDFView, see the
+following page:
+
+ http://hdf.ncsa.uiuc.edu/hdf-java-html/hdfview/
+
+Bug fixes and a few other new features are also included with this
+release.
+
+This release was tested and supports the following platforms:
+
+ Windows (98/NT/2000/XP)
+ Solaris
+ Linux
+ AIX
+ IRIX 6.5
+ Mac OSX
+ OSF1
+
+
+-------------------------------------------------------------------------------
+
+
+For questions regarding these or other HDF issues, contact:
+
+ hdfhelp@ncsa.uiuc.edu
+
+

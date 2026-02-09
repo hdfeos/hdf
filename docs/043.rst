@@ -1,0 +1,179 @@
+==================
+HDF Newsletter #43
+==================
+
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #43
+ August 5, 1999
+
+CONTENTS
+
+. Release of HDF5 version 1.2.0 Beta
+
+ - New Features and Changes *******************************
+ - Platforms Supported * Visit the HDF home page *
+ * for up-to-date information *
+
+. Release of HDF5.0 Beta Image Conversion * on HDF: *
+ Tools * http://hdf.ncsa.uiuc.edu/ *
+
+-------------------------------------------------------------------------------
+
+. HDF 4.1r3: AIX 4.3 Support
+
+. HDF 4.1r3: Codewarrior 4 support
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+Release of HDF5 version 1.2.0 Beta
+
+-------------------------------------------------------------------------------
+
+
+HDF5 version 1.2.0 Beta is now available. You can download this
+from the NCSA ftp server at:
+
+ ftp://ftp.ncsa.uiuc.edu/HDF/HDF5/hdf5-1.2.0beta/
+
+
+New Features and Changes:
+
+-------------------------------------------------------------------------------
+
+
+o Many changes to datatypes have been added, including support for
+ new datatypes (variable-length, bitfield, opaque, enumeration),
+ optimizations to compound datatypes, and new functions
+ for optimized conversions for native datatypes.
+
+o Several changes to data spaces have been made. New query functions
+ for selections have been added and performance has been improved.
+
+o HDF5 is now supported on the Cray T3E and Windows NT.
+
+o Enhancements have been made to the parallel I/O support, which
+ include improved performance and support for new platforms
+ (Cray T3E, Linux, and the DEC Cluster).
+
+o Numerous changes to the configuration have been added, in
+ support of MPI-IO, more compilers, shared libraries, and new
+ platforms.
+
+o Object (serial and parallel) and dataset region (serial only)
+ references have been implemented.
+
+o Enhancements have been made to the hdfls and h5dump tools, and
+ the h5toh4 converter has been added.
+
+o The control and redirection of debugging and tracing messages
+ have been improved.
+
+o The documentation has been improved and more examples have been
+ added.
+
+Please refer to the RELEASE file at the top of the HDF5 source
+code tree for further details on changes in this release.
+
+
+Platforms Supported:
+-------------------
+ AIX 4.3.2
+ Cray T3E v2.0.4.61
+ FreeBSD v3.2
+ HP-UX v10.20
+ IRIX v6.5
+ IRIX64 v6.5 (-64 and -n32)
+ Linux (SuSE and RedHat)
+ OSF1 v4.0
+ Solaris v2.6
+ Solaris x86 v2.5.1
+ TFLOPS v1.0.4
+ Windows NT (MSVC++ 5.0 and 6.0)
+
+
+Release of HDF5.0 Beta Image Conversion Tools
+
+-------------------------------------------------------------------------------
+
+
+A beta version of the HDF5.0 Image Conversion suite of tools is
+now available. These tools are the first to implement the new
+HDF5 image and palette specifications. The conversion suite of
+tools convert data from other formats into HDF5. The format
+converters include GIF '87 & '89, TIFF 6.0, PPM, and PGM. The
+latter two will convert from the Poskanzer suite of image
+converters, which opens up interchange to a great many more
+formats.
+
+These can be downloaded from the NCSA ftp server at:
+
+ ftp://ftp.ncsa.uiuc.edu/HDF/HDF5/tools/
+
+
+
+HDF 4.1r3: AIX 4.3 support
+
+-------------------------------------------------------------------------------
+
+
+HDF 4.1r3 supports AIX 4.3. The pre-compiled binaries for
+AIX 4.3 can be downloaded from the NCSA ftp server at:
+
+ ftp://ftp.ncsa.uiuc.edu/HDF/HDF/HDF_Current/bin/aix/
+
+To build HDF on AIX 4.3, you must obtain not only the
+HDF 4.1r3 source code, but the fixed 'hdfi.h' file available
+from the patches/ directory:
+
+ HDF 4.1r3 source code:
+ ftp://ftp.ncsa.uiuc.edu/HDF/HDF/HDF_Current/tar/
+
+ New 'hdfi.h' file:
+ ftp://ftp.ncsa.uiuc.edu/HDF/HDF/HDF_Current/patches/aix4.3/
+
+Replace the ./HDF4.1r3/hdf/src/hdfi.h file in the source code with
+this new version.
+
+
+HDF 4.1r3: Codewarrior 4 Support
+
+-------------------------------------------------------------------------------
+
+
+HDF 4.1r3 has been tested on the Macintosh Power PC running
+MacOS 8.5.1 with MetroWerks Codewarrior 4. We provide the
+pre-compiled binaries and project files for Codewarrior 4
+on the NCSA ftp server at:
+
+ ftp://ftp.ncsa.uiuc.edu/HDF/HDF/HDF_Current/hqx/CW4/
+
+To build HDF with Codewarrior 4, you need to download the
+Macintosh source code, in addition to the project files:
+
+ HDF 4.1r3 Macintosh Source Code:
+ ftp://ftp.ncsa.uiuc.edu/HDF/HDF/HDF_Current/hqx/4.1r3_mac.src.hqx
+
+ Codewarrior 4 Project Files:
+ ftp://ftp.ncsa.uiuc.edu/HDF/HDF/HDF_Current/hqx/CW4/CW4Projects.sea.hqx
+
+Please refer to the CW4Projects.txt file for further details on
+building HDF with Codewarrior 4:
+
+ ftp://ftp.ncsa.uiuc.edu/HDF/HDF/HDF_Current/hqx/CW4/CW4Projects.txt
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ hdfhelp@ncsa.uiuc.edu
+
+

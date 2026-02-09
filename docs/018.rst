@@ -1,0 +1,225 @@
+==================
+HDF Newsletter #18
+==================
+
+ Nov. 17, 1995
+
+Contents
+
+ . HDF4.0b2 release
+ . HDF<-->FITS converter
+ . BIGHDF
+ . Contributions
+ . Collage1.3.1
+ . Mosaic 2.7b2
+ . New HDFers
+
+
+HDF4.0b2 release
+----------------
+ HDF4.0b2 is now available on the NCSA ftp server, ftp.ncsa.uiuc.edu, in
+ /HDF/HDF4.0.beta/.
+
+ Important changes:
+ The mfhdf side library has been renamed to libmfhdf.a
+ Gzip compression has been added, including the gzip library libz.a
+ To link with HDF4.0b2 libraries, you need to include
+ libmfhdf.a, libdf.a, libjpeg.a and libz.a. The order
+ is important.
+ A new version of dimension record has been implemented, making it
+ possible to store an SDS without requiring dimension scales.
+ SGI Power Challenge running IRIX6.1 is fully supported.
+ Bug fixes.
+
+ New features:
+ GR interface supports different methods of interlacing images
+ in memory.
+ Gzip library support
+ Unified configuration of library
+ I/O performance improvements
+ Space savings, especiall for 1-D arrays by not requiring
+ dimension scales
+ Pablo performance measurement software has been integrated into
+ the HDF library, making it possible to capture performance
+ information.
+
+ New functions added:
+ Fortran functions hxscdir and hxsdir for external file access.
+ SDsetdimval_comp to set compatibility mode for a dimension
+ SDisdimval_bwcomp to get compatibility mode for a dimension
+
+
+ See ABOUT_4.0b2 in HDF4.0b2/release_notes/ for more details about
+ each item listed above.
+
+HDF<-->FITS converter
+
+-------------------------------------------------------------------------------
+
+ The NCSA HDF group is working with Don Jennings, Bill Pence
+ and others on mapping between HDF and FITS. Our ultimate goal
+ is to be able to convert all HDF objects to FITS and vice
+ versa, making it possible to acess FITS files with HDF
+ software and vice versa. This work has two parts: HDF to
+ FITS(HDF2FITS) mapping and FITS to HDF(FITS2HDF) mapping.
+ For more infomation see the "HDF and FITS Conversion Information
+ Page", URL:
+
+	http://hdf.ncsa.uiuc.edu:8001/fits
+
+
+BigHDF: A next-generation HDF?
+
+-------------------------------------------------------------------------------
+
+ HDF is showing its age. A lot of applications seriously
+ push the limits of HDF's capabilities, in terms of the sizes
+ of objects and files that then need to create and access,
+ the number of objects that can be stored in an HDF file,
+ the appropriateness and generality of the HDF object types, in
+ performance, and in other ways. For some time, the HDF group
+ has been thinking about what it would take to completely overhaul
+ HDF, to see if we can come up with a new HDF that is reasonably
+ compatible with the current HDF and at the same time addesses
+ the requirements of the 90's and beyond.
+
+ With the help of some NASA funding, we have come up with a proposal
+ for a prototype for a next generation HDF, which we have codenamed
+ "BigHDF." BigHDF would be completely new in every respect, but it
+ would be implemented in such a way as to maintain compability with
+ older versions of HDF.
+
+ We would now like to go public with our ideas, both to let you know
+ what we are up to and to solicit your comments and suggestions. If
+ all goes according to plan, we will create a prototype of BigHDF
+ in 1996.
+
+ With BigHDF, we try to address the following needs that the
+ current HDF doesn't address or doesn't address well:
+
+ * A need to store very large objects (>2 GB)
+ * A need to store large numbers of objects (>20K)
+ * A need for more general, flexible data models
+ * Performance improvements
+ * Compatibility with OODBs and distributed object technologies
+
+ Here are some features of BigHDF, as currently proposed:
+
+ It will support a new data model, with a single, unified object
+ type from which the current objects (raster, SDS, Vdata, etc) can
+ be derived. The single object type will be a multidimensional
+ array of a given data type. Data types will include the usual
+ scalar types, some new scalar types (date, time, complex, pointers),
+ and a composite (record structure) type. Each object will have
+ a user-defined attribute list, and special storage options,
+ including the current compressed, linked-block and external
+ storage options, plus some new ones such as chunked storage,
+ and possibly indexed storage.
+
+ The file format will also be different. Instead of creating
+ objects out of many little pieces, each with its own tag/ref,
+ BigHDF will have only one type of object, as described above,
+ and most of the information used to describe the object will
+ be contained in a header record. Instead of identifying objects
+ with tag/ref pairs, an object identifier will be used to identify
+ objects.
+
+ We are just finishing a draft specification for BigHDF, which we
+ will publish on the HDF Web page soon. Have a look at it and
+ let us know what you think.
+
+Contributions
+-------------
+ AipsView -- AipsView is a tool for visual data analysis built at
+ NCSA with support from the NSF/ARPA Grand Challenge
+ project in Radio Astronomy Imaging, and in cooperation
+ with the AIPS++ programming project.
+ AipsView takes FITS image files (including blanked pixels)
+ as input. It can also read single-SDS files written in
+ the HDF format.
+
+ For more information please see the AipsView information
+ page at:
+
+	 http://monet.ncsa.uiuc.edu/AipsView
+
+ HDIFF -- HDIFF is a utility that performs a quick check of two similar
+ HDF files. Gary Fu, gfu@shark.gsfc.nasa.gov, contributed
+ HDIFF. HDIFF is in /HDF/contrib/hdiff/ on the NCSA ftp
+ server. (ftp.ncsa.uiuc.edu)
+
+ LinkWinds version 2.1 -- The Linked Windows Interactive Data System
+ (LinkWinds) is contributed by the LinkWinds Development Task
+ at NASA/JPL. LInkwinds is "a visual data exploration system
+ which has served as a testbed and prototyping environment
+
+.. code-block:: fortran
+
+    for a NASA/JPL program of research into graphical methods
+    for rapidly and interactively accessing, displaying and
+    analyzing large multivariate multidisciplinary datasets."
+    LinkWinds 2.1 is in /HDF/contrib/LinkWinds/ on the NCSA
+    ftp server.
+
+
+ NCSA Reformat -- after adding conversions from HDF to TIFF, GIF,
+ X window dumps, Sun and raw raster, Xinjian Lu recently
+ added HDF to FITS conversion capability to REFORMAT.
+ The new version is in /HDF/contrib/NCSA/reformat on the
+ NCSA ftp server.
+
+Collage1.3.1b1
+--------------
+ Collage1.3.1b1 is now available on the NCSA ftp server, ftp.ncsa.uiuc.edu,
+ in subdirectory /Visualization/Collage/Unix/Collage1.3.1b1/. New features
+ of the Collage1.3.1b1 were listed in HDF Newsletter17.txt, which is
+ in /HDF/newsletters/ on the NCSA ftp server. Here we only repeat the new
+ features of the HDF browser.
+
+ The HDF browser in Collage1.3.1b1 allows users to look at different
+ attributes of an HDF data set by selecting them with toggle buttons using
+ the mouse. There is a new toggle frame containing the most frequently used
+ 6 attributes: name, long_name, valid_max, valid_min, format, unit, and the
+ tag and reference number of the data set. There are also a "Default" toggle
+ button that displays both tag and ref when pressed, and an "All" toggle
+ button that displays all the attributes listed above when pressed.
+ The layout of the browser needs more work, and the tag values are not
+ displayed correctly. These problems will be fixed in future release.
+
+Mosaic 2.7b2
+------------
+ Mosaic 2.7b2 has been released, and 2.7b3 will be released soon.
+ Many new features have been added in 2.7b2, including:
+ . HDF long_name can be displayed along with the SDS (variable) name.
+ This display can be turned on by using the resource Mosaic*hdfLongName.
+
+	Mosaic -xrm "Mosaic*hdfLongName: True" &
+
+ . All save dialogs now have a default filename
+ . New features in ftp
+ . MD5 Authentication
+ . Kerberos 4 & 5 Authentication
+ . Security Icon
+ . Postscript Printing routines have changed
+ . PNG Graphics Format is support as an in-line image format
+ . E-Mail and News Signatures
+ . other new features
+
+New HDFers
+----------
+
+Xinjian Lu, a visitor from Beijing, People's Republic of China
+ joined HDF group last August. He is now working on FITS to HDF
+ converters and a FITS web browser. He also added conversion
+ functions into NCSA Reformat to convert files from HDF format
+ to other formats.
+
+ReuyHsia Li, a Ph. D. candidate of Computer Science, joined HDF
+ group last September. She is now working on distributed HDF,
+ and currently is implementing a prototype HDF that runs on
+ a network of workstations.
+
+Vivian Gray McElroy is the youngest new member of HDF. Vivian is
+ the first child of Diana McElroy and Jeffery Gray. Vivian was
+ born at 1:37 pm on September 11th. She is two months and seven
+ days old now.

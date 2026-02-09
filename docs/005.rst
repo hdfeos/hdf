@@ -1,0 +1,477 @@
+=================
+HDF Newsletter #5
+=================
+
+Contents:
+
+ To transpose or not to transpose? (We need your help)
+
+ HDF 3.2 beta
+ A. How HDF 3.2 is different from HDF 3.1
+
+ 1. SDS enhancements
+ 2. New conversion routines
+ 3. Complete new set of general purpose routines.
+ 4. Emulation of previous general purpose interface
+ 5. Inclusion of the Vset calling interface
+ 6. Test modules.
+ 7. Naming conventions
+ B. Getting HDF 3.2 beta
+ C. Work to do, problems to solve, and things to decide
+
+ Calibration Tag
+
+-------------------------------------------------------------------------------
+
+
+ To transpose or not to transpose?
+ (We need your help)
+
+Background
+
+HDF3.1 release 5 and earlier releases store SDS arrays in HDF
+files in "row major order" by default. ("Row major order"
+refers to the fact that two-dimensional arrays are stored "a
+row at a time," each row occupying a contiguous block of
+storage.) The C language follows this convention in its
+internal storage of arrays as well, which means that a C call
+
+.. code-block:: c
+
+   to an HDF SDS routine like DFSDadddata simply streams the
+   data as is to the HDF file.
+
+
+But Fortran does not follow this convention in its internal
+storage of arrays. Fortran stores arrays in "column major
+
+.. code-block:: fortran
+
+   order." When a Fortran program calls DFSDputdata to write an
+   array to an HDF file the data must be transposed.
+   Similarly, when a Fortran program calls DFSDgetdata, it
+   transposes the data so that it is stored in the original
+   order.
+
+
+This approach seemed reasonable when we first designed the
+SDS interface, because it was a way of keeping rows and
+columns consistent, no matter which language was used. But,
+as many users have suggested, this was not always true,
+especially when arrays of higher dimension were involved. By
+second-guessing how users "view" arrays, HDF often imposes an
+order on them that is not intended. Furthermore, when higher
+dimensions are involved, transposing can rearrange data in
+ways that make it very hard for a user to understand it.
+
+A second problem caused by transposing data is that it takes
+time. For large data sets this slows down reading and
+writing substantially. Some HDF users have found that they
+must turn off transposing because they simply cannot tolerate
+the additional time it takes.
+
+The proposed change
+
+In a nutshell, we are proposing that the SDS interface no
+longer transpose arrays that are read from or written to HDF
+files by Fortran programs.
+
+The main negative implication to this, we believe, is that
+some older programs assume transposing and have code to
+accommodate for it, and these programs will have to be
+revised. The positive implications are (1) that users know
+that what goes into an HDF file maps directly to what they
+have stored in memory, and (2) performance for large datasets
+is improved enormously.
+
+
+What we need from you
+
+Let us know if you care about this issue one way or the
+other. If you want to play with a version of HDF that does
+not transpose, get the file README.notranspose in
+outgoing/hdf3.2 on the ftp server (ftp.ncsa.uiuc.edu; IP
+address 141.142.20.50).
+
+We plan to wait and see what the reaction is from our users,
+and then we will decide whether to make this important
+change. Our schedule calls for us to release HDF 3.2 in May
+sometime, and we might want to make the change with that
+release, if we make it. So let us know within the next few
+weeks if you have an opinion about it.
+
+
+-------------------------------------------------------------------------------
+
+
+
+ HDF 3.2 beta
+
+On March 1, we put a new version of HDF on the ftp server
+(ftp.ncsa.uiuc.edu; IP address 141.142.20.50) in the
+directory HDF/HDF3.2beta. This version is a result of a
+
+.. code-block:: c
+
+   joint software development effort between NCSA and the
+   Information Technologies Institute of Singapore, with a lot
+   of additional support from Phillips Petroleum. It represents
+   a major overhaul of HDF, and gives a good foundation for
+   future HDF development.
+
+
+We are working towards a full release of HDF 3.2 sometime in
+May. The beta release has been implemented so far only on
+the Cray, Sun (SPARC), and Decstation 5000. We expect to
+have it ported to the other platforms by the time of the full
+release.
+
+PLEASE, ALL YOU ADVENTUROUS SOULS, GRAB IT AND PLAY WITH IT,
+AND LET US KNOW WHAT NEEDS FIXING. Shiming Xu will be our
+contact person for this: sxu@ncsa.uiuc.edu (217) 244-3830.
+
+
+A. How HDF 3.2 is different from HDF 3.1
+
+-------------------------------------------------------------------------------
+
+
+A1. SDS enhancements.
+
+The previous SDS interfaces allow storage of 32-bit floats
+and Cray native mode floats only. The HDF 3.2 SDS interface
+has been expanded to handle 8-bit, 16- bit, and 32-bit
+integers, 32-bit and 64-bit floats, and native mode for all
+of these.. In this beta version, 64-bit floats have not yet
+been tested, but they should be done by the full release.
+
+In the C interface, integers can be signed or unsigned. In
+the FORTRAN interface, there is no distinction, so all
+integers are assumed to be signed. The names used to
+describe the new data types are
+
+ int8 8-bit signed integer
+
+.. code-block:: fortran
+
+    uint8 8-bit unsigned integer (C only)
+    int16 16-bit signed integer
+    uint16 16-bit unsigned integer (C only)
+    int32 32-bit signed integer
+    uint32 32-bit unsigned integer (C only)
+    float32 32-bit float
+    float64 64-bit float
+
+
+   To handle the new data types, the DFSDsettype routine has
+   been replaced by three new routines: DFSDsetNT, DFSDgetNT and
+   DFSDsetorder. DFSDsetNT and DFSDsetorder should completely
+   replace the DFSDsettype routine.
+
+   DFSDsetNT must be called if a number type other than float32
+   is to be stored. For example:
+
+
+C:
+
+.. code-block:: c
+
+    DFSDsetNT(DFNT_INT8);
+    DFSDadddata("myfile.hdf", rank, dims, i8data);
+
+   FORTRAN:
+    ret = dssnt(DFNT_INT8)
+    ret = dsadata('myfile.hdf', rank, dims, i8data)
+
+   Valid parameter values for DFSDsetNT (e.g. DFNT_INT8) are
+   defined in the file hdf.h. They are of the general form
+   "DFNT_<numbertype>", all capital letters.
+
+
+Since, in addition to data, an SDS can contain max/min values
+and scales, these can also contain data types other than
+float32. Since max/min values are supposed to relate to the
+data itself, it is assumed that the type of max/min is the
+same as the type of the data. The same is true for scales,
+although eventually an option is planned to allow you to set
+scale number types differently than data number types.
+
+.. code-block:: c
+
+   DFSDgetNT allows you to query about the number type of the
+   SDS that is current. As with other "DFSDget..." routines,
+   you must call DFSDgetdims, or DFSDgetdata to "move to" a
+   particular SDS before calling DFSDgetNT.
+
+   The second routine, DFSDsetorder, can be used to override the
+   default ordering of data in an SDS. It works the same as the
+   previous routine DFSDsettype, with the third parameter set.
+   For example:
+
+
+C:
+
+.. code-block:: c
+
+    DFSDsetorder(DFO_FORTRAN);
+    DFSDadddata("myfile.hdf", rank, dims, i8data);
+
+
+FORTRAN:
+
+.. code-block:: c
+
+    ret = dssodr(DFO_FORTRAN)
+    ret = dspdata('myfile.hdf', rank, dims, i8data)
+
+
+One result of the "setorder" implementation was the discovery
+that the tag that indicates "FORTRAN order" (tag 709) may
+appear as an "unknown tag" for some software that has not
+been written to expect it.
+
+(As indicated in the first part of the newsletter, the HDF
+group is considering dropping the automatic transposition
+of FORTRAN data sets with this release.)
+
+In order to support the new number types and at the same time
+make it easier to add new features (e.g data compression) to
+future versions of SDS, a new structure for the SDG
+(scientific data group) and some new tags have been
+implemented. The new structure is called NDG, for "numeric
+data group", and has the tag 720.
+
+In order to maintain backward compatibility, HDF examines
+each new NDG that it writes to a file to determine whether it
+is backward compatible with the old SDG structure (float32
+data only, etc.), and if it is, writes out an SDG as well as
+an NDG. A new "link tag" (710) stored in the NDG tells HDF
+that it represents the same SDS as the corresponding SDG.
+
+
+A2. New conversion routines.
+
+A completely new, and much more general, scheme is used for
+doing conversions. The same conversion module is now used by
+the Vset and SDS interfaces, and the intention is to use this
+module for all HDF I/O that requires conversions.
+
+The conversion module is intended for use by developers only,
+and should not be considered part of an application
+interface.
+
+
+A3. Complete new set of general purpose routines.
+
+The lower layer of HDF has been completely redesigned and re-
+implemented, and all application interfaces, such as RIS8 and
+SDS, have been re-implemented on this layer. The new lower
+layer incorporates the following improvements:
+
+ - More consistent data and function types are needed.
+ - An error handling module that supports more meaningful
+ and extensive reporting of errors.
+ - Simplification of key lower level functions
+ - Simplified techniques for facilitating portability
+ - Support for alternate forms of physical storage, such
+ as linked blocks storage, and storage of the data
+ portion of an object in an external file.
+ - A version tag indication which version of the HDF
+ library last changed an HDF file.
+ - Hooks to support simultaneous access to multiple files
+ - Hooks to support simultaneous access to multiple
+ objects within a single file.
+
+The modules that implement these changes can be found in
+files that begin with the letter "h", and each routine begins
+with the letter "H" (Hopen, Hclose, Hwrite, etc.).
+
+Because of these changes, the names of include files are
+different. Where you included df.h previously, you
+should now include hdf.h. Also, the number and names
+of basic modules has changed, and now include:
+
+ hfile.c basic i/0
+ herr.c error-handling
+ hkit.c general purpose routines (HDgetspace, etc.)
+ hblocks.c to support linked block physical storage
+ hextelt.c to support external storage of HDF data
+
+More details on this new organization will be available
+later.
+
+
+A4. Emulation of previous general purpose interface
+
+Although the previous general purpose interface has been
+replaced by the new general purpose routines, backward
+compatibility is maintained by a set of routines that emulate
+the old routines. All of the old routines that begin with
+the letters "DF" (DFopen, DFclose, DFgetelement, etc.) have
+been rewritten on top of the new "H" layers. Users who
+currently use the "DF" routines should be able to continue to
+use them, although they are encouraged to switch to using the
+new "H" routines as soon as possible.
+
+
+A5. Inclusion of the Vset calling interface
+
+Previously, the Vset calling interface had its own library.
+In HDF 3.2, the Vset calling interface is contained in the
+same library as the other HDF interfaces. As mentioned
+previously, the Vset module now uses the new conversion
+routines.
+
+
+A6. Test modules.
+
+In an effort to work towards having an HDF "test suite", a
+number of test modules are included with this release of HDF.
+This test suite is quite incomplete at the moment, but we
+plan to extend it to cover as many routines as possible as
+quickly as possible.
+
+The names of the test files are formed by concatenating the
+letter "t", the base name of the interface (e.g. "dfsd"),
+
+.. code-block:: fortran
+
+   optionally some other descriptive set of characters, and
+   either ".c" or ".f", depending on whether they are C or
+   FORTRAN programs. For example, the program "tdfan.c" is a
+   test program for the HDF object annotation interface, and
+   "tdfanfile.c" is a test program for the HDF file annotation
+   interface.
+
+
+
+A7. Naming conventions
+
+We have tried to be more consistent in our naming conventions
+for routines with this release. Routines in the FORTRAN and
+C applications interfaces begin with one or more capital
+letters, as follows:
+
+.. code-block:: c
+
+    DFR8 (8-bit raster image sets)
+    DF24 (24-bit raster image sets)
+    DFP (palettes)
+    DFSD (scientific data sets)
+    DFAN (annotations)
+    V (vsets)
+
+
+The lower level routines are categorized as follows:
+
+ H... (new lower level i/o)
+ DF... (emulation of old lower level i/o routines)
+ HD... (lower level utilities for developers)
+ HE... (lower level error-handling)
+ HL... (routines that support linked block storage)
+ HX... (routines that support external elements)
+ DFK... (conversion routines)
+ H*I... (internal, "private" routines, not guaranteed
+ always to exist or to remain the same. Use
+ at your own risk.)
+
+
+B. Getting HDF 3.2 beta
+
+-------------------------------------------------------------------------------
+
+There are four subdirectories under HDF/HDF3.2beta: src,
+tests, examples, and tar.
+
+ "src" contains all source for the beta release,
+ "tests" contains all of the test programs currently
+ available for the beta release,
+ "examples" contains the old examples, revised to
+ work with HDF 3.2, and
+ "tar" contains tar files of the test and src
+ directories.
+
+There is an INSTALL file in the src directory with full
+particulars on installing HDF 3.2 beta.
+
+
+C. Work to do, problems to solve, and things to decide
+
+-------------------------------------------------------------------------------
+
+
+The following list is in approximate order of priority and
+expected chronological order.
+
+The FORTRAN test suite needs to be expanded to cover all
+interfaces, then the interfaces need to be tested. This
+means that FORTRAN modules corresponding to the following
+must be written: tdfan, tdfanfile, tdfr8, tdfr24, and tdfp,
+and tdfstubs.
+
+Fortran stubs need to be written for certain H level
+routines, such as HEprint, and possibly Hopen, and Hclose.
+
+The command line utilities need to be revised.
+
+The transpose/no-transpose policy needs to be decided and
+code changed accordingly.
+
+Everything needs to be ported to the SGI, IBM RS/6000,
+Convex, Mac, and IBM PC.
+
+Documentation needs to be revised, including "NCSA HDF
+Specifications", "NCSA HDF Calling Interfaces and Utilities",
+and "HDF Vset."
+
+
+-------------------------------------------------------------------------------
+
+
+ Calibration Tag
+
+Alban Deniz, an alert HDF user at Naval Research Lab, has
+suggested that we add a "calibration tag", which would be to
+provide information for calibrating the values in an SDS.
+Alban sent suggests the following specification:
+
+ SDCAL Scientific data offset and calibration
+ 16 bytes
+ (731)
+
+ This record contains four 32-bit floating point
+ values:
+
+ cal calibration factor
+ cal_err absolute error in the calibration factor
+ ioff raw data offset
+ ioff_err rms error in the offset
+
+The relationship between a value 'iy' stored in an SDS and
+the actual value would be defined as:
+
+ y = cal * (iy - ioff)
+
+The variable ioff_err contains the rms error of ioff, and
+cal_err contains the absolute error of cal.
+
+Two new routines would be added to the SDS interface:
+
+.. code-block:: c
+
+    DFSDgetcal(*cal, *cal_err, *ioff, *ioff_err)
+    DFSDsetcal(cal, cal_err, ioff, ioff_err)
+
+
+Alban has been using this tag and these routines for over a
+year with his own personalized version of the HDF library,
+and finds them very useful. And now that HDF 3.2 provides
+support for small integers in SDS, such a tag seems very
+useful.
+
+We would like to add Alban's routines to the SDS interface,
+but first we would like to hear your opinions about it. Are
+there any changes you would like to see made to it to
+generalize it?
+
+

@@ -1,0 +1,128 @@
+==================
+HDF Newsletter #70
+==================
+
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #70
+ October 14, 2002
+
+CONTENTS
+
+-------------------------------------------------------------------------------
+
+. New h5import Tool * *
+
+ * Visit the HDF home page *
+
+. Changes to H5LT Attribute Functions * for up-to-date information *
+
+ * *
+
+. Dropping Support for Linux 2.2, * http://hdf.ncsa.uiuc.edu/ *
+ HP-UX 10.20, and IRIX Legacy Platforms * *
+
+-------------------------------------------------------------------------------
+
+. Mail Server Down 10/10/02
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+New h5import Tool
+=================
+
+We have been developing a new tool, h5import, for converting data stored
+in one or more ASCII or binary files into one or more datasets in an
+existing or new HDF5 file.
+
+The h5import utility can accept the following types of input data:
+
+.. code-block:: fortran
+
+    1. ASCII text file with numeric data (floating point or integer data).
+
+    2. Binary file with native floating point data (32-bit or 64-bit)
+
+    3. Binary file with native integer (signed or unsigned)
+    data (8-bit or 16-bit or 32-bit or 64-bit).
+
+
+ 4. ASCII text file containing strings (text data). (Not implemented)
+
+
+If you would like to read about this tool, see:
+ http://hdf.ncsa.uiuc.edu/RFC/H5tools/h5import.txt
+
+If you would like to obtain a pre-release version of this tool, send a
+message to hdfhelp@ncsa.uiuc.edu. We'll be making it available from
+our ftp server in the near future.
+
+
+
+Changes to H5LT Attribute Functions
+
+-------------------------------------------------------------------------------
+
+
+New attribute functions have been added to the H5LT Application
+Programming Interface located in the HDF5 High Level APIs.
+
+There are seven new H5LTget_attribute_* functions for string, char,
+short, int, long, float, and double.
+
+In addition, the H5LTget_attribute_ndims and H5LTget_attribute_info
+
+.. code-block:: c
+
+   functions were changed to have a new list of parameters.
+
+
+The latest software with these changes can be downloaded from:
+ http://hdf.ncsa.uiuc.edu/HDF5/hdf5_hl/doc/
+
+
+
+Dropping Support for Linux 2.2, HP-UX 10.20, and IRIX Legacy Platforms
+
+-------------------------------------------------------------------------------
+
+
+The HDF group would like to drop software support for Linux 2.2
+(RedHat 6.x), HP-UX 10.20, and some SGI legacy platforms and focus
+our resources on supporting Linux 2.4 (RedHat 7.x), HP-UX 11.00 and
+SGI IRIX64. The SGI legacy platforms being dropped are Indigo, Indy,
+Indigo2/R4000/R5000, and O2 which support only 32-bit applications.
+
+In particular, Linux 2.4 supports many new features including larger
+files sizes. Also, we will continue to support SGI IRIX64 built with
+the -n32 option which should work on the older IRIX systems.
+
+Please let us know as soon as possible if this will cause problems
+for you.
+
+
+
+Mail Server Down 10/10/02
+
+-------------------------------------------------------------------------------
+
+
+Our mail server was down on Thursday, October 10th and some mail was lost.
+If you sent a message to the HDF Helpdesk (hdfhelp@ncsa.uiuc.edu) on that
+day and did not receive a response, please re-send your message.
+
+
+
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ hdfhelp@ncsa.uiuc.edu
+

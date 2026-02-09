@@ -1,0 +1,63 @@
+==================
+HDF Newsletter #86
+==================
+
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #86
+ November 22, 2005
+
+CONTENTS
+
+-------------------------------------------------------------------------------
+
+. Release of HDF Java Products 2.3 * *
+
+ * Visit the HDF home page *
+ * for up-to-date information *
+ * *
+ * http://hdf.ncsa.uiuc.edu/ *
+ * *
+
+-------------------------------------------------------------------------------
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+Release of HDF Java Products 2.3
+
+-------------------------------------------------------------------------------
+
+
+The latest version of the HDF Java Products, version 2.3,
+is available. This version was tested with HDF5-1.6.5 and
+HDF 4.2r1. The HDF Java Products can be downloaded from the
+following page:
+
+ http://hdf.ncsa.uiuc.edu/hdf-java-html/
+
+Version 2.3 includes bug fixes and a few new features.
+Following is a list of the major changes in HDFView with this
+release:
+
+ o Support for HDF-SRB (Windows and Linux only)
+ o Support for compound datatypes containing 2D arrays (or greater)
+ o Create/display named datatypes in HDF5
+ o Create link in hdf5
+ o Improve ability to manipulate palette
+ o Select row/column data as X axis for xy plot in the table view
+ o Numerous bug fixes
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ hdfhelp@ncsa.uiuc.edu
+

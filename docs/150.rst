@@ -1,0 +1,73 @@
+===================
+HDF Newsletter #150
+===================
+
+To view from a browser see:
+ https://www.hdfgroup.org/newsletters/newsletter150.pdf
+
+-------------------------------------------------------------------------------
+
+The HDF Group Home Page: https://www.hdfgroup.org/
+Support Services: https://www.hdfgroup.org/services/
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #150
+ June 30, 2016
+
+CONTENTS
+ . Release of HDF 4.2.12
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF 4.2.12
+
+-------------------------------------------------------------------------------
+
+
+The HDF 4.2.12 release is now available. It can be obtained from the
+HDF Downloads page:
+
+ https://www.hdfgroup.org/downloads/index.html#hdf4
+
+The HDF (HDF4) home page is:
+
+ https://www.hdfgroup.org/products/hdf4/
+
+HDF 4.2.12 is a minor release with a few changes including the following:
+
+ o The Java HDF JNI library has been integrated into HDF. The package
+ hierarchy has also been changed to "hdf.hdflib".
+
+ o The HDisnetcdf64 function was added for determining whether or not a
+ file is a netCDF 64-bit file.
+
+ o The hdp utility can now detect a netCDF 64-bit file.
+
+ o Support was added for Mac OS X Yosemite 10.10 and El Capitan 10.11.
+
+For a comprehensive list of changes in this release, please see the release
+notes:
+
+ https://www.hdfgroup.org/ftp/HDF/HDF_Current/src/hdf-4.2.12-RELEASE.txt
+
+
+Future Changes to Supported Compilers and Platforms
+
+-------------------------------------------------------------------------------
+
+
+Please be aware that after this release, we will be dropping Mac OS X 10.8.
+We will also be moving to the latest version of CMake.
+
+In addition, the Windows standard will move from VS 2013 with Intel Fortran 15
+to VS 2015 with Intel Fortran 16.
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ help@hdfgroup.org
+

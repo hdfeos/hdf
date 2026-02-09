@@ -1,0 +1,148 @@
+===================
+HDF Newsletter #153
+===================
+
+To view from a browser see:
+ https://support.hdfgroup.org/newsletters/newsletter153.pdf
+
+-------------------------------------------------------------------------------
+
+The HDF Group Home Page: https://www.hdfgroup.org/
+Support Services: https://www.hdfgroup.org/support/
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #153
+ May 1, 2017
+
+CONTENTS
+ . Changes in Download Process
+ . Release of HDF5-1.10.1
+
+ - Known Issues
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Changes in Download Process
+
+-------------------------------------------------------------------------------
+
+
+Please be aware that the HDF5-1.10.1 release is the first release in which
+the software is located on The HDF Group home page:
+
+ https://www.hdfgroup.org/
+
+The source code does not require a login, but the built binaries can ONLY
+be downloaded by first logging in.
+
+
+Release of HDF5-1.10.1
+
+-------------------------------------------------------------------------------
+
+
+The HDF5-1.10.1 release is now available for download from:
+
+ https://www.hdfgroup.org/downloads/hdf5/
+
+For complete details regarding this release, see:
+
+ https://support.hdfgroup.org/HDF5/docNewFeatures/index.html
+
+User documentation for HDF5-1.10.1 can be accessed from:
+
+ https://support.hdfgroup.org/HDF5/doc/
+
+This release contains major new features and changes. Please be aware that
+the new features use extensions to the HDF5 File Format. The new features
+are listed below:
+
+ o Metadata Cache Image
+
+ HDF5 metadata is typically small, and scattered throughout the HDF5 file.
+ This can affect performance, particularly on large HPC systems. The
+ Metadata Cache Image feature can improve performance by writing the
+ metadata cache in a single block on file close, and then populating the
+ cache with the contents of this block on file open, thus avoiding the many
+ small I/O operations that would otherwise be required on file open and
+ close.
+
+ o Metadata Cache Evict on Close
+
+ The HDF5 library's metadata cache is fairly conservative about holding on
+ to HDF5 object metadata (object headers, chunk index structures, etc.),
+ which can cause the cache size to grow, resulting in memory pressure on
+ an application or system. The "evict on close" property will cause all
+ metadata for an object to be evicted from the cache as long as metadata
+ is not referenced from any other open object.
+
+ o Paged Aggregation
+
+ The current HDF5 file space allocation accumulates small pieces of metadata
+ and raw data in aggregator blocks which are not page aligned and vary
+ widely in sizes. The paged aggregation feature was implemented to provide
+ efficient paged access of these small pieces of metadata and raw data.
+
+ o Page Buffering
+
+ Small and random I/O accesses on parallel file systems result in poor
+ performance for applications. Page buffering in conjunction with paged
+ aggregation can improve performance by giving an application control of
+ minimizing HDF5 I/O requests to a specific granularity and alignment.
+
+
+Other important changes include the following:
+
+ o A mechanism for disabling the SWMR file locking scheme was added.
+ o The HDF5 Fortran library can now be compiled with the NAG compiler.
+ o A new option was added to the h5clear tool to remove a metadata cache image.
+
+For a detailed list of changes in this release, please see the Release Notes:
+
+https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.10/hdf5-1.10.1/src/unpacked/release_docs/
+
+Also see the "HDF5 Software Changes from Release to Release" document for
+information on what has changed:
+
+ https://support.hdfgroup.org/HDF5/doc/ADGuide/Changes.html
+
+
+
+Known Issues
+------------
+
+ o HDF5 releases are always backward compatible. In general, they are also
+ forward compatible in maintenance releases of a major release. However, the
+ HDF5-1.10.0 maintenance release will NOT be able to read HDF5-1.10.1 files
+ that contain a metadata cache image. The metadata cache image must be
+ removed with the h5clear tool in order for HDF5-1.10.0 to read the file.
+
+ o The CMake instructions for building the HDF5 examples omit two files that
+ need to be copied to the directory where the examples are to be run. The
+ instructions specify to copy the HDF5_Example.cmake file. However, the
+ HDF5_Examples_options.cmake and CTestScript.cmake files must also be copied
+ over.
+
+ These instructions are found in the README.txt file that comes with each
+ pre-built windows binary, and they are also found in Section II of the
+ USING_CMake_Examples.txt file in the release_docs directory of the source code.
+
+ o The following test lib files are installed when building HDF5 using autotools:
+
+ libdynlib1.la libdynlib3.la libdynlibadd.la libdynlibdump.la libdynlibvers.la
+ libdynlib1.so libdynlib3.so libdynlibadd.so libdynlibdump.so libdynlibvers.so
+ libdynlib2.la libdynlib4.la libdynlibdiff.la libdynlibls.la
+ libdynlib2.so libdynlib4.so libdynlibdiff.so libdynlibls.so
+
+ These should not be installed and can be removed from the lib directory
+ (rm lib/libdynlib*). They will not be included in future releases.
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ help@hdfgroup.org
+

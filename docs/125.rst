@@ -1,0 +1,63 @@
+===================
+HDF Newsletter #125
+===================
+
+The HDF Group Home Page: http://www.hdfgroup.org/
+Helpdesk & Mailing Lists: http://www.hdfgroup.org/services/support.html
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #125
+ December 15, 2011
+
+CONTENTS
+. HDF-Java 2.8 Release
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+HDF-Java 2.8 Release
+
+-------------------------------------------------------------------------------
+
+
+The HDF-Java 2.8 release is ready for download at:
+
+ http://www.hdfgroup.org/downloads/index.html
+
+Major changes includes the following:
+
+ *) This release was built and tested with HDF 4.2.6,
+ HDF5 1.8.8, and JDK 1.6.
+ *) More methods were added to the HDF5 JNI wrapper.
+ *) Unit tests were added for all major HDF5 JNI functions.
+ *) This release includes over 35 enhancements and bug fixes.
+
+For more information about this release, please see the release notes at:
+
+ http://www.hdfgroup.org/hdf-java-html/hdfview/UsersGuide/ug01introduction.html#ug01release
+
+
+As a reminder, the HDF Group is conducting an HDFView user survey. Your kind
+participation will help us improve our commitment in serving the HDF
+community.
+
+Please take a few minutes to go over the survey questions at:
+
+ http://www.surveymonkey.com/s/PLGRLJY
+
+Thank you very much for your help.
+
+The HDF Group
+
+
+
+
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ help@hdfgroup.org
+

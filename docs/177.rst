@@ -1,0 +1,32 @@
+===================
+HDF Newsletter #177
+===================
+
+The HDF5 1.8.22 release is now available, and can be accessed from the Support Portal at https://portal.hdfgroup.org/display/support/HDF5+1.8.22
+HDF5 1.8.22 is a minor release with a few new features and changes. Important changes include:
+The following vulnerability issues were addressed:
+CVE-2018-11206
+CVE-2018-13869
+CVE-2018-13870
+CVE-2018-14033
+CVE-2018-17435
+HDF5 now supports building with the AEC library as a replacement library for SZip.
+Several changes were made to CMake:
+The minimum version of CMake changed to 3.12.
+Improvements to CMake support were brought to HDF5 1.8.22 to bring it to the same support as other HDF5 versions.
+A CMake option was added to link generated Fortran MOD files into the include directory.
+Toolchain and cross-compile support were added in CMake.
+Support for building only shared libraries was added to CMake.
+Support for VS2019 was added for CMake version 3.15 and later.
+S3 and HDFS VFDs have been added to HDF5 1.8.22.
+Symbolic links were added for HL Fortran lib files to match the general pattern of hl lib file names.
+Tools bugs in h5repack for reference attributes and for datasets with external storage were fixed.
+This release contains other changes that are not listed here. Please be sure to read the Release Notes for a comprehensive list of new features and changes.
+Changes that affect maintainers of HDF5-dependent applications are listed on the HDF5 Software Changes from Release to Release page.
+Binary compatibility issue and workaround
+
+.. code-block:: c
+
+   HDF5 1.8.22 binaries can replace the previous HDF5 version to run with applications compiled and linked with HDF5 1.8.21 and possibly HDF5 versions as early as 1.8.15.  However, HDF5 checks versions in lib files against versions in header files used to compile the application and will cause the application to abort when they do not match.  An environment variable HDF5_DISABLE_VERSION_CHECK can be set to 2 to skip the check, to 1 to warn but not abort, or to 0 for the default behavior, aborting when the HDF5 version in the lib files does not match the version in the header files.
+   Future of HDF5 1.8
+   Please be aware that the next release (HDF5 1.8.23) is expected to be the last releases for HDF5 1.8. We encourage users to move to HDF5 1.10.7 or to HDF5 1.12.1 which will be released soon.

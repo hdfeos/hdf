@@ -1,0 +1,151 @@
+==================
+HDF Newsletter #10
+==================
+
+ July 29, 1993
+
+Contents
+
+	HDF3.3 Beta release 2
+	HDF FAQ
+	New contributions from HDF users
+	Update on NCSA tools: Mosaic and Collage
+
+HDF3.3 Beta release 2
+
+-------------------------------------------------------------------------------
+
+
+HDF 3.3 Beta Release 2 has been tested on the following machines:
+
+Platform 'base library' 'HDF / netCDF part'
+Sun4 X X
+IBM/RS6000 X X
+SGI X X
+Convex X X
+Cray-Y X X
+Cray-2 X X
+NeXT X X
+HP X X
+DecStation X X
+
+DEC Alpha X
+Fujitsu VP X
+IBM PC - MSDOS X
+IBM PC - Windows X
+Mac X
+VAX/VMS X
+
+
+What's new in HDF 3.3 Beta 2
+
+ o netCDF 2.3.2 support
+ o added routine SDfindattr() to find an attribute given its
+ name
+
+.. code-block:: c
+
+    o sometimes SDreaddata() would return incorrect fill values
+    when no data had been written
+    o programs using Vset routines should no longer need to
+    explicitly include vg.h
+    o fixed problem in multi-file interface when sharing
+    dimensions between datasets
+    o the base library now works on the Mac with MPW3.2 C and
+    Language System Fortran
+    o a number of memory leaks (including two huge ones) were fixed
+    o added routine SDsetexternalfile() (documented below) to
+    store a dataset's data in a separate file
+    o a number of bugs in the handling of old SDS files by the new
+    interface were fixed
+    o the base library works on PC except the slab routines
+    o the base library passed test on VMS except little endian
+    float64
+
+
+HDF FAQ
+
+ We have put together 27 frequently asked questions about HDF and
+ its applications. It is in the directory HDF/ on the NCSA ftp server.
+ It is a living file and will be changed along with the development
+ of HDF. A suggested bug report form is included in the FAQ. Hope users
+ use the form to report to us the bugs. Comments and suggestions are welcome.
+
+New contributions from HDF users
+
+ Several users donated their software to our HDF user community. These
+ contributions are kept in the subdirectory HDF/contrib/ on the NCSA ftp
+ server. See the README file in the same directory for more detail about
+ the software and the contributor. A brief list of the contributions
+ follows.
+
+ o Peter Schweitzer contributed his port of HDF3.2r4 to Watcom C/386.
+ The contribution includes a README, a Makefile, a compiled optimized
+ HDF library (C only), and the UNIX diff files of the source code.
+
+ o NCSA fix32atr
+
+.. code-block:: fortran
+
+    A C program fix32luf.c is written to fix the label/unit/format problem
+    in hdf files written by releases 1 -- 3 of HDF3.2. See
+    HDF/newsletter/Newsletter8 for more detail.
+
+
+ o Andrea Leone of Scientific Visualization Group Centre for Advanced
+ Studies, R&D in Sardinia, Italy made some modification of HDF3.2r4
+
+.. code-block:: c
+
+    library to avoid the limitation on the number of Velements in a single
+    Vgroup.
+
+
+ o Nathan contributed his modifications to hfile.h and hfile.c in order to
+ get HDF 3.2r4 to compile with Think C++ 6.0. Hdf.note lists the changes
+ in those files.
+
+ o Michael E. Mauel, Department of Applied Physics, Columbia
+ University contributed his changes to HDF3.2r3 to compile
+ it with THINK C v6.0. An HDF3.2r3.THINK_C.README and some
+ examples are also included in the subdirectory HDF3.2r3.THINK_C/.
+
+ o Neil Buesing of EROS Data Center at Sioux Falls, South Dakota, contributed
+ InspectHDF.c. InspectHDF.c is developed to display information on HDF files.
+
+ o Utility sds2ris.c is also contributed by Neil Buesing. It reads SDS's from
+ input file and writes the data out as RIS's in the output file.
+
+ o Joshua Goldstein from Research Systems contributed his port of HDF3.2r1 to
+ the Alpha running VMS.
+
+
+Update on NCSA tools: Mosaic and Collage
+
+ o Collage 1.2 Beta is released on the ftp. In addition to the bug fixes,
+ several changes and new features were added:
+
+ - changes in generating a raster picture from a SDS
+ - changes in the Rasters Windows
+ - changes in changes in the Histogram tool
+ - changes in the Plot or Profile tool
+ - changes in the Contour Operation
+ - changes in the Animation tool
+ - changes in options when loading an animation
+ - new slider to control the speed of animation
+ - loading a file from command line
+ - GIF, XWD support
+ - new 3D features
+ - new comunication features
+ - chat box -- multiuser talk
+
+ For more details please wait for a formal announcement from the Collage
+ developers!
+
+ o NCSA Mosaic 1.2
+
+ NCSA Mosaic is an Internet-based global hypermedia browser, available
+ on the NCSA anonymous ftp server. It contains an HDF browser.
+
+
+

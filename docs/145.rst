@@ -1,0 +1,115 @@
+===================
+HDF Newsletter #145
+===================
+
+To view from a browser see:
+ http://www.hdfgroup.org/newsletters/newsletter145.pdf
+
+-------------------------------------------------------------------------------
+
+The HDF Group Home Page: http://www.hdfgroup.org/
+Support Services: http://www.hdfgroup.org/services/
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #145
+ May 15, 2015
+
+CONTENTS
+ . Release of HDF5-1.8.15
+ . Highlights
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF5-1.8.15
+
+-------------------------------------------------------------------------------
+
+
+The HDF5-1.8.15 release is now available and can be downloaded from The HDF
+Group Downloads page:
+
+ http://www.hdfgroup.org/downloads/
+
+It can also be obtained from:
+
+ http://www.hdfgroup.org/HDF5/release/obtain5.html
+
+HDF5-1.8.15 is a minor release with a few new features and changes. Important
+changes include:
+
+ o Support was added for the following platforms:
+
+ - Linux 3.10
+ - Mac OS X Yosemite 10.10
+ - AIX 6.1
+
+ o Several new C functions were added to HDF5:
+
+ - H5allocate_memory() and H5resize_memory() were added to resolve
+ heap corruption issues and crashes (especially on Windows). They
+ allow filter authors to allocate or resize memory using the same
+ memory allocation library that HDF5 uses.
+
+ - H5PLset_loading_state() and H5PLget_loading_state() were added
+ for improving control of dynamically loaded plugin libraries.
+
+ o Numerous changes and improvements were made to the C++, Fortran, and
+ High Level APIs.
+
+ o Many configuration changes were made in this release. They include the
+ following:
+
+ - Old (or unused) options and platform files were removed, including those
+ for VMS.
+ - The minimum CMake version was moved to 3.1.
+ - WiX packaging was added for CMake on Windows.
+
+This release contains many other changes that are not listed here. Please be
+sure to read the Release Notes for a comprehensive list of new features and
+changes:
+
+ http://www.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.8.15-RELEASE.txt
+
+Changes that affect maintainers of HDF5-dependent applications are listed on
+the HDF5 Software Changes from Release to Release page. See:
+
+ http://www.hdfgroup.org/HDF5/doc/ADGuide/Changes.html
+
+
+Highlights
+==========
+
+The following items of interest came up since the last newsletter.
+
+ o The HDF Blog was launched in March and numerous articles have already been posted.
+ Be sure to check it out: http://blog.hdfgroup.org/
+
+ o A new O'Reilly book "Effective Computation in Physics" has a chapter on HDF5:
+ http://shop.oreilly.com/product/0636920033424.do
+
+Following is an interesting user:
+
+ o Galacticus is an open source semi-analytic model of galaxy formation that
+ that uses HDF5: http://sites.google.com/site/galacticusmodel/about
+
+Although The HDF Group does not endorse any particular product, we are pleased that
+these products and efforts support HDF. We are always interested in learning about
+
+.. code-block:: c
+
+   applications that use the HDF technologies. Please do let us know about your software
+   or project if you have not already done so. We have a registration page that
+   you can fill out (or just send the Helpdesk a message):
+
+
+ https://www.hdfgroup.org/downloads/registration.php
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ help@hdfgroup.org
+

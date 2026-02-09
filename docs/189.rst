@@ -1,0 +1,62 @@
+===================
+HDF Newsletter #189
+===================
+
+We are happy to announce the release of HDF5 1.14.0, which can now be obtained from the HDF5 Download page. More information about this release can be found on the HDF5 1.14.0 release page. For scheduled future releases, please refer to the release schedule.
+HDF5 1.14.0 offers the following new features and changes:
+An updated virtual object layer (VOL) API that supports DAOS, pass-through, and asynchronous VOL connectors. Click here for the HDF5 VOL connectors registered with The HDF Group and stay tuned for announcements on releases of other VOL connectors.
+
+.. code-block:: c
+
+   Note: The new VOL API is not backward compatible with the 1.12.x VOL API. In light of this, we will not be supporting the HDF5 1.12.x VOL API in the future and VOL development should shift to targeting the VOL API in 1.14.0 and later. For many connector authors, the changes will be minimal and involve minor changes to the VOL class structure and parameter handling. For a full discussion of the VOL changes, see the VOL connector author’s guide.
+   Asynchronous APIs for the HDF5 VOL connectors (currently DAOS and Async VOLs) that support asynchronous HDF5 operations using the HDF5 Event Set (H5ES) API. This feature allows I/O to proceed in the background while the application is performing other tasks.
+   The HDF5 Subfiling VFD allows an HDF5 application to aggregate data to a subset of MPI ranks, which then perform I/O against a distributed HDF5 file represented as a collection of sub-files in equal-sized data segment stripes. Please refer to the Release Notes for details.
+   This release also adds the onion VFD, which allows creating versioned HDF5 files, where subsequent modifications are tracked and older versions can be re-opened.
+   Several improvements to parallel compression feature were made and are described in the Parallel compression improvements in HDF5 1.13.1 blog post.
+   Multi dataset I/O operation includes a number of new APIs that were added to the C library and the Fortran wrappers. VOL callbacks for dataset I/O were also updated to support this new feature. Please refer to the Release Notes for details.
+   Updates to the virtual file driver (VFD) layer that will support VFD plugins, e.g., GPU VFD.
+   A new tool called h5dwalk. The h5dwalk utility provides a parallel alternative to creating and running script-based approaches to invoke serial HDF5 tools on a collection of hdf5 files. As a means of invoking parallel instances of a serial tool, the h5dwalk application can accept directories as input arguments. This new tool provides recursive file discovery and filtering of select HDF5 files. The resulting file collection is distributed between MPI ranks and individual files are then selected for input to a user selected application. For more information, please refer to the h5dwalk User's Guide.
+   Another new tool called h5delete. Deleting HDF5 storage when using the VOL can be tricky when the VOL does not create files. The h5delete tool is a simple wrapper around the H5Fdelete() API call that uses the VOL specified in the HDF5_VOL_CONNECTOR environment variable to delete a "file". If the call to H5Fdelete() fails, the tool will attempt to use the POSIX remove(3) call to remove the file.
+   A new public function, H5ESget_requests(), was added to allow an application to retrieve request pointers from an event set. It is intended for use primarily by VOL plugin developers.
+   Many performance improvements were made to bring HDF5 1.14.0 more in line with earlier releases of the library.
+   Several issues were fixed in this release, including a memory leak, an issue with variable-length attributes, an issue with hyperslab selections, and an issue with attribute type conversion with compound datatypes. Please see the Release Notes for details.
+   A number of wrappers were added to the C++, Fortran, and JAVA libraries. They are listed in the Release Notes.
+   Several improvements were made in the JAVA library.
+   A few issues with the file open/close in the Fortran API were fixed.
+   A trivial tool, perf, has been removed to avoid conflicts with the GNU's perf tool
+   The H5Dchunk_iter() callback now uses scaled offsets like in H5Dget_chunk_info().
+   Support for building h5perf in "standalone mode" was dropped in both serial and parallel HDF5.
+   Note that, by the end of 2022, support for VS 2015 will be dropped.
+   A new CMake configuration variable was added, HDF5_USE_GNU_DIRS (default OFF), to select the use of the GNU Coding Standard for the install directory variables by including the CMake module, GNUInstallDirs (see CMake documentation for details).
+   The Doxygen User Guide documentation can be found in the share/html subdirectory of the HDF5 install directory, when configured and generated.
+   The variable-length datatype handling in JNI was improved to handle more complex combinations of sub-datatypes.
+   h5repack was improved to only print output when verbose option (-v) is selected.
+   The following features were removed:
+   MPE support: --with-mpe=
+   dmalloc support:
+   --with-dmalloc=
+   HDF5_ENABLE_USING_DMALLOC
+   The memory allocation sanity checks feature:
+   From configure:
+   --enable-memory-alloc-sanity-check
+   HDF5_MEMORY_ALLOC_SANITY_CHECK
+   HDF5_ENABLE_MEMORY_STATS
+   From source code:
+   H5get_alloc_stats()
+   H5_alloc_stats_t
+   The following vulnerabilities were addressed:
+   CVE-2019-8396
+   CVE-2018-13867
+   CVE-2018-16438
+   CVE-2021-46244
+   CVE-2021-45830
+   CVE-2021-4624
+   CVE-2021-45833
+   CVE-2018-14031
+   CVE-2018-17439
+   A few minor improvements in the configuration for *pc files and MPI libraries link. Details can be found in RELEASE.txt.
+   There are a few known vulnerabilities in the high-level GIF tools when a corrupted HDF5 file is provided as input. These issues have not been addressed and the tools are disabled by default. To enable these tools, the following option can be used:
+   --enable-hlgiftools
+   HDF5_BUILD_HL_GIF_TOOLS=ON
+   This release contains other changes that are not listed here. Please be sure to read the Release Notes for a comprehensive list of new features and changes.
+   Changes that affect maintainers of HDF5-dependent applications are listed on the HDF5 Software Changes from Release to Release page.

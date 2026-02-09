@@ -1,0 +1,93 @@
+==================
+HDF Newsletter #51
+==================
+
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #51
+ April 25, 2000
+
+
+CONTENTS
+
+-------------------------------------------------------------------------------
+
+. Java Products Release 2.5 * Visit the HDF home page *
+
+ * for up-to-date information *
+
+. Terra Satellite Data Open to Public * *
+
+ * http://hdf.ncsa.uiuc.edu/ *
+
+-------------------------------------------------------------------------------
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Java Products Release 2.5
+
+-------------------------------------------------------------------------------
+
+
+Release 2.5 of the Java Products for HDF 4.1r3 is now available.
+For information, documentation, and downloads see:
+
+ http://hdf.ncsa.uiuc.edu/java-hdf-html/
+
+
+Changes in this Release:
+
+-------------------------------------------------------------------------------
+
+
+ * All bugs in our database were addressed.
+ * The Java HDF Interface was upgraded:
+ + The HDFArray class was extended to handle arrays of any class
+ of 'Number', (i.e., 'Float' as well as 'float').
+
+New Features in this Release:
+
+-------------------------------------------------------------------------------
+
+ * Vdata attributes are now displayed similarly to SDS attributes.
+ Attributes on Vdata fields are displayed in the Vdata attributes.
+
+
+
+
+Terra Satellite Data Open to Public
+
+-------------------------------------------------------------------------------
+
+
+NASA has announced that data from the new Terra satellite is now
+available to the public. This satellite is the "flagship" of a
+series of satellites that will study long term global climate change.
+The data products use HDF.
+
+For more information about the Terra satellite and data,
+see:
+
+ http://terra.nasa.gov/
+
+Terra is part of the Earth Observing System (EOS), which is the
+centerpiece of NASA's Earth Science Enterprise (ESE). For further
+information see:
+
+ http://eospso.gsfc.nasa.gov/eospso_homepage.html
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ hdfhelp@ncsa.uiuc.edu
+
+
+

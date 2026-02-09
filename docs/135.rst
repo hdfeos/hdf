@@ -1,0 +1,139 @@
+===================
+HDF Newsletter #135
+===================
+
+To view from a browser see:
+ http://www.hdfgroup.org/newsletters/newsletter135.html
+
+-------------------------------------------------------------------------------
+
+The HDF Group Home Page: http://www.hdfgroup.org/
+Helpdesk/Mailing List Info: http://www.hdfgroup.org/services/support.html
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #135
+ June 27, 2013
+
+CONTENTS
+ . Release of HDF4 CF Conversion Toolkit 1.0.beta
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+Release of HDF4 CF Conversion Toolkit 1.0.beta
+
+-------------------------------------------------------------------------------
+
+
+We are pleased to announce that the release of HDF4 CF (H4CF) Conversion
+Toolkit 1.0.beta is now available from the HDF-EOS Tools and Information
+Center. It can be downloaded from the following page:
+
+ http://hdfeos.org/software/h4cflib.php
+
+The H4CF Conversion Toolkit can access various NASA HDF4 and HDF-EOS2
+files by following the CF conventions. The toolkit includes a conversion
+library for application developers and a conversion utility for NetCDF
+users.
+
+This release contains the following new features and changes:
+
+API Name Change
+---------------
+
+ - Some attribute-related API names have been shortened. For example,
+ h4cf_get_var_attr_type() has been reduced to h4cf_get_attr_type()
+ since we also support the retrieval of file attribute types in this
+ release.
+
+Vdata Handling
+--------------
+
+ - In the previous version, vdata attribute values, vdata field values
+ and vdata field attribute values were incorrectly translated to
+ string. Now the original vdata data and attribute values will be
+ kept.
+
+ - Since there are no equivalent vdata objects in the h4cf output, to
+ conform to the netCDF classic model, the vdata attributes will be
+ mapped to file attributes and the vdata field attributes will be
+ mapped to variable attributes.
+
+Unsigned Data Type
+------------------
+
+ - The handling of unsigned data types in h4tonccf has been improved.
+ If NetCDF-3 output is desired, unsigned int8 and int16 types will be
+ up-scaled to int16 and int32 respectively.
+
+Test Suite
+----------
+
+ - A test suite with sample data files and API test programs was added.
+
+ - Users can download and test the conversion tool with sample NASA
+ data.
+
+Examples
+--------
+
+ - More file-type specific examples were provided.
+
+ - An NcML example was added for post-editing a converted NetCDF
+ file.
+
+
+The new version also includes many bug fixes in both the library and
+conversion tool:
+
+ - The -O0 compiler option is no longer necessary.
+
+ - Memory leaks were checked with valgrind and leaking problems were
+ fixed.
+
+ - HDF-EOS2 Grids that use the LAMAZ projection are now supported.
+
+ - A type mismatch problem between CF attributes and variable type
+ was fixed.
+
+.. code-block:: c
+
+    - h4cf_get_file_attrs() returns the list of attributes instead of
+    a string map. This will allow writing attributes with different
+    types, not just string.
+
+
+ - Bugs related to subsetting vdata field values were fixed.
+
+ - The conversion tool will not insert an arbitrary _FillValue
+ attribute that does not exist in the original file.
+
+ - Name clashing routines were updated when handling HDF4 products.
+ Now the name clashing is more robust and the original object names
+ will be used to generate the final CF-compliant variable names if
+ no name clashing is found.
+
+ - The name clashing issue related to hybrid HDF-EOS2 objects has
+ been fixed.
+
+ - A few critical bugs have been fixed related to making MODIS scale
+ and offset and valid_range attributes follow CF. Now MODIS
+ products in our testsuite are translated to conform to CF
+ conventions.
+
+
+This release contains many other changes that are not listed here.
+Please be sure to read the release document for a comprehensive list
+of new features and changes:
+
+ http://hdfeos.org/software/h4cflib/doc/RELEASE.txt
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ help@hdfgroup.org
+

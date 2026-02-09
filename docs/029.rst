@@ -1,0 +1,116 @@
+==================
+HDF Newsletter #29
+==================
+
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+
+-------------------------------------------------------------------------------
+
+
+
+ Newsletter #29
+ February 18, 1998
+
+CONTENTS
+
+HDF5 release 1.0.0a
+European mirror site of HDF *******************************
+
+ * Visit the HDF home page *
+ * for up-to-date information *
+ * on HDF: *
+ * http://hdf.ncsa.uiuc.edu/ *
+
+-------------------------------------------------------------------------------
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+HDF5 release 1.0.0a
+===================
+
+HDF5 version 1.0.0a is now available, and can be downloaded from
+the HDF ftp server (hdf.ncsa.uiuc.edu), in the directory:
+ /pub/dist/HDF5/
+
+The documentation for this release can be found at:
+ http://hdf.ncsa.uiuc.edu/nra/BigHDF/
+
+What is the HDF5 library?
+
+-------------------------------------------------------------------------------
+
+
+HDF5 is a new, experimental version of HDF that is designed to address some of
+the limitations of the current version of HDF (HDF4.1) and to address current
+and anticipated requirements of modern systems and applications.
+
+This HDF5 library is not complete, but it should be sufficient to show the
+basic features of HDF5. We urge you to look at it and give us feedback on what
+you like or don't like about it, and what features you would like to see added
+to it.
+
+Why HDF5?
+---------
+
+The development of HDF5 is motivated by a number of limitations in the current
+HDF format, as well as limitations in the library. Some of these limitations
+are:
+ A single file cannot store more than 20,000 complex objects, and a single
+ file cannot be larger than 2 gigabytes.
+ The data models are less consistent than they should be: there are more
+ object types than necessary, and datatypes are too restricted.
+ The library source is old and overly complex, does not support parallel I/O
+ effectively, and is difficult to use in threaded applications.
+
+When complete HDF5 will include the following improvements:
+ A new file format designed to address some of the deficiencies of HDF4.1,
+ particularly the need to store larger files and more objects per file.
+ A simpler, more comprehensive data model that includes only two basic
+ structures: a multidimensional array of record structures, and a
+ grouping structure.
+ A simpler, better-engineered library and API, with improved support for
+ parallel I/O, threads, and other requirements imposed by modern systems
+ and applications.
+
+Limitations of the current library:
+
+-------------------------------------------------------------------------------
+
+ The prototype release includes most of the basic functionality that is
+planned for the HDF5 library. However, the library does not implement all of
+the features detailed in the format and API specifications. Here is a listing
+of some of the limitations of the current release:
+
+ - Attributes for data objects are not supported
+ - Data compression is not supported
+ - External storage of objects is not supported
+ - Some functions for manipulating datasets, dataspaces, and groups have not
+ been implemented
+ - Some number types, including user-defined number types are not supported.
+ Also number type conversion is limited.
+
+
+
+European mirror site of HDF
+
+-------------------------------------------------------------------------------
+
+
+The German Remote Sensing Data Center has generously offered to mirror
+the HDF ftp server and web page.
+
+The FTP Server location is:
+
+ DLR German Remote Sensing Data Center:
+ Host Name: ftp.dfd.dlr.de
+ Location: software/hdf
+
+The location of the web page is:
+
+ ATMOS User Center at the German Remote Sensing Data Center
+ http://auc.dfd.dlr.de/HDF
+
+Thank you!

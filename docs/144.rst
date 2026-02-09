@@ -1,0 +1,118 @@
+===================
+HDF Newsletter #144
+===================
+
+To view from a browser see:
+ http://www.hdfgroup.org/newsletters/newsletter144.pdf
+
+-------------------------------------------------------------------------------
+
+The HDF Group Home Page: http://www.hdfgroup.org/
+Support Services: http://www.hdfgroup.org/services/
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #144
+ February 13, 2015
+
+
+CONTENTS
+ . Release of HDF 4.2.11
+ . The HDF Group Software Highlights
+ . Other applications and efforts we have become aware of
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF 4.2.11
+
+-------------------------------------------------------------------------------
+
+
+The HDF 4.2.11 release is now available. It can be obtained from the
+HDF Downloads page:
+
+ http://www.hdfgroup.org/downloads/index.html#hdf4
+
+The HDF (HDF4) home page is located at:
+
+ http://www.hdfgroup.org/products/hdf4/
+
+HDF 4.2.11 is a minor release with a few changes, including fixes to
+the hdp, hrepack, ncdump, and ncgen utilities.
+
+For a comprehensive list of changes in this release see:
+
+ http://www.hdfgroup.org/ftp/HDF/HDF_Current/src/hdf-4.2.11-RELEASE.txt
+
+
+Future Changes to Supported Compilers and Platforms
+
+-------------------------------------------------------------------------------
+
+
+Please be aware that after this release, we will be moving to CMake 3.1. The
+Windows standard will move to VS 2013 with Intel 15, though testing will
+continue on VS 2012.
+
+In addition, support will be dropped for CentOS 5 i686 and CentOS 5 x86_64.
+
+
+
+The HDF Group Software Highlights
+
+-------------------------------------------------------------------------------
+
+
+o The H4CF Conversion Toolkit 1.0 release is now available.
+
+ This toolkit enables NASA HDF-EOS2 and HDF4 products to be converted to
+ follow CF conventions. The utilities are especially useful for NASA
+ HDF-EOS2 and HDF4 end-users to visualize and analyze the converted
+ netCDF3 or netCDF4 files with their favorite netCDF tools or applications.
+
+ This release includes a few critical memory leak fixes and improved error
+ handling. Also, CF support was added for TRMM version 7 and AIRS version 6
+ NASA products.
+
+ The H4CF Conversion Toolkit web page: http://hdfeos.org/software/h4cflib.php
+
+ More information about this release: http://hdfeos.org/software/h4cflib/doc/RELEASE.txt
+
+
+
+Other applications and efforts that we have become aware of
+
+-------------------------------------------------------------------------------
+
+
+o JHV5 - Java binding for HDF5 focusing on ease of use.
+ A new release of JHDF5, version 14.12, is now available.
+ https://wiki-bsse.ethz.ch/display/JHDF5/JHDF5+%28HDF5+for+Java%29
+
+o HDF5 Plugin for ImageJ and Fiji.
+ http://lmb.informatik.uni-freiburg.de/resources/opensource/imagej_plugins/hdf5.html
+
+o PhDC4D - software for maintenance management of ships, offshore structures and
+ static equipment. http://www.phdsoft.com/
+
+o NueroHDF - a standard way to store neuroscience data in HDF5.
+ https://neurohdf.readthedocs.org/en/latest/index.html
+
+Although The HDF Group does not endorse any particular product, we are pleased
+that these products and efforts support HDF.
+
+.. code-block:: c
+
+   We are always interested in learning about HDF applications. Please do let us
+   know about your software if you have not already done so.
+
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ help@hdfgroup.org
+

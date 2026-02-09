@@ -1,0 +1,79 @@
+==================
+HDF Newsletter #28
+==================
+
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+
+-------------------------------------------------------------------------------
+
+
+
+ Newsletter #28
+ November 18, 1997
+
+CONTENTS
+
+Platforms to Support with HDF 4.1r2
+DEC Visual FORTRAN *******************************
+Noesys 1.1 * Visit the HDF home page *
+
+ * for up-to-date information *
+ * on HDF: *
+ * http://hdf.ncsa.uiuc.edu/ *
+
+-------------------------------------------------------------------------------
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Platforms to Support with HDF 4.1r2
+
+-------------------------------------------------------------------------------
+
+
+Following is a tentative list of the platforms that we plan to
+support with HDF 4.1r2. If you have any questions or concerns
+regarding this list, please send a message to the HDF Helpdesk
+(hdfhelp@ncsa.uiuc.edu).
+
+ Sun OS 4.1.4
+ Solaris 2.5.1
+ Solaris X86 2.5
+ IRIX 5.3
+ IRIX 6.2, 6.4 (-64 bit,-n32 bit)
+ HPUX 9.03, 10.2
+ HP Exemplar
+ Digital UNIX 4.08
+ LINUX RedHat 4.2 (Kernel 2.0.30)
+ FreeBSD
+ VMS (Alpha OpenVMS, VAX)
+ Cray (YMP, T3E, T90, T90ieee, C90)
+ Windows 95/NT
+ Macintosh
+
+DEC Visual FORTRAN
+==================
+
+We would like to get a feel for how many HDF users are interested in
+using HDF with DEC Visual FORTRAN. If you are currently using DEC
+Visual FORTRAN with HDF or would like to, please send us a message at
+the HDF Helpdesk (hdfhelp@ncsa.uiuc.edu).
+
+Noesys 1.1
+==========
+
+We recently received an announcement about Fortner Software's Noesys 1.1,
+the latest version of their data analysis and visualization software built
+on the HDF data model. Noesys 1.1 is currently available for Windows, with
+the Macintosh due later this month.
+
+This version is especially interesting because it supports the ability to
+view and edit SDSs and Vdatas, as well as the ability to view and subset
+very large datasets. These are capabilities that many HDF users have asked
+for.
+
+For more information about Noesys 1.1, see: http://www.fortner.com/hdf/
+
+

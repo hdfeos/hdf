@@ -1,0 +1,100 @@
+===================
+HDF Newsletter #140
+===================
+
+To view from a browser see:
+ http://www.hdfgroup.org/newsletters/newsletter140.html
+
+-------------------------------------------------------------------------------
+
+The HDF Group Home Page: http://www.hdfgroup.org/
+Support Services: http://www.hdfgroup.org/services/
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #140
+ May 15, 2014
+
+CONTENTS
+. Release of HDF5-1.8.13
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF5 1.8.13
+
+-------------------------------------------------------------------------------
+
+
+The HDF5-1.8.13 release is now available, and can be downloaded from the
+HDF Group Downloads page:
+
+ http://www.hdfgroup.org/downloads/
+
+It can also be obtained directly from:
+
+ http://www.hdfgroup.org/HDF5/release/obtain5.html
+
+HDF5-1.8.13 is a minor release, with a few new features and changes.
+Important changes include:
+
+ o The H5free_memory (C) api was added to free memory that was allocated
+ by HDF5 API calls. This was added specifically for Windows, but may be
+ useful anywhere that the library uses a different memory manager than
+ the application.
+
+ o New wrappers were added for C++ (many) and Fortran
+ (h5pset_file_image_f and h5pget_file_image_f).
+
+ o Mac OS X 10.9 Mavericks is now supported.
+
+ o Many improvements were added in support of CMake, including the
+ addition of support for CMake 2.8.11.
+
+ o Improvements were added to the Core VFD (or Memory VFD).
+
+ o The following changes were made to Parallel HDF5:
+
+ - The MPI-POSIX VFD was removed. Application developers should
+ always use the MPI-IO VFD.
+
+.. code-block:: c
+
+    - Parallel HDF5 now supports collective I/O on point selections.
+
+
+ o A few changes were added to the tools (h5diff, h5dump, and h5repack).
+
+This release contains many other changes that are not listed here.
+Please be sure to read the Release Notes for a comprehensive list of
+new features and changes:
+
+ http://www.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.8.13-RELEASE.txt
+
+Changes that affect maintainers of HDF5-dependent applications are
+listed in "HDF5 Software Changes from Release to Release". See:
+
+ http://www.hdfgroup.org/HDF5/doc/ADGuide/Changes.html
+
+
+
+Future Changes to Supported Platforms
+
+-------------------------------------------------------------------------------
+
+
+Please be aware that after this release, we will be moving to
+CMake 3.0, and will add testing for VS 2013. VS 2012 will remain
+the standard.
+
+In addition, we will only support Cygwin built with CMake, and will
+be dropping VS 2010.
+
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ help@hdfgroup.org
+

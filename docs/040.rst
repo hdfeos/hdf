@@ -1,0 +1,80 @@
+==================
+HDF Newsletter #40
+==================
+
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #40
+ February 17, 1999
+
+CONTENTS
+
+-------------------------------------------------------------------------------
+
+HDF5 Beta Tools Release * Visit the HDF home page *
+
+ * for up-to-date information *
+ * on HDF: *
+ * http://hdf.ncsa.uiuc.edu/ *
+
+-------------------------------------------------------------------------------
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+HDF5 Beta Tools Release
+
+-------------------------------------------------------------------------------
+
+
+Pre-compiled versions of the HDF5 (beta) tools are now available
+for the following platforms:
+
+ Digitial Unix 4.0
+ HP-UX 10.20
+ Irix 6.5
+ Linux 2.2.1
+ Solaris 2.5
+
+The following binary utilities are included for each of the platforms
+above:
+
+
+ h5dump - Enables the user to examine the contents of an HDF5 file
+ and dump those contents to an ASCII file.
+
+ h5toh4 - Converts an HDF5 file into an HDF4 file.
+
+ h5ls - Lists selected information about file objects in the
+ specified format.
+
+ h5repart - Repartitions a file or family of files.
+
+ h5import - Creates an HDF5 file with a 1-D dataset of uint8.
+
+ h5debug - Debugs an existing HDF5 file at a low level.
+
+
+Information on h5dump, h5toh4, h5ls, and h5repart is included in
+the Tools.html, which is provided with the binaries.
+
+You can download this release from:
+
+ ftp://hdf.ncsa.uiuc.edu/pub/dist/HDF5/hdf5-tools-beta/
+
+For more information regarding HDF5, take a look at the HDF5 home
+page:
+
+ http://hdf.ncsa.uiuc.edu/HDF5/
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ hdfhelp@ncsa.uiuc.edu
+

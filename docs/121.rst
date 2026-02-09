@@ -1,0 +1,154 @@
+===================
+HDF Newsletter #121
+===================
+
+The HDF Group Home Page: http://hdfgroup.org/
+Helpdesk & Mailing Lists Info: http://hdfgroup.org/services/support.html
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #121
+ June 21, 2011
+
+CONTENTS
+ . Release of HDF 4.2.6
+ . Dropping support for g77 and g95 compilers in HDF4
+ . Soliciting feedback on dropping VS 2008 project files
+ . The HDF Group joins the Open Geospatial Consortium (OGC)
+ . HDF5DotNet - C++/CLI Wrappers for HDF5-1.8.7
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF 4.2.6
+
+-------------------------------------------------------------------------------
+
+
+We are please to announce the release of HDF 4.2.6. It can be obtained
+from the "HDF Downloads" page:
+
+ http://www.hdfgroup.org/downloads/index.html#hdf4
+
+or directly from the "Obtaining The HDF Software" page:
+
+ http://www.hdfgroup.org/release4/obtain.html
+
+The documentation for HDF 4.2.6 is not yet available, but will be soon.
+
+Important new features and changes in this release include:
+
+. Prior to HDF version 4.2.6, a zero could be successfully passed in for
+
+.. code-block:: c
+
+    the count parameter of SDsetattr, but a delayed failure would then occur
+    when SDend was called (which could potentially cause file corruption).
+    As of 4.2.6, SDsetattr will fail when the count is zero.
+
+
+ A user suggested the following workaround for C applications that need
+
+.. code-block:: fortran
+
+    to create an attribute containing a zero-length character string: the C
+    application can pass in a single character string containing the '\0'
+    character for the value and 1 for the count.
+
+
+. Many new functions were added to this release:
+
+ - The Vnattrs2, Vattrinfo2, and Vgetattr2 functions were added to work
+ around limitations of Vnattrs, which is not aware of attributes
+ created by pre-Vsetattr methods.
+
+ - Numerous functions were added to support the HDF4 Mapping project.
+
+ - The VSgetexternalfile and SDgetexternalfile functions were added to
+ provide information on an external file.
+
+. CMake support was added.
+
+. The HDF tests will no longer fail if building HDF4 with different
+ versions of the JPEG library.
+
+. A few fixes were made to hdp and hdiff.
+
+. The HDF Reference Manual is now available in HTML format.
+
+Please be sure to see the HDF 4.2.6 release notes for complete details
+on what has changed in this release:
+
+ http://www.hdfgroup.org/ftp/HDF/HDF_Current/src/hdf-4.2.6-RELEASE.txt
+
+
+Dropping support for g77 and g95 compilers in HDF4
+
+-------------------------------------------------------------------------------
+
+
+HDF version 4.2.6 is the last version of the HDF4 library to be tested
+with g77 and g95 as the Fortran 77 compilers. Both of these compilers
+will be removed from the tested compilers list. Instead, gfortran, which
+is part of the standard GCC package and is actively maintained, will be
+the default Fortran compiler on systems where GNU compilers are used by
+default (such as Linux).
+
+
+Soliciting feedback on dropping VS 2008 project files
+
+-------------------------------------------------------------------------------
+
+
+After the next release of HDF4, scheduled for February 2012, we are
+planning to drop support for VS 2008 project and batch files and
+move to CMake only. We are targeting the summer of 2013 for this change,
+but are soliciting feedback from users before we make any changes.
+Please let us know your comments on this!
+
+
+The HDF Group joins the Open Geospatial Consortium (OGC)
+
+-------------------------------------------------------------------------------
+
+
+We are pleased to announce that The HDF Group has joined the Open
+Geospatial Consortium (OGC) (http://www.opengeospatial.org/) as an
+Associate Member.
+
+HDF has been used in geospatial data storage for most of its 22 year
+existence. Over that time there have been many requests to standardize
+in how geospatial entities are described and stored in HDF. Membership
+in the OGC provides a great opportunity for us to work towards greater
+standardization and hence improve the experience of everyone who
+encounters geospatial data in either of the HDF formats.
+
+We look forward to the opportunities to collaborate on OGC initiatives,
+learn more about geospatial markets and technologies, and develop
+relationships with other consortium members.
+
+
+HDF5DotNet - C++/CLI Wrapper for HDF5-1.8.7
+
+-------------------------------------------------------------------------------
+
+
+For those who may not have been aware of it, a new version of
+HDF5DotNet, built with HDF5-1.8.7, is available from the following
+location:
+
+ http://hdf5.net/
+
+HDF5DotNet is a C++/CLI wrapper (of a subset) of HDF5 library APIs
+in a .NET assembly for use by .NET applications. This version is
+CLS compliant, supports .NET 64-bit, and includes wrappers for more
+HDF5 functions.
+
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ help@hdfgroup.org
+

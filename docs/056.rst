@@ -1,0 +1,154 @@
+==================
+HDF Newsletter #56
+==================
+
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #56
+ November 28, 2000
+
+
+CONTENTS
+
+-------------------------------------------------------------------------------
+
+. Release of HDF 4.1r4 * Visit the HDF home page *
+
+ - New Features and Changes * for up-to-date information *
+ - Platforms Tested * *
+ - Known Problems * http://hdf.ncsa.uiuc.edu/ *
+ * *
+
+. Release of Thread-Safe HDF5 *******************************
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF 4.1r4
+
+-------------------------------------------------------------------------------
+
+
+HDF 4.1r4 is now available. You can obtain this from the HDF(4)
+Home Page at:
+
+ http://hdf.ncsa.uiuc.edu/hdf4.html
+
+You can also download it directly from the NCSA anonymous ftp server
+from:
+
+ ftp://ftp.ncsa.uiuc.edu/HDF/HDF/HDF_Current/
+
+The HDF 4.1r4 documentation can be obtained from:
+
+ http://hdf.ncsa.uiuc.edu/doc.html
+
+First time users are encouraged to look at the HDF FAQ for this release:
+
+ http://hdf.ncsa.uiuc.edu/HDF-FAQ.html
+
+
+New Features and Changes
+
+-------------------------------------------------------------------------------
+
+
+This release focuses on new features and changes added to the
+GR interface.
+
+o Two new utilities have been added to HDF, gif2hdf and hdf2gif.
+ The gif2hdf utility will convert a GIF image into an HDF file
+ containing a GR image. The hdf2gif utility will convert an HDF GR
+ image into a GIF image.
+
+o Chunking and chunking with compression have been added to the
+ GR interface.
+
+o JPEG compression with the GR interface was not working properly.
+ This problem has been fixed.
+
+Several hdp options have been added:
+
+o Added -s option to dumpgr and dumpsds to allow printing data
+
+.. code-block:: fortran
+
+    as a stream instead of breaking the lines at 65 characters.
+
+
+o Added option -c to dumpgr and dumpsds to allow printing clean output
+ for attributes with type DFNT_CHAR. With this option, hdp will print
+
+.. code-block:: fortran
+
+    space characters, such as horizontal tabs, CRs, and LFs, as they are
+    instead of "\digit" (still the default.) This option also prints "..."
+    for one or more null characters among the data.
+
+
+o Added option -l to dumpgr to allow printing data in different interlace
+ modes.
+
+
+Platforms Tested
+----------------
+
+HDF 4.1 Release 4 has been tested on the following platforms:
+
+ Cray J90 (available after initial 4.1r4 release)
+ Cray T3E
+ DEC Alpha/Digital Unix
+ DEC Alpha/OpenVMS
+ Exemplar
+ FreeBSD
+ HP-UX
+ IRIX
+ IRIX64 (-n32, -64)
+ Linux
+ Solaris
+ Solaris x86
+ SP
+ Windows NT/98/2000
+
+For more information on the platforms that were tested and for
+which we provide pre-compiled binaries, please refer to the following
+web page (accessible from the HDF home page):
+
+ http://hdf.ncsa.uiuc.edu/platforms.html
+
+
+Known Problems
+--------------
+
+o The ncgen utility fails on the IBM SP.
+
+
+Release of Thread-Safe HDF5
+
+-------------------------------------------------------------------------------
+
+
+The first release of Thread-Safe HDF5 is available from the NCSA ftp server.
+This is a beta release. It uses the Pthreads (POSIX threads) library.
+
+You can download it from the page:
+
+ http://hdf.ncsa.uiuc.edu/HDF5/papers/mthdf/
+
+For details on what thread safety means in regards to HDF5, refer to
+the following paper (April 1999):
+
+ http://hdf.ncsa.uiuc.edu/HDF5/papers/mthdf/MTHDFpaper.htm
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ hdfhelp@ncsa.uiuc.edu
+
+

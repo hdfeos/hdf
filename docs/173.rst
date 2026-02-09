@@ -1,0 +1,10 @@
+===================
+HDF Newsletter #173
+===================
+
+Version 2.2.5 of the h4toh5 Conversion Library and Tools is now available from the HDF Support Portal’s Download h4h5tools page and directly from h4h5tools+2.2.5.
+This release was tested with HDF5 1.10.6, HDF5 1.8.21, and HDF 4.2.15 and contains the following changes:
+Support was added for VS 1019 with CMake.
+Improvements to the CMake configuration were added.
+Memory leaks were fixed in the tools.
+Please see the Release Notes for complete details on what is new in this release.

@@ -1,0 +1,16 @@
+===================
+HDF Newsletter #176
+===================
+
+HDFView version 3.1.2 is now available from the HDFView Download page at https://www.hdfgroup.org/downloads/hdfview/
+The software can also be obtained from the HDFView 3.1.2 page on the HDF Support Portal.
+This is a maintenance release with a few changes, including:
+This release was built and tested with HDF5-1.10.7, HDF 4.2.15, and Open JDK 15.
+HDFView was converted to use Java Modules, which provides a smaller footprint.
+The dimensions in a netCDF file are now displayed in the Object Info tab.
+The “Current Working Directory” option can now be specified for the default working directory.
+Committed datatypes can now be used when creating new objects.
+A bug was fixed with creating and using a dataset with an enum datatype.
+Please see the release notes for complete details on what is new in this release.
+Limitations
+HDFView 3.1.2 is not currently supported on macOS 10.15 and 11.0 due to a notification signing issue. We will provide these binary distributions as they are made available. Please see the HDFView 3.1.2 page for further information on this and other issues.

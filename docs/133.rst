@@ -1,0 +1,86 @@
+===================
+HDF Newsletter #133
+===================
+
+To view from a browser see:
+ http://www.hdfgroup.org/newsletters/newsletter133.html
+
+-------------------------------------------------------------------------------
+
+The HDF Group Home Page: http://www.hdfgroup.org/
+Helpdesk/Mailing List Info: http://www.hdfgroup.org/services/support.html
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #133
+ March 8, 2013
+
+CONTENTS
+ . Release of h5edit version 1.1.0
+ . Release of nagg version 1.5.0-beta
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of h5edit version 1.1.0
+
+-------------------------------------------------------------------------------
+
+
+H5edit version 1.1.0 is now available from the JPSS project Downloads page:
+
+ http://www.hdfgroup.org/projects/npoess/jpss_downloads.html
+
+New Features and Changes in this release include:
+
+ o Support was added for the --atomic option which will maintain a
+ backup file that can be used to recover the original data file in the
+ event that errors occur.
+
+ o The testh5edit.sh script no longer fails with an output mismatch error
+ when h5edit is built with HDF5-1.8.9. Please note that with this change
+ h5edit 1.1.0 is not backward compatible with HDF5 releases prior to
+ HDF5-1.8.9.
+
+ o Support was added for COPY and RENAME commands for attributes.
+
+The h5edit tool is a general command line tool to edit HDF5 files. The
+current version is limited to operations on attributes only. For more
+information see:
+
+ http://www.hdfgroup.org/projects/npoess/h5edit_index.html
+
+
+
+Release of nagg version 1.5.0-beta
+
+-------------------------------------------------------------------------------
+
+
+A new release of nagg, version 1.5.0-beta is available from the JPSS
+project Downloads page:
+
+ http://www.hdfgroup.org/projects/npoess/jpss_downloads.html
+
+This version:
+
+ o Extends the "-l filename" option to process geolocation information
+ according to the specified file in addition to number of granules and
+ type of products.
+
+ o Extends the notion of compatible geolocation products to allow, for
+ example, packaging an SDR product with a terrain-corrected geolocation
+ product.
+
+Nagg is an NPP-specific tool for aggregating JPSS data granules from
+existing files into new files. For more information on this tool, see:
+
+ http://www.hdfgroup.org/projects/npoess/nagg_index.html
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ help@hdfgroup.org
+

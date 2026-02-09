@@ -1,0 +1,55 @@
+===================
+HDF Newsletter #158
+===================
+
+To view from a browser see:
+ https://support.hdfgroup.org/newsletters/newsletter158.pdf
+
+-------------------------------------------------------------------------------
+
+The HDF Group Home Page: https://www.hdfgroup.org/
+Support Services: https://www.hdfgroup.org/support/
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #158
+ September 12, 2017
+
+Release of the h4toh5 Conversion Library and Tools Version 2.2.3
+
+-------------------------------------------------------------------------------
+
+
+Version 2.2.3 of the h4toh5 Conversion Library and Tools is now available
+from the HDF Downloads page:
+
+ https://support.hdfgroup.org/downloads/index.html#h4h5
+
+It can be obtained directly from:
+
+ https://support.hdfgroup.org/products/hdf5_tools/h4toh5/download.html
+
+This release was tested with HDF 4.2.13, HDF5-1.8.19, and HDF5-1.10.1, and
+contains many changes, including:
+
+ o Numerous improvements were made to the tools. For example:
+
+ - h4toh5 now follows the HDF5 dimension scale specification to handle
+ HDF4 SDS dimensions
+
+ - "h4toh5 -eos" can now convert a 1D HDF-EOS2 swath to HDF5.
+
+ o Memory leaks in the library and tools were fixed.
+
+Please see the Release Notes for complete details on what is new with this
+release:
+
+ https://support.hdfgroup.org/ftp/HDF5/h4toh5/src/h4h5tools-2.2.3-RELEASE.txt
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ help@hdfgroup.org

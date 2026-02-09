@@ -1,0 +1,13 @@
+===================
+HDF Newsletter #165
+===================
+
+The HDFView 3.0 release is now available from the HDFView home page:
+https://www.hdfgroup.org/downloads/hdfview/
+It is built with the HDF5-1.10.3 and with HDF 4.2.14.
+HDFView 3.0 is a major release that includes the following new features and changes:
+It supports 64-bit object identifiers, and uses the HDF-Java wrappers that were added to HDF5 and HDF4.
+The GUI framework that HDFView uses was migrated from Swing to SWT, which provides a more native application look and feel and advanced support for tables.
+The data views have been separated from the main HDFView window. The main HDFView window still displays open files and their structures on the left side of the window, and it now displays any metadata on the right side.
+This release includes improved support for various datatypes (compound, array of compound, and opaque).
+For a complete list of the new features and changes in this release, please see the Release Notes.

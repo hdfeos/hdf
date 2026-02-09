@@ -1,0 +1,87 @@
+==================
+HDF Newsletter #97
+==================
+
+THG Home Page: http://hdfgroup.org/
+Helpdesk & Mailing Lists Info: http://hdfgroup.org/services/support.html
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #97
+ October 23, 2007
+
+CONTENTS
+ . Release of HDF5 1.8.0 Beta 4
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF5 1.8.0 Beta 4
+
+-------------------------------------------------------------------------------
+
+
+The Beta 4 release of HDF5 1.8.0 is now available from:
+
+ http://www.hdfgroup.uiuc.edu/HDF5/release/beta/obtain518.html
+
+A list of the new features in HDF5 1.8.0 can be found at:
+
+ http://www.hdfgroup.uiuc.edu/HDF5/doc_1.8pre/WhatsNew180.html
+
+Documentation for HDF5 1.8.0 Beta 4 can be obtained from the following
+location:
+
+ http://www.hdfgroup.uiuc.edu/HDF5/doc_1.8pre/
+
+
+Please note that this release marks a MAJOR SHIFT in APIs that affects how
+applications must be COMPILED and LINKED with HDF5 1.8.0.
+
+The following discussion applies to HDF5 C applications only; HDF5 Fortran,
+C++, and Java applications are not affected.
+
+In HDF5 Release 1.8.0, we are introducing new versions of several basic APIs
+to accommodate new requirements and features. Thus, in HDF5 1.8.0-beta4,
+many commonly used functions, such as H5Gcreate, H5Dcreate, H5Topen, etc.,
+have been renamed and macros with the original function names have been
+introduced. These macros can be mapped at compile time to either the old or
+new versions of the APIs, which can all be available in the library.
+"API Compatibility Macros" describes these changes in detail:
+
+ http://www.hdfgroup.uiuc.edu/HDF5/doc_1.8pre/doc/RM/APICompatMacros.html
+
+We strongly encourage you to read this document before compiling any
+C application(s) with the HDF5 1.8.0-beta4 library.
+
+
+By default, the beta4 release maps the new macros to the NEW API versions
+that are being introduced with release 1.8.0.
+
+This means that C applications that worked with HDF5 Release 1.6.x,
+1.8.0-beta3, or earlier, will not link with the HDF5-1.8.0-beta4
+
+.. code-block:: c
+
+   library unless you do one of the following:
+
+
+ 1) Configure and build the application using this compiler flag:
+ -D H5_USE_16_API
+ 2) Configure and build the HDF5 1.8.0-beta4 library using this
+ configuration flag:
+ --with-default-api-version=v16
+ 3) Update the application to use the new 1.8.0 signatures.
+
+
+Also be aware that the use of new features of the HDF5 1.8.0 library can
+raise backward and forward compatibility issues that may affect your HDF5
+files. The following document describes these issues in detail:
+
+http://www.hdfgroup.uiuc.edu/HDF5/doc_1.8pre/doc/ADGuide/CompatFormat180.html
+
+
+Please let the THG Helpdesk know if you have any questions!
+
+
+

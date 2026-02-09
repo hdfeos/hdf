@@ -1,0 +1,167 @@
+==================
+HDF Newsletter #13
+==================
+
+ February 25, 1994
+
+
+Contents
+
+1. Introduction
+2. Announcement on HDF3.3 release 3
+3. The first official release of the HDF Reference Manual V3.3
+4. Information about limits in HDF releases
+5. ANSI C in future versions
+6. Policy on Fortran 90 support for HDF
+7. Update on NCSA tools
+8. New contributions
+
+
+
+Introduction
+============
+
+We are trying to start writing the next newsletter
+as soon as the previous one has been sent out. We will
+build it up over time with paragraphs and will
+keep it with file name Newsletter???.draft on ftp
+so that people can view it periodically to see
+what was up. An .html file is also available on the NCSA ftp server.
+
+Announcement on HDF3.3 Release 3
+
+-------------------------------------------------------------------------------
+
+
+HDF3.3r3 is officially released today. It contains some improvements
+in the SD interface, Vdata interface; fixed a couple memory leaks.
+Operating systems Windows NT and Solaris are supported.
+The HDF base library passed all tests on the Intel I860. See ABOUT_3.3r3
+for more details.
+
+The first official release of the HDF Reference Manual V3.3
+
+-------------------------------------------------------------------------------
+
+
+Many thanks for the feedback from HDF users on the draft
+of HDF Reference Manual V3.3. We have revised the documentation
+and its first officail version is now available on the NCSA ftp
+server,in subdirectory Documentation/HDF3.3/Ref_Manual/.
+The draft was moved to Documentation/HDF3.3/Ref_Manual_draft/ temporarily.
+It will be removed from the ftp server on March 1, 1994.
+
+Information about limits in HDF releases
+
+-------------------------------------------------------------------------------
+
+
+The current implementation of HDF contains limits on certain aspects of
+hdf files. Some of the limits are defined in the library, others are
+
+.. code-block:: c
+
+   implied by the number types of parameters which are used in HDF internally.
+   Recently several users' applications happened to reach one or another limits
+   which caused various error messages or core dumps. To address this problem,
+   a section of 'Limits of the current release' was inserted into the ABOUT_3.3r3.
+   A limits.html file is also available on the www HDF information server.
+
+
+ANSI C in future versions
+
+-------------------------------------------------------------------------------
+
+
+We raised the ANSI C issue in Newsletter12 dated Dec. 23, 1993.
+Up to now very few responses have been received. Since it will probably affect
+a certain number of HDF users, we are re-posting the section of
+'ANSI C in HDF 4.0' of the Newsletter12 below hoping to draw users objections
+and comments.
+
+
+ ANSI C in HDF 4.0
+ -----------------
+ There has been some discussion among the members of the HDF
+ development team about the issue of our next major release (v4.0)
+ being primarily targeted towards the use of ANSI C conforming
+ compilers.
+
+ We would like to have v4.0 and all further releases of the HDF library
+ and utilities be written to only compile with ANSI C compilers. We
+ believe this will increase the clarity and maintainability of our
+ code.
+
+ In the interests of maintaining backwards compatibility with K&R C
+ compilers, we would distribute in the release Peter Deutsch's ansi2knr
+ tool which can convert ANSI C code into K&R compliant code. This would
+ allow older K&R C compilers continued access to new versions of the
+ library.
+
+ Please respond to Quincey Koziol at koziol@ncsa.uiuc.edu for future
+ correspondence on this issue.
+
+
+Policy on Fortran 90 support for HDF
+
+-------------------------------------------------------------------------------
+
+
+Some user's have asked the NCSA HDF group if we
+plan to support Fortran 90 versions of the HDF
+APIs. After some discussion, we have determined
+that this would not be simple, for several
+reasons, including:
+
+ There are significant differences between Fortran 90 and Fortran 77,
+
+.. code-block:: c
+
+    which we currently do support Fortran 90 compilers are not currently
+    implemented on many platforms that HDF is currently supported on
+    Support for Fortran 90 should probably involve adding new capabilities
+    to the Fortran interface, such as support for structures and dynamic
+    memory allocation. Such capabilities are desirable, but substantial
+    resources are required to implement them in HDF.
+
+
+Hence, we have adopted the following policy on Fortran 90 support for HDF:
+
+"The HDF library does not currently support Fortran 90 APIs for any of
+its interfaces. The HDF group has no plans to support Fortran 90 APIs
+until a compelling need is observed for such support, Fortran 90
+compilers become available on most platforms that HDF currently supports,
+and sufficient resources can be obtained for implementing Fortran 90 APIs."
+
+Update on NCSA Tools
+
+-------------------------------------------------------------------------------
+
+
+XDataSlice 2.3 is now available on the NCSA ftp server, in directory:
+
+ /UNIX/XDataSlice/XDS2.3/
+
+XDS2.3 fixes some memory leaks; allows 2 Colormaps (when using the palette
+editor), one for the dicer images and one for the other windows; includes
+more communication support. Read the README file in that directory for
+details about the new features in XDS2.3.
+
+New contributions
+=================
+
+HDF3.2r2 was ported to FreeBSD on IBM-PC 386/486.
+
+Pedro Vazquez, vazquez@iqm.unicamp.br ported HDF3.2r2 to FreeBSD
+on IBM-PC 386/486. This HDF port suports all HDF features
+under C and almost all under fortran. The library
+works with both gnu f77 and f2c/gcc. The library
+was used to compile XDataSlice and it's able to
+read hdf files created on Suns and IBM as well
+create hdf files readable by these machines. There are no
+byte order problems.
+
+The port is in HDF/contrib/HDF3.2r2.FreeBSD.386.486
+
+
+

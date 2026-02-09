@@ -1,0 +1,66 @@
+===================
+HDF Newsletter #151
+===================
+
+To view from a browser see:
+ https://www.hdfgroup.org/newsletters/newsletter151.pdf
+
+-------------------------------------------------------------------------------
+
+The HDF Group Home Page: https://www.hdfgroup.org/
+Support Services: https://www.hdfgroup.org/services/
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #151
+ July 25, 2016
+
+
+Release of HDF Java Products for HDF5-1.8 (HDFView 2.13 and HDF Java 3.2.1)
+
+-------------------------------------------------------------------------------
+
+
+We are pleased to announce the latest release of the HDF Java Products. The
+HDF Java Products are now separated into two products, HDFView 2.13 and
+HDF Java 3.2.1. The HDF Java wrappers provided with this release are
+compatible with HDF5-1.8 and 32-bit object identifiers.
+
+The HDF Java Products can be obtained from The HDF Group Download page:
+
+ https://www.hdfgroup.org/downloads/index.html
+
+They can be obtained directly from the HDF Java Products Download page:
+
+ https://www.hdfgroup.org/products/java/release/download.html
+
+For more information on the HDF Java Products, see the home page:
+
+ https://www.hdfgroup.org/products/java/index.html
+
+The major changes in this release include:
+
+ o HDFView and the Java HDF and HDF5 interfaces (JHI and JHI5) are now
+ provided separately. The object libraries are packaged with HDFView.
+
+ o HDFView on Windows is installed in the user's directory by default.
+ The installation location can be changed by selecting the Advanced
+ button and modifying the Installation Scope (just after invoking the
+ installer).
+
+ o The Java package names for JHI5 and JHI have changed to "hdf.hdf5lib"
+ and "hdf.hdflib", respectively.
+
+Please be sure to see the Release Notes for more information on what has
+changed in this release:
+
+ https://www.hdfgroup.org/products/java/hdfview/UsersGuide/ug01introduction.html#ug01release
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ help@hdfgroup.org
+

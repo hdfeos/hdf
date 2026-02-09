@@ -1,0 +1,17 @@
+===================
+HDF Newsletter #188
+===================
+
+We are very pleased to announce the release of HDF5 1.13.3, which can now be obtained from the HDF5 Download page.
+Information about this release can be found on the Support Portal as follows:
+HDF5 documentation
+Software Changes from Release to Release
+HDF5 1.13.3 offers the new features and changes:
+A new feature is introduced in this release, multi dataset I/O operation. For this, a number of new APIs were added to the C library and the Fortran wrappers.  VOL callbacks for dataset I/O were also updated to support this new feature.  Please refer to the Release Notes for details.
+A new CMake configuration variable is added, HDF5_USE_GNU_DIRS (default OFF), to select the use of the GNU Coding Standard for the install directory variables by including the CMake module, GNUInstallDirs (see CMake documentation for details).
+A new Fortran wrapper is added, H5Dfill_f API, which accepts pointers, fill value datatype, and datatype of dataspace elements.
+The Doxygen User Guide documentation is available, in the share/html subdirectory of the HDF5 install directory, when configured and generated.
+Several issues are fixed in this release, including a memory leak, an issue with variable length attributes, an issue with hyperslab selections, and an issue with attribute type conversion with compound datatypes. Please see the Release Notes for details.
+The variable-length datatype handling in JNI has been improved to handle more complex combinations of sub-datatypes.
+This release contains other changes that are not listed here. Please be sure to read the Release Notes for a comprehensive list of new features and changes.
+Changes that affect maintainers of HDF5-dependent applications are listed on the HDF5 Software Changes from Release to Release page.

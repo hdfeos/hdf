@@ -1,0 +1,172 @@
+===================
+HDF Newsletter #131
+===================
+
+To view from a browser see:
+ http://www.hdfgroup.org/newsletters/newsletter131.html
+
+-------------------------------------------------------------------------------
+
+The HDF Group Home Page: http://hdfgroup.org/
+Helpdesk & Mailing Lists Info: http://hdfgroup.org/services/support.html
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #131
+ January 28, 2013
+
+CONTENTS:
+
+ . Release of HDF5-1.8.10-patch1
+ . Release of h5edit 1.1.0-beta1
+ . HDFView Survey Update
+ . RESTful HDF5 Interface Specification 0.1
+ . Retirement of HDF-EOS5 to NetCDF-4 Converter
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF5-1.8.10-patch1
+
+-------------------------------------------------------------------------------
+
+
+The HDF5-1.8.10-patch1 release is now available. This is a source code
+release only. Pre-compiled binary distributions were not generated for
+HDF5-1.8.10-patch1 and the HDF5-1.8.10 pre-built binary distributions
+are still available.
+
+This release is available from the HDF Group Downloads page:
+
+ http://www.hdfgroup.org/downloads/
+
+It can also be obtained directly from:
+
+ http://www.hdfgroup.org/HDF5/release/obtain5.html
+
+There are a few notable fixes in HDF5-1.8.10-patch1:
+
+ o The library now behaves correctly when performing large I/O operations
+ on Mac OS-X. Previously, I/O operations greater than 2 GB would fail.
+
+ o The h5diff performance has been improved when comparing HDF5 files with
+ many attributes.
+
+ o A bug in the core VFD has been fixed that prevented opening files
+ greater than 2 GB on some systems (this bug is unrelated to the OS-X
+ 2 GB issue).
+
+.. code-block:: c
+
+   If you are currently using HDF5-1.8.10 and these changes do not affect you,
+   then there is no need to install this patch.
+
+
+Please refer to the HDF5-1.8.10-patch1 release notes for detailed
+information regarding this release:
+
+ http://www.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.8.10-patch1-RELEASE.txt
+
+Please note that there is no change to the HDF5-1.8.10 documentation, which
+is available from here:
+
+ http://www.hdfgroup.org/HDF5/doc/
+
+For information on HDF5, see the HDF5 home page:
+
+ http://www.hdfgroup.org/products/hdf5/index.html
+
+
+
+Release of h5edit 1.1.0-beta1
+
+-------------------------------------------------------------------------------
+
+
+A new release of h5edit, version 1.1.0-beta1, is now available. New
+features and changes in this release include:
+
+ o Support was added for the --atomic option which will maintain a
+ backup file that can be used to recover the original data file in
+ the event that errors occur. Please see the RFC on the atomicity
+ feature for more information about this option:
+
+ ftp:/ftp.hdfgroup.uiuc.edu/pub/outgoing/NPOESS/RFC/H5edit_Atomicity_Requirements+Design-1.pdf
+
+ o In previous releases of h5edit, the testh5edit.sh script received an
+ output mismatch error when h5edit used HDF5-1.8.9. This occurred
+ because of a change to h5dump, which h5edit uses to verify the test
+ output. As of h5edit 1.1.0-beta1 the h5edit output file was updated
+ to work with HDF5-1.8.9. Please note that this means that
+ h5edit 1.1.0-beta1 is not backward compatible with HDF5 releases prior
+ to HDF5-1.8.9.
+
+H5edit is a command line tool to edit HDF5 files. The current version is
+limited to operations on attributes only. For more information see:
+
+ http://www.hdfgroup.org/projects/npoess/h5edit_index.html
+
+
+
+HDFView Survey Update
+
+-------------------------------------------------------------------------------
+
+
+Thank you to everyone who participated in the HDFView User Survey. Your
+feedback and comments are extremely helpful to us. Please see the
+HDFView User Survey Report regarding the responses received, here:
+
+ http://www.hdfgroup.org/hdf-java-html/hdfview/hdfview_survey_report_2013.pdf
+
+A link to the survey has been added to the HDFView home page for anyone
+who has further comments or suggestions:
+
+ http://www.hdfgroup.org/hdf-java-html/hdfview/
+
+
+RESTful HDF5 Interface Specification 0.1
+
+-------------------------------------------------------------------------------
+
+
+RESTful HDF5 Interface Specification 0.1 can be accessed here:
+
+ http://www.hdfgroup.org/pubs/papers/RESTful_HDF5.pdf
+
+This document specifies a REST (REpresentational State Transfer)
+interface for HDF5 data stores. It describes HDF5 resources, URIs,
+and resource representations, and shows a simple example of how to
+use this interface to populate an HDF5 store.
+
+Please note that this is version 0.1 of this specification. Resource
+granularity and representations are based on our own experiments and
+a limited understanding of "real" applications.
+
+We invite you to share your comments/thoughts regarding this via the
+HDF-Forum, or you can reply directly to gheber@hdfgroup.org. We would
+like to know how you would use an HDF5/REST interface with your data.
+If you would consider participating in a trial, please let us know
+that, as well.
+
+
+Retirement of HDF-EOS5 to NetCDF-4 Converter
+
+-------------------------------------------------------------------------------
+
+
+Effective 12/31/2012, the HDF-EOS5 to NetCDF-4 Converter is no longer
+supported by The HDF Group. For information regarding this tool, see:
+
+ http://www.hdfeos.org/software/convert_hdfeos5.php
+
+Contact eoshelp@hdfgroup.org if you have any questions or concerns
+about this.
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ help@hdfgroup.org
+

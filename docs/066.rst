@@ -1,0 +1,265 @@
+==================
+HDF Newsletter #66
+==================
+
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #66
+ February 22, 2002
+
+
+CONTENTS
+
+-------------------------------------------------------------------------------
+
+. Release of HDF5-1.4.3 * *
+
+ - New Features and Changes * Visit the HDF home page *
+ - Bug Fixes * for up-to-date information *
+ - Platforms Tested * *
+ - Known Problems * http://hdf.ncsa.uiuc.edu/ *
+ * *
+
+. HDF5 High Level API Software Release *******************************
+ (beta 0.2)
+
+. Dropping Support for Windows 98
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF5-1.4.3
+
+-------------------------------------------------------------------------------
+
+
+HDF5-1.4.3 is now available for download. You can obtain the
+HDF5-1.4.3 software from the HDF5 home page at:
+
+ http://hdf.ncsa.uiuc.edu/HDF5/
+
+The HDF5 documentation is included in the source code and can also
+be downloaded from:
+
+ http://hdf.ncsa.uiuc.edu/HDF5/doc/
+
+This is a fully tested release. The configuration features supported
+in this release can be viewed at:
+
+ http://hdf.ncsa.uiuc.edu/HDF5/release/SuppConfigFeats.html
+
+
+New Features
+------------
+
+Major new features in HDF5 include:
+
+ * A helper script called ``h5cc'', which helps compilation of HDF5
+ programs, is now distributed with HDF5. See the reference manual
+ for information on how to use this feature.
+
+ * Changed prototype for H5Awrite from:
+
+.. code-block:: c
+
+    H5Awrite(hid_t attr_id, hid_t type_id, void *buf)
+    to:
+    H5Awrite(hid_t attr_id, hid_t type_id, const void *buf)
+
+
+ * Several changes to the C++ API were made, including
+ support for Windows and the addition of the operator= to
+ class PredType.
+
+ * Added HDF5 library performance tests, and made several performance
+ improvements (to hyperslabs, data conversions, and chunking).
+
+ * Parallel C HDF5 now works on HP-UX platforms, Compaq clusters,
+ Linux clusters, Cplants (alpha-linux clusters).
+
+ * The HDF5 F90 shared library is now supported on Windows platforms.
+
+ * The HDF5 C Library is now supported on IA32 and IA64 platforms.
+
+Further information can be found in the RELEASE.txt file that comes with the
+source code:
+
+ ftp://ftp.ncsa.uiuc.edu/HDF/HDF5/current/src/unpacked/release_docs/RELEASE.txt
+
+
+Bug Fixes
+=========
+
+Some of the major bug fixes in this release are listed below:
+
+ * Fixed a bug when reading chunked datasets where the edge of the dataset
+ would be incorrectly detected and generate an assertion failure.
+
+ * Fixed a bug where reading an entire dataset wasn't being handled
+ optimally when the dataset had unlimited dimensions. Dataset is read
+ in a single low-level I/O operation now, instead of being broken into
+ separate pieces internally.
+
+ * Fixed a bug where reading or writing chunked data which needed a
+ datatype conversion could result in data values getting corrupted.
+
+.. code-block:: c
+
+    * Fixed a bug where appending a point selection to the current selection
+    would not actually append the point when there were no points defined
+    currently.
+
+
+ * Fixed a bug where 'or'ing a hyperslab with a 'none' selection would
+ fail. Now adds that hyperslab as the first hyperslab in the selection.
+
+ * Fixed an off-by-one error in H5Sselect_valid which would allow hyperslab
+ selections which overlapped the edge of the selection by one element as
+ valid.
+
+ * Corrected behavior of H5Tinsert to not allow compound datatype fields to
+ be inserted past the end of the datatype.
+
+ * Fixed bug where variable-length datatypes for attributes were not working
+ correctly.
+
+ * Fixed bug where raw data re-allocated from the free-list would sometimes
+ overlap with the metadata accumulator and get corrupted.
+
+ * Fixed bug where a preempted chunk in the chunk data could still be
+ used by an internal pointer and cause an assertion failure or core
+ dump.
+
+ * Fixed bug where non-zero fill-value was not being read correctly from
+ certain chunked datasets when using an "all" or contiguous hyperslab
+ selection.
+
+Further information can be found in the RELEASE.txt file that comes with the
+source code.
+
+
+Platforms Tested
+================
+
+ AIX 4.3.3.0 (IBM SP powerpc) xlc 5.0.2.0
+ mpcc_r 5.0.2.0
+ xlf 07.01.0000.0002
+ mpxlf 07.01.0000.0002
+ AIX 4.3 (IBM SP RS6000) C for AIX Compiler, Version 5.0.2.0
+ xlf 7.1.0.2
+ poe 3.1.0.12 (includes mpi)
+ Cray T3E sn6711 2.0.5.57 Cray Standard C Version 6.5.0.3
+ Cray Fortran Version 3.5.0.4
+ Cray SV1 10.0.0.8 Cray Standard C Version 6.5.0.3
+ Cray Fortran Version 3.5.0.4
+ FreeBSD 4.5 gcc 2.95.3
+ g++ 2.95.3
+ HP-UX B.11.00 HP C HP92453-01 A.11.01.20
+ HP F90 v2.4
+ HP-UX B.11.00 SysV HP C HP92453-01 A.11.01.20
+ HP F90 v2.4
+ HP MPI [not a product] (03/24/2000) B6060BA
+ IRIX 6.5 MIPSpro cc 7.30
+ IRIX64 6.5 (64 & n32) MIPSpro cc 7.3.1.2m
+ Linux 2.4.9-13smp gcc 2.95.3
+ g++ 2.95.3
+ Linux 2.2.18smp gcc 2.95.2
+ gcc 2.95.2 with mpich 1.2.1
+ g++ 2.95.2
+ pgf90 3.2-4
+ OSF1 V5.1 Compaq C V6.3-028
+ Compaq Fortran V5.4-1283
+ SunOS 5.7 WorkShop Compilers 5.0 98/12/15 C 5.0
+ (Solaris 2.7) Workshop Compilers 5.0 98/12/15 C++ 5.0
+ Workshop Compilers 5.0 98/10/25
+ FORTRAN 90 2.0 Patch 107356-04
+ SunOS 5.8/32 Sun WorkShop 6 update 1 C 5.2 2000/09/11
+ (Solaris 2.8) Sun WorkShop 6 update 1 Fortran 95 6.1
+ Patch 109503-07 2001/08/11
+ Sun WorkShop 6 update 1 C++ 5.2 Patch
+ 109508-04 2001/07/11
+ SunOS 5.8/64 Sun WorkShop 6 update 1 C 5.2 2000/09/11
+ (Solaris 2.8) Sun WorkShop 6 update 1 Fortran 95 6.1
+ Patch 109503-07 2001/08/11
+ Sun WorkShop 6 update 1 C++ 5.2 Patch
+ 109508-04 2001/07/11
+ TFLOPS r1.0.4 v4.0.8 i386 pgcc Rel 3.1-4i with mpich-1.2.1 with
+ local modifications
+ IA-32 Linux 2.2.19smpx cc Intel 5.0.1
+ egcs-2.91.66
+ IA-64 Linux 2.4.16 ia64 gcc version 2.96 20000731
+ Intel(R) C++ Itanium(TM) Compiler
+ for the Itanium(TM)-based applications,
+ Version 6.0 Beta, Build 20010905
+ Windows 2000 (NT5.0) MSVC++ 6.0
+ DEC Visual Fortran 6.0
+ Windows NT4.0 MSVC++ 6.0
+ DEC Visual Fortran 6.0
+ Windows NT4.0 Code Warrior 6.0
+ Windows 98 MSVC++ 6.0
+ DEC Visual Fortran 6.0
+
+
+Known Problems
+--------------
+
+For details on the known problems in this release, refer to the
+RELEASE.txt file or known problems web page:
+
+ http://hdf.ncsa.uiuc.edu/HDF5/release/known_problems5.html
+
+
+
+HDF5 High Level API Software Release (beta 0.2)
+
+-------------------------------------------------------------------------------
+
+
+The latest release of the HDF5 High Level API software is now available
+from the HDF5 Home Page. The URL is:
+
+ http://hdf.ncsa.uiuc.edu/HDF5/hdf5_hl/doc/
+
+This release includes:
+
+ o The following new Table functions:
+
+ H5TBdelete_record
+ H5TBinsert_record
+ H5TBadd_records_from
+ H5TBcombine_tables
+ H5TBinsert_field
+ H5TBdelete_field
+
+ o Several function changes
+
+ o Additional test/example programs for the Table API.
+
+ o The windows installation procedure has been improved.
+ There is now an "all" project that builds the hdf5_hl library and
+ all the tests/examples. There is also a batch file that can be run
+ from the command line to test all the hdf5_hl tests/examples.
+ Note the change in location of the INSTALL.txt file, as follows:
+
+ ftp://ftp.ncsa.uiuc.edu/HDF/HDF5/hdf5_hl/
+
+
+Dropping Support for Windows 98
+
+-------------------------------------------------------------------------------
+
+
+This is the last release that we will be supporting Windows 98
+in HDF5.
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ hdfhelp@ncsa.uiuc.edu
+

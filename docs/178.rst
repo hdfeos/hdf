@@ -1,0 +1,27 @@
+===================
+HDF Newsletter #178
+===================
+
+We are very pleased to announce the release of HDF5 1.12.1, which can now be obtained from the HDF5 Download page.
+Information about this release can be found on the Support Portal as follows:
+HDF5 documentation
+Software Changes from Release to Release
+HDF5 1.12.1 is a minor release with a few new features and changes:
+The new Mirror and Splitter VFDs were added, enabling "concurrent" file writes to two files, one of which could be on a remote system.
+The following vulnerability issues were addressed:CVE-2018-11206CVE-2018-14033 (same as CVE-2020-10811)CVE-2018-14460
+
+.. code-block:: c
+
+   Autotools and CMake options were added to enable or disable file locking. C functions and C++, Fortran and Java wrappers were also added for setting and getting the file locking parameters. In addition, file locking now works on Windows.
+   Various improvements were made to HDF5 CMake and Autotools configuration to produce doxygen generated documentation, to flag certain compiler warnings as errors, to build the HDF filter plugins project as an external project, and to link the generated Fortran MOD files into the include directory.
+   Starting in this release, HDF5 will support using the AEC library as a replacement library for SZip and CMake will no longer build the C++ library by default.
+   Various internal changes were made to improve performance.
+   HDF5 now requires Visual Studio 2015 or greater; work-around code and definitions for older Visual Studio version have been removed.
+   Support for macOS 11.2 Big Sur is added and, on macOS, Universal Binaries can now be built, allowing native execution on both Intel and Apple Silicon (ARM) based Macs.
+   VOL LayerChanges have been made to the current virtual object layer (VOL) in the develop branch (future 1.13.0.) These changes cannot be brought to the 1.12 branch due to binary compatibility concerns. VOL developers who have been targeting the 1.12 branch should consider building against the develop branch. The develop branch will have several "unstable" releases where binary compatibility is not maintained as we further develop the VOL layer followed by a stable 1.14.0 release.
+   Also new in this release is the HDF5 C-API documentation based on Doxygen. Note that the Fortran-API is NOT included in this release, and will be included in a future release.  Online versions can be found at these URLs:http://docs.hdfgroup.org/hdf5/v1_12/https://docs.hdfgroup.org/hdf5/v1_12/
+   Included are all core library functions documented in the current documentation with the exception of H5P[g,s]et_fapl_[hdfs,ros3].
+   This documentation is WORK-IN-PROGRESS. That’s why all existing documentation will remain accessible for the foreseeable future.
+   Since this portion of the HDF5 documentation is now part of the source code, it gets the same treatment as code. In other words, issues, inaccuracies, corrections should be reported as issues in GitHub (https://github.com/HDFGroup/hdf5/issues), and pull requests will be reviewed and accepted as any other code changes.
+   This release contains other changes that are not listed here. Please be sure to read the Release Notes for a comprehensive list of new features and changes.
+   Changes that affect maintainers of HDF5-dependent applications are listed on the HDF5 Software Changes from Release to Release page.

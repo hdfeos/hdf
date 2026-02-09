@@ -1,0 +1,353 @@
+==================
+HDF Newsletter #12
+==================
+
+
+ SEASON'S GREETINGS FROM HDF!
+
+-------------------------------------------------------------------------------
+
+
+
+ NEWSLETTER #12
+
+ December 23, 1993
+
+Contents
+
+ 1. HDF3.3 Release 2
+ 2. HDF3.3r2 bug fixes and support for Solaris2.0
+ 3. HDF3.3 Reference Manual available
+ 4. ANSI C in HDF 4.0
+ 5. Proposed N-bit Dataset Routines
+ 6. HDF Help Desk and HDF Information Server
+ 7. Update on Collage, Mosaic, etc
+ 8. New Contributions
+
+HDF 3.3 release 2 now available
+
+-------------------------------------------------------------------------------
+
+
+NCSA is pleased to announce the release of HDF 3.3r2. HDF 3.3r2 is
+available on the NCSA ftp server (ftp.ncsa.uiuc.edu; IP address
+141.142.20.50) in the directory HDF/HDF3.3r2/. File ABOUT_3.3r2
+and README files in that directory and subdirectories contain full
+details on the new features of HDF 3.3, as well as directions on how
+to download, install and use it.
+
+HDF3.3r2 bug fixes and support for Solaris 2.0
+
+-------------------------------------------------------------------------------
+
+
+We would like to give our special thanks to Andy Pursch and Christopher
+Cordell from JPL for helping us to port HDF3.3r2 to Solaris.
+
+Since HDF3.3r2 was released at the end of November, 1993, several bugs
+have been fixed as well as a port to Solaris. We decide to put bug
+fixes and the port in two patch files hdf.patch01 and mfhdf.patch01
+in HDF/HDF3.3r2/patches/. For the convenience of users who don't
+have easy access to patch facilities, we put all patched source
+code in HDF/HDF3.3r2/patches/patchedsrc/.
+
+Please read the README files in those directories for details.
+
+HDF 3.3 Reference Manual available
+
+-------------------------------------------------------------------------------
+
+
+A complete draft of the "HDF 3.3. Reference Manual, Draft Version 3.3" has
+just been completed.
+
+This manual is designed to serve as a listing of the function calls
+and command-line utilities supported by HDF version 3.3. It contains
+descriptions, definitions, and in some cases examples that demonstrate
+how to use each function and utility in the HDF library.
+
+The main chapters in the manual are:
+
+ Ch 1: Intro to HDF functions calls and utilities. A brief review
+ of each HDF interface, its data model and routines
+
+ Ch 2: The HDF function calls. An alphabetical listing of function
+ calls available in the HDF 3.3 library.
+
+ Ch 3: The HDF Utilities. An alphabetical listing of command-line
+ utilities available in the HDF 3.3 library.
+
+The NCSA ftp directory Documentation/HDF3.3/Ref_Manual contains postscript
+files that constitute the manual. See the README in the directory for
+further information.
+
+If you need hardcopy, contact the office of NCSA Documentation Orders at:
+
+ (217)244-4130
+ docorder@ncsa.uiuc.edu (Internet)
+ docorder@ncsagate (BITNET)
+
+or
+
+ Attention: Documentation Orders
+ NCSA
+ University of Illinois at Urbana-Champaign
+ 605 Springfield Ave.
+ Champaign, IL 61820
+
+
+ANSI C in HDF 4.0
+=================
+There has been some discussion among the members of the HDF
+development team about the issue of our next major release (v4.0)
+being primarily targeted towards the use of ANSI C conforming
+compilers.
+
+We would like to have v4.0 and all further releases of the HDF library
+and utilities be written to only compile with ANSI C compilers. We
+believe this will increase the clarity and maintainability of our
+code.
+
+In the interests of maintaining backwards compatibility with K&R C
+compilers, we would distribute in the release Peter Deutsch's ansi2knr
+tool which can convert ANSI C code into K&R compliant code. This would
+allow older K&R C compilers continued access to new versions of the
+library.
+
+Please respond to Quincey Koziol at koziol@ncsa.uiuc.edu for future
+correspondence on this issue.
+
+N-Bit Dataset Routines
+
+-------------------------------------------------------------------------------
+
+Currently, users of Scientific data sets in HDF are asking for ways to
+store datasets which are composed of number types which don't fall
+into any of our current pre-defined number types. This type of data
+
+.. code-block:: fortran
+
+   could be 12-bit integers, 15-bit floating point numbers, and possibly
+   structures (Vdatas) containing fields of various bit sizes.
+
+
+Since HDF is moving towards sole support of multi-file I/O, functions
+which allowed these types of datasets would only be implemented in the
+multi- file SDS and the VSet routines. The following discussion
+relates only to the SDS extensions, VSet extensions for bitfields will
+be handled at a later date.
+
+o Writing N-Bit datasets:
+
+ - SDsetbitfield(int32 sdsid, intn bitoffset, intn bitlength)
+
+This routine would specify that a bitfield was to be extracted from
+each item of data in a dataset in memory as it was written to the
+file. The data in memory exists in an "unpacked" form, and the
+extracted bitfields would be extracted and packed together as the data
+was written to the HDF file.
+
+The bitfield would start at the location specified by the bitoffset
+field, and the number of bits to extract would be specified in the
+bitlength field. This would allow users to extract bits from anywhere
+
+.. code-block:: fortran
+
+   in an integer as they were written to the file. The numbertype
+   specified in the SDselect, or SDcreate call (where the sdsid parameter
+   was generated), would be the "base" numbertype used to advance through
+   the unpacked dataset in memory as the bitfields were extracted and
+   written to the file.
+
+
+An example of the function calls needed to write a 6-bit field
+
+.. code-block:: fortran
+
+   occupying bits 8-13 in a 16-bit integer is shown below, with the
+   layout of the bits in memory.
+
+
+ int32 fid, sdsid, dims[2]={10,10};
+ int32 start[2]={0,0};
+ int32 edge[2]={10,10};
+ int16 mydata[10][10];
+
+ fid=SDstart("myfile.hdf",DFACC_CREATE);
+ sdsid=SDcreate(fid,"mydata",DFNT_INT16,2,dims);
+ SDsetbitfield(sdsid,8,6);
+ SDwritedata(sdsid,start,NULL,edge,mydata);
+
+The "mydata" dataset looks like this in memory:
+
+ 1
+ 5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0
+
+-------------------------------------------------------------------------------
+
+ | | <-data-> | |
+
+-------------------------------------------------------------------------------
+
+ | | <-data-> | |
+
+-------------------------------------------------------------------------------
+
+ .
+ .
+ .
+
+-------------------------------------------------------------------------------
+
+ | | <-data-> | |
+
+-------------------------------------------------------------------------------
+
+ | | <-data-> | |
+
+-------------------------------------------------------------------------------
+
+
+ - SDsetbitsignextend(int32 sdsid,bool signextend)
+
+This routine would indicate that the highest bit in the bitfield would
+be used to specify the value of all bits higher in the data. In the
+example above, if SDsetbitsignextend() was called with the signextend
+
+.. code-block:: c
+
+   parameter set to TRUE, bit 13 would be determine the bit values of
+   bits 14 & 15, setting them to 1 if bit 13 was one and 0 if bit 13 was
+   zero. This routine would take a higher priority than the
+   SDsetbitbackground() routine or SDsetbitfill() routines below.
+
+
+ - SDsetbitbackground(int32 sdsid,VOIDP background)
+
+This routine would specify the value that was filled into the "empty"
+
+.. code-block:: c
+
+   bits when a dataset was later read. The background parameter would be
+   a pointer to a value of the same number type as the dataset being
+   written. This value would be a template onto which the bits read from
+   the dataset would be overlayed. The bits read from the dataset would
+   replace the appropriate bits (i.e. 8-13 in the example above) from the
+   background value when the dataset was read by a user.
+
+
+ - SDsetbitfill(int32 sdsid,bool bitfill)
+
+This routine is proposed as an alternate to the SDsetbitbackground()
+routine above, it would just specify whether the bits "around" the
+bit-field would be set to 1 or 0 when the bit-field was read from the
+file and presented to the user. In the example above, calling this
+routine would ensure that bits 0-7 and 14-15 would be set to a
+pre-defined value.
+
+Either SDsetbitfill() or SDsetbitbackground() would be implemented,
+not both.
+
+o Reading N-Bit datasets:
+
+Ideally, reading an N-bit dataset would be completely transparent to a
+user. They would just set up an array of the number type of the
+
+.. code-block:: c
+
+   dataset, and call the reading functions specified in the multi-file SD
+   interface. The internals of the HDF library would handle the
+   reconstruction of the numbers for the user. This would mean that
+   slicing would be supported, however it may be slow due to the unusual
+   access methods required.
+
+
+o Implementation:
+
+The fact that a dataset was composed of bitfields would be indicated
+by an attribute written to described the bitfields involved. Storing
+the actual data in the file would need to be done through the bit I/O
+routines in a manner similar to number type conversion. This is
+necessary so that all machines would be able to read and write
+bitfields without mixing them around.
+
+Please respond to Quincey Koziol at koziol@ncsa.uiuc.edu for further
+correspondence on this issue.
+
+Announcement of HDF Help Desk and HDF Information Server
+
+-------------------------------------------------------------------------------
+
+The HDF User Support Team would like to announce the creation of a
+single email address for sending questions. The email address is
+hdfhelp@ncsa.uiuc.edu. All future questions should be sent to this
+address.
+
+Currently, there is an EXPERIMENTAL HDF Information Server which is
+accessible via Mosaic. Its URL is:
+
+ http://yahoo.ncsa.uiuc.edu:8001/.
+
+This server will perhaps become a permanent part of HDF.
+We would like to hear your feedback about this system.
+
+Update Collage, Mosaic, etc
+
+-------------------------------------------------------------------------------
+
+New releases of XCollage and Mosaic as well as various other tools from
+the Software Development Group at NCSA have been made in the past few
+weeks. XCollage 1.2.1 now supports HDF3.3. Mosaic is now also available
+for the IBM PC (Windows) and the Macintosh. All software is available
+via NCSA's ftp server at ftp.ncsa.uiuc.edu. For more information about
+NCSA software, see NCSA's Information Server or documentation on the
+ftp server.
+
+New Contributions
+=================
+
+o fix version tag
+
+ Fixver.c in subdirectory fixver/ is contributed by Doug Ilg, Hughes STX.
+
+.. code-block:: fortran
+
+    This program rewrites the version tag of the file specified on the command
+    line. It fixes the problem of uninitialized garbage that is written at the
+    end of the version tag string. This garbage can cause some programs
+    (notably Mac Collage) to choke.
+
+
+o read hdf files into Iris Explorer
+
+ The NCSA PATHFINDER project contains a module ReadDF which reads HDF
+ files into IRIS Explorer. The module is available on the NCSA
+ anonymous ftp server.
+
+ The module can now read from either HDF or netCDF files since it uses
+ the NCSA MFHDF library. It runs on IRIX version 4 and Explorer 2.0.
+
+ Please get the README files subdirectory hdftoxplr/ for more
+ information.
+
+ David P. Wojtowicz is the author of readDF.
+
+o hdfinfo
+
+ Hdfinfo.c was written by William Sherman of NCSA. It compiles with
+ the HDF3.2 library. The package is in subdirectory hdfinfo/.
+
+o HDF 24 bit image animator
+
+ Andrea Leone, Centre for Advanced Studies, R&D Sardinia, has contributed
+ two programs, hdf24seq and mhdf24seq, which have been tested on the SGIs
+ and IBM RS/6000. Both programs visualize and animate 24 bit images from
+ HDF files. mhdf24seq allows the user to visualize images from more than
+ one hdf file at a time.
+
+ The programs, as well as a README file are in the directory
+ HDF3.3r1_hdf24seq.
+
+ Andrea can be reached via email at: Andrea.Leone@crs4.it
+
+

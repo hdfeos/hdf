@@ -1,0 +1,128 @@
+==================
+HDF Newsletter #65
+==================
+
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #65
+ November 28, 2001
+
+
+CONTENTS
+
+-------------------------------------------------------------------------------
+
+. 2nd Beta Release of HDF5 High Level * *
+ API Software * Visit the HDF home page *
+
+ * for up-to-date information *
+
+. Release of Java HDF Products Version 2.7 * *
+
+ * http://hdf.ncsa.uiuc.edu/ *
+
+. Upcoming HDF-EOS Workshop * *
+
+-------------------------------------------------------------------------------
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+2nd Beta Release of HDF5 High Level API Software
+
+-------------------------------------------------------------------------------
+
+
+The second beta release of the HDF5 High Level API software is now available
+from the HDF5 Home Page. The URL is:
+
+ http://hdf.ncsa.uiuc.edu/HDF5/hdf5_hl/doc/
+
+This release includes:
+
+ o A new "Table API" (H5TB) for manipulating table datasets.
+ The Table API defines a standard storage for HDF5 datasets that are
+ intended to be interpreted as tables. A table is defined as a
+ collection of records whose values are stored in fixed-length
+ fields. All records have the same structure and all values in each
+ field have the same datatype.
+
+ o Many new functions for HDF5 Lite (H5L).
+
+ o More examples for the HDF5 Lite (H5L) and HDF5 Image (H5IM) APIs.
+
+
+.. code-block:: c
+
+   The HDF5 High Level APIs consist of higher-level functions which do more
+   operations per call than the basic HDF5 interface. The purpose is to
+   simplify and standardize operations within HDF5.
+
+
+We welcome (and encourage!) you to send us any comments you might have
+regarding this software. You can send them to:
+
+ hdfhelp@ncsa.uiuc.edu
+
+
+
+Release of Java HDF Products Version 2.7
+
+-------------------------------------------------------------------------------
+
+
+Version 2.7 of the Java HDF Products, built to work with HDF 4.1r5, is now
+available from:
+
+ http://hdf.ncsa.uiuc.edu/java-hdf-html/
+
+The changes since the 2.6 release are:
+
+ * All bugs in our database were fixed.
+
+ * The JHI was upgraded and built on HDF 4.1r5. It includes bug
+ fixes and some new API calls.
+
+ * Remote file access and the Java HDF Server (JHS) were deleted.
+ The code had not been tested for two years, and likely would
+
+.. code-block:: c
+
+    not work. It was removed in order to avoid possible maintenance
+    problems.
+
+
+ * The Java HDF Products no longer include the Java Runtime
+ Environment (JRE) due to Sun's license restrictions.
+
+
+Upcoming HDF-EOS Workshop
+
+-------------------------------------------------------------------------------
+
+
+The HDF-EOS Workshop, originally scheduled for last September, will be
+held in conjunction with the Science Data Processing Workshop on
+February 26th, 27th, and 28th, 2002, in Greenbelt, Maryland. The HDF
+sessions will be a separate "track" of the workshop, but in the same
+conference facility. Information regarding it can be found on the
+HDF-EOS Standards and Tools Information Center web page:
+
+ http://hdfeos.gsfc.nasa.gov/hdfeos/workshop.cfm
+
+Please check this page if you would like to register, participate, or
+just find out about this workshop.
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ hdfhelp@ncsa.uiuc.edu
+

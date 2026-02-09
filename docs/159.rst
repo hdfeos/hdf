@@ -1,0 +1,96 @@
+===================
+HDF Newsletter #159
+===================
+
+To view from a browser see:
+ https://support.hdfgroup.org/newsletters/newsletter159.pdf
+
+-------------------------------------------------------------------------------
+
+The HDF Group Home Page: https://www.hdfgroup.org/
+Support Services: https://www.hdfgroup.org/solutions/
+
+-------------------------------------------------------------------------------
+
+
+ Newsletter #159
+ November 30, 2017
+
+CONTENTS
+ . Release of HDF5-1.8.20
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF5-1.8.20
+
+-------------------------------------------------------------------------------
+
+
+The HDF5-1.8.20 release is now available. It can be obtained from The
+HDF Group Support Download page:
+
+ https://support.hdfgroup.org/downloads/
+
+It can also be obtained directly from:
+
+ https://support.hdfgroup.org/HDF5/release/obtain518.html
+
+HDF5-1.8.20 is a minor release with a few new features and changes. Important
+changes include:
+
+ o An issue with H5Zfilter_avail was fixed, where it was not finding
+ available plugins.
+
+ o Improvements were made to the h5repack, h5ls, h5dump, h5diff, and h5import
+ utilities.
+
+ In particular, please be aware that the behavior of the h5repack utility
+ changed.
+
+.. code-block:: c
+
+    A parameter was added to the "UD=" option of h5repack to allow the user
+    defined filter flag to be changed to either H5Z_FLAG_MANDATORY (0) or
+    H5Z_FLAG_OPTIONAL (1).
+
+    An example of the command with the new parameter is shown here:
+    h5repack -f UD=307,0,1,9 h5repack_layout.h5 out.h5repack_layout.h5
+
+
+ Previously, the command would have been as follows:
+ h5repack -f UD=307,1,9 h5repack_layout.h5 out.h5repack_layout.h5
+
+ o Support for the NAG compiler was added.
+
+ o Many C++ APIs were added or modified to better reflect the HDF5 model.
+
+This release contains many other changes that are not listed here. Please be
+sure to read the Release Notes for a comprehensive list of new features and
+changes:
+
+ https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8/hdf5-1.8.20/src/hdf5-1.8.20-RELEASE.txt
+
+Changes that affect maintainers of HDF5-dependent applications are listed
+on the HDF5 Software Changes from Release to Release page. See:
+
+ https://support.hdfgroup.org/HDF5/doc1.8/ADGuide/Changes.html
+
+
+
+Future Changes to Supported Compilers
+
+-------------------------------------------------------------------------------
+
+
+Please be aware that the minimum supported CMake version will be changing in
+the next release to CMake 3.8 or greater.
+
+
+
+-------------------------------------------------------------------------------
+
+For questions regarding these or other HDF issues, contact:
+
+ help@hdfgroup.org
+
+
