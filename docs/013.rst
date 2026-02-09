@@ -153,7 +153,7 @@ New contributions
 HDF3.2r2 was ported to FreeBSD on IBM-PC 386/486.
 
 Pedro Vazquez, vazquez@iqm.unicamp.br ported HDF3.2r2 to FreeBSD
-on IBM-PC 386/486. This HDF port suports all HDF features
+on IBM-PC 386/486. This HDF port supports all HDF features
 under C and almost all under fortran. The library
 works with both gnu f77 and f2c/gcc. The library
 was used to compile XDataSlice and it's able to

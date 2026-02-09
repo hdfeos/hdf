@@ -136,7 +136,7 @@ Update on NCSA tools: Mosaic and Collage
  - loading a file from command line
  - GIF, XWD support
  - new 3D features
- - new comunication features
+ - new comnunication features
  - chat box -- multiuser talk
 
  For more details please wait for a formal announcement from the Collage

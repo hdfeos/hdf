@@ -231,7 +231,7 @@ This routine would specify the value that was filled into the "empty"
    bits when a dataset was later read. The background parameter would be
    a pointer to a value of the same number type as the dataset being
    written. This value would be a template onto which the bits read from
-   the dataset would be overlayed. The bits read from the dataset would
+   the dataset would be overlaid. The bits read from the dataset would
    replace the appropriate bits (i.e. 8-13 in the example above) from the
    background value when the dataset was read by a user.
 

@@ -57,7 +57,7 @@ Contents:
  "Vset2.1.extra.doc" describes routines added in Vset2.1 and not covered
  by "HDF Vset 2.0".
 
- The "MigrationNotes" of HDF3.2 addesses differences between HDF3.2 and
+ The "MigrationNotes" of HDF3.2 addresses differences between HDF3.2 and
  HDF3.1, and explains how to migrate existing application programs from
  HDF3.1 to HDF3.2.
 
@@ -141,7 +141,7 @@ Contents:
  on the top page when you receive the new documentation!
 
  MigrationNotes is contained in HDF3.2 releases. Users having difficulties
- in geting these two files should contact softdev@ncsa.uiuc.edu.
+ in getting these two files should contact softdev@ncsa.uiuc.edu.
 
 
 4. Documentation for HDF 3.3 Beta

@@ -202,7 +202,7 @@ helpful.
 
  No-transpose Plans
 
-In newletter #5 we proposed to not transpose the data array
+In newsletter #5 we proposed to not transpose the data array
 when HDF functions are called from Fortran programs to read
 data from or write data to an HDF file. All the responses
 from users voted for no transpose, with some concerns about

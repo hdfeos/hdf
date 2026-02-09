@@ -35,7 +35,7 @@ March 1989 a different range is defined:
 
  Tags in the range 16,000-32,000 are user-definable.
 
-This means the user-definable tag range for HDF3.2 and later verions
+This means the user-definable tag range for HDF3.2 and later versions
 conflicts with the tag ranges specified previously. The new library
 (HDF3.2 or later versions) interprets tags in 16384 -- 32767 as HDF
 special elements, based on the new Specification. If users defined

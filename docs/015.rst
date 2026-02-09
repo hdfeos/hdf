@@ -9,7 +9,7 @@ HDF Newsletter #15
 Contents
 
  1. HDF3.3 Release 4
- 2. HDF3.3r4 documention update
+ 2. HDF3.3r4 documentation update
  3. Status of HDF4.0
  4. New Contributions
  5. Update on NCSA tools
@@ -21,7 +21,7 @@ HDF3.3 Release 4
 -------------------------------------------------------------------------------
 
 
-NCSA is pleased to annouce yet another release of HDF, HDF3.3r4. HDF3.3r4
+NCSA is pleased to announce yet another release of HDF, HDF3.3r4. HDF3.3r4
 is available on the NCSA ftp server (ftp.ncsa.uiuc.edu; new IP address
 141.142.3.135) in the directory HDF/HDF3.3r4/. The ABOUT_3.3r4 and README
 files in that directory and the README files in its subdirectories contain

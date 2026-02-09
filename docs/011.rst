@@ -97,7 +97,7 @@ IBM PC - Windows **
 VAX/VMS X
 
  * The netCDF interface works but you currently are unable to read old
- netCDF(XDR) files. In addtion, the fortran interface and ncdump
+ netCDF(XDR) files. In addition, the fortran interface and ncdump
  utility has yet to be finished.
 
  ** There is no FORTRAN support for either PC version of HDF 3.3.
