@@ -1,0 +1,27 @@
+We are very pleased to announce the release of HDF5 1.10.8, which can now be obtained from the HDF5 Download page. Information about this release can be found at Software Changes from Release to Release
+HDF5 1.10.8 is a minor release with several new features and changes:
+The following vulnerability issues were addressed:
+CVE-2020-10810
+CVE-2018-14460
+CVE-2018-11206
+CVE-2018-14033 (same as CVE-2020-10811)
+HDF5 now requires Visual Studio 2015 or greater, so old work-around code and definitions have been removed.  See RELEASE.txt for specifics.
+New wrappers for the following H5S functions were added to the Java Library
+H5Sselect_copy, H5Sselect_shape_same, H5Sselect_adjust, H5Sselect_intersect_block, H5Sselect_project_intersection, H5Scombine_hyperslab, H5Smodify_select, H5Scombine_select
+New platforms tested include Linux 4 and Linux 5 versions on x86_64, macOS M1, BigSur, and VS 2019 with clang 12.0.0.
+Other changes in CMake:
+C++ library is no longer built by default, HDF5_BUILD_CPP_LIB now defaults to OFF
+Shell script tests are now run in test/ by default
+CMake messages were reclassified, to allow new modes and --log-level option
+New options in this release:
+To control certain compiler warnings diagnostics
+Autotools:    --enable-diags
+CMake:        HDF5_ENABLE_BUILD_DIAGS
+To consider certain compiler warnings as errors
+Autotools:    -enable-warnings-as-errors
+CMake:        HDF5_ENABLE_WARNINGS_AS_ERRORS
+To control the build of High-Level tools with default ON/enabled.
+Autotools:    --enable-hltools
+CMake:        HDF5_BUILD_HL_TOOLS
+This release contains other changes that are not listed here. Please be sure to read the Release Notes for a comprehensive list of new features and changes.
+Changes that affect maintainers of HDF5-dependent applications are listed on the HDF5 Software Changes from Release to Release page.

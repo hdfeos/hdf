@@ -1,0 +1,94 @@
+Executive Summary: HDF5 2.0.0 now adheres to semantic versioning conventions while maintaining the trusted format and library you rely on. This version has been modernized for today’s workflows, making it easier to convert raw data into results. It simplifies setup and usage, increases confidence through safer defaults and improved release practices, and reduces unwanted side effects during upgrades.
+Download HDF5 2.0.0 from the HDF5 2.0.0 download page today!
+What's in it for You
+Does your application or workflow rely on HDF5? The benefits of upgrading to 2.0.0 significantly outweigh the migration costs for most users. Plan for a migration effort commensurate with the complexity of your projects, but expect long-term gains in performance, reliability, and maintainability.
+👉 Need help with your migration? The HDF Group offers consulting services to help your organization navigate migration, integrate the new features of 2.0.0, and accelerate performance. Contact us today to learn more.
+Value
+Impact Level
+Key Consideration
+Time Savings
+⭐⭐⭐⭐⭐ High
+Virtual dataset operations see transformative speedups
+Effort Reduction
+⭐⭐⭐⭐ High
+Native support for modern datatypes eliminates workarounds
+Risk Mitigation
+⭐⭐⭐⭐ High
+Safer defaults and stronger practices increase reliability
+Side Effects
+⭐⭐⭐ Moderate
+One-time migration costs; backward compatibility requires planning
+Keep reading for more details on the benefits and potential side effects of HDF5 2.0.0.
+Key Benefits and Considerations
+⏱️ TIME: Faster Results with Dramatic Performance Gains
+HDF5 2.0.0 delivers substantial time savings that directly accelerate your data workflows:
+Virtual Dataset Performance Breakthrough
+Up to 2500% faster Virtual Dataset (VDS) read/write operations—transforming multi-hour operations into minutes
+30% faster opening of virtual datasets, reducing startup latency in data processing pipelines
+25% faster closing of virtual datasets, improving overall workflow completion times
+Optimized Memory and Search Performance
+Reduced memory overhead through shared name strings across datasets, lowering memory footprint and improving cache efficiency
+Optimized spatial search algorithms for virtual datasets accelerate data access patterns common in scientific and analytical workloads.
+Bottom Line: If your workflows involve virtual datasets, large-scale data access, or iterative read/write operations, HDF5 2.0.0 can reduce processing time from hours to minutes in some scenarios.
+💪 EFFORT: Reduced Complexity and Easier Integration
+HDF5 2.0.0 eliminates common friction points that previously required workarounds or manual configuration:
+Simplified Windows Development
+Full UTF-8 filename support on Windows resolves long-standing encoding issues
+No more character encoding workarounds or filename restrictions
+Seamless cross-platform development with consistent filename handling
+Large-Scale Data Support
+A new, larger chunk size limit, in multi-petabytes, replaces the previous 4 GiB limit.
+Native Support for Modern Data Types
+bfloat16 predefined datatypes enable efficient machine learning model storage without custom conversion code
+First-class complex number support eliminates manual compound type creation in scientific applications
+Direct read/write of complex data without marshaling overhead
+Streamlined Build Process
+CMake-only builds simplify the build system (Autotools removed)
+Single, modern build approach reduces configuration complexity
+Easier integration into modern CI/CD pipelines
+Enhanced Maven artifact deployment with comprehensive multi-platform support (Linux, Windows, macOS x86_64, macOS aarch64) and Java examples are fully integrated with Maven.
+Enhanced Cloud Integration
+Improved ROS3 VFD capabilities using the aws-c-s3 library provide better S3 performance and reliability.
+Bottom Line: Common tasks that previously required custom code, workarounds, or complex configuration now work out of the box, reducing development effort and maintenance burden.
+⚠️ RISK: Increased Reliability and Safer Defaults
+HDF5 2.0.0 strengthens confidence in your data infrastructure through modernization and improved defaults:
+Stronger Foundation
+New file format version 4.0 provides a more robust foundation for future enhancements.
+C11 standard compliance aligns with modern C programming practices and compiler optimizations
+Stronger release practices improve quality assurance and testing coverage
+Safer Default Configuration
+Updated default for H5Fset_libver_bounds (now set to HDF5 library version 1.8)
+Ensures users automatically benefit from optimal performance and the latest features
+Reduces the risk of accidentally using outdated format features with known limitations
+Modernized Architecture
+Transition from dual build systems (CMake/Autotools) to CMake-only reduces build-related bugs.
+Elimination of legacy code paths decreases maintenance surface area
+Bottom Line: The combination of modernized infrastructure, safer defaults, and stronger release practices reduces the likelihood of data corruption, compatibility issues, and unexpected behavior—increasing confidence in production deployments.
+💊 SIDE EFFECTS: Breaking Changes and Migration Considerations
+While HDF5 2.0.0 maintains format compatibility, several changes require attention during migration:
+Breaking Changes Requiring Code Updates
+Library State Variable Renaming:
+HDF5_ENABLE_PARALLEL → HDF5_PROVIDES_PARALLEL (see PR #5716)
+Build scripts and configuration detection code must be updated
+Impact: Low to moderate, depending on build system complexity
+Build System Migration:
+Autotools has been completely removed—CMake is now the only supported build system
+Projects using Autotools-based builds must migrate to CMake
+Impact: High for projects with complex Autotools configurations
+Backward Compatibility Considerations
+Default File Format Version Change:
+H5Fset_libver_bounds default lower bound now set to HDF5 1.8 (previously earlier versions)
+Files created with defaults may not be readable by HDF5 versions older than 1.8
+Mitigation required: Manually adjust the lower bound if compatibility with pre-1.8 versions is needed
+Impact: Moderate—affects projects requiring support for legacy HDF5 installations
+File Format Version 4.0:
+New format version improves capabilities but introduces compatibility considerations
+Older HDF5 libraries may not support all features of files created with 2.0.0
+Impact: Low if users control their entire HDF5 ecosystem; higher in heterogeneous environments
+Migration Effort Assessment
+Small projects: Minimal—primarily documentation and variable name updates
+Medium projects: Moderate—CMake migration may require 1-3 days
+Large projects: Significant—complex Autotools builds may require 1-2 weeks for CMake migration
+Bottom Line: Most side effects are one-time migration costs that pay dividends in long-term maintainability. The key risk is backward compatibility with very old HDF5 versions, which can be mitigated through configuration changes.
+For detailed information about this release, please see the Changelog. For future releases, we maintain a release schedule in the README on GitHub. As always, feel free to post on the forum with any questions.
+Finally, a sincere thanks to the many HDF5 community members who contributed to HDF5 2.0.

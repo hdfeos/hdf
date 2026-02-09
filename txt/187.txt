@@ -1,0 +1,16 @@
+We are very pleased to announce the release of HDF5 1.13.2, which can now be obtained from the HDF5 Download page.
+Information about this release can be found on the Support Portal as follows:
+HDF5 documentation
+Software Changes from Release to Release
+HDF5 1.13.2 offers the new features and changes:
+A new virtual file driver is introduced in this release, the HDF5 Subfiling VFD. The Subfiling VFD allows an HDF5 application to aggregate data to a subset of MPI ranks, and those ranks then distribute an HDF5 file across a collection of "sub-files" in equal-sized data segment “stripes.” Please refer to the Release Notes for detail.
+This release also adds the onion VFD, which allows creating versioned HDF5 files, where subsequent modifications are tracked and older versions can be re-opened.
+A number of wrappers have been added to the C++ and JAVA libraries.
+Several improvements were made in the JAVA library.
+Some issues with the file open/close in the Fortran API were fixed.
+A trivial tool, perf, has been removed to avoid conflicts with the gnu's perf tool
+The H5Dchunk_iter() callback now uses scaled offsets like in H5Dget_chunk_info().
+Support for building h5perf in "standalone mode" was dropped in both serial and parallel HDF5.
+Note that, by the end of the year, support for VS 2015 will be dropped.
+This release contains other changes that are not listed here. Please be sure to read the Release Notes for a comprehensive list of new features and changes.
+Changes that affect maintainers of HDF5-dependent applications are listed on the HDF5 Software Changes from Release to Release page.

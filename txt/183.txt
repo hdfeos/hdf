@@ -1,0 +1,19 @@
+We are very pleased to announce the release of HDF5 1.12.2, which can now be obtained from the HDF5 Download page.
+Information about this release can be found on the Support Portal as follows:
+HDF5 documentation
+Software Changes from Release to Release
+HDF5 1.12.2 is a minor release with a few new features and changes:
+Several improvements to parallel compression feature were made, as in 1.13.1. They are described in the Parallel compression improvements in HDF5 1.13.1 blog post.
+Several improvements to the configuration, including new options:
+to enable dimension scales APIs (H5DS*) to use the new object references with the native VOL connector (aka native HDF5 library)
+Autotools   --enable-dimension-scales-with-new-ref
+CMake       HDF5_DIMENSION_SCALES_NEW_REF=ON
+to control the build of High-Level tools
+Autotools   --enable-hltools
+CMake        HDF5_BUILD_HL_TOOLS=ON
+New supported platforms added is the macOS Apple M1 11.6 Darwin 20.6.0 arm64 with Apple clang version 12.0.5.
+The shortened versions of the long options (ex: --datas instead of --dataset) have been removed from all the tools.
+A CVE issue has been fixed, CVE-2018-17432.
+Note that, by the end of the year, support for VS 2015 will be dropped.
+This release contains other changes that are not listed here. Please be sure to read the Release Notes for a comprehensive list of new features and changes.
+Changes that affect maintainers of HDF5-dependent applications are listed on the HDF5 Software Changes from Release to Release page.

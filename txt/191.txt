@@ -1,0 +1,13 @@
+The HDF 4.2.16 release is now available from the HDF 4.2.16 download page on the HDF Support Portal. For information on HDF4, see the HDF4 page.
+While this is a minor release comprised of many smaller clean-up tasks, there are several noteworthy changes:
+Added support for ARM, including Apple’s M1 and M2
+Added a new option to disable building HDF4's versions of ncdump and ncgen, which conflict with the official netCDF tools.
+Platform support is now based on configure tests and C99 types instead of hard-coded, machine-specific values, so HDF4 should "just work" on more platforms without code changes.
+The Fortran interface is disabled by default. There are places where pointers are stored in 32-bit INTEGER values, making it unsafe on 64-bit systems.
+Many deficiencies in the build systems were corrected.
+Fixes for several reported issues (segfaults, memory leaks, etc.)
+Please see the full release notes for detailed information regarding this release including an extensive list of changes.
+In the next version of HDF4, we plan to stop deploying a few internal header files, as this makes refactoring impossible. We will discuss this on the forum and work with the community to ensure that these changes have minimal impact on HDF4 software.
+Recently Dana Robinson, Director of Software Engineering, used his Call the Doctor session to discuss the future of HDF4.
+(You can also access this content as a podcast episode.)
+We would like to hear from you about HDF4 (or our other projects!) We have added an area on our forum devoted to HDF4. Please let us know your needs, wants, and issues with HDF4.

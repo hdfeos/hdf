@@ -1,0 +1,15 @@
+We are very pleased to announce the release of HDF5 1.10.9, which can now be obtained from the HDF5 Download page.
+Information about this release can be found at
+Software Changes from Release to Release
+HDF5 1.10.9 is a minor release with several new features and changes:
+Several improvements to parallel compression feature were made, as in 1.13.1. They are described in the Parallel compression improvements in HDF5 1.13.1 blog post.
+Work has begun to produce a “User Guide” with doxygen, to be finished in the next 1.10 release. To generate the work-in-progress “User Guide”, configure with --enable-doxygen for autotools or with -DHDF5_BUILD_DOC=ON for CMake, and run “make doxygen”.  The output will be in hdf5lib_docs/html in the top level build directory.  Links in the navigation pane on the left are to previous documentation which will be replaced; the current work in progress is in “User Guide”.  Feedback is welcome.
+Version checking for run-time compatibility will now allow applications built with earlier HDF5 1.10.x versions to run without setting the environment variable to allow it.
+The path searched by the CMake find_package command has been corrected to use HDF5_INSTALL_CMAKE_DIR set to the <INSTALL_DIR>/cmake folder. See RELEASE.txt for details.
+These CVE issues have not been addressed in this release, but can be avoided with new configure options to disable building High-Level tools. These three CVE issues will be avoided by not building the gif tools using --disable-tools for autotools or HDF5_BUILD_HL_TOOLS=OFF for cmake:
+CVE-2018-17433
+CVE-2018-17436
+CVE-2020-10809
+Note that, by the end of the year, support for VS 2015 will be dropped from all HDF5 versions.
+This release contains other changes that are not listed here. Please be sure to read the Release Notes for a comprehensive list of new features and changes.
+Changes that affect maintainers of HDF5-dependent applications are listed on the HDF5 Software Changes from Release to Release page.

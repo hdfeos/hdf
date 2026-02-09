@@ -1,0 +1,7 @@
+The HDF5 Library and Tools 1.10.11 release is now available from the HDF5 1.10.11 download page on the HDF Support Portal.
+This is a maintenance release with a few changes and updates:
+Some fixes and improved support for Cmake.
+Fixed multiple bugs, CVEs, and GitHub issues.
+With this release, we can report that HDF5 is now CVE-free! You can learn more about this effort in this episode of Call the Doctor, hosted by Dana Robinson.
+Please see the full release notes for detailed information regarding this release, including a detailed list of changes.
+We also maintain a release schedule for all HDF5 versions in the README on Github. As always, feel free to post on the forum with any questions.

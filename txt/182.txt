@@ -1,0 +1,10 @@
+We are very pleased to announce the release of HDF5 1.13.1, which can now be obtained from the HDF5 Download page.
+Information about this release can be found on the Support Portal as follows:
+HDF5 documentation
+Software Changes from Release to Release
+HDF5 1.13.1 offers the new features and changes:
+A new public function, H5ESget_requests(), was added to allow an application to retrieve request pointers from an event set. It is intended for use primarily by VOL plugin developers.
+Several improvements to parallel compression feature were made and are described in the Parallel compression improvements in HDF5 1.13.1 blog post.
+Note that, by the end of the year, support for VS 2015 will be dropped.
+This release contains other changes that are not listed here. Please be sure to read the Release Notes for a comprehensive list of new features and changes.
+Changes that affect maintainers of HDF5-dependent applications are listed on the HDF5 Software Changes from Release to Release page.

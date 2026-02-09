@@ -1,0 +1,9 @@
+The HDF 4.3.0 release is now available from the HDF 4.3.0 download page on the HDF Support Portal. For information on HDF4, see the HDF4 page.
+This is a major release with several important changes and bug fixes:
+Many internal header files are no longer deployed. Although the functionality contained in those headers was undocumented, it is possible that code exists which uses symbols from them. This code will cease to compile with HDF 4.3.0, hence the bump from 4.2.x to 4.3.x. A full list of the affected header files can be found in the release notes.
+The XDR I/O library has been refactored into an internal, minimalist I/O layer with a different name. It is no longer necessary (or even possible) to link to an external XDR library like TI-RPC, and XDR-related configuration options have been removed.
+The HDF4 examples repository content has been incorporated into the HDF4 library.
+When building with CMake, HDF4 tools built with shared linkage to the libraries will no longer have a -shared suffix. We now only build one set of tools, with the default library linkage being shared, though static/shared can be controlled via a configure option.
+Added support for CMake presets files.
+Please see the full release notes for detailed information regarding this release.
+We maintain a release schedule in the README on Github. As always, feel free to post on the forum with any questions.
