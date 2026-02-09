@@ -1,0 +1,131 @@
+--------------------------------------------------------------------------
+To subscribe/unsubscribe to the hdfnews mailing list, please send your
+request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+--------------------------------------------------------------------------
+
+                          Newsletter #57
+                         December 22, 2000
+
+
+CONTENTS
+                                            *******************************
+. Release of HDF5-1.4-Beta2                 * Visit the HDF home page     *
+  - New Features and Changes                * for up-to-date information  *
+  - Platforms Tested                        *                             *
+                                            *  http://hdf.ncsa.uiuc.edu/  *
+. Release of Java Products Version 2.6      *                             *
+                                            *******************************
+ 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Release of HDF5-1.4-Beta2
+=========================
+
+The first beta version of HDF5-1.4 is now available (don't let the name 
+fool you).  Pre-compiled binaries are not included with this version of the 
+software. 
+
+You can obtain the HDF5-1.4-Beta2 software from:
+
+   ftp://ftp.ncsa.uiuc.edu/HDF/HDF5/hdf5-1.4-beta2/
+
+Documentation is included in the source code and can also be
+found in:
+  
+   ftp://ftp.ncsa.uiuc.edu/HDF/HDF5/docs/
+
+We encourage you to try it and welcome your feedback!
+
+
+New Features and Changes
+------------------------
+
+Following is a list of the major new features and changes in
+HDF5-1.4-Beta2.  There are too many changes to list all of them
+here.  For further information on what has changed, refer to the
+RELEASE file at the top of the HDF5-1.4-Beta2 source code tree.
+ 
+  * The Virtual File Layer, VFL, was added to replace the old
+    file drivers.  It also provides an API for user defined file
+    drivers.
+
+  * It includes Fortran 90 support for Solaris 2.6 and 2.7, Linux, DEC 
+    Unix, Cray T3E, Cray J90 and SGI Origin 2000.
+
+  * It includes the h4toh5 tool for converting HDF (4) files into HDF5.
+    This was tested on Solaris 2.5 and 2.6, IRIX 6.5, HP-UX 11.0, DEC
+    Unix, FreeBSD, and Windows 2000.
+
+  * It includes C++ support for Solaris 2.6 and 2.7, Linux, and FreeBSD.
+
+  * Numerous performance improvements were made to the library.
+
+  * The first phase of Thread-Safe support was added.
+
+
+Platforms Tested 
+----------------
+  Note: Due to the nature of the bug fixes, only static versions of the
+       library and tools were tested. 
+
+  AIX 4.3.2 (IBM SP)            mpcc_r 3.6.6
+  Cray T3E sn6711 2.0.539b      Cray Standard C Version 6.3.0.2
+                                Cray Fortran Version 3.4.0.2
+  FreeBSD 4.2-STABLE            gcc 2.95.2
+                                g++ 2.95.2
+  HP-UX B.10.20                 HP C  HP92453-01 A.10.32.30
+  HP-UX B.11.00                 HP C  HP92453-01 A.11.00.13
+  IRIX 6.5                      MIPSpro cc 7.30
+  IRIX64 6.5 (64 & n32)         MIPSpro cc 7.3.1m
+                                mpt.1.4.0.2
+                                mpich-1.2.1
+  Linux 2.2.16-3smp             gcc-2.95.2
+                                g++ 2.95.2
+                                pgf90 3.1-3
+  OSF1 V4.0                     DEC-V5.2-040
+                                Digital Fortran 90 V4.1-270
+  SunOS 5.6                     WorkShop Compilers 5.0 98/12/15 C 5.0
+  (Solaris 2.6)                 WorkShop Compilers 5.0 99/10/25 Fortran 90
+                                       2.0 Patch 107356-04
+                                Workshop Compilers 5.0 98/12/15 C++ 5.0
+  SunOS 5.7                     WorkShop Compilers 5.0 98/12/15 C 5.0
+  (Solaris 2.7)                 WorkShop Compilers 5.0 99/10/25 Fortran 90
+                                       2.0 Patch 107356-04
+                                Workshop Compilers 5.0 98/12/15 C++ 5.0
+  TFLOPS 3.3                    mpich-1.2.0 with local changes
+  Windows NT4.0, 2000 (NT5.0)   MSVC++ 6.0
+
+
+
+Release of Java Products Version 2.6
+====================================
+
+Release 2.6 of the Java Products is available (as of December 7th).  This
+release is a bug fix release, built with the HDF 4.1r4 library.
+
+For information on the Java HDF (4) Products, please see:
+
+   http://hdf.ncsa.uiuc.edu/java-hdf-html/
+
+
+Changes in this Release
+-----------------------
+
+ * All bugs in our database were fixed.
+
+ * The Java HDF Interface (JHI) was upgraded and built with the 
+   HDF 4.1r4 library. This bug fix release of the library fixes 
+   several serious problems with JPEG images, which affected the viewer.
+
+ * External files are supported. The JHV now uses the environment 
+   variable HDFEXTDIR by default, and the user may set the external 
+   file path using the preferences dialog.
+
+
+--------------------------------------------------------------
+For questions regarding these or other HDF issues, contact:
+
+   hdfhelp@ncsa.uiuc.edu
+
+
