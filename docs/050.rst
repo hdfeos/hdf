@@ -82,7 +82,7 @@ JHI5 version 1.1 is a bug fix release. The changes in JHI5 1.1 are:
  it in 'jhdf5.jar' when running 'make install'. This is fixed.
 
 
-See the Java-HDF5 Home Page for futher details:
+See the Java-HDF5 Home Page for further details:
 
  http://hdf.ncsa.uiuc.edu/java-hdf5-html/
 

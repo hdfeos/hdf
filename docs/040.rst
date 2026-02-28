@@ -35,7 +35,7 @@ HDF5 Beta Tools Release
 Pre-compiled versions of the HDF5 (beta) tools are now available
 for the following platforms:
 
- Digitial Unix 4.0
+ Digital Unix 4.0
  HP-UX 10.20
  Irix 6.5
  Linux 2.2.1

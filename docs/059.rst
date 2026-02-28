@@ -98,7 +98,7 @@ New Features and Changes
 
  * The RCSID string in H5public.h caused a C++ compiling problem,
  due to multiple definitions of the same static variable. All
- occurences of the RCSID definition were removed.
+ occurrences of the RCSID definition were removed.
 
  * PDF and Postscript versions of the HDF5 documents are available
  with this release from:

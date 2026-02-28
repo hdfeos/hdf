@@ -113,7 +113,7 @@ regarding them:
  See: https://www.hdfgroup.org/projects/hdfserver/
 
  Product Designer: A tool for designing HDF products and a framework for
- sharing and re-using those designs across work groups and with others while
+ sharing and reusing those designs across work groups and with others while
  improving interoperability and compliance with community conventions.
  See: https://wiki.earthdata.nasa.gov/display/HPD/HDF+Product+Designer
 
