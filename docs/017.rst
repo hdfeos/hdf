@@ -261,7 +261,7 @@ button that displays all the attributes listed above when pressed.
 2. There is now an interpolation feature that interpolates animations. Now
 
 animation can be scaled by any factor x and Collage will take care of all
-the computations involved in proper enlargment of image.
+the computations involved in proper enlargement of image.
 
 3. Error handling has been substantially improved, including
  - Doodles are now clipped properly on white board

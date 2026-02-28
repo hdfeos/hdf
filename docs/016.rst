@@ -63,7 +63,7 @@ have been fixed:
 2. Fortran function sfiscvar() was missing on some platforms.
 3. SDwritedata sometimes wrote out the incorrect number of bytes for
  odd dimension sizes if the first dimension was UNLIMITED.
-4. The file name hdf/MAKE.IRIS4 was missleading. It has been
+4. The file name hdf/MAKE.IRIS4 was misleading. It has been
  renamed as hdf/MAKE.IRIX.
 5. Minor fixes.
 

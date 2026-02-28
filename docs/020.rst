@@ -121,7 +121,7 @@ Vdata/vgroup names and classes:
 "RIATTR0.0N" -- name of a Vdata containing an attribute in GR
 "RIATTR0.0C" -- class of a Vdata containing an attribute
 
-Atrribute names:
+Attribute names:
 
 "FillValue" -- name of an attribute containing the fill value
 
@@ -141,7 +141,7 @@ Vdata/vgroup names and classes:
 "VALUES" -- field name of a vdata which contains values of an
  SD attribute
 
-Atrribute names:
+Attribute names:
 
 "_FillValue" -- user defined fill value
 "long_name" -- data/dimension label string

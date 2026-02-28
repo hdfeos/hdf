@@ -37,7 +37,7 @@ HDF4.0b2 release
  Gzip library support
  Unified configuration of library
  I/O performance improvements
- Space savings, especiall for 1-D arrays by not requiring
+ Space savings, especially for 1-D arrays by not requiring
  dimension scales
  Pablo performance measurement software has been integrated into
  the HDF library, making it possible to capture performance
@@ -59,10 +59,10 @@ HDF<-->FITS converter
  The NCSA HDF group is working with Don Jennings, Bill Pence
  and others on mapping between HDF and FITS. Our ultimate goal
  is to be able to convert all HDF objects to FITS and vice
- versa, making it possible to acess FITS files with HDF
+ versa, making it possible to access FITS files with HDF
  software and vice versa. This work has two parts: HDF to
  FITS(HDF2FITS) mapping and FITS to HDF(FITS2HDF) mapping.
- For more infomation see the "HDF and FITS Conversion Information
+ For more information see the "HDF and FITS Conversion Information
  Page", URL:
 
 	http://hdf.ncsa.uiuc.edu:8001/fits
@@ -80,13 +80,13 @@ BigHDF: A next-generation HDF?
  performance, and in other ways. For some time, the HDF group
  has been thinking about what it would take to completely overhaul
  HDF, to see if we can come up with a new HDF that is reasonably
- compatible with the current HDF and at the same time addesses
+ compatible with the current HDF and at the same time addresses
  the requirements of the 90's and beyond.
 
  With the help of some NASA funding, we have come up with a proposal
  for a prototype for a next generation HDF, which we have codenamed
  "BigHDF." BigHDF would be completely new in every respect, but it
- would be implemented in such a way as to maintain compability with
+ would be implemented in such a way as to maintain compatibility with
  older versions of HDF.
 
  We would now like to go public with our ideas, both to let you know

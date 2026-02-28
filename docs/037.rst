@@ -239,7 +239,7 @@ HCR Tools Release 2.0v1.2
 -------------------------------------------------------------------------------
 
 
-HDF Configuration Record (HCR) Tools Release 2.0v1.2 is freely avilable
+HDF Configuration Record (HCR) Tools Release 2.0v1.2 is freely available
 for public access. HCR is a tools suite that provides an easy interface
 to create, modify and access HDF-EOS files. This release has been
 upgraded to work with the latest official releases of the HDF-EOS library
