@@ -1,0 +1,19 @@
+Following the major milestone of HDF5 2.0.0, we are pleased to announce the release of HDF5 2.1.0.
+What's New in 2.1.0
+This release introduces features that enhance performance and compatibility for AI and high-performance computing (HPC) workflows.
+Improved I/O Performance on Chunked Datasets
+HDF5's data sieving functionality has been enabled when performing I/O on dataset chunks that are not currently in the chunk cache, improving performance for specific access patterns.
+Support for New Low-Precision Datatypes (FP4 and FP6)
+New predefined datatypes have been added for FP6 data (E2M3 and E3M2 formats): H5T_FLOAT_F6E2M3 and H5T_FLOAT_F6E3M2, as well as FP4 data (E2M1 format): H5T_FLOAT_F4E2M1. Conversions are handled through software emulation; native FP support is not yet available.
+Expanded Fortran Support for SWMR
+Four new Fortran SWMR wrappers have been added: h5fstart_swmr_write_f, h5dflush_f, h5pset_append_flush_f, and h5pget_append_flush_f.
+Security Fixes
+Three critical vulnerabilities have been addressed:
+CVE-2025-2309: in the H5T__bit_copy type conversion function
+CVE-2025-2308: in the H5Z__scaleoffset_decompress_one_byte scale-offset filter
+CVE-2025-44904: error detection for mismatched chunk sizes in unfiltered datasets
+Additional Improvements
+A new CMake module called Findlibaec.cmake locates libaec for SZIP support, checking for CMake-built versions first, then heuristically searching the system.
+Compatibility
+As a minor release, HDF5 2.1.0 is backward compatible with 2.0.0. The project continues transitioning to CMake-only builds; users still relying on Autotools should consult the migration documentation.
+For detailed information about this release, please see the CHANGELOG. For future releases, we maintain a release schedule in the README on GitHub. As always, feel free to post on the forum with any questions.
