@@ -1,121 +1,101 @@
-==================
+========================================================================
 HDF Newsletter #41
-==================
+========================================================================
 
 To subscribe/unsubscribe to the hdfnews mailing list, please send your
 request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
-subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the
+message.
 
--------------------------------------------------------------------------------
-
-
- Newsletter #41
- May 21, 1999
+Newsletter #41 / May 21, 1999
 
 CONTENTS
 
-. HDF 4.1 Release 3
- A. New Features and Changes *******************************
- B. Platforms Tested * Visit the HDF home page *
- C. Known Problems * for up-to-date information *
- D. Acknowledgements * on HDF: *
+   * HDF 4.1 Release 3
 
- * http://hdf.ncsa.uiuc.edu/ *
-
--------------------------------------------------------------------------------
-
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     * A. New Features and Changes
+     * B. Platforms Tested
+     * C. Known Problems
+     * D. Acknowledgements
 
 HDF 4.1 Release 3
-=================
+------------------------------------------------------------------------
 
 HDF 4.1 Release 3 is now available on the NCSA anonymous ftp server
-(ftp.ncsa.uiuc.edu) in the directory /HDF/HDF/HDF_Current/. The HDF 4.1r2
-release has been placed under /HDF/HDF/prev-releases/.
+(ftp.ncsa.uiuc.edu) in the directory /HDF/HDF/HDF_Current/. The HDF
+4.1r2 release has been placed under /HDF/HDF/prev-releases/.
 
-A. New Features and Changes:
+A. New Features and Changes
+------------------------------------------------------------------------
 
--------------------------------------------------------------------------------
+   * HDF 4.1r2 was unable to properly read HDF SDSs created with HDF
+     3.3x. It did not read the correct SDS names. This problem has
+     been fixed.
 
+   * Many problems have been fixed with the GR interface, including
+     the following:
 
-o HDF 4.1r2 was unable to properly read HDF SDSs created with HDF 3.3x.
- It did not read the correct SDS names. This problem has been fixed.
+     * The GR interface can now read compressed files created with the
+       DFR8 and DF24 interfaces, except for those which were compressed
+       with IMCOMP compression.
 
-o Many problems have been fixed with the GR interface, including the
- following:
+     * The GR interface can read and write images compressed with RLE,
+       GZIP and Skipping Huffman compression methods.
 
- - The GR interface can now read compressed files created with the
+     * Palettes can now be written and read properly with the GR
+       interface.
 
-.. code-block:: c
+     * 24-bit raster images can now be read by the GR interface.
 
-    DFR8 and DF24 interfaces, except for those which were compressed
-    with IMCOMP compression.
+   * You can now create an SDS with a name up to 256 characters in
+     length. The previous limit was 64.
 
+   * HDF now supports IJP JPEG version 6b and Gzip version 1.1.3.
 
- - The GR interface can read and write images compressed with RLE,
- GZIP and Skipping Huffman compression methods.
+   * Numerous hdp problems have been fixed, including the following:
 
- - Palettes can now be written and read properly with the GR interface.
+     * hdp no longer fails on an HDF file which contains a vdata that
+       no records have been written to.
 
- - 24-bit raster images can now be read by the GR interface.
+     * hdp no longer fails on the PC and Macintosh dumping large SDSs.
 
-.. code-block:: fortran
+     * GR file attributes can now be displayed.
 
-   o You can now create an SDS with a name up to 256 characters in length.
-    The previous limit was 64.
+     * A palette can now be dumped with the GR command.
 
+   * SDfileinfo no longer returns the wrong number of datasets for old
+     files created with the DFSD interface.
 
-o HDF now supports IJP JPEG version 6b and Gzip version 1.1.3.
-
-o Numerous hdp problems have been fixed, including the following:
-
- - hdp no longer fails on an HDF file which contains a vdata that no
- records have been written to.
-
- - hdp no longer fails on the PC and Mactinosh dumping large SDSs.
-
- - GR file attributes can now be displayed.
-
- - A palette can now be dumped with the GR command.
-
-.. code-block:: c
-
-   o SDfileinfo no longer returns the wrong number of datasets for old
-    files created with the DFSD interface.
-
-
-o This will be the last release that SunOS 4.1.4 is supported.
+   * This will be the last release that SunOS 4.1.4 is supported.
 
 Check the bugs_fixed.txt file in the ./release_notes/ directory of
 the source code or pre-compiled binaries for other changes that are not
 listed here.
 
-
-B. Platforms Tested:
- ----------------
+B. Platforms Tested
+------------------------------------------------------------------------
 
 HDF 4.1 Release 3 has been tested on the following platforms:
 
- Cray J90
- Cray T90 (CFP, IEEE)
- Cray T3E
- DEC Alpha/Digital Unix
- DEC Alpha/OpenVMS
- DEC Alpha NT
- VAX OpenVMS
- Exemplar
- FreeBSD
- HP-UX
- IRIX 6.5
- IRIX64 6.5 (-n32, -64)
- Linux
- Macintosh
- Solaris
- Solaris x86
- SP
- SunOS 4.1.4
- Windows NT/95
+   * Cray J90
+   * Cray T90 (CFP, IEEE)
+   * Cray T3E
+   * DEC Alpha/Digital Unix
+   * DEC Alpha/OpenVMS
+   * DEC Alpha NT
+   * VAX OpenVMS
+   * Exemplar
+   * FreeBSD
+   * HP-UX
+   * IRIX 6.5
+   * IRIX64 6.5 (-n32, -64)
+   * Linux
+   * Macintosh
+   * Solaris
+   * Solaris x86
+   * SP
+   * SunOS 4.1.4
+   * Windows NT/95
 
 For more information on the platforms that were tested and for
 which we provide pre-compiled binaries, please refer to the following
@@ -123,31 +103,26 @@ web page (accessible from the HDF home page):
 
  http://hdf.ncsa.uiuc.edu/platforms.html
 
+C. Known Problems
+------------------------------------------------------------------------
 
-C. Known Problems:
- --------------
+   * On Alpha OpenVMS version 6.2, the DF.OLB and MFHDF.OLB Libraries
+     should be created with optimization turned off. Otherwise hdftest
+     fails (the sfgichnk function returns incorrect information).
 
-o On Alpha OpenVMS version 6.2, the DF.OLB and MFHDF.OLB Libraries
- should be created with optimization turned off. Otherwise hdftest
+   * On VAX Open VMS 6.2, the ncgen utility core dumps and an error
+     occurs when reading GR image data with user-defined fill values.
 
-.. code-block:: c
+   * If you encounter problems building on a platform, please be sure
+     to check the INSTALL file at the top of the HDF source tree, in
+     case these problems are documented in section 2.5,
+     Platform-specific Notes.
 
-    fails (the sfgichnk function returns incorrect information).
+   * On the NT, the hdp utility fails in the debug version when using
+     the list command.
 
-
-o On VAX Open VMS 6.2, the ncgen utility core dumps and an error occurs
- when reading GR image data with user-defined fill values.
-
-o If you encounter problems building on a platform, please be sure to
- check the INSTALL file at the top of the HDF source tree, in case
- these problems are documented in section 2.5, Platform-specific Notes.
-
-o On the NT, the hdp utility fails in the debug version when using the
- list command.
-
-
-D. Acknowledgements:
- ----------------
+D. Acknowledgements
+------------------------------------------------------------------------
 
 Fortner Software LLC ("Fortner") created the reference implementations
 for the Macintosh and Windows NT/95 of the HDF 4.1r3 library. For more
@@ -155,10 +130,6 @@ information, please refer to the macintosh.txt and windows.txt files in
 the ./release_notes/ directory in the source code and pre-compiled
 binary distributions.
 
--------------------------------------------------------------------------------
-
 For questions regarding these or other HDF issues, contact:
 
  hdfhelp@ncsa.uiuc.edu
-
-

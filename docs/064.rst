@@ -1,41 +1,29 @@
-==================
+========================================================================
 HDF Newsletter #64
-==================
+========================================================================
 
 To subscribe/unsubscribe to the hdfnews mailing list, please send your
 request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
-subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the
+message.
 
--------------------------------------------------------------------------------
-
-
- Newsletter #64
- November 7, 2001
-
+Newsletter #64 / November 7, 2001
 
 CONTENTS
 
--------------------------------------------------------------------------------
+   * Release of HDF4.1r5
 
-. Release of HDF4.1r5 * Visit the HDF home page *
+     * New Features and Changes
+     * Platforms Tested
 
- - New Features and Changes * for up-to-date information *
- - Platforms Tested * *
- * http://hdf.ncsa.uiuc.edu/ *
-
-. Dropping Support for Exemplar * *
-
--------------------------------------------------------------------------------
-
-
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   * Dropping Support for Exemplar
 
 Release of HDF4.1r5
-===================
+------------------------------------------------------------------------
 
-HDF 4.1r5 is now available. This release contains several new functions as
-well as numerous bug fixes. You can obtain it from the HDF (4) home page:
+HDF 4.1r5 is now available. This release contains several new functions
+as well as numerous bug fixes. You can obtain it from the HDF (4) home
+page:
 
  http://hdf.ncsa.uiuc.edu/hdf4.html
 
@@ -52,67 +40,60 @@ First time users are encouraged to look at the HDF FAQ for this release:
 
  http://hdf.ncsa.uiuc.edu/HDF-FAQ.html
 
+New Features and Changes
+------------------------------------------------------------------------
 
-New Features and Changes:
+   * The following Vdata routines were added:
 
--------------------------------------------------------------------------------
+     VSsetblocksize/vsfsetblsz -- sets the block size of the
+     linked-block element.
+     VSsetnumblocks/vsfsetnmbl -- sets the number of blocks for
+     a linked-block element.
+     VSgetblockinfo/vsfgetblinfo -- retrieves the block size and the
+     number of blocks of a linked-block element.
 
+   * Two routines were added to get compression information for the SD
+     and GR interfaces, including chunked elements:
+     SDgetcompress/sfgcompress and GRgetcompress/mggcompress.
 
-o The following Vdata routines were added:
+     Note:
 
- VSsetblocksize/vsfsetblsz -- sets the block size of the
- linked-block element.
- VSsetnumblocks/vsfsetnmbl -- sets the number of blocks for
- a linked-block element.
- VSgetblockinfo/vsfgetblinfo -- retrieves the block size and the number
- of blocks of a linked-block element.
+     - For a JPEG image, GRgetcompress only returns the compression
+       type, not the compression information (i.e, quantity and
+       force_baseline). This information is not currently retrievable.
 
-o Two routines were added to get compression information for the SD and
- GR interfaces, including chunked elements: SDgetcompress/sfgcompress
- and GRgetcompress/mggcompress.
+     - Getting compression type for JPEG chunked images is not working
+       yet.
 
- Note:
+   * "hdp dumpgr" has a new option, -pd, to print palette data only.
+     Also, whenever option -p or -pd is given, only palettes are
+     printed, and no images or file attributes.
 
-.. code-block:: c
+   * A new FORTRAN function, heprntf (HEprint), was added. It takes two
+     arguments: file name and level. If the file name string has 0
+     length, then error messages will be printed to standard output.
 
-    - For a JPEG image, GRgetcompress only returns the compression type, not
-    the compression information (i.e, quantity and force_baseline). This
-    information is not currently retrievable.
+   * On Windows, the unresolved symbol (error_top) error has been fixed
+     when calling HEclear and linking with the DLL. Users who want to
+     use the HDF DLL should define HDFAPDLL in their applications.
+     Simply go to Project Settings and add HDFAPDLL as the predefined
+     constant.
 
+   * A memory leak in the netCDF portion of the HDF/mfhdf distribution
+     was fixed.
 
- - Getting compression type for JPEG chunked images is not working yet.
+   * The "#define NULL" was removed since ANSI C compilers are required
+     to define NULL.
 
-.. code-block:: c
+   * When using "hdp dumpgr", data was being printed in the range of
+     0-250 when it should have been between 0-168. This problem is now
+     fixed.
 
-   o "hdp dumpgr" has a new option, -pd, to print palette data only. Also,
-    whenever option -p or -pd is given, only palettes are printed, and no
-    images or file attributes.
+Please refer to the bugs_fixed.txt file for more details on bugs that
+were fixed.
 
-
-o A new FORTRAN function, heprntf (HEprint), was added. It takes two
- arguments: file name and level. If the file name string has 0 length,
- then error messages will be printed to standard output.
-
-o On Windows, the unresolved symbol (error_top) error has been fixed when
- calling HEclear and linking with the DLL. Users who want to use the HDF
- DLL should define HDFAPDLL in their applications. Simply go to Project
- Settings and add HDFAPDLL as the predefined constant.
-
-o A memory leak in the netCDF portion of the HDF/mfhdf distribution
- was fixed.
-
-o The "#define NULL" was removed since ANSI C compilers are required to
- define NULL.
-
-o When using "hdp dumpgr", data was being printed in the range of 0-250
- when it should have been between 0-168. This problem is now fixed.
-
-Please refer to the bugs_fixed.txt file for more details on bugs that were
-fixed.
-
-
-Platforms Tested:
-----------------
+Platforms Tested
+------------------------------------------------------------------------
 
 HDF 4.1 Release 5 has been tested on the following platforms:
 
@@ -129,24 +110,17 @@ HDF 4.1 Release 5 has been tested on the following platforms:
  Solaris 2.7, 2.8
  Windows NT/98/2000
 
-For more information on the platforms that were tested and for
-which we provide pre-compiled binaries, please refer to the following
-web page (accessible from the HDF home page):
+For more information on the platforms that were tested and for which
+we provide pre-compiled binaries, please refer to the following web
+page (accessible from the HDF home page):
 
  http://hdf.ncsa.uiuc.edu/platforms.html
 
-
 Dropping Support for Exemplar
-
--------------------------------------------------------------------------------
-
+------------------------------------------------------------------------
 
 We are dropping support for the Exemplar with future releases
 of HDF 4.x.
-
-
-
--------------------------------------------------------------------------------
 
 For questions regarding these or other HDF issues, contact:
 

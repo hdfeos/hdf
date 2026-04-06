@@ -1,36 +1,30 @@
-===================
+========================================================================
 HDF Newsletter #137
-===================
+========================================================================
 
 To view from a browser see:
  http://www.hdfgroup.org/newsletters/newsletter137.html
 
--------------------------------------------------------------------------------
-
 The HDF Group Home Page: http://www.hdfgroup.org/
 Helpdesk/Mailing List Info: http://www.hdfgroup.org/services/support.html
 
--------------------------------------------------------------------------------
+------------------------------------------------------------------------
 
+Newsletter #137 / November 15, 2013
 
- Newsletter #137
- November 15, 2013
+CONTENTS
 
-CONTENTS:
- . Release of HDF5-1.8.12
- . Release of h4mapwriter version 1.0.6
- . Release of h5edit 1.2.0
- . Book Release of "Python and HDF5"
+   * Release of HDF5-1.8.12
+   * Release of h4mapwriter version 1.0.6
+   * Release of h5edit 1.2.0
+   * Book Release of "Python and HDF5"
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
+------------------------------------------------------------------------
 Release of HDF5-1.8.12
+------------------------------------------------------------------------
 
--------------------------------------------------------------------------------
-
-
-The HDF5-1.8.12 release is now available, and can be downloaded from the
-HDF Group Downloads page:
+The HDF5-1.8.12 release is now available, and can be downloaded from
+the HDF Group Downloads page:
 
  http://www.hdfgroup.org/downloads/
 
@@ -41,25 +35,25 @@ It can also be obtained directly from:
 HDF5-1.8.12 is a minor release, with a few new features and changes,
 including:
 
- o An option was added to specify the location of a default plugin
- (dynamically loaded filter) when building HDF5.
+   * An option was added to specify the location of a default plugin
+     (dynamically loaded filter) when building HDF5.
 
- The configure option is: --with-default-plugindir=location
- The CMake option is: -DH5_DEFAULT_PLUGINDIR:PATH=location
+     The configure option is: --with-default-plugindir=location
+     The CMake option is: -DH5_DEFAULT_PLUGINDIR:PATH=location
 
- o The h5repack utility was updated to use plugin filters (dynamically
- loaded filters) to read and write files.
+   * The h5repack utility was updated to use plugin filters (dynamically
+     loaded filters) to read and write files.
 
- o The following options were added to h5dump:
+   * The following options were added to h5dump:
 
- - The "-N" or "--any_path" option searches the file for paths that
- match the search path.
+     * The "-N" or "--any_path" option searches the file for paths
+       that match the search path.
 
- - The "-A 0" option excludes the display of attributes.
+     * The "-A 0" option excludes the display of attributes.
 
- o Several changes were made to the C++ APIs. Some wrappers and
- overloaded convenience functions were added, as well as a new
- class, H5::H5Location.
+   * Several changes were made to the C++ APIs. Some wrappers and
+     overloaded convenience functions were added, as well as a new
+     class, H5::H5Location.
 
 This release contains many other changes that are not listed here.
 Please be sure to read the Release Notes for a comprehensive list of
@@ -72,11 +66,9 @@ listed in "HDF5 Software Changes from Release to Release":
 
  http://www.hdfgroup.org/HDF5/doc/ADGuide/Changes.html
 
-
+------------------------------------------------------------------------
 Future Changes to Supported Platforms
-
--------------------------------------------------------------------------------
-
+------------------------------------------------------------------------
 
 Please be aware that after this release we will be moving our current
 standard for Windows from Windows 7 VS 2010 Intel Fortran 12 to
@@ -89,11 +81,9 @@ CMake 2.8.14, and upgrade the GNU Autotools to the latest version.
 
 Let us know if you have any concerns about these upcoming changes.
 
-
+------------------------------------------------------------------------
 Release of h4mapwriter version 1.0.6
-
--------------------------------------------------------------------------------
-
+------------------------------------------------------------------------
 
 Version 1.0.6 of the h4mapwriter utility is now available and can be
 downloaded from the h4mapwriter project page:
@@ -106,11 +96,9 @@ The h4mapwriter is a utility that creates an HDF4 file content map in
 XML for a given HDF4 file. It enables the data to be retrieved from
 an HDF4 file without relying on the HDF4 library.
 
-
+------------------------------------------------------------------------
 Release of h5edit 1.2.0
-
--------------------------------------------------------------------------------
-
+------------------------------------------------------------------------
 
 Version 1.2.0 of h5edit is available from the JPSS project Downloads
 page:
@@ -119,8 +107,8 @@ page:
 
 New features in this release include:
 
- o Added support for the MODIFY command.
- o Added support for Mac OS X Mountain Lion 10.8.4.
+   * Added support for the MODIFY command.
+   * Added support for Mac OS X Mountain Lion 10.8.4.
 
 The h5edit tool is a general command line tool to edit HDF5 files.
 The current version is limited to operations on attributes only. For
@@ -128,11 +116,9 @@ more information see:
 
  http://www.hdfgroup.org/projects/jpss/h5edit_index.html
 
-
+------------------------------------------------------------------------
 Book Release of "Python and HDF5"
-
--------------------------------------------------------------------------------
-
+------------------------------------------------------------------------
 
 We are pleased to announce the release this month of a new O'Reilly
 book by Andrew Collette entitled "Python and HDF5". For more
@@ -140,10 +126,8 @@ information see:
 
  http://shop.oreilly.com/product/0636920030249.do
 
-
--------------------------------------------------------------------------------
+------------------------------------------------------------------------
 
 For questions regarding these or other HDF issues, contact:
 
  help@hdfgroup.org
-

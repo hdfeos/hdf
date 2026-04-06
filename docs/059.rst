@@ -1,45 +1,34 @@
-==================
+========================================================================
 HDF Newsletter #59
-==================
+========================================================================
 
 To subscribe/unsubscribe to the hdfnews mailing list, please send your
 request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
-subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the
+message.
 
--------------------------------------------------------------------------------
-
-
- Newsletter #59
- April 13, 2001
-
+Newsletter #59 / April 13, 2001
 
 CONTENTS
 
--------------------------------------------------------------------------------
+   * Release of HDF5-1.4.1
 
-. Release of HDF5-1.4.1 * Visit the HDF home page *
+     * New Features and Changes
+     * Platforms Tested
+     * Known Problems
 
- - New Features and Changes * for up-to-date information *
- - Platforms Tested * *
- - Known Problems * http://hdf.ncsa.uiuc.edu/ *
- * *
-
-. Release of Java HDF5 Products *******************************
-
-. More HDF5 tools support XML
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   * Release of Java HDF5 Products
+   * More HDF5 tools support XML
 
 Release of HDF5-1.4.1
-
--------------------------------------------------------------------------------
-
+------------------------------------------------------------------------
 
 HDF5-1.4.1 is now available for download. The changes in this release
 are primarily to the HDF5 utilities, and not all features were tested.
-Therefore, we have not provided the entire pre-compiled binary distribution
-(libraries, include files, utilities) for the platforms we support. We do
-provide the pre-compiled utilities as well as the source code for HDF5-1.4.1.
+Therefore, we have not provided the entire pre-compiled binary
+distribution (libraries, include files, utilities) for the platforms we
+support. We do provide the pre-compiled utilities as well as the source
+code for HDF5-1.4.1.
 
 You can obtain the HDF5-1.4.1 software from the HDF5 home page or from
 the NCSA ftp server:
@@ -55,62 +44,58 @@ found in:
 
  ftp://ftp.ncsa.uiuc.edu/HDF/HDF5/docs/
 
-
 New Features and Changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--------------------------------------------------------------------------------
+   * XML output option for h5dump utility.
 
+     A new option --xml to output data in XML format has been added.
+     The XML output contains a complete description of the file, marked
+     up in XML.
 
- * XML output option for h5dump utility.
+     The XML conforms to the HDF5 Document Type Definition (DTD), which
+     is available at:
 
- A new option --xml to output data in XML format has been added. The
- XML output contains a complete description of the file, marked up in
- XML.
+     http://hdf.ncsa.uiuc.edu/DTDs/HDF5-File.dtd
 
- The XML conforms to the HDF5 Document Type Definition (DTD), which
- is available at:
+     The XML output is suitable for use with other tools, including the
+     Java Tools:
 
- http://hdf.ncsa.uiuc.edu/DTDs/HDF5-File.dtd
+     http://hdf.ncsa.uiuc.edu/java-hdf5-html/
 
- The XML output is suitable for use with other tools, including the
- Java Tools:
+   * h4toh5 utility: conversion of images is fixed
 
- http://hdf.ncsa.uiuc.edu/java-hdf5-html/
+     Earlier releases of the h4toh5 utility produced images that did
+     not correctly conform to the HDF5 Image and Palette Specification:
 
- * h4toh5 utility: conversion of images is fixed
+     http://hdf.ncsa.uiuc.edu/HDF5/doc/ImageSpec.html
 
- Earlier releases of the h4toh5 utility produced images that did not
- correctly conform to the HDF5 Image and Palette Specification:
+     Several required HDF5 attributes were omitted, and the dataspace
+     was reversed (i.e., the height and width of the image dataset were
+     incorrectly described.) For more information, please see:
 
- http://hdf.ncsa.uiuc.edu/HDF5/doc/ImageSpec.html
+     http://hdf.ncsa.uiuc.edu/HDF5/H5Image/ImageDetails.htm
 
- Several required HDF5 attributes were omitted, and the dataspace
- was reversed (i.e., the height and width of the image dataset were
- incorrectly described.) For more information, please see:
+   * Fixed bug with contiguous hyperslabs not being detected, causing
+     slower I/O than necessary.
 
- http://hdf.ncsa.uiuc.edu/HDF5/H5Image/ImageDetails.htm
+   * Fixed bug where non-aligned hyperslab I/O on chunked datasets was
+     causing errors during I/O.
 
- * Fixed bug with contiguous hyperslabs not being detected, causing
- slower I/O than necessary.
+   * The RCSID string in H5public.h caused a C++ compiling problem,
+     due to multiple definitions of the same static variable. All
+     occurrences of the RCSID definition were removed.
 
- * Fixed bug where non-aligned hyperslab I/O on chunked datasets was
- causing errors during I/O.
-
- * The RCSID string in H5public.h caused a C++ compiling problem,
- due to multiple definitions of the same static variable. All
- occurrences of the RCSID definition were removed.
-
- * PDF and Postscript versions of the HDF5 documents are available
- with this release from:
- http://hdf.ncsa.uiuc.edu/HDF5/doc/PSandPDF/
- ftp://ftp.ncsa.uiuc.edu/HDF/HDF5/docs/
-
+   * PDF and Postscript versions of the HDF5 documents are available
+     with this release from:
+     http://hdf.ncsa.uiuc.edu/HDF5/doc/PSandPDF/
+     ftp://ftp.ncsa.uiuc.edu/HDF/HDF5/docs/
 
 Platforms Tested
-----------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Due to the nature of this release only the C, C++ libraries and tools were
-tested.
+Due to the nature of this release only the C, C++ libraries and tools
+were tested.
 
  AIX 4.3.3.0 (IBM SP powerpc) xlc 3.6.6
  mpcc_r 3.6.6
@@ -133,80 +118,65 @@ tested.
  Windows NT4.0, 2000 (NT5.0) MSVC++ 6.0
  Windows 98 MSVC++ 6.0
 
-
 Known Problems
---------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
- * The h5dump tests may fail to match the expected output in some
- platforms (e.g. SP2 parallel, Windows) where the error messages
+   * The h5dump tests may fail to match the expected output in some
+     platforms (e.g. SP2 parallel, Windows) where the error messages
+     directed to "stderr" do not appear in the "right order" with output
+     from stdout. This is not an error.
 
-.. code-block:: c
+   * The --enable-static-exec configure flag fails to compile for
+     HP-UX 11.00 platforms.
 
-    directed to "stderr" do not appear in the "right order" with output
-    from stdout. This is not an error.
+   * The executables are always dynamic on IRIX64 6.5(64 and n32) and
+     IRIX 6.5 even if they are configured with --enable-static-exec.
 
+   * The shared library failed compilation on IRIX 6.5.
 
- * The --enable-static-exec configure flag fails to compile for HP-UX
- 11.00 platforms.
+   * After "make install" or "make install-doc" one may need to reload
+     the source from the tar file before doing another build.
 
- * The executables are always dynamic on IRIX64 6.5(64 and n32) and
- IRIX 6.5 even if they are configured with --enable-static-exec.
-
- * The shared library failed compilation on IRIX 6.5.
-
- * After "make install" or "make install-doc" one may need to reload
- the source from the tar file before doing another build.
-
- * See "Known problems" section for the HDF5 1.4.0 release in the
- HISTORY.txt file.
-
+   * See "Known problems" section for the HDF5 1.4.0 release in the
+     HISTORY.txt file.
 
 Release of Java HDF5 Products
+------------------------------------------------------------------------
 
--------------------------------------------------------------------------------
-
-
-The latest version of the Java HDF5 Products which has been updated to work
-with HDF5-1.4.1 is now available from:
+The latest version of the Java HDF5 Products which has been updated to
+work with HDF5-1.4.1 is now available from:
 
  http://hdf.ncsa.uiuc.edu/java-hdf5-html/
 
 Several new features have been added to H5View in this release:
 
- * Can convert an XML file into HDF5 and then open it.
- * Can convert an HDF4 file into HDF5 and then open it.
- * Save a file as XML.
- * Many new editing features.
+   * Can convert an XML file into HDF5 and then open it.
+   * Can convert an HDF4 file into HDF5 and then open it.
+   * Save a file as XML.
+   * Many new editing features.
 
 Please refer to the java-hdf5-html/ web page for a comprehensive
 list of all of the changes.
 
-
 More HDF5 tools support XML
-
--------------------------------------------------------------------------------
-
+------------------------------------------------------------------------
 
 This release features an initial set of tools that convert between
 XML and HDF5 (and vice versa).
 
 The initial tool set includes:
 
- * A standard Document Type Definition (DTD)
- * Java tools to read XML and create HDF5
- * Addition of XML output to the h5dump utility.
+   * A standard Document Type Definition (DTD)
+   * Java tools to read XML and create HDF5
+   * Addition of XML output to the h5dump utility.
 
 These tools use the standard DTD, and the same XML can be read
 and written by all the tools.
 
 More information about the tools and XML is available at:
+
  http://hdf.ncsa.uiuc.edu/HDF5/XML
-
-
--------------------------------------------------------------------------------
 
 For questions regarding these or other HDF issues, contact:
 
  hdfhelp@ncsa.uiuc.edu
-
-

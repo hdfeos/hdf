@@ -1,41 +1,32 @@
-==================
+========================================================================
 HDF Newsletter #35
-==================
+========================================================================
 
 To subscribe/unsubscribe to the hdfnews mailing list, please send your
 request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
-subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the
+message.
 
--------------------------------------------------------------------------------
-
-
- Newsletter #35
- July 23, 1998
+Newsletter #35 / July 23, 1998
 
 CONTENTS
 
--------------------------------------------------------------------------------
+   * New release of HDF 4.1r2
 
-New release of HDF 4.1r2 * Visit the HDF home page *
+      * DEC Alpha NT (C and Fortran)
+      * Windows NT/95 (Fortran)
 
- - DEC Alpha NT (C and Fortran) * for up-to-date information *
- - Windows NT/95 (Fortran) * on HDF: *
- * http://hdf.ncsa.uiuc.edu/ *
-
-HTML Version of HDF 4.1r2 User's Guide *******************************
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   * HTML Version of HDF 4.1r2 User's Guide
 
 New Release of HDF 4.1r2
-
--------------------------------------------------------------------------------
-
+------------------------------------------------------------------------
 
 HDF 4.1r2 is now available on the DEC Alpha NT. Only the
 multi-file interfaces are supported, for both MS Visual C++ and
 Visual Fortran 5.0.
 
-Visual Fortran 5.0 is now supported on HDF 4.1r2 for Windows NT/95, as well.
+Visual Fortran 5.0 is now supported on HDF 4.1r2 for Windows NT/95,
+as well.
 
 The source code for both DEC Alpha NT and Windows NT/95 can be
 found at:
@@ -44,17 +35,16 @@ found at:
 
 The pre-compiled binaries can be found at:
 
- DEC Alpha NT:
- ftp://ftp.ncsa.uiuc.edu/HDF/HDF_Current/zip/alphaNT/
+   * DEC Alpha NT:
 
- Windows NT/95:
- ftp://ftp.ncsa.uiuc.edu/HDF/HDF_Current/zip/winNT95/
+     ftp://ftp.ncsa.uiuc.edu/HDF/HDF_Current/zip/alphaNT/
 
+   * Windows NT/95:
+
+     ftp://ftp.ncsa.uiuc.edu/HDF/HDF_Current/zip/winNT95/
 
 HTML Version of HDF 4.1r2 User's Guide
-
--------------------------------------------------------------------------------
-
+------------------------------------------------------------------------
 
 An HTML version of the HDF 4.1r2 User's Guide is now available.
 You can download it from:
@@ -66,11 +56,6 @@ The URL is:
 
  http://hdf.ncsa.uiuc.edu/training/HDFtraining/UsersGuide/
 
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 For questions regarding these or other HDF issues, contact:
 
  hdfhelp@ncsa.uiuc.edu
-
-

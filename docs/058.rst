@@ -1,39 +1,25 @@
-==================
+========================================================================
 HDF Newsletter #58
-==================
+========================================================================
 
 To subscribe/unsubscribe to the hdfnews mailing list, please send your
 request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
-subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the
+message.
 
--------------------------------------------------------------------------------
-
-
- Newsletter #58
- February 22, 2001
-
+Newsletter #58 / February 22, 2001
 
 CONTENTS
 
--------------------------------------------------------------------------------
+   * Release of HDF5-1.4.0
 
-. Release of HDF5-1.4.0 * Visit the HDF home page *
+     * New Features and Changes
+     * Platforms Tested
 
- - New Features and Changes * for up-to-date information *
- - Platforms Tested * *
- * http://hdf.ncsa.uiuc.edu/ *
-
-. Dropping Support for Solaris x86 * *
-
--------------------------------------------------------------------------------
-
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   * Dropping Support for Solaris x86
 
 Release of HDF5-1.4.0
-
--------------------------------------------------------------------------------
-
+------------------------------------------------------------------------
 
 HDF5-1.4.0 is now available for download.
 
@@ -46,11 +32,8 @@ found in:
 
  ftp://ftp.ncsa.uiuc.edu/HDF/HDF5/docs/
 
-
 New Features and Changes
-
--------------------------------------------------------------------------------
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Following is a list of the major new features and changes in
 HDF5-1.4.0.
@@ -60,35 +43,37 @@ information on what has changed, refer to the RELEASE.txt file at
 the top of the HDF5-1.4.0 source code tree. This file is also
 included with the pre-compiled binaries.
 
- * The Virtual File Layer, VFL, was added to replace the old
- file drivers. It also provides an API for user defined file
- drivers.
+   * The Virtual File Layer, VFL, was added to replace the old
+     file drivers. It also provides an API for user defined file
+     drivers.
 
- * It includes Fortran 90 support for the following platforms:
- Solaris 2.6 and 2.7, Linux, DEC Unix, Cray T3E, Cray SV1 and
- SGI Origin 2000 (64-bit option only). The parallel version of
- the HDF5 Fortran 90 library is supported on the SGI Origin 2000
- and Cray T3E platforms.
+   * It includes Fortran 90 support for the following platforms:
+     Solaris 2.6 and 2.7, Linux, DEC Unix, Cray T3E, Cray SV1 and
+     SGI Origin 2000 (64-bit option only). The parallel version of
+     the HDF5 Fortran 90 library is supported on the SGI Origin 2000
+     and Cray T3E platforms.
 
- * It includes C++ support for Solaris 2.6 and 2.7, Linux, and FreeBSD.
+   * It includes C++ support for Solaris 2.6 and 2.7, Linux, and
+     FreeBSD.
 
- * It includes the h4toh5 tool for converting HDF (4) files into HDF5.
- The h4toh5 tool has been tested on all supported platforms except
- for the TFLOPS.
+   * It includes the h4toh5 tool for converting HDF (4) files into
+     HDF5. The h4toh5 tool has been tested on all supported platforms
+     except for the TFLOPS.
 
- * The first phase of Thread-Safe support was added. For details, see:
+   * The first phase of Thread-Safe support was added. For details,
+     see:
 
- http://hdf.ncsa.uiuc.edu/HDF5/papers/mthdf/MTHDFpaper.htm
+     http://hdf.ncsa.uiuc.edu/HDF5/papers/mthdf/MTHDFpaper.htm
 
- * Improvements and changes were made to parallel HDF5.
+   * Improvements and changes were made to parallel HDF5.
 
- * A new array datatype was added to the datatypes which can be created.
+   * A new array datatype was added to the datatypes which can be
+     created.
 
- * Numerous performance improvements were made to the library.
-
+   * Numerous performance improvements were made to the library.
 
 Platforms Tested
-----------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
  AIX 4.3.3.0 (IBM SP powerpc) xlc 3.6.6
  mpcc_r 3.6.6
@@ -126,20 +111,12 @@ Platforms Tested
  Windows NT4.0, 2000 (NT5.0) MSVC++ 6.0
  Windows 98 MSVC++ 6.0
 
-
-
 Dropping Support for Solaris x86
-
--------------------------------------------------------------------------------
-
+------------------------------------------------------------------------
 
 This will be the last release that we support Solaris x86 for
 the PC on both HDF 4.x and HDF5.
 
-
--------------------------------------------------------------------------------
-
 For questions regarding these or other HDF issues, contact:
 
  hdfhelp@ncsa.uiuc.edu
-

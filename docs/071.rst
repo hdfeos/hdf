@@ -1,39 +1,26 @@
-==================
+========================================================================
 HDF Newsletter #71
-==================
+========================================================================
 
 To subscribe/unsubscribe to the hdfnews mailing list, please send your
 request to ncsalist@ncsa.uiuc.edu with the appropriate command (e.g.
-subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the message.
+subscribe hdfnews, unsubscribe hdfnews, help) in the *body* of the
+message.
 
--------------------------------------------------------------------------------
-
-
- Newsletter #71
- February 10, 2003
+Newsletter #71 / February 10, 2003
 
 CONTENTS
 
--------------------------------------------------------------------------------
+   * Release of HDF5-1.4.5
 
-. Release of HDF5-1.4.5 * *
+     - New Features and Changes
+     - Platforms Tested
 
- - New Features and Changes * Visit the HDF home page *
- - Platforms Tested * for up-to-date information *
- * *
-
-. Release of HDF5 High Level APIs * http://hdf.ncsa.uiuc.edu/ *
-
- * *
-
-. Release of HDF Java Products 1.2 *******************************
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   * Release of HDF5 High Level APIs
+   * Release of HDF Java Products 1.2
 
 Release of HDF5-1.4.5
-
--------------------------------------------------------------------------------
-
+------------------------------------------------------------------------
 
 HDF5-1.4.5 is now available for download. You can obtain the
 HDF5-1.4.5 software from the HDF5 home page at:
@@ -50,32 +37,28 @@ in this release can be viewed at:
 
  http://hdf.ncsa.uiuc.edu/HDF5/release/SuppConfigFeats.html
 
-
 New Features and Changes
-
--------------------------------------------------------------------------------
-
+------------------------------------------------------------------------
 
 Important changes in HDF5 include:
 
-o The following platforms are now supported: AIX 5.1 (-64 bit) and Mac OS X.
+   * The following platforms are now supported: AIX 5.1 (-64 bit) and
+     Mac OS X.
+   * The following compilers are now supported on Linux 2.4: The
+     Portland Group compilers (pgcc. pgf90, pgCC) and gcc (and g++)
+     3.2.
+   * Several missing Fortran 90 APIs have been added to the library.
+   * Numerous bug fixes and enhancements to Parallel HDF5 have been
+     added.
 
-o The following compilers are now supported on Linux 2.4: The Portland
- Group compilers (pgcc. pgf90, pgCC) and gcc (and g++) 3.2.
-
-o Several missing Fortran 90 APIs have been added to the library.
-
-o Numerous bug fixes and enhancements to Parallel HDF5 have been added.
-
-Numerous bugs have been fixed in the software, as well. Detailed information
-regarding changes to the software can be found in the RELEASE.txt that comes
-with the source code:
+Numerous bugs have been fixed in the software, as well. Detailed
+information regarding changes to the software can be found in the
+RELEASE.txt that comes with the source code:
 
  ftp://ftp.ncsa.uiuc.edu/HDF/HDF5/current/src/unpacked/release_docs/RELEASE.txt
 
-
 Platforms Tested
-----------------
+------------------------------------------------------------------------
 
  AIX 5.1 (32 and 64-bit) C for AIX Compiler, Version 6
  xlf 8.1.0.2
@@ -121,7 +104,6 @@ Platforms Tested
  IA-32 Linux 2.4.9 gcc 2.96
  Intel(R) C++ Version 7.0
  Intel(R) Fortran Compiler Version 7.0
-
  IA-64 Linux 2.4.16 ia64 gcc version 2.96 20000731
  Intel(R) C++ Version 7.0
  Intel(R) Fortran Compiler Version 7.0
@@ -133,12 +115,8 @@ Platforms Tested
  gcc and g++ Apple Computer, Inc. GCC
  version 1161, based on gcc version 3.1
 
-
-
 Release of HDF5 High Level APIs
-
--------------------------------------------------------------------------------
-
+------------------------------------------------------------------------
 
 The latest release of the HDF5 High Level APIs, which was tested
 using HDF5-1.4.5, is now available from:
@@ -154,20 +132,15 @@ operations and uses.
 
 The HDF5 HL library includes:
 
- H5LT API: "higher-level" functions which create and read simple
- datasets and attributes in a few calls.
-
- H5IM API: Create and read HDF5 Images and Palettes
-
- H5TB API: Create and read HDF5 Tables
+   * H5LT API: "higher-level" functions which create and read simple
+     datasets and attributes in a few calls.
+   * H5IM API: Create and read HDF5 Images and Palettes
+   * H5TB API: Create and read HDF5 Tables
 
 The HDF5 HL library requires the HDF5 library.
 
-
 Release of HDF Java Products 1.2
-
--------------------------------------------------------------------------------
-
+------------------------------------------------------------------------
 
 The latest official release of the HDF Java Products built
 with HDF5-1.4.5 is now available. It can be downloaded from:
@@ -181,10 +154,6 @@ list of the new features in HDFView see the HDFView page at:
 
  http://hdf.ncsa.uiuc.edu/hdf-java-html/hdfview/
 
-
--------------------------------------------------------------------------------
-
 For questions regarding these or other HDF issues, contact:
 
  hdfhelp@ncsa.uiuc.edu
-

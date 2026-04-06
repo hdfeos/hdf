@@ -1,30 +1,24 @@
-===================
+========================================================================
 HDF Newsletter #136
-===================
+========================================================================
 
 To view from a browser see:
  http://www.hdfgroup.org/newsletters/newsletter136.html
 
--------------------------------------------------------------------------------
-
 The HDF Group Home Page: http://www.hdfgroup.org/
 Helpdesk/Mailing List Info: http://www.hdfgroup.org/services/support.html
 
--------------------------------------------------------------------------------
+------------------------------------------------------------------------
 
-
- Newsletter #136
- July 30, 2013
+Newsletter #136 / July 30, 2013
 
 CONTENTS
- . Release of H4toH5 Conversion Library and Tools Version 2.2.2
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   * Release of H4toH5 Conversion Library and Tools Version 2.2.2
 
+------------------------------------------------------------------------
 Release of H4toH5 Conversion Library and Tools Version 2.2.2
-
--------------------------------------------------------------------------------
-
+------------------------------------------------------------------------
 
 Version 2.2.2 of the H4toH5 Conversion Library and Tools is now
 available. This release has been tested with HDF5-1.8.11 and HDF 4.2.9.
@@ -44,24 +38,19 @@ HDF4 objects to HDF5 objects.
 
 Important new features and changes in this release include:
 
- o Improvements were added to configure for finding other libraries
- used by HDF5.
+   * Improvements were added to configure for finding other libraries
+     used by HDF5.
 
- o The h5toh4 conversion tool can now convert a fixed-size HDF5 string
+   * The h5toh4 conversion tool can now convert a fixed-size HDF5
+     string in a compound datatype to an HDF4 char type.
 
-.. code-block:: c
-
-    in a compound datatype to an HDF4 char type.
-
-
-Please see the Release file for complete details regarding this release:
+Please see the Release file for complete details regarding this
+release:
 
  http://www.hdfgroup.org/ftp/HDF5/tools/h4toh5/src/h4h5tools-2.2.2-RELEASE.txt
 
-
--------------------------------------------------------------------------------
+------------------------------------------------------------------------
 
 For questions regarding these or other HDF issues, contact:
 
  help@hdfgroup.org
-
